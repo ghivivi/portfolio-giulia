@@ -3,28 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il Mio Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        h1 {
-            font-size: 3em;
-            text-align: center;
-        }
-    </style>
+    <meta name="description" content="Portfolio di Giulia - Videomaker professionista. Produzioni video, documentari, cortometraggi e contenuti creativi.">
+    <title>Giulia | Videomaker Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Auto-redirect to Italian version after 2 seconds -->
+    <script>
+        setTimeout(function() {
+            window.location.href = 'it/';
+        }, 2000);
+    </script>
 </head>
-<body>
-    <div>
-        <h1>Il Mio Portfolio Video</h1>
-        <p style="text-align: center;">Sito in costruzione... 🎬</p>
-    </div>
+<body class="landing-page">
+    <main>
+        <h1 class="landing-logo">Giulia</h1>
+        <p class="landing-subtitle">Videomaker &amp; Storyteller</p>
+
+        <div class="language-selector">
+            <a href="it/" class="language-btn">Italiano</a>
+            <a href="en/" class="language-btn">English</a>
+            <a href="fr/" class="language-btn">Français</a>
+        </div>
+    </main>
 </body>
 </html>
