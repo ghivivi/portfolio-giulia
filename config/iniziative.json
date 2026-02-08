@@ -1,0 +1,32 @@
+{
+  "category": {
+    "it": "Iniziative Proprie",
+    "en": "Personal Projects",
+    "fr": "Projets Personnels"
+  },
+  "projects": [
+    {
+      "id": "progetto-sperimentale",
+      "visible": true,
+      "order": 1,
+      "video": {
+        "type": "youtube",
+        "id": "dQw4w9WgXcQ"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)"
+      },
+      "title": {
+        "it": "Progetto Sperimentale",
+        "en": "Experimental Project",
+        "fr": "Projet Expérimental"
+      },
+      "description": {
+        "it": "Un'esplorazione delle possibilità del linguaggio cinematografico attraverso tecniche innovative e visuali audaci.",
+        "en": "An exploration of cinematic language possibilities through innovative techniques and bold visuals.",
+        "fr": "Une exploration des possibilités du langage cinématographique à travers des techniques innovantes et des visuels audacieux."
+      }
+    }
+  ]
+}

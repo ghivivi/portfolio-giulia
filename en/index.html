@@ -15,255 +15,124 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- NAVIGATION -->
-    <header class="site-header" id="site-header">
-        <nav class="nav-container">
-            <a href="#hero" class="nav-logo">GIULIA</a>
-            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            <div class="nav-main">
-                <ul class="nav-links">
-                    <li><a href="#hero" class="nav-link active">Home</a></li>
-                    <li><a href="#portfolio" class="nav-link">Projects</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
-                </ul>
-                <ul class="lang-switcher">
-                    <li><a href="../it/" class="lang-link">IT</a></li>
-                    <li class="lang-separator">|</li>
-                    <li><a href="../en/" class="lang-link active">EN</a></li>
-                    <li class="lang-separator">|</li>
-                    <li><a href="../fr/" class="lang-link">FR</a></li>
-                </ul>
-            </div>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <a href="#" class="sidebar-logo">GIULIA</a>
+            <p class="sidebar-tagline">Videomaker &amp; Storyteller</p>
+        </div>
+
+        <nav class="sidebar-nav">
+            <ul class="sidebar-links">
+                <li><a href="#giornalismo" class="sidebar-link">Journalism</a></li>
+                <li><a href="#documentari" class="sidebar-link">Documentaries</a></li>
+                <li><a href="#iniziative" class="sidebar-link">Personal Projects</a></li>
+            </ul>
+            <ul class="sidebar-links sidebar-links--secondary">
+                <li><a href="#" class="sidebar-link" data-modal="about">About</a></li>
+                <li><a href="#" class="sidebar-link" data-modal="contact">Contact</a></li>
+            </ul>
         </nav>
+
+        <div class="sidebar-footer">
+            <ul class="lang-switcher">
+                <li><a href="../it/" class="lang-link">IT</a></li>
+                <li class="lang-separator">|</li>
+                <li><a href="../en/" class="lang-link active">EN</a></li>
+                <li class="lang-separator">|</li>
+                <li><a href="../fr/" class="lang-link">FR</a></li>
+            </ul>
+            <div class="social-links">
+                <a href="https://instagram.com" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
+                </a>
+                <a href="https://youtube.com" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/></svg>
+                </a>
+                <a href="https://vimeo.com" class="social-link" aria-label="Vimeo" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M22,7.42C21.91,9.37 20.55,12.04 17.92,15.44C15.2,19 12.9,20.75 11,20.75C9.85,20.75 8.86,19.67 8.05,17.5C7.5,15.54 7,13.58 6.44,11.62C5.84,9.46 5.2,8.37 4.5,8.37C4.36,8.37 3.84,8.69 2.96,9.33L2,8.07C3,7.2 3.96,6.33 4.92,5.47C6.24,4.31 7.24,3.7 7.92,3.63C9.45,3.47 10.45,4.53 10.92,6.81C11.42,9.3 11.79,10.87 12.03,11.5C12.63,13.67 13.29,14.75 14,14.75C14.54,14.75 15.29,13.9 16.25,12.19C17.2,10.5 17.7,9.2 17.75,8.3C17.85,6.87 17.29,6.16 16.06,6.16C15.5,6.16 14.92,6.3 14.32,6.58C15.27,3.37 17.04,1.82 19.63,1.93C21.54,2 22.41,3.33 22,7.42Z"/></svg>
+                </a>
+                <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                    <svg viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg>
+                </a>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MOBILE HEADER -->
+    <header class="mobile-header" id="mobile-header">
+        <a href="#" class="sidebar-logo">GIULIA</a>
+        <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </header>
 
-    <main>
-        <!-- SECTION 1: HERO -->
-        <section class="hero" id="hero">
-            <div class="hero-video-bg">
-                <div class="hero-overlay"></div>
-            </div>
-            <div class="hero-content">
-                <h1 class="hero-title">Giulia</h1>
-                <p class="hero-subtitle">Videomaker &amp; Storyteller</p>
-                <a href="#portfolio" class="hero-cta">Discover the Projects</a>
-            </div>
-            <div class="scroll-indicator">
-                <span class="scroll-arrow"></span>
-            </div>
-        </section>
-
-        <!-- SECTION 2: PORTFOLIO / PROJECTS -->
-        <section class="portfolio" id="portfolio">
-            <div class="section-header">
-                <h2 class="section-title">Projects</h2>
-                <p class="section-subtitle">A selection of my work</p>
-            </div>
-
-            <div class="portfolio-grid">
-                <!-- PROJECT CARD 1: YouTube embed -->
-                <article class="project-card fade-in" data-video-type="youtube" data-video-id="dQw4w9WgXcQ">
-                    <div class="video-container">
-                        <div class="video-thumbnail" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);"></div>
-                        <button class="play-btn" aria-label="Play video">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Nature Documentary</h3>
-                        <p class="project-category">Documentary</p>
-                        <p class="project-description">A visual journey through the most evocative landscapes, telling stories of nature and biodiversity.</p>
-                    </div>
-                </article>
-
-                <!-- PROJECT CARD 2: Vimeo embed -->
-                <article class="project-card fade-in" data-video-type="vimeo" data-video-id="123456789">
-                    <div class="video-container">
-                        <div class="video-thumbnail" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);"></div>
-                        <button class="play-btn" aria-label="Play video">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Urban Short Film</h3>
-                        <p class="project-category">Short Film</p>
-                        <p class="project-description">An intimate story set in the city streets, exploring human connections in the digital age.</p>
-                    </div>
-                </article>
-
-                <!-- PROJECT CARD 3: Local video -->
-                <article class="project-card fade-in" data-video-type="local" data-video-src="../videos/progetto-3.mp4">
-                    <div class="video-container">
-                        <div class="video-thumbnail" style="background: linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%);"></div>
-                        <button class="play-btn" aria-label="Play video">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Music Video</h3>
-                        <p class="project-category">Music Video</p>
-                        <p class="project-description">A visual concept for an emerging artist, blending cinematic aesthetics and live performance.</p>
-                    </div>
-                </article>
-
-                <!-- PROJECT CARD 4: YouTube embed -->
-                <article class="project-card fade-in" data-video-type="youtube" data-video-id="dQw4w9WgXcQ">
-                    <div class="video-container">
-                        <div class="video-thumbnail" style="background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);"></div>
-                        <button class="play-btn" aria-label="Play video">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Cultural Reportage</h3>
-                        <p class="project-category">Reportage</p>
-                        <p class="project-description">An in-depth investigation of local traditions, documenting the cultural richness of the territory.</p>
-                    </div>
-                </article>
-
-                <!-- PROJECT CARD 5: Vimeo embed -->
-                <article class="project-card fade-in" data-video-type="vimeo" data-video-id="123456789">
-                    <div class="video-container">
-                        <div class="video-thumbnail" style="background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);"></div>
-                        <button class="play-btn" aria-label="Play video">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Commercial Spot</h3>
-                        <p class="project-category">Commercial</p>
-                        <p class="project-description">An advertising campaign combining emotional storytelling and visual impact for a sustainable brand.</p>
-                    </div>
-                </article>
-
-                <!-- PROJECT CARD 6: Local video -->
-                <article class="project-card fade-in" data-video-type="local" data-video-src="../videos/progetto-6.mp4">
-                    <div class="video-container">
-                        <div class="video-thumbnail" style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);"></div>
-                        <button class="play-btn" aria-label="Play video">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <div class="project-info">
-                        <h3 class="project-title">Experimental Project</h3>
-                        <p class="project-category">Experimental</p>
-                        <p class="project-description">An exploration of cinematic language possibilities through innovative techniques and bold visuals.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- SECTION 3: ABOUT -->
-        <section class="about" id="about">
-            <div class="about-container">
-                <div class="about-image fade-in">
-                    <img src="../images/portrait-placeholder.jpg" alt="Giulia - Videomaker" loading="lazy">
-                </div>
-                <div class="about-text fade-in">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="about-bio">
-                        I'm a videomaker based in Italy, specialized in creating visual content that tells authentic stories.
-                        My passion is capturing meaningful moments and transforming them into engaging cinematic narratives.
-                    </p>
-                    <p class="about-bio">
-                        With years of experience in documentary productions, short films, and commercial content,
-                        I bring every project to life with a keen eye for detail and unique narrative sensitivity.
-                    </p>
-                    <div class="about-skills">
-                        <span class="skill-tag">Directing</span>
-                        <span class="skill-tag">Editing</span>
-                        <span class="skill-tag">Color Grading</span>
-                        <span class="skill-tag">Documentaries</span>
-                        <span class="skill-tag">Storytelling</span>
-                        <span class="skill-tag">Cinematography</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION 4: CONTACT -->
-        <section class="contact" id="contact">
-            <div class="contact-container">
-                <h2 class="section-title fade-in">Contact</h2>
-                <p class="section-subtitle fade-in">Have a project in mind? Let's talk.</p>
-
-                <div class="contact-content">
-                    <div class="contact-info fade-in">
-                        <a href="mailto:giulia@example.com" class="contact-link">
-                            <span class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                                </svg>
-                            </span>
-                            giulia@example.com
-                        </a>
-                        <a href="tel:+39000000000" class="contact-link">
-                            <span class="contact-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-                                </svg>
-                            </span>
-                            +39 000 000 0000
-                        </a>
-                    </div>
-
-                    <div class="social-links fade-in">
-                        <a href="https://instagram.com" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/>
-                            </svg>
-                        </a>
-                        <a href="https://youtube.com" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/>
-                            </svg>
-                        </a>
-                        <a href="https://vimeo.com" class="social-link" aria-label="Vimeo" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M22,7.42C21.91,9.37 20.55,12.04 17.92,15.44C15.2,19 12.9,20.75 11,20.75C9.85,20.75 8.86,19.67 8.05,17.5C7.5,15.54 7,13.58 6.44,11.62C5.84,9.46 5.2,8.37 4.5,8.37C4.36,8.37 3.84,8.69 2.96,9.33L2,8.07C3,7.2 3.96,6.33 4.92,5.47C6.24,4.31 7.24,3.7 7.92,3.63C9.45,3.47 10.45,4.53 10.92,6.81C11.42,9.3 11.79,10.87 12.03,11.5C12.63,13.67 13.29,14.75 14,14.75C14.54,14.75 15.29,13.9 16.25,12.19C17.2,10.5 17.7,9.2 17.75,8.3C17.85,6.87 17.29,6.16 16.06,6.16C15.5,6.16 14.92,6.3 14.32,6.58C15.27,3.37 17.04,1.82 19.63,1.93C21.54,2 22.41,3.33 22,7.42Z"/>
-                            </svg>
-                        </a>
-                        <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- MAIN CONTENT -->
+    <main class="main-content" id="main-content">
+        <!-- Categories rendered dynamically from config/*.json -->
     </main>
 
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <p>&copy; 2026 Giulia. All rights reserved.</p>
-    </footer>
+    <!-- MODAL: About -->
+    <div class="content-modal" id="about-modal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="content-modal-inner">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div class="about-modal-content">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-bio">
+                    I'm a videomaker based in Italy, specialized in creating visual content that tells authentic stories.
+                    My passion is capturing meaningful moments and transforming them into engaging cinematic narratives.
+                </p>
+                <p class="about-bio">
+                    With years of experience in documentary productions, short films, and commercial content,
+                    I bring every project to life with a keen eye for detail and unique narrative sensitivity.
+                </p>
+                <div class="about-skills">
+                    <span class="skill-tag">Directing</span>
+                    <span class="skill-tag">Editing</span>
+                    <span class="skill-tag">Color Grading</span>
+                    <span class="skill-tag">Documentaries</span>
+                    <span class="skill-tag">Storytelling</span>
+                    <span class="skill-tag">Cinematography</span>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- VIDEO MODAL (lightbox for embeds) -->
+    <!-- MODAL: Contact -->
+    <div class="content-modal" id="contact-modal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="content-modal-inner">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div class="contact-modal-content">
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">Have a project in mind? Let's talk.</p>
+                <div class="contact-info">
+                    <a href="mailto:giulia@example.com" class="contact-link">
+                        <span class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </span>
+                        giulia@example.com
+                    </a>
+                    <a href="tel:+39000000000" class="contact-link">
+                        <span class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        </span>
+                        +39 000 000 0000
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- VIDEO MODAL -->
     <div class="video-modal" id="video-modal" aria-hidden="true">
         <div class="modal-overlay"></div>
         <div class="modal-content">
             <button class="modal-close" aria-label="Close">&times;</button>
-            <div class="modal-video-wrapper">
-                <!-- Dynamically populated by JS -->
-            </div>
+            <div class="modal-video-wrapper"></div>
         </div>
     </div>
 

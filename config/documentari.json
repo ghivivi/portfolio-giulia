@@ -1,0 +1,32 @@
+{
+  "category": {
+    "it": "Documentari",
+    "en": "Documentaries",
+    "fr": "Documentaires"
+  },
+  "projects": [
+    {
+      "id": "documentario-natura",
+      "visible": true,
+      "order": 1,
+      "video": {
+        "type": "youtube",
+        "id": "dQw4w9WgXcQ"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)"
+      },
+      "title": {
+        "it": "Documentario Natura",
+        "en": "Nature Documentary",
+        "fr": "Documentaire Nature"
+      },
+      "description": {
+        "it": "Un viaggio visivo attraverso i paesaggi più suggestivi, raccontando storie di natura e biodiversità.",
+        "en": "A visual journey through the most evocative landscapes, telling stories of nature and biodiversity.",
+        "fr": "Un voyage visuel à travers les paysages les plus évocateurs, racontant des histoires de nature et de biodiversité."
+      }
+    }
+  ]
+}

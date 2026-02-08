@@ -5,206 +5,359 @@
 (function() {
     'use strict';
 
+    // ---- CONFIG ----
+    var CATEGORIES = ['giornalismo', 'documentari', 'iniziative'];
+
     // ---- 1. DOM REFERENCES ----
-    const header    = document.getElementById('site-header');
-    const navToggle = document.querySelector('.nav-toggle');
-    const navMain   = document.querySelector('.nav-main');
-    const navItems  = document.querySelectorAll('.nav-link');
-    const modal     = document.getElementById('video-modal');
+    var sidebar = document.getElementById('sidebar');
+    var navToggle = document.querySelector('.nav-toggle');
+    var videoModal = document.getElementById('video-modal');
+    var modalVideoWrapper = videoModal ? videoModal.querySelector('.modal-video-wrapper') : null;
+    var videoModalClose = videoModal ? videoModal.querySelector('.modal-close') : null;
+    var videoModalOverlay = videoModal ? videoModal.querySelector('.modal-overlay') : null;
 
-    // Check if elements exist (landing page doesn't have all elements)
-    const modalVideoWrapper = modal ? modal.querySelector('.modal-video-wrapper') : null;
-    const modalClose = modal ? modal.querySelector('.modal-close') : null;
-    const modalOverlay = modal ? modal.querySelector('.modal-overlay') : null;
-    const playButtons = document.querySelectorAll('.play-btn');
-    const fadeElements = document.querySelectorAll('.fade-in');
+    // ---- 2. LANGUAGE DETECTION ----
+    function detectLanguage() {
+        var path = window.location.pathname;
+        if (path.indexOf('/it/') !== -1) return 'it';
+        if (path.indexOf('/en/') !== -1) return 'en';
+        if (path.indexOf('/fr/') !== -1) return 'fr';
+        return 'it';
+    }
 
-    // ---- 2. NAVIGATION: Scroll-based header styling ----
-    function handleHeaderScroll() {
-        if (!header) return;
+    // ---- 3. LOAD AND RENDER PROJECTS BY CATEGORY ----
+    async function loadAndRenderByCategory(language) {
+        var configPath = '../config/';
+        var mainContent = document.getElementById('main-content');
+        if (!mainContent) return;
 
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        mainContent.innerHTML = '';
+
+        for (var i = 0; i < CATEGORIES.length; i++) {
+            try {
+                var response = await fetch(configPath + CATEGORIES[i] + '.json');
+                var data = await response.json();
+
+                var visibleProjects = data.projects.filter(function(p) {
+                    return p.visible !== false;
+                });
+
+                if (visibleProjects.length === 0) continue;
+
+                var categoryName = data.category[language] || data.category.it;
+                var categoryId = CATEGORIES[i];
+
+                var sectionHTML = '<section class="category-section fade-in" id="' + categoryId + '">' +
+                    '<h2 class="category-title">' + categoryName + '</h2>' +
+                    '<div class="category-row">';
+
+                visibleProjects.sort(function(a, b) {
+                    return (a.order || 999) - (b.order || 999);
+                });
+
+                visibleProjects.forEach(function(project) {
+                    if (!project.category) project.category = data.category;
+                    sectionHTML += createProjectCard(project, language);
+                });
+
+                sectionHTML += '</div></section>';
+                mainContent.insertAdjacentHTML('beforeend', sectionHTML);
+            } catch (error) {
+                console.error('Error loading ' + CATEGORIES[i] + ':', error);
+            }
         }
+
+        initVideoListeners();
+        initScrollAnimations();
+        initThumbnailFallbacks();
     }
 
-    // ---- 3. NAVIGATION: Active link highlighting ----
-    //     Uses IntersectionObserver to detect which section is in view
-    function initActiveNavTracking() {
-        const sections = document.querySelectorAll('section[id]');
-        if (sections.length === 0 || navItems.length === 0) return;
+    // ---- 4. CREATE PROJECT CARD HTML ----
+    function createProjectCard(project, language) {
+        var categoryText = '';
+        if (project.category) {
+            categoryText = project.category[language] || project.category.it || '';
+        }
+        var title = project.title[language] || project.title.it || '';
+        var description = project.description[language] || project.description.it || '';
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    navItems.forEach(link => {
-                        link.classList.toggle('active',
-                            link.getAttribute('href') === `#${id}`
-                        );
-                    });
-                }
-            });
-        }, {
-            rootMargin: '-50% 0px -50% 0px' // trigger at center of viewport
-        });
+        var videoAttrs = '';
+        if (project.video.type === 'local') {
+            videoAttrs = 'data-video-type="local" data-video-src="' + project.video.src + '"';
+        } else {
+            videoAttrs = 'data-video-type="' + project.video.type + '" data-video-id="' + project.video.id + '"';
+        }
 
-        sections.forEach(section => observer.observe(section));
+        var thumbnailStyle = '';
+        if (project.thumbnail && project.thumbnail.url) {
+            thumbnailStyle = "background-image: url('" + project.thumbnail.url + "'); background-size: cover; background-position: center;";
+        } else if (project.thumbnail && project.thumbnail.fallbackGradient) {
+            thumbnailStyle = 'background: ' + project.thumbnail.fallbackGradient + ';';
+        } else {
+            thumbnailStyle = 'background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);';
+        }
+
+        var playLabels = {
+            it: 'Riproduci video',
+            en: 'Play video',
+            fr: 'Lire la vidéo'
+        };
+
+        return '<article class="project-card" ' + videoAttrs + '>' +
+            '<div class="video-container">' +
+                '<div class="video-thumbnail" style="' + thumbnailStyle + '"></div>' +
+                '<button class="play-btn" aria-label="' + playLabels[language] + '">' +
+                    '<svg viewBox="0 0 24 24" fill="currentColor">' +
+                        '<path d="M8 5v14l11-7z"/>' +
+                    '</svg>' +
+                '</button>' +
+            '</div>' +
+            '<div class="project-info">' +
+                '<h3 class="project-title">' + title + '</h3>' +
+                '<p class="project-category">' + categoryText + '</p>' +
+                '<p class="project-description">' + description + '</p>' +
+            '</div>' +
+        '</article>';
     }
 
-    // ---- 4. MOBILE MENU TOGGLE ----
-    function initMobileMenu() {
-        if (!navToggle || !navMain) return;
+    // ---- 5. MOBILE SIDEBAR TOGGLE ----
+    function initMobileSidebar() {
+        if (!navToggle || !sidebar) return;
 
-        navToggle.addEventListener('click', () => {
-            const isActive = navToggle.classList.toggle('is-active');
-            navMain.classList.toggle('is-active');
+        navToggle.addEventListener('click', function() {
+            var isActive = navToggle.classList.toggle('is-active');
+            sidebar.classList.toggle('is-active');
             navToggle.setAttribute('aria-expanded', isActive);
             document.body.style.overflow = isActive ? 'hidden' : '';
         });
 
-        // Close menu on link click
-        navItems.forEach(link => {
-            link.addEventListener('click', () => {
+        // Close sidebar when clicking a link
+        sidebar.querySelectorAll('.sidebar-link').forEach(function(link) {
+            link.addEventListener('click', function() {
                 navToggle.classList.remove('is-active');
-                navMain.classList.remove('is-active');
+                sidebar.classList.remove('is-active');
                 navToggle.setAttribute('aria-expanded', 'false');
                 document.body.style.overflow = '';
             });
         });
     }
 
-    // ---- 5. SCROLL ANIMATIONS (fade-in) ----
-    function initScrollAnimations() {
-        if (fadeElements.length === 0) return;
+    // ---- 6. CONTENT MODALS (About / Contact) ----
+    function initContentModals() {
+        var modalLinks = document.querySelectorAll('[data-modal]');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // animate once only
+        modalLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                var modalId = link.getAttribute('data-modal') + '-modal';
+                var modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.classList.add('is-active');
+                    modal.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
                 }
             });
-        }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
         });
 
-        fadeElements.forEach(el => observer.observe(el));
-    }
+        // Close buttons and overlays for content modals
+        document.querySelectorAll('.content-modal').forEach(function(modal) {
+            var closeBtn = modal.querySelector('.modal-close');
+            var overlay = modal.querySelector('.modal-overlay');
 
-    // ---- 6. VIDEO MODAL ----
-    function openModal(card) {
-        if (!modal || !modalVideoWrapper) return;
-
-        const type    = card.dataset.videoType;
-        const videoId = card.dataset.videoId;
-        const videoSrc = card.dataset.videoSrc;
-
-        let content = '';
-
-        switch (type) {
-            case 'youtube':
-                content = `<iframe
-                    src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0"
-                    allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>`;
-                break;
-            case 'vimeo':
-                content = `<iframe
-                    src="https://player.vimeo.com/video/${videoId}?autoplay=1"
-                    allow="autoplay; fullscreen"
-                    allowfullscreen></iframe>`;
-                break;
-            case 'local':
-                content = `<video controls autoplay>
-                    <source src="${videoSrc}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>`;
-                break;
-        }
-
-        modalVideoWrapper.innerHTML = content;
-        modal.classList.add('is-active');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-        if (!modal || !modalVideoWrapper) return;
-
-        modal.classList.remove('is-active');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        // Destroy iframe/video to stop playback
-        modalVideoWrapper.innerHTML = '';
-    }
-
-    function initVideoModal() {
-        if (!modal) return;
-
-        // Play buttons
-        playButtons.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                const card = btn.closest('.project-card');
-                openModal(card);
-            });
+            if (closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    closeContentModal(modal);
+                });
+            }
+            if (overlay) {
+                overlay.addEventListener('click', function() {
+                    closeContentModal(modal);
+                });
+            }
         });
 
-        // Also allow clicking the entire video-container area
-        document.querySelectorAll('.video-container').forEach(container => {
-            container.addEventListener('click', () => {
-                const card = container.closest('.project-card');
-                openModal(card);
-            });
-            container.style.cursor = 'pointer';
-        });
-
-        // Close modal
-        if (modalClose) {
-            modalClose.addEventListener('click', closeModal);
-        }
-
-        if (modalOverlay) {
-            modalOverlay.addEventListener('click', closeModal);
-        }
-
-        // Close on Escape key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('is-active')) {
-                closeModal();
+        // ESC key for content modals
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.content-modal.is-active').forEach(function(modal) {
+                    closeContentModal(modal);
+                });
             }
         });
     }
 
-    // ---- 7. INITIALIZATION ----
-    function init() {
-        // Header scroll (works on all pages)
-        if (header) {
-            window.addEventListener('scroll', handleHeaderScroll, { passive: true });
-            handleHeaderScroll(); // Initial check
+    function closeContentModal(modal) {
+        modal.classList.remove('is-active');
+        modal.setAttribute('aria-hidden', 'true');
+        // Only restore scroll if no other modals are open
+        if (!document.querySelector('.content-modal.is-active') &&
+            !(videoModal && videoModal.classList.contains('is-active'))) {
+            document.body.style.overflow = '';
+        }
+    }
+
+    // ---- 7. VIDEO MODAL ----
+    function openVideoModal(card) {
+        if (!videoModal || !modalVideoWrapper) return;
+
+        var type = card.dataset.videoType;
+        var videoId = card.dataset.videoId;
+        var videoSrc = card.dataset.videoSrc;
+
+        var content = '';
+
+        switch (type) {
+            case 'youtube':
+                content = '<iframe src="https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+                break;
+            case 'vimeo':
+                content = '<iframe src="https://player.vimeo.com/video/' + videoId + '?autoplay=1" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+                break;
+            case 'local':
+                content = '<video controls autoplay><source src="' + videoSrc + '" type="video/mp4">Your browser does not support the video tag.</video>';
+                break;
         }
 
-        // Only initialize portfolio-specific features if elements exist
-        if (navItems.length > 0) {
-            initActiveNavTracking();
+        modalVideoWrapper.innerHTML = content;
+        videoModal.classList.add('is-active');
+        videoModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideoModal() {
+        if (!videoModal || !modalVideoWrapper) return;
+
+        videoModal.classList.remove('is-active');
+        videoModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        modalVideoWrapper.innerHTML = '';
+    }
+
+    function initVideoListeners() {
+        if (!videoModal) return;
+
+        document.querySelectorAll('.play-btn').forEach(function(btn) {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                var card = btn.closest('.project-card');
+                openVideoModal(card);
+            });
+        });
+
+        document.querySelectorAll('.video-container').forEach(function(container) {
+            container.addEventListener('click', function() {
+                var card = container.closest('.project-card');
+                openVideoModal(card);
+            });
+            container.style.cursor = 'pointer';
+        });
+    }
+
+    function initVideoModalClose() {
+        if (!videoModal) return;
+
+        if (videoModalClose) {
+            videoModalClose.addEventListener('click', closeVideoModal);
+        }
+        if (videoModalOverlay) {
+            videoModalOverlay.addEventListener('click', closeVideoModal);
         }
 
-        if (navToggle && navMain) {
-            initMobileMenu();
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && videoModal.classList.contains('is-active')) {
+                closeVideoModal();
+            }
+        });
+    }
+
+    // ---- 8. SCROLL ANIMATIONS ----
+    function initScrollAnimations() {
+        var fadeEls = document.querySelectorAll('.fade-in:not(.is-visible)');
+        if (fadeEls.length === 0) return;
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        fadeEls.forEach(function(el) {
+            observer.observe(el);
+        });
+    }
+
+    // ---- 9. THUMBNAIL FALLBACK ----
+    function initThumbnailFallbacks() {
+        document.querySelectorAll('.video-thumbnail').forEach(function(thumb) {
+            var bgImage = thumb.style.backgroundImage;
+            if (bgImage && bgImage !== 'none' && bgImage.indexOf('url') !== -1) {
+                var img = new Image();
+                img.onerror = function() {
+                    thumb.style.backgroundImage = 'none';
+                    thumb.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)';
+                };
+                var match = bgImage.match(/url\(['"]?([^'"]+)['"]?\)/);
+                if (match) {
+                    img.src = match[1];
+                }
+            }
+        });
+    }
+
+    // ---- 10. SIDEBAR ACTIVE LINK TRACKING ----
+    function initSidebarActiveTracking() {
+        var sections = document.querySelectorAll('.category-section[id]');
+        var sidebarLinks = document.querySelectorAll('.sidebar-link[href^="#"]');
+        if (sections.length === 0 || sidebarLinks.length === 0) return;
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var id = entry.target.getAttribute('id');
+                    sidebarLinks.forEach(function(link) {
+                        link.classList.toggle('active',
+                            link.getAttribute('href') === '#' + id
+                        );
+                    });
+                }
+            });
+        }, {
+            rootMargin: '-20% 0px -60% 0px'
+        });
+
+        sections.forEach(function(section) {
+            observer.observe(section);
+        });
+    }
+
+    // ---- 11. INITIALIZATION ----
+    async function init() {
+        // Mobile sidebar
+        initMobileSidebar();
+
+        // Content modals (About / Contact)
+        initContentModals();
+
+        // Video modal close handlers
+        initVideoModalClose();
+
+        // Load and render projects by category
+        var mainContent = document.getElementById('main-content');
+        if (mainContent) {
+            var language = detectLanguage();
+            await loadAndRenderByCategory(language);
+            initSidebarActiveTracking();
         }
 
-        if (fadeElements.length > 0) {
-            initScrollAnimations();
-        }
-
-        if (modal) {
-            initVideoModal();
-        }
+        // Initialize scroll animations for existing elements
+        initScrollAnimations();
     }
 
     // Run when DOM is ready
