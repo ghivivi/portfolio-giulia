@@ -79,13 +79,20 @@
             categoryText = project.category[language] || project.category.it || '';
         }
         var title = project.title[language] || project.title.it || '';
-        var description = project.description[language] || project.description.it || '';
+        var description = '';
+        if (project.description) {
+            description = project.description[language] || project.description.it || '';
+        }
 
+        var hasVideo = project.video && project.video.type;
         var videoAttrs = '';
-        if (project.video.type === 'local') {
-            videoAttrs = 'data-video-type="local" data-video-src="' + project.video.src + '"';
-        } else {
-            videoAttrs = 'data-video-type="' + project.video.type + '" data-video-id="' + project.video.id + '"';
+
+        if (hasVideo) {
+            if (project.video.type === 'local') {
+                videoAttrs = 'data-video-type="local" data-video-src="' + project.video.src + '"';
+            } else {
+                videoAttrs = 'data-video-type="' + project.video.type + '" data-video-id="' + project.video.id + '"';
+            }
         }
 
         var thumbnailStyle = '';
@@ -102,20 +109,39 @@
             en: 'Play video',
             fr: 'Lire la vidéo'
         };
+        var readLabels = {
+            it: 'Leggi articolo',
+            en: 'Read article',
+            fr: "Lire l'article"
+        };
 
-        return '<article class="project-card" ' + videoAttrs + '>' +
+        var cardAttrs = 'class="project-card"';
+        if (hasVideo) {
+            cardAttrs += ' ' + videoAttrs;
+        } else if (project.articleUrl) {
+            cardAttrs += ' data-article-url="' + project.articleUrl + '"';
+        }
+
+        var actionBtnHTML = '';
+        if (hasVideo) {
+            actionBtnHTML = '<button class="play-btn" aria-label="' + playLabels[language] + '">' +
+                '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
+            '</button>';
+        } else if (project.articleUrl) {
+            actionBtnHTML = '<a href="' + project.articleUrl + '" target="_blank" rel="noopener" class="article-link-btn" aria-label="' + readLabels[language] + '">' +
+                '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7H12z"/></svg>' +
+            '</a>';
+        }
+
+        return '<article ' + cardAttrs + '>' +
             '<div class="video-container">' +
                 '<div class="video-thumbnail" style="' + thumbnailStyle + '"></div>' +
-                '<button class="play-btn" aria-label="' + playLabels[language] + '">' +
-                    '<svg viewBox="0 0 24 24" fill="currentColor">' +
-                        '<path d="M8 5v14l11-7z"/>' +
-                    '</svg>' +
-                '</button>' +
+                actionBtnHTML +
             '</div>' +
             '<div class="project-info">' +
                 '<h3 class="project-title">' + title + '</h3>' +
-                '<p class="project-category">' + categoryText + '</p>' +
-                '<p class="project-description">' + description + '</p>' +
+                (categoryText ? '<p class="project-category">' + categoryText + '</p>' : '') +
+                (description ? '<p class="project-description">' + description + '</p>' : '') +
             '</div>' +
         '</article>';
     }
@@ -234,23 +260,30 @@
     }
 
     function initVideoListeners() {
-        if (!videoModal) return;
-
         document.querySelectorAll('.play-btn').forEach(function(btn) {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
                 var card = btn.closest('.project-card');
-                openVideoModal(card);
+                if (card.dataset.videoType && videoModal) {
+                    openVideoModal(card);
+                }
             });
         });
 
         document.querySelectorAll('.video-container').forEach(function(container) {
-            container.addEventListener('click', function() {
-                var card = container.closest('.project-card');
-                openVideoModal(card);
-            });
-            container.style.cursor = 'pointer';
+            var card = container.closest('.project-card');
+            if (card.dataset.videoType && videoModal) {
+                container.addEventListener('click', function() {
+                    openVideoModal(card);
+                });
+                container.style.cursor = 'pointer';
+            } else if (card.dataset.articleUrl) {
+                container.addEventListener('click', function() {
+                    window.open(card.dataset.articleUrl, '_blank');
+                });
+                container.style.cursor = 'pointer';
+            }
         });
     }
 
