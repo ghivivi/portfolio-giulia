@@ -6,9 +6,29 @@
   },
   "projects": [
     {
-      "id": "english-egyptian-protesters-demand-end-to-sexual-harassment-middle-east-eye-tv",
+      "id": "",
       "visible": true,
       "order": 1,
+      "date": "",
+      "video":       {
+        "type": "youtube",
+        "id": "CUh5iNMIIrs"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "FAR RIGHT: A NEW FRIGHTENING NORMAL",
+        "en": "FAR RIGHT: A NEW FRIGHTENING NORMAL",
+        "fr": "FAR RIGHT: A NEW FRIGHTENING NORMAL"
+      },
+      "articleUrl": "https://www.youtube.com/watch?v=CUh5iNMIIrs"
+    },
+    {
+      "id": "english-egyptian-protesters-demand-end-to-sexual-harassment-middle-east-eye-tv",
+      "visible": true,
+      "order": 100,
       "date": "2015-03-01",
       "video":       {
         "type": "youtube",
@@ -80,7 +100,7 @@
       },
       "title": {
         "it": "http://youtu.be/sEQxNEx6N34",
-        "en": "Religious tensions simmer in Egypt\'s Minya - Middle East Eye TV",
+        "en": "Religious tensions simmer in Egypt's Minya - Middle East Eye TV",
         "fr": "http://youtu.be/sEQxNEx6N34"
       },
       "articleUrl": "http://www.nawartpress.com/?p=588"
@@ -139,9 +159,9 @@
         "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
       },
       "title": {
-        "it": "Religious tensions simmer in Egypt\'s Minya - Middle East Eye",
-        "en": "Religious tensions simmer in Egypt\'s Minya - Middle East Eye",
-        "fr": "Religious tensions simmer in Egypt\'s Minya - Middle East Eye"
+        "it": "Religious tensions simmer in Egypt's Minya - Middle East Eye",
+        "en": "Religious tensions simmer in Egypt's Minya - Middle East Eye",
+        "fr": "Religious tensions simmer in Egypt's Minya - Middle East Eye"
       },
       "articleUrl": "http://www.middleeasteye.net/news/sisi-win-egypts-election-962-percent-vote"
     },
