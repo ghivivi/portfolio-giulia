@@ -5,9 +5,6 @@
 (function() {
     'use strict';
 
-    // ---- CONFIG ----
-    var CATEGORIES = ['giornalismo', 'documentari', 'iniziative'];
-
     // ---- 1. DOM REFERENCES ----
     var sidebar = document.getElementById('sidebar');
     var navToggle = document.querySelector('.nav-toggle');
@@ -25,64 +22,96 @@
         return 'it';
     }
 
-    // ---- 3. LOAD AND RENDER PROJECTS BY CATEGORY ----
-    async function loadAndRenderByCategory(language) {
-        var configPath = '../config/';
+    // ---- 3. LOAD AND RENDER PROJECTS ----
+    async function loadAndRenderProjects(language) {
         var mainContent = document.getElementById('main-content');
         if (!mainContent) return;
 
         mainContent.innerHTML = '';
 
-        for (var i = 0; i < CATEGORIES.length; i++) {
-            try {
-                var response = await fetch(configPath + CATEGORIES[i] + '.json');
-                var data = await response.json();
+        try {
+            var response = await fetch('../config/projects.json');
+            var data = await response.json();
 
-                var visibleProjects = data.projects.filter(function(p) {
-                    return p.visible !== false;
+            var categories = data.categories;
+            var categoryOrder = data.categoryOrder;
+            var projects = data.projects.filter(function(p) {
+                return p.visible !== false;
+            });
+
+            // Render each category section
+            for (var i = 0; i < categoryOrder.length; i++) {
+                var catId = categoryOrder[i];
+                var catName = categories[catId] ? (categories[catId][language] || categories[catId].it) : catId;
+
+                // Filter projects for this category
+                var catProjects = projects.filter(function(p) {
+                    return p.categories && p.categories.indexOf(catId) !== -1;
                 });
 
-                if (visibleProjects.length === 0) continue;
+                if (catProjects.length === 0) continue;
 
-                var categoryName = data.category[language] || data.category.it;
-                var categoryId = CATEGORIES[i];
-
-                var sectionHTML = '<section class="category-section fade-in" id="' + categoryId + '">' +
-                    '<h2 class="category-title">' + categoryName + '</h2>' +
-                    '<div class="category-row">';
-
-                visibleProjects.sort(function(a, b) {
+                catProjects.sort(function(a, b) {
                     return (a.order || 999) - (b.order || 999);
                 });
 
-                visibleProjects.forEach(function(project) {
-                    if (!project.category) project.category = data.category;
-                    sectionHTML += createProjectCard(project, language);
+                var sectionHTML = '<section class="category-section fade-in" id="' + catId + '">' +
+                    '<h2 class="category-title">' + catName + '</h2>' +
+                    '<div class="category-row">';
+
+                catProjects.forEach(function(project) {
+                    sectionHTML += createProjectCard(project, language, categories);
                 });
 
                 sectionHTML += '</div></section>';
                 mainContent.insertAdjacentHTML('beforeend', sectionHTML);
-            } catch (error) {
-                console.error('Error loading ' + CATEGORIES[i] + ':', error);
             }
-        }
 
-        initVideoListeners();
-        initScrollAnimations();
-        initThumbnailFallbacks();
+            // Render TODO category if any
+            var todoProjects = projects.filter(function(p) {
+                return p.categories && p.categories.indexOf('TODO') !== -1;
+            });
+
+            if (todoProjects.length > 0) {
+                var todoLabels = { it: 'Da Categorizzare', en: 'Uncategorized', fr: 'Non Catégorisé' };
+                var todoHTML = '<section class="category-section fade-in" id="todo">' +
+                    '<h2 class="category-title">' + (todoLabels[language] || todoLabels.it) + '</h2>' +
+                    '<div class="category-row">';
+
+                todoProjects.forEach(function(project) {
+                    todoHTML += createProjectCard(project, language, categories);
+                });
+
+                todoHTML += '</div></section>';
+                mainContent.insertAdjacentHTML('beforeend', todoHTML);
+            }
+
+            initVideoListeners();
+            initScrollAnimations();
+            initThumbnailFallbacks();
+        } catch (error) {
+            console.error('Error loading projects:', error);
+        }
     }
 
     // ---- 4. CREATE PROJECT CARD HTML ----
-    function createProjectCard(project, language) {
-        var categoryText = '';
-        if (project.category) {
-            categoryText = project.category[language] || project.category.it || '';
-        }
+    function createProjectCard(project, language, categories) {
         var title = project.title[language] || project.title.it || '';
         var description = '';
         if (project.description) {
             description = project.description[language] || project.description.it || '';
         }
+
+        // Build category tags from categories array
+        var categoryLabels = [];
+        if (project.categories) {
+            project.categories.forEach(function(catId) {
+                if (catId !== 'TODO' && categories[catId]) {
+                    categoryLabels.push(categories[catId][language] || categories[catId].it);
+                }
+            });
+        }
+        var categoryText = categoryLabels.join(' / ');
 
         var hasVideo = project.video && project.video.type;
         var videoAttrs = '';
@@ -157,9 +186,10 @@
             document.body.style.overflow = isActive ? 'hidden' : '';
         });
 
-        // Close sidebar when clicking a link
-        sidebar.querySelectorAll('.sidebar-link').forEach(function(link) {
+        // Close sidebar when clicking a link (including dropdown links)
+        sidebar.querySelectorAll('.sidebar-link, .dropdown-link').forEach(function(link) {
             link.addEventListener('click', function() {
+                if (link.classList.contains('dropdown-toggle')) return;
                 navToggle.classList.remove('is-active');
                 sidebar.classList.remove('is-active');
                 navToggle.setAttribute('aria-expanded', 'false');
@@ -168,7 +198,32 @@
         });
     }
 
-    // ---- 6. CONTENT MODALS (About / Contact) ----
+    // ---- 6. WORKS DROPDOWN ----
+    function initWorksDropdown() {
+        var dropdownToggle = document.querySelector('.dropdown-toggle');
+        var dropdown = dropdownToggle ? dropdownToggle.closest('.sidebar-dropdown') : null;
+
+        if (!dropdownToggle || !dropdown) return;
+
+        // Open dropdown by default on desktop
+        if (window.innerWidth >= 768) {
+            dropdown.classList.add('is-open');
+        }
+
+        dropdownToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            dropdown.classList.toggle('is-open');
+        });
+
+        // Close dropdown when clicking a sub-link
+        dropdown.querySelectorAll('.dropdown-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                dropdown.classList.remove('is-open');
+            });
+        });
+    }
+
+    // ---- 7. CONTENT MODALS (About / Contact / Services) ----
     function initContentModals() {
         var modalLinks = document.querySelectorAll('[data-modal]');
 
@@ -215,14 +270,13 @@
     function closeContentModal(modal) {
         modal.classList.remove('is-active');
         modal.setAttribute('aria-hidden', 'true');
-        // Only restore scroll if no other modals are open
         if (!document.querySelector('.content-modal.is-active') &&
             !(videoModal && videoModal.classList.contains('is-active'))) {
             document.body.style.overflow = '';
         }
     }
 
-    // ---- 7. VIDEO MODAL ----
+    // ---- 8. VIDEO MODAL ----
     function openVideoModal(card) {
         if (!videoModal || !modalVideoWrapper) return;
 
@@ -304,7 +358,7 @@
         });
     }
 
-    // ---- 8. SCROLL ANIMATIONS ----
+    // ---- 9. SCROLL ANIMATIONS ----
     function initScrollAnimations() {
         var fadeEls = document.querySelectorAll('.fade-in:not(.is-visible)');
         if (fadeEls.length === 0) return;
@@ -326,7 +380,7 @@
         });
     }
 
-    // ---- 9. THUMBNAIL FALLBACK ----
+    // ---- 10. THUMBNAIL FALLBACK ----
     function initThumbnailFallbacks() {
         document.querySelectorAll('.video-thumbnail').forEach(function(thumb) {
             var bgImage = thumb.style.backgroundImage;
@@ -344,10 +398,10 @@
         });
     }
 
-    // ---- 10. SIDEBAR ACTIVE LINK TRACKING ----
+    // ---- 11. SIDEBAR ACTIVE LINK TRACKING ----
     function initSidebarActiveTracking() {
         var sections = document.querySelectorAll('.category-section[id]');
-        var sidebarLinks = document.querySelectorAll('.sidebar-link[href^="#"]');
+        var sidebarLinks = document.querySelectorAll('.sidebar-link[href^="#"], .dropdown-link[href^="#"]');
         if (sections.length === 0 || sidebarLinks.length === 0) return;
 
         var observer = new IntersectionObserver(function(entries) {
@@ -370,30 +424,23 @@
         });
     }
 
-    // ---- 11. INITIALIZATION ----
+    // ---- 12. INITIALIZATION ----
     async function init() {
-        // Mobile sidebar
         initMobileSidebar();
-
-        // Content modals (About / Contact)
+        initWorksDropdown();
         initContentModals();
-
-        // Video modal close handlers
         initVideoModalClose();
 
-        // Load and render projects by category
         var mainContent = document.getElementById('main-content');
         if (mainContent) {
             var language = detectLanguage();
-            await loadAndRenderByCategory(language);
+            await loadAndRenderProjects(language);
             initSidebarActiveTracking();
         }
 
-        // Initialize scroll animations for existing elements
         initScrollAnimations();
     }
 
-    // Run when DOM is ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {

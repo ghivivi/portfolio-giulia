@@ -24,12 +24,22 @@
 
         <nav class="sidebar-nav">
             <ul class="sidebar-links">
-                <li><a href="#giornalismo" class="sidebar-link">Journalism</a></li>
-                <li><a href="#documentari" class="sidebar-link">Documentaries</a></li>
-                <li><a href="#iniziative" class="sidebar-link">Personal Projects</a></li>
+                <li class="sidebar-dropdown">
+                    <a href="#" class="sidebar-link dropdown-toggle">Works <svg class="dropdown-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M7 10l5 5 5-5z" fill="currentColor"/></svg></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="dropdown-link" data-filter="all">All Projects</a></li>
+                        <li><a href="#documentary-films" class="dropdown-link">Documentary Films</a></li>
+                        <li><a href="#conflict-zones" class="dropdown-link">Conflict Zones</a></li>
+                        <li><a href="#migration-displacement" class="dropdown-link">Migration & Displacement</a></li>
+                        <li><a href="#multimedia-projects" class="dropdown-link">Multimedia Projects</a></li>
+                        <li><a href="#longform-reportage" class="dropdown-link">Longform & Reportage</a></li>
+                        <li><a href="#humanitarian-projects" class="dropdown-link">Humanitarian Projects</a></li>
+                    </ul>
+                </li>
             </ul>
             <ul class="sidebar-links sidebar-links--secondary">
                 <li><a href="#" class="sidebar-link" data-modal="about">About</a></li>
+                <li><a href="#" class="sidebar-link" data-modal="services">Services</a></li>
                 <li><a href="#" class="sidebar-link" data-modal="contact">Contact</a></li>
             </ul>
         </nav>
@@ -122,6 +132,28 @@
                         </span>
                         +39 000 000 0000
                     </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL: Services -->
+    <div class="content-modal" id="services-modal" aria-hidden="true">
+        <div class="modal-overlay"></div>
+        <div class="content-modal-inner">
+            <button class="modal-close" aria-label="Close">&times;</button>
+            <div class="services-modal-content">
+                <h2 class="section-title">Services</h2>
+                <p class="section-subtitle">What I can do for your project.</p>
+                <div class="about-skills">
+                    <span class="skill-tag">Directing</span>
+                    <span class="skill-tag">Video Production</span>
+                    <span class="skill-tag">Documentaries</span>
+                    <span class="skill-tag">Reportage</span>
+                    <span class="skill-tag">Editing</span>
+                    <span class="skill-tag">Color Grading</span>
+                    <span class="skill-tag">Storytelling</span>
+                    <span class="skill-tag">Multimedia Projects</span>
                 </div>
             </div>
         </div>

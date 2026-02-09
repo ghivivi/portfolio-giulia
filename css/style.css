@@ -222,6 +222,57 @@ h1, h2, h3 {
     color: var(--color-white);
 }
 
+/* Sidebar Dropdown (Works menu) */
+.sidebar-dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.dropdown-arrow {
+    transition: transform var(--transition-fast);
+    flex-shrink: 0;
+}
+
+.sidebar-dropdown.is-open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    list-style: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-base), opacity var(--transition-base);
+    opacity: 0;
+    padding-left: var(--space-sm);
+}
+
+.sidebar-dropdown.is-open .dropdown-menu {
+    max-height: 400px;
+    opacity: 1;
+}
+
+.dropdown-link {
+    color: var(--color-text-muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color var(--transition-fast);
+    padding: 0.25rem 0;
+    display: block;
+}
+
+.dropdown-link:hover,
+.dropdown-link.active {
+    color: var(--color-white);
+}
+
 .sidebar-footer {
     margin-top: var(--space-lg);
     padding-top: var(--space-md);
@@ -617,6 +668,15 @@ h1, h2, h3 {
 .skill-tag:hover {
     border-color: var(--color-accent);
     color: var(--color-accent);
+}
+
+/* Services modal content */
+.services-modal-content .section-title {
+    margin-bottom: var(--space-xs);
+}
+
+.services-modal-content .section-subtitle {
+    margin-bottom: var(--space-md);
 }
 
 /* Contact modal content */
