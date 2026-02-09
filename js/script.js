@@ -67,24 +67,27 @@
                 mainContent.insertAdjacentHTML('beforeend', sectionHTML);
             }
 
-            // Render TODO category if any
-            var todoProjects = projects.filter(function(p) {
+            // Render TOTAG category if any
+            var totagProjects = projects.filter(function(p) {
                 return p.categories && p.categories.indexOf('TODO') !== -1;
             });
 
-            if (todoProjects.length > 0) {
-                var todoLabels = { it: 'Da Categorizzare', en: 'Uncategorized', fr: 'Non Catégorisé' };
-                var todoHTML = '<section class="category-section fade-in" id="todo">' +
-                    '<h2 class="category-title">' + (todoLabels[language] || todoLabels.it) + '</h2>' +
+            if (totagProjects.length > 0) {
+                var totagLabels = { it: 'Da Categorizzare', en: 'To Tag', fr: 'À Catégoriser' };
+                var totagHTML = '<section class="category-section fade-in" id="totag">' +
+                    '<h2 class="category-title">' + (totagLabels[language] || totagLabels.it) + '</h2>' +
                     '<div class="category-row">';
 
-                todoProjects.forEach(function(project) {
-                    todoHTML += createProjectCard(project, language, categories);
+                totagProjects.forEach(function(project) {
+                    totagHTML += createProjectCard(project, language, categories);
                 });
 
-                todoHTML += '</div></section>';
-                mainContent.insertAdjacentHTML('beforeend', todoHTML);
+                totagHTML += '</div></section>';
+                mainContent.insertAdjacentHTML('beforeend', totagHTML);
             }
+
+            // Update dropdown counters and hide empty links
+            updateDropdownCounts(projects, categoryOrder, totagProjects.length);
 
             initVideoListeners();
             initScrollAnimations();
@@ -173,6 +176,46 @@
                 (description ? '<p class="project-description">' + description + '</p>' : '') +
             '</div>' +
         '</article>';
+    }
+
+    // ---- 4b. UPDATE DROPDOWN COUNTS & HIDE EMPTY ----
+    function updateDropdownCounts(projects, categoryOrder, totagCount) {
+        var dropdownLinks = document.querySelectorAll('.dropdown-link');
+        var totalVisible = 0;
+
+        dropdownLinks.forEach(function(link) {
+            var href = link.getAttribute('href');
+            var filter = link.getAttribute('data-filter');
+
+            if (filter === 'all') return; // handle "All" separately
+
+            // Extract category id from href (e.g. "#documentary-films" -> "documentary-films")
+            var catId = href ? href.replace('#', '') : '';
+            var count = 0;
+
+            if (catId === 'totag') {
+                count = totagCount;
+            } else {
+                count = projects.filter(function(p) {
+                    return p.visible !== false && p.categories && p.categories.indexOf(catId) !== -1;
+                }).length;
+            }
+
+            if (count === 0) {
+                // Hide dropdown link for empty categories
+                link.closest('li').style.display = 'none';
+            } else {
+                totalVisible += count;
+                // Append count badge
+                link.insertAdjacentHTML('beforeend', ' <span class="dropdown-count">' + count + '</span>');
+            }
+        });
+
+        // Update "All Projects" count
+        var allLink = document.querySelector('.dropdown-link[data-filter="all"]');
+        if (allLink) {
+            allLink.insertAdjacentHTML('beforeend', ' <span class="dropdown-count">' + totalVisible + '</span>');
+        }
     }
 
     // ---- 5. MOBILE SIDEBAR TOGGLE ----
