@@ -1,4 +1,4 @@
-{
+﻿{
   "category": {
     "it": "Documentari",
     "en": "Documentaries",
@@ -6,27 +6,475 @@
   },
   "projects": [
     {
-      "id": "documentario-natura",
+      "id": "english-egyptian-protesters-demand-end-to-sexual-harassment-middle-east-eye-tv",
       "visible": true,
       "order": 1,
-      "video": {
+      "date": "2015-03-01",
+      "video":       {
         "type": "youtube",
-        "id": "dQw4w9WgXcQ"
+        "id": "G67VSwoMuTw"
       },
       "thumbnail": {
         "url": "",
-        "fallbackGradient": "linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)"
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
       },
       "title": {
-        "it": "Documentario Natura",
-        "en": "Nature Documentary",
-        "fr": "Documentaire Nature"
+        "it": "Egyptian protesters demand end to sexual harassment - Middle East Eye TV",
+        "en": "Egyptian protesters demand end to sexual harassment - Middle East Eye TV",
+        "fr": "Egyptian protesters demand end to sexual harassment - Middle East Eye TV"
       },
-      "description": {
-        "it": "Un viaggio visivo attraverso i paesaggi più suggestivi, raccontando storie di natura e biodiversità.",
-        "en": "A visual journey through the most evocative landscapes, telling stories of nature and biodiversity.",
-        "fr": "Un voyage visuel à travers les paysages les plus évocateurs, racontant des histoires de nature et de biodiversité."
-      }
+      "articleUrl": "http://www.nawartpress.com/?p=615"
+    },
+    {
+      "id": "english-video-turks-kurds-express-their-fears-as-is-advances-on-kobane-middle-east-eye-tv",
+      "visible": true,
+      "order": 2,
+      "date": "2015-03-01",
+      "video":       {
+        "type": "youtube",
+        "id": "XcrWwFHZ7jg"
+      },
+      "thumbnail": {
+        "url": "http://www.middleeasteye.net/sites/default/files/styles/main_image_article_page/public/main-images/Kobane%20still.png",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Video: Turks, Kurds express their fears as IS advances on Kobane - Middle East Eye TV",
+        "en": "Video: Turks, Kurds express their fears as IS advances on Kobane - Middle East Eye TV",
+        "fr": "Video: Turks, Kurds express their fears as IS advances on Kobane - Middle East Eye TV"
+      },
+      "articleUrl": "http://www.middleeasteye.net/news/turks-and-kurds-express-their-fears-islamic-state-advances-kobane-273753702#sthash.p1GIifYN.dpuf"
+    },
+    {
+      "id": "documentario-una-storia-sommersa-premio-morrione",
+      "visible": true,
+      "order": 3,
+      "date": "2015-03-01",
+      "video":       {
+        "type": "youtube",
+        "id": "feVWYvSLKXA"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Documentario: Una storia sommersa - Premio Morrione",
+        "en": "Documentario: Una storia sommersa - Premio Morrione",
+        "fr": "Documentario: Una storia sommersa - Premio Morrione"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=757"
+    },
+    {
+      "id": "english-religious-tensions-simmer-in-egypts-minya-middle-east-eye-tv",
+      "visible": true,
+      "order": 4,
+      "date": "2015-03-01",
+      "video":       {
+        "type": "youtube",
+        "id": "sEQxNEx6N34"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "http://youtu.be/sEQxNEx6N34",
+        "en": "Religious tensions simmer in Egypt\'s Minya - Middle East Eye TV",
+        "fr": "http://youtu.be/sEQxNEx6N34"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=588"
+    },
+    {
+      "id": "466",
+      "visible": true,
+      "order": 5,
+      "date": "2015-03-01",
+      "video":       {
+        "type": "youtube",
+        "id": "zKU1Wb3xZMc"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Siriani in fuga - Rainews24",
+        "en": "Siriani in fuga - Rainews24",
+        "fr": "Siriani in fuga - Rainews24"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=466"
+    },
+    {
+      "id": "trailer-una-storia-sommersa-documentario-premio-morrione",
+      "visible": true,
+      "order": 6,
+      "date": "2015-03-01",
+      "video":       {
+        "type": "youtube",
+        "id": "74Yf50ZYWQo"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Trailer Una Storia Sommersa - Documentario Premio Morrione",
+        "en": "Trailer Una Storia Sommersa - Documentario Premio Morrione",
+        "fr": "Trailer Una Storia Sommersa - Documentario Premio Morrione"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=582"
+    },
+    {
+      "id": "english-religious-tensions-simmer-in-egypts-minya-middle-east-eye",
+      "visible": true,
+      "order": 7,
+      "date": "2015-03-01",
+      "video":       {
+        "type": "youtube",
+        "id": "sEQxNEx6N34"
+      },
+      "thumbnail": {
+        "url": "http://www.middleeasteye.net/sites/default/files/styles/main_image_article_page/public/main-images/2013_Egypt_churches.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Religious tensions simmer in Egypt\'s Minya - Middle East Eye",
+        "en": "Religious tensions simmer in Egypt\'s Minya - Middle East Eye",
+        "fr": "Religious tensions simmer in Egypt\'s Minya - Middle East Eye"
+      },
+      "articleUrl": "http://www.middleeasteye.net/news/sisi-win-egypts-election-962-percent-vote"
+    },
+    {
+      "id": "wild",
+      "visible": true,
+      "order": 8,
+      "date": "2015-03-24",
+      "video":       {
+        "type": "youtube",
+        "id": "tn2-GSqPyl0"
+      },
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/03/Poster.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Wild, la Terapia del Viaggio",
+        "en": "Wild, la Terapia del Viaggio",
+        "fr": "Wild, la Terapia del Viaggio"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1105"
+    },
+    {
+      "id": "essere-un-travestito-a-tirana",
+      "visible": true,
+      "order": 9,
+      "date": "2015-05-20",
+      "video":       {
+        "type": "youtube",
+        "id": "6mPPmazIzcA"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Essere un travestito a Tirana",
+        "en": "Essere un travestito a Tirana",
+        "fr": "Essere un travestito a Tirana"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1367"
+    },
+    {
+      "id": "lesvos-dyarbakir-in-48h",
+      "visible": true,
+      "order": 10,
+      "date": "2015-06-04",
+      "video":       {
+        "type": "youtube",
+        "id": "O0MV1BAspos"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Lesvos - Dyarbakir in 48h",
+        "en": "Lesvos - Dyarbakir in 48h",
+        "fr": "Lesvos - Dyarbakir en 48h"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1444"
+    },
+    {
+      "id": "english-video-migrants-tragedy-overwhelms-greek-island-of-lesvos",
+      "visible": true,
+      "order": 11,
+      "date": "2015-06-10",
+      "video":       {
+        "type": "youtube",
+        "id": "3DrirVgP04E"
+      },
+      "thumbnail": {
+        "url": "http://www.middleeasteye.net/sites/default/files/styles/main_image_article_page/public/main-images/Lesvos.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Migrants tragedy overwhelms Greek island of Lesvos - Middle East Eye",
+        "en": "Migrants tragedy overwhelms Greek island of Lesvos - Middle East Eye",
+        "fr": "Migrants tragedy overwhelms Greek island of Lesvos - Middle East Eye"
+      },
+      "articleUrl": "http://www.middleeasteye.net/news/video-migrants-targedy-overwhelms-greek-island-lesvos-76206394"
+    },
+    {
+      "id": "english-mee-speaks-to-fabrunyer-aykol-female-co-mayor-of-the-municipality-of-mardin",
+      "visible": true,
+      "order": 12,
+      "date": "2015-06-14",
+      "video":       {
+        "type": "youtube",
+        "id": "e0TXYoFF8Hg"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "MEE speaks to Fabrunyer Aykol, female co-mayor of the municipality of Mardin",
+        "en": "MEE speaks to Fabrunyer Aykol, female co-mayor of the municipality of Mardin",
+        "fr": "MEE speaks to Fabrunyer Aykol, female co-mayor of the municipality of Mardin"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1504"
+    },
+    {
+      "id": "francais-lesbos-lautre-porte-de-leurope-pour-des-refugies-en-perdition-orientxxi",
+      "visible": true,
+      "order": 13,
+      "date": "2015-07-31",
+      "video":       {
+        "type": "youtube",
+        "id": "rxvMQHIGbIg"
+      },
+      "thumbnail": {
+        "url": "http://orientxxi.info/local/cache-responsive/cache-560/875c320b357bac42c6b13e393d06d901.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Francais Lesbos Lautre Porte De Leurope Pour Des Refugies En Perdition Orientxxi",
+        "en": "Francais Lesbos Lautre Porte De Leurope Pour Des Refugies En Perdition Orientxxi",
+        "fr": "Francais Lesbos Lautre Porte De Leurope Pour Des Refugies En Perdition Orientxxi"
+      },
+      "articleUrl": "http://orientxxi.info/"
+    },
+    {
+      "id": "un-mondo-di-donne-raistoria",
+      "visible": true,
+      "order": 14,
+      "date": "2015-11-03",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "UN MONDO DI DONNE - RAISTORIA",
+        "en": "UN MONDO DI DONNE - RAISTORIA",
+        "fr": "UN MONDO DI DONNE - RAISTORIA"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "made-in-tunisia-women-textile-workers-resist-poor-working-conditions",
+      "visible": true,
+      "order": 15,
+      "date": "2016-06-03",
+      "video":       {
+        "type": "youtube",
+        "id": "6oTz64k2Dqk"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Made in Tunisia: Women textile workers resist poor working conditions",
+        "en": "Made in Tunisia: Women textile workers resist poor working conditions",
+        "fr": "Made in Tunisia: Women textile workers resist poor working conditions"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3092"
+    },
+    {
+      "id": "trono-di-sale-marocco",
+      "visible": true,
+      "order": 16,
+      "date": "2016-11-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Trono di Sale - Marocco",
+        "en": "Trono di Sale - Marocco",
+        "fr": "Trono di Sale - Marocco"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3260"
+    },
+    {
+      "id": "senza-vie-legali-in-tunisia-si-diventa-harraga",
+      "visible": true,
+      "order": 17,
+      "date": "2017-11-29",
+      "video":       {
+        "type": "youtube",
+        "id": "6gYBXRwsDjY"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Senza vie legali, in Tunisia si diventa “harraga”",
+        "en": "Senza vie legali, in Tunisia si diventa “harraga”",
+        "fr": "Senza vie legali, in Tunisia si diventa “harraga”"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3767"
+    },
+    {
+      "id": "documentary-far-right-a-new-frightening-normal",
+      "visible": true,
+      "order": 18,
+      "date": "2018-02-21",
+      "video":       {
+        "type": "youtube",
+        "id": "CUh5iNMIIrs"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Documentary : Far Right, a New Frightening Normal",
+        "en": "Documentary : Far Right, a New Frightening Normal",
+        "fr": "Documentary : Far Right, a New Frightening Normal"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3841"
+    },
+    {
+      "id": "teaser-of-a-kurdish-women-dream-2015",
+      "visible": true,
+      "order": 19,
+      "date": "2018-02-21",
+      "video":       {
+        "type": "youtube",
+        "id": "SfxbQSWhPqA"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Teaser of A Kurdish Women Dream, 2015",
+        "en": "Teaser of A Kurdish Women Dream, 2015",
+        "fr": "Teaser of A Kurdish Women Dream, 2015"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3836"
+    },
+    {
+      "id": "world-refugee-day-2016-giz-video",
+      "visible": true,
+      "order": 20,
+      "date": "2018-05-15",
+      "video":       {
+        "type": "youtube",
+        "id": "U5SDuLlF2z4"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Giornata Mondiale del Rifugiato 2016 - video GIZ",
+        "en": "World Refugee Day 2016 - GIZ video",
+        "fr": "Journée Mondiale du Réfugié 2016 - vidéo GIZ"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3934"
+    },
+    {
+      "id": "strange-fish-nominated-at-visioni-dal-mondo-festival",
+      "visible": true,
+      "order": 21,
+      "date": "2018-07-17",
+      "video":       {
+        "type": "vimeo",
+        "id": "277282627"
+      },
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2018/07/alloro_arancione-300x206.png",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Strange Fish nominato al festival Visioni dal Mondo",
+        "en": "Strange Fish nominated at Visioni dal Mondo Festival",
+        "fr": "Strange Fish nommé au festival Visioni dal Mondo"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=4003"
+    },
+    {
+      "id": "scirocco-short-animation-film-realized-by-the-brush-bow-collective-and-leonard-ermel",
+      "visible": true,
+      "order": 22,
+      "date": "2018-08-06",
+      "video":       {
+        "type": "youtube",
+        "id": "bvb-jgQUTEU"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Scirocco short animation film realized by the Brush & Bow collective and Leonard Ermel",
+        "en": "Scirocco short animation film realized by the Brush & Bow collective and Leonard Ermel",
+        "fr": "Scirocco short animation film realized by the Brush & Bow collective and Leonard Ermel"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=4020"
+    },
+    {
+      "id": "bnp-award-and-special-mention-of-the-jury-to-strange-fish-visioni-dal-mondo",
+      "visible": true,
+      "order": 23,
+      "date": "2018-09-20",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Premio BNP e menzione speciale della giuria a Strange Fish - Visioni dal Mondo",
+        "en": "BNP award and special mention of the jury to Strange Fish - Visioni Dal Mondo",
+        "fr": "Prix BNP et mention spéciale du jury au Visioni dal Mondo pour Strange Fish"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=4029"
+    },
+    {
+      "id": "strange-fish-film-e-prossime-date",
+      "visible": true,
+      "order": 24,
+      "date": "2019-01-25",
+      "video":       {
+        "type": "vimeo",
+        "id": "299668760"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Strange Fish, film e prossime uscite",
+        "en": "Strange Fish, documentary movie and next screenings",
+        "fr": "Strange Fish, documentaire et prochaines sorties"
+      },
+      "articleUrl": "https://www.raiplay.it/video/2019/08/Doc-3-Strange-Fish-73a3ecf5-8c72-4a2e-be28-ad11df3fd987.html?fbclid=IwAR1aHrAeM_-Q2xYJckRBgA-DrIeUPPQQWbyrBeBKmvtBwVBTsMYyOnq7jUg#"
     }
   ]
 }

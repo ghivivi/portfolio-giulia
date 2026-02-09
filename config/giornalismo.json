@@ -1,4 +1,4 @@
-{
+﻿{
   "category": {
     "it": "Lavori Giornalistici",
     "en": "Journalism",
@@ -6,27 +6,1483 @@
   },
   "projects": [
     {
-      "id": "reportage-culturale",
+      "id": "italiano-siria-zahraa-e-nubl-villaggi-simbolo-dello-scontro-sunniti-sciiti",
       "visible": true,
       "order": 1,
-      "video": {
-        "type": "youtube",
-        "id": "dQw4w9WgXcQ"
+      "date": "2015-02-25",
+      "video": null,
+      "thumbnail": {
+        "url": "http://nena-news.globalist.it/QFC/NEWS_72914.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
       },
+      "title": {
+        "it": "Siria, Zahraa e Nubl villaggi simbolo dello scontro sunniti-sciiti",
+        "en": "Siria, Zahraa e Nubl villaggi simbolo dello scontro sunniti-sciiti",
+        "fr": "Siria, Zahraa e Nubl villaggi simbolo dello scontro sunniti-sciiti"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=283"
+    },
+    {
+      "id": "english-theatre-and-revolution-artshub",
+      "visible": true,
+      "order": 2,
+      "date": "2015-02-28",
+      "video": null,
       "thumbnail": {
         "url": "",
         "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
       },
       "title": {
-        "it": "Reportage Culturale",
-        "en": "Cultural Reportage",
-        "fr": "Reportage Culturel"
+        "it": "Theatre and revolution - ArtsHub",
+        "en": "Theatre and revolution - ArtsHub",
+        "fr": "Theatre and revolution - ArtsHub"
       },
-      "description": {
-        "it": "Un'indagine approfondita sulle tradizioni locali, documentando la ricchezza culturale del territorio.",
-        "en": "An in-depth investigation of local traditions, documenting the cultural richness of the territory.",
-        "fr": "Une enquête approfondie sur les traditions locales, documentant la richesse culturelle du territoire."
-      }
+      "articleUrl": "http://www.artshub.co.uk/news-article/features/public-policy/theatre-of-the-revolution-197246"
+    },
+    {
+      "id": "sinai-deserto-e-affari-left",
+      "visible": true,
+      "order": 3,
+      "date": "2015-02-28",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/02/image03.png",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Sinai, deserto e affari - Left",
+        "en": "Sinai, deserto e affari - Left",
+        "fr": "Sinai, deserto e affari - Left"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=365"
+    },
+    {
+      "id": "english-for-young-israelis-the-other-side-simply-does-not-exist-middle-east-eye",
+      "visible": true,
+      "order": 4,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.middleeasteye.net/sites/default/files/styles/main_image_article_page/public/Gi.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "For young Israelis, the other side ‘simply does not exist’ - Middle East Eye",
+        "en": "For young Israelis, the other side ‘simply does not exist’ - Middle East Eye",
+        "fr": "For young Israelis, the other side ‘simply does not exist’ - Middle East Eye"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=678"
+    },
+    {
+      "id": "holot-il-ghetto-nero-nigrizia",
+      "visible": true,
+      "order": 5,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/03/10363320_10152884029353850_7252323587889770204_n.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Holot, il ghetto nero - Nigrizia",
+        "en": "Holot, il ghetto nero - Nigrizia",
+        "fr": "Holot, il ghetto nero - Nigrizia"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=681"
+    },
+    {
+      "id": "perche-la-turchia-lascia-che-lis-avanzi-su-kobane-pagina99",
+      "visible": true,
+      "order": 6,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.pagina99.it/upload/1412420830796.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Perché la Turchia lascia che l\'IS avanzi su Kobane - Pagina99",
+        "en": "Perché la Turchia lascia che l\'IS avanzi su Kobane - Pagina99",
+        "fr": "Perché la Turchia lascia che l\'IS avanzi su Kobane - Pagina99"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=693"
+    },
+    {
+      "id": "la-guerra-siriana-vista-dal-golan-sempre-piu-vicino-a-israele-europa",
+      "visible": true,
+      "order": 7,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "La guerra siriana vista dal Golan, sempre più vicino a Israele - Europa",
+        "en": "La guerra siriana vista dal Golan, sempre più vicino a Israele - Europa",
+        "fr": "La guerra siriana vista dal Golan, sempre più vicino a Israele - Europa"
+      },
+      "articleUrl": "http://www.europaquotidiano.it/2014/09/30/la-guerra-siriana-vista-dal-golan-sempre-piu-vicino-a-israele/"
+    },
+    {
+      "id": "in-egitto-si-celebrano-le-finte-elezioni-il-caffe",
+      "visible": true,
+      "order": 8,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://new.caffe.ch/media/2014/05/22494_3_medium.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "In Egitto si celebrano le finte elezioni - Il Caffè",
+        "en": "In Egitto si celebrano le finte elezioni - Il Caffè",
+        "fr": "In Egitto si celebrano le finte elezioni - Il Caffè"
+      },
+      "articleUrl": "http://www.caffe.ch/stories/cronaca/47077_in_egitto_si_celebrano_le_finte_elezioni/"
+    },
+    {
+      "id": "le-donne-del-cairo-in-piazza-contro-gli-stupri-pagina-99",
+      "visible": true,
+      "order": 9,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.pagina99.it/upload/1402829299104.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Le donne del Cairo in piazza contro gli stupri - Pagina 99",
+        "en": "Le donne del Cairo in piazza contro gli stupri - Pagina 99",
+        "fr": "Le donne del Cairo in piazza contro gli stupri - Pagina 99"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=636"
+    },
+    {
+      "id": "giornata-nazionale-contro-le-mutilazioni-genitali-femminili-in-egitto-donne-e-bambine-raccontano-il-loro-dolore-video-inchiesta-huffington-post",
+      "visible": true,
+      "order": 10,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Giornata nazionale contro le mutilazioni genitali femminili: in Egitto donne e bambine raccontano il loro dolore (VIDEO INCHIESTA) - Huffington Post",
+        "en": "Giornata nazionale contro le mutilazioni genitali femminili: in Egitto donne e bambine raccontano il loro dolore (VIDEO INCHIESTA) - Huffington Post",
+        "fr": "Giornata nazionale contro le mutilazioni genitali femminili: in Egitto donne e bambine raccontano il loro dolore (VIDEO INCHIESTA) - Huffington Post"
+      },
+      "articleUrl": "http://www.huffingtonpost.it/2015/02/06/mgf-mutuilazioni-video-egitto_n_6628904.html"
+    },
+    {
+      "id": "tra-i-profughi-curdi-di-kobane-fuggiti-in-poche-ore-combattiamo-per-liberare-la-citta-dallis-repubblica",
+      "visible": true,
+      "order": 11,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.repstatic.it/content/nazionale/img/2014/10/09/161743703-dde2f2cd-cddf-4408-ac00-0abc914a516a.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Tra i profughi curdi di Kobane, fuggiti in poche ore: \\"Combattiamo per liberare la città dall\'Is\\" - Repubblica",
+        "en": "Tra i profughi curdi di Kobane, fuggiti in poche ore: \\"Combattiamo per liberare la città dall\'Is\\" - Repubblica",
+        "fr": "Tra i profughi curdi di Kobane, fuggiti in poche ore: \\"Combattiamo per liberare la città dall\'Is\\" - Repubblica"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=704"
+    },
+    {
+      "id": "al-sisi-incontra-renzi-in-egitto-proseguono-gli-arresti-di-massa-pagina-99",
+      "visible": true,
+      "order": 12,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.pagina99.it/upload/1416865110771.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Al Sisi incontra Renzi, in Egitto proseguono gli arresti di massa - Pagina 99",
+        "en": "Al Sisi incontra Renzi, in Egitto proseguono gli arresti di massa - Pagina 99",
+        "fr": "Al Sisi incontra Renzi, in Egitto proseguono gli arresti di massa - Pagina 99"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=760"
+    },
+    {
+      "id": "francais-caricaturer-legypte-choisir",
+      "visible": true,
+      "order": 13,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/03/Schermata-2015-03-01-alle-21.18.05.png",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "Caricaturer l\'Egypte - Choisir"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=780"
+    },
+    {
+      "id": "egitto-dove-la-satira-puo-costare-la-liberta-repubblica",
+      "visible": true,
+      "order": 14,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.repstatic.it/content/nazionale/img/2015/01/13/232702782-de8c8283-cab0-4d30-8040-bd5b49e048ab.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Egitto, dove la satira può costare la libertà - Repubblica",
+        "en": "Egitto, dove la satira può costare la libertà - Repubblica",
+        "fr": "Egitto, dove la satira può costare la libertà - Repubblica"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=784"
+    },
+    {
+      "id": "english-who-was-egypts-omar-mustafa-middle-east-eye",
+      "visible": true,
+      "order": 15,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.middleeasteye.net/sites/default/files/styles/main_image_article_page/public/omar%20mustafa_0.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Who was Egypt\'s Omar Mustafa? - Middle East Eye",
+        "en": "Who was Egypt\'s Omar Mustafa? - Middle East Eye",
+        "fr": "Who was Egypt\'s Omar Mustafa? - Middle East Eye"
+      },
+      "articleUrl": "http://www.middleeasteye.net/news/egypt-issues-security-clearances-its-citizen-travellers-101752372"
+    },
+    {
+      "id": "francais-rojava-et-la-question-kurde-choisir",
+      "visible": true,
+      "order": 16,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "Rojava et la question kurde - Choisir"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=723"
+    },
+    {
+      "id": "francais-kobane-suruc-7-km-de-distance-2-pays-1-peuple-choisir",
+      "visible": true,
+      "order": 17,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.choisir.ch/images/actualites/KurdistanZeernews.jpg.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "Kobane - Suruç : 7 km de distance, 2 pays, 1 peuple - Choisir"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=727"
+    },
+    {
+      "id": "legitto-bombarda-le-sue-case-per-combattere-i-jihadisti-pagina99",
+      "visible": true,
+      "order": 18,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "L’Egitto bombarda le sue case per combattere i jihadisti - Pagina99",
+        "en": "L’Egitto bombarda le sue case per combattere i jihadisti - Pagina99",
+        "fr": "L’Egitto bombarda le sue case per combattere i jihadisti - Pagina99"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=733"
+    },
+    {
+      "id": "english-egypt-speak-day-1-and-2-of-vote-middle-east-eye",
+      "visible": true,
+      "order": 19,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.middleeasteye.net/sites/default/files/styles/wysiwyg_large/public/images/Gamal%20Ahmed%20Abo%20Ghael%20and%20Sohaira%20Hussein%20Bitwaldy.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Egypt speak: day 1 and 2 of vote - Middle East Eye",
+        "en": "Egypt speak: day 1 and 2 of vote - Middle East Eye",
+        "fr": "Egypt speak: day 1 and 2 of vote - Middle East Eye"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=595"
+    },
+    {
+      "id": "francais-syriens-en-egypte-de-refugies-a-terroristes-choisir",
+      "visible": true,
+      "order": 20,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "Syriens en Egypte. De réfugiés à \\"terroristes\\" - Choisir"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=495"
+    },
+    {
+      "id": "pronta-la-nuova-costituzione-la-tunisia-e-un-po-piu-laica-pagina99",
+      "visible": true,
+      "order": 21,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.pagina99.it/upload/1389716091977.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Pronta la nuova costituzione  La Tunisia è un po\' più laica - Pagina99",
+        "en": "Pronta la nuova costituzione  La Tunisia è un po\' più laica - Pagina99",
+        "fr": "Pronta la nuova costituzione  La Tunisia è un po\' più laica - Pagina99"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=498"
+    },
+    {
+      "id": "la-gatta-di-tunisi-che-lotta-contro-la-normalizzazione-pagina99",
+      "visible": true,
+      "order": 22,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.pagina99.it/upload/1390911338936.png",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "La gatta di Tunisi che lotta contro la normalizzazione - Pagina99",
+        "en": "La gatta di Tunisi che lotta contro la normalizzazione - Pagina99",
+        "fr": "La gatta di Tunisi che lotta contro la normalizzazione - Pagina99"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=501"
+    },
+    {
+      "id": "il-viaggio-della-morte-testimonianze-da-alessandria-degitto-paralleli",
+      "visible": true,
+      "order": 23,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.mediteu.org/sites/default/files/styles/thumbnail/public/pictures/picture-100-1384623380.png",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Il viaggio della morte. Testimonianze da Alessandria d\'Egitto - Paralleli",
+        "en": "Il viaggio della morte. Testimonianze da Alessandria d\'Egitto - Paralleli",
+        "fr": "Il viaggio della morte. Testimonianze da Alessandria d\'Egitto - Paralleli"
+      },
+      "articleUrl": "http://www.mediteu.org/?q=users/paralleli"
+    },
+    {
+      "id": "sotto-razzi-e-bombe-nel-kibbutz-di-beeri-il-caffe",
+      "visible": true,
+      "order": 24,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://new.caffe.ch/media/2014/08/22921_3_medium.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Sotto razzi e bombe nel kibbutz di \\"Be\'eri\\" - Il Caffè",
+        "en": "Sotto razzi e bombe nel kibbutz di \\"Be\'eri\\" - Il Caffè",
+        "fr": "Sotto razzi e bombe nel kibbutz di \\"Be\'eri\\" - Il Caffè"
+      },
+      "articleUrl": "http://www.caffe.ch/stories/cronaca/47907_sotto_razzi_e_bombe_nel_kibbutz_di_beeri/"
+    },
+    {
+      "id": "lo-stato-islamico-del-sinai-una-guerra-alle-porte-di-israele-europa",
+      "visible": true,
+      "order": 25,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.europaquotidiano.it/wp-content/uploads/2013/10/sinai-guerra-egitto.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Lo stato islamico del Sinai, una guerra alle porte di Israele - Europa",
+        "en": "Lo stato islamico del Sinai, una guerra alle porte di Israele - Europa",
+        "fr": "Lo stato islamico del Sinai, una guerra alle porte di Israele - Europa"
+      },
+      "articleUrl": "http://www.europaquotidiano.it/2013/10/06/egitto-sinai/"
+    },
+    {
+      "id": "la-disperazione-che-infrange-i-sogni-il-caffe",
+      "visible": true,
+      "order": 26,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://new.caffe.ch/media/2013/11/21063_3_medium.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "La disperazione che infrange i sogni - Il Caffè",
+        "en": "La disperazione che infrange i sogni - Il Caffè",
+        "fr": "La disperazione che infrange i sogni - Il Caffè"
+      },
+      "articleUrl": "http://www.caffe.ch/stories/cultura/45246_la_disperazione_che_infrange_i_sogni/"
+    },
+    {
+      "id": "egitto-con-gli-occhi-dei-ragazzi-di-strada-pagina99",
+      "visible": true,
+      "order": 27,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/03/bambini-di-strata.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Egitto con gli occhi dei ragazzi di strada - Pagina99",
+        "en": "Egitto con gli occhi dei ragazzi di strada - Pagina99",
+        "fr": "Egitto con gli occhi dei ragazzi di strada - Pagina99"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=505"
+    },
+    {
+      "id": "risa-emozioni-silenzi-il-cairo-si-rivede-in-piazza-pagina99",
+      "visible": true,
+      "order": 28,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Risa, emozioni, silenzi, Il Cairo si rivede in piazza - Pagina99",
+        "en": "Risa, emozioni, silenzi, Il Cairo si rivede in piazza - Pagina99",
+        "fr": "Risa, emozioni, silenzi, Il Cairo si rivede in piazza - Pagina99"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=541"
+    },
+    {
+      "id": "una-piazza-da-oscar-left",
+      "visible": true,
+      "order": 29,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Una piazza da Oscar - Left",
+        "en": "Una piazza da Oscar - Left",
+        "fr": "Una piazza da Oscar - Left"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=547"
+    },
+    {
+      "id": "voto-dobbedienza-nigrizia",
+      "visible": true,
+      "order": 30,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Voto d\'obbedienza - Nigrizia",
+        "en": "Voto d\'obbedienza - Nigrizia",
+        "fr": "Voto d\'obbedienza - Nigrizia"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=579"
+    },
+    {
+      "id": "la-rivoluzione-rubata-tre-anni-dopo-mubarak-pagina99",
+      "visible": true,
+      "order": 31,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.pagina99.it/upload/1390848458285.JPG",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "La rivoluzione rubata, tre anni dopo Mubarak - Pagina99",
+        "en": "La rivoluzione rubata, tre anni dopo Mubarak - Pagina99",
+        "fr": "La rivoluzione rubata, tre anni dopo Mubarak - Pagina99"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=535"
+    },
+    {
+      "id": "sinai-business-beduino-nigrizia",
+      "visible": true,
+      "order": 32,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Sinai, business beduino - Nigrizia",
+        "en": "Sinai, business beduino - Nigrizia",
+        "fr": "Sinai, business beduino - Nigrizia"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=510"
+    },
+    {
+      "id": "sinai-terra-di-nessuno-vita-trentina",
+      "visible": true,
+      "order": 33,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.vitatrentina.it/var/vitatrentina/storage/images/rivista/2014/anno_89_-_n_10/pag_18_meridiani/sinai_terra_di_nessuno/egitto_-_il_confine_egitto-israele_nei_pressi_di_eilat._-_2008_-_wikipedia/2439447-1-ita-IT/egitto_-_il_confine_egitto-israele_nei_pressi_di_eilat._-_2008_-_wikipedia_large.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Sinai, terra di nessuno - Vita Trentina",
+        "en": "Sinai, terra di nessuno - Vita Trentina",
+        "fr": "Sinai, terra di nessuno - Vita Trentina"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=513"
+    },
+    {
+      "id": "english-the-priest-the-bedouins-and-the-kidnapped-africans-esquire",
+      "visible": true,
+      "order": 34,
+      "date": "2015-03-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "The Priest, The Bedouins and the Kidnapped Africans - Esquire",
+        "en": "The Priest, The Bedouins and the Kidnapped Africans - Esquire",
+        "fr": "The Priest, The Bedouins and the Kidnapped Africans - Esquire"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=518"
+    },
+    {
+      "id": "curious",
+      "visible": true,
+      "order": 35,
+      "date": "2015-03-05",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/03/1-1.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "MACLA artisti in collettivo",
+        "en": "MACLA artisti in collettivo",
+        "fr": "MACLA collectif d\'artistes"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "il-faraone-contro-il-califfo-nel-sinai-east",
+      "visible": true,
+      "order": 36,
+      "date": "2015-03-13",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.eastonline.eu/images/copertine/xeast58it.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Il Faraone contro il Califfo nel Sinai - East",
+        "en": "Il Faraone contro il Califfo nel Sinai - East",
+        "fr": "Il Faraone contro il Califfo nel Sinai - East"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1041"
+    },
+    {
+      "id": "donne-e-confini-nel-dibattito-allanpi-di-parma",
+      "visible": true,
+      "order": 37,
+      "date": "2015-03-19",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/03/IMG_5555-2.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Donne e confini nel dibattito all\'ANPI di Parma",
+        "en": "Donne e confini nel dibattito all\'ANPI di Parma",
+        "fr": "Donne e confini nel dibattito all\'ANPI di Parma"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1069"
+    },
+    {
+      "id": "buon-newroz-il-capodanno-raccontato-da-aicha-attivista-curda",
+      "visible": true,
+      "order": 38,
+      "date": "2015-03-22",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/03/IMG_2389.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Buon Newroz! il capodanno raccontato da Aicha, attivista curda",
+        "en": "Buon Newroz! il capodanno raccontato da Aicha, attivista curda",
+        "fr": "Buon Newroz! il capodanno raccontato da Aicha, attivista curda"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1094"
+    },
+    {
+      "id": "non-un-numero-non-un-ombra-i-migranti-nei-dormitori-di-caritas",
+      "visible": true,
+      "order": 39,
+      "date": "2015-03-23",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/03/migranti.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Non un numero, non un ombra: i migranti nei dormitori di Caritas",
+        "en": "Non un numero, non un ombra: i migranti nei dormitori di Caritas",
+        "fr": "Non un numero, non un ombra: i migranti nei dormitori di Caritas"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1075"
+    },
+    {
+      "id": "grazie-a-chi-sta-contribuendo-a-rendere-questo-progetto-realta",
+      "visible": true,
+      "order": 40,
+      "date": "2015-04-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/03/team-work.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Manca sempre meno alla partenza!",
+        "en": "Manca sempre meno alla partenza!",
+        "fr": "Manca sempre meno alla partenza!"
+      },
+      "articleUrl": "http://www.nawartpress.com/nawart-press-su-limpresa-eccezionale-a-radio-popolare-podcast/"
+    },
+    {
+      "id": "un-artista-in-cammino-francis-alys-macla-lab",
+      "visible": true,
+      "order": 41,
+      "date": "2015-04-05",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/04/francis-alys.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Un artista in cammino: Francis Alys - MACLA LAB",
+        "en": "Un artista in cammino: Francis Alys - MACLA LAB",
+        "fr": "Un artiste sur le chemin: Francis Alys - MACLA LAB"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1167"
+    },
+    {
+      "id": "campagna-riuscita",
+      "visible": true,
+      "order": 42,
+      "date": "2015-04-16",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/04/2015-04-15-14.18.02-e1429100910471.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Campagna riuscita!!!",
+        "en": "Campagna riuscita!!!",
+        "fr": "Campagna riuscita!!!"
+      },
+      "articleUrl": "http://www.nawartpress.com/nawart-press-su-limpresa-eccezionale-a-radio-popolare-podcast/"
+    },
+    {
+      "id": "la-casa-prigione-di-gjurakoc",
+      "visible": true,
+      "order": 43,
+      "date": "2015-05-07",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/05/IMG_5555-2.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "La casa prigione di Gjurakoc",
+        "en": "La casa prigione di Gjurakoc",
+        "fr": "La casa prigione di Gjurakoc"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1263"
+    },
+    {
+      "id": "gipsy-groove-al-peralla-festival-di-gjakova",
+      "visible": true,
+      "order": 44,
+      "date": "2015-05-11",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/05/IMG_3459.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Gipsy Groove al Përalla Festival di Gjakova",
+        "en": "Gipsy Groove al Përalla Festival di Gjakova",
+        "fr": "Gipsy Groove al Përalla Festival di Gjakova"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1316"
+    },
+    {
+      "id": "essere-un-travestito-a-tirana-2",
+      "visible": true,
+      "order": 45,
+      "date": "2015-05-21",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Essere un travestito a Tirana",
+        "en": "Essere un travestito a Tirana",
+        "fr": "Essere un travestito a Tirana"
+      },
+      "articleUrl": "http://www.nawartpress.com/essere-un-travestito-a-tirana/"
+    },
+    {
+      "id": "francais-les-mines-de-trepca",
+      "visible": true,
+      "order": 46,
+      "date": "2015-06-02",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/06/Schermata-2015-06-02-alle-18.42.32.png",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Les mines de Trepca",
+        "en": "Les mines de Trepca",
+        "fr": "Les mines de Trepca"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1440"
+    },
+    {
+      "id": "francais-mais-pourquoi-partent-ils",
+      "visible": true,
+      "order": 47,
+      "date": "2015-06-02",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/06/Schermata-2015-06-02-alle-18.35.29.png",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Mais pourquoi partent-ils?",
+        "en": "Mais pourquoi partent-ils?",
+        "fr": "Mais pourquoi partent-ils?"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1435"
+    },
+    {
+      "id": "servizio-tg-da-akcakale-emergenza-profughi-al-confine-con-tal-abyiad",
+      "visible": true,
+      "order": 48,
+      "date": "2015-06-22",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/06/akçakale.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Servizio TG da Akçakale per RSI: Emergenza profughi al confine con Tal Abyiad",
+        "en": "Servizio TG da Akçakale per RSI: Emergenza profughi al confine con Tal Abyiad",
+        "fr": "Servizio TG da Akçakale per RSI: Emergenza profughi al confine con Tal Abyiad"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1521"
+    },
+    {
+      "id": "a-pranzo-con-le-sacerdotesse-zoroastriane",
+      "visible": true,
+      "order": 49,
+      "date": "2015-07-09",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/07/2015-06-28-17.12.05-300x225.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "A pranzo con le sacerdotesse zoroastriane",
+        "en": "A pranzo con le sacerdotesse zoroastriane",
+        "fr": "A pranzo con le sacerdotesse zoroastriane"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1576"
+    },
+    {
+      "id": "galleria-fotografica-uzbekistan",
+      "visible": true,
+      "order": 50,
+      "date": "2015-07-23",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Galleria fotografica Uzbekistan",
+        "en": "Photo-Gallery Uzbekistan",
+        "fr": "Galerie photographique Uzbekistan"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1693"
+    },
+    {
+      "id": "english-the-zoroastrian-priestesses-of-iran",
+      "visible": true,
+      "order": 51,
+      "date": "2015-07-28",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "The Zoroastrian Priestesses of Iran",
+        "en": "The Zoroastrian Priestesses of Iran",
+        "fr": "The Zoroastrian Priestesses of Iran"
+      },
+      "articleUrl": "http://www.nawartpress.com/english-the-zoroastrian-priestesses-of-iran-middle-east-eye/"
+    },
+    {
+      "id": "english-the-zoroastrian-priestesses-of-iran-middle-east-eye",
+      "visible": true,
+      "order": 52,
+      "date": "2015-07-28",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.middleeasteye.net/sites/default/files/styles/main_image_article_page/public/_MG_1598.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "The Zoroastrian priestesses of Iran - Middle East Eye",
+        "en": "The Zoroastrian priestesses of Iran - Middle East Eye",
+        "fr": "The Zoroastrian priestesses of Iran - Middle East Eye"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=1704"
+    },
+    {
+      "id": "francais-pretresses-zoroastriennes-en-iran-orientxxi",
+      "visible": true,
+      "order": 53,
+      "date": "2015-09-25",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Prêtresses zoroastriennes en Iran - OrientXXI",
+        "en": "Prêtresses zoroastriennes en Iran - OrientXXI",
+        "fr": "Prêtresses zoroastriennes en Iran - OrientXXI"
+      },
+      "articleUrl": "http://orientxxi.info/"
+    },
+    {
+      "id": "frontiera-melilla-per-i-siriani-un-nuovo-muro-prima-delleuropa-repubblica",
+      "visible": true,
+      "order": 54,
+      "date": "2015-11-03",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/10/IMG_5555-23.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Frontiera Melilla, per i siriani un nuovo muro prima dell’Europa – REPUBBLICA",
+        "en": "Frontiera Melilla, per i siriani un nuovo muro prima dell’Europa – REPUBBLICA",
+        "fr": "Frontiera Melilla, per i siriani un nuovo muro prima dell’Europa – REPUBBLICA"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "vierges-au-masculin-choisir",
+      "visible": true,
+      "order": 55,
+      "date": "2015-11-03",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "VIERGES AU MASCULIN - CHOISIR"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "il-blog-di-nawart-su-vita",
+      "visible": true,
+      "order": 56,
+      "date": "2015-11-03",
+      "video": null,
+      "thumbnail": {
+        "url": "http://blog.vita.it/ilmondodelledonne/files/2015/10/12190827_10153736662143000_1048471425815462309_n.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "IL BLOG DI NAWART SU VITA",
+        "en": "IL BLOG DI NAWART SU VITA",
+        "fr": "Le elezioni delle donne curde di Silvan IL BLOG DI VITA"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "le-desk-una-nuova-sfida-al-giornalismo-in-marocco-il-blog-di-vita",
+      "visible": true,
+      "order": 57,
+      "date": "2015-11-23",
+      "video": null,
+      "thumbnail": {
+        "url": "http://blog.vita.it/ilmondodelledonne/files/2015/11/Fatima-Zahra-Lqadiri-Le-Desk.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Le Desk, una nuova sfida al giornalismo in Marocco IL BLOG DI VITA",
+        "en": "Le Desk, una nuova sfida al giornalismo in Marocco IL BLOG DI VITA",
+        "fr": "Le Desk, una nuova sfida al giornalismo in Marocco IL BLOG DI VITA"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "iran-la-revolution-discrete-des-zoroastriens",
+      "visible": true,
+      "order": 58,
+      "date": "2015-12-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "Iran: la révolution discrète des zoroastriens"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "abbiamo-bisogno-di-tante-wangari-maathai-il-blog-di-vita",
+      "visible": true,
+      "order": 59,
+      "date": "2015-12-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "Abbiamo bisogno di tante Wangari Maathai - Il BLOG DI VITA"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "se-il-sole-del-deserto-diventa-energia-pulita",
+      "visible": true,
+      "order": 60,
+      "date": "2015-12-01",
+      "video": null,
+      "thumbnail": {
+        "url": "http://nawartpr.yanchware.com/wp-content/uploads/2015/12/27112015-CDT-solare-marocco.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Se il sole del deserto diventa energia pulita",
+        "en": "Se il sole del deserto diventa energia pulita",
+        "fr": "Se il sole del deserto diventa energia pulita"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "noor-1-premiere-centrale-delectricite-solaire-du-maroc",
+      "visible": true,
+      "order": 61,
+      "date": "2016-01-03",
+      "video": null,
+      "thumbnail": {
+        "url": "http://orientxxi.info/IMG/arton1115-resp560.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "Noor 1, première centrale d’électricité solaire du Maroc"
+      },
+      "articleUrl": "http://orientxxi.info/"
+    },
+    {
+      "id": "la-satira-dopo-charlie-hebdo-doaa-el-adl-disegnatrice-egiziana-il-blog-di-vita",
+      "visible": true,
+      "order": 62,
+      "date": "2016-01-12",
+      "video": null,
+      "thumbnail": {
+        "url": "http://blog.vita.it/ilmondodelledonne/files/2016/01/charlie-hebdo-un-an-apre%CC%80s.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "La satira dopo Charlie Hebdo: Doaa El Adl disegnatrice egiziana, il blog di vita",
+        "en": "La satira dopo Charlie Hebdo: Doaa El Adl disegnatrice egiziana, il blog di vita",
+        "fr": "La satira dopo Charlie Hebdo: Doaa El Adl disegnatrice egiziana, il blog di vita"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "donne-e-icone-di-steve-mccurry-a-forli-il-blog-di-vita",
+      "visible": true,
+      "order": 63,
+      "date": "2016-01-12",
+      "video": null,
+      "thumbnail": {
+        "url": "http://blog.vita.it/ilmondodelledonne/files/2015/12/ragazza-afgana.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Donne e icone di Steve McCurry a Forlì il blog di vita",
+        "en": "Donne e icone di Steve McCurry a Forlì il blog di vita",
+        "fr": "Donne e icone di Steve McCurry a Forlì il blog di vita"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "marocco-apre-la-piu-grande-centrale-solare-termodinamica-del-mondo",
+      "visible": true,
+      "order": 64,
+      "date": "2016-01-12",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Marocco: apre la più grande centrale solare termodinamica del mondo",
+        "en": "Marocco: apre la più grande centrale solare termodinamica del mondo",
+        "fr": "Marocco: apre la più grande centrale solare termodinamica del mondo"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "retata-continua",
+      "visible": true,
+      "order": 65,
+      "date": "2016-01-13",
+      "video": null,
+      "thumbnail": {
+        "url": "http://nawartpr.yanchware.com/wp-content/uploads/2016/01/12246934_728420047302977_6931390516874301705_n.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Retata Continua",
+        "en": "Retata Continua",
+        "fr": "Retata Continua"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "seguire-le-piste-arabe-al-ritmo-della-techno-hadra",
+      "visible": true,
+      "order": 66,
+      "date": "2016-01-18",
+      "video": null,
+      "thumbnail": {
+        "url": "http://nawartpr.yanchware.com/wp-content/uploads/2016/01/IMG-20160115-WA0002.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Seguire le piste arabe al ritmo della techno Hadra",
+        "en": "Seguire le piste arabe al ritmo della techno Hadra",
+        "fr": "Seguire le piste arabe al ritmo della techno Hadra"
+      },
+      "articleUrl": ""
+    },
+    {
+      "id": "leuropa-promessa",
+      "visible": true,
+      "order": 67,
+      "date": "2016-02-08",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "L\'\\"Europa Promessa\\"",
+        "en": "L\'\\"Europa Promessa\\"",
+        "fr": "L\'\\"Europa Promessa\\""
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=2886"
+    },
+    {
+      "id": "1000-donne-per-la-pace",
+      "visible": true,
+      "order": 68,
+      "date": "2016-02-09",
+      "video": null,
+      "thumbnail": {
+        "url": "http://blog.vita.it/ilmondodelledonne/files/2016/02/carovana.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "1000 donne per la pace",
+        "en": "1000 donne per la pace",
+        "fr": "1000 donne per la pace"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=2895"
+    },
+    {
+      "id": "unione-africana-burundi-cpi-e-parita-di-genere",
+      "visible": true,
+      "order": 69,
+      "date": "2016-02-09",
+      "video": null,
+      "thumbnail": {
+        "url": "http://blog.vita.it/ilmondodelledonne/files/2016/02/african_union_gender_pre-summit_on_2016_african_year_of_human_rights_with_particular_focus_on_the_rights_of_women_17_-_21_january_2016_0.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Unione Africana: Burundi, CPI e… parità di genere",
+        "en": "Unione Africana: Burundi, CPI e… parità di genere",
+        "fr": "Unione Africana: Burundi, CPI e… parità di genere"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=2892"
+    },
+    {
+      "id": "8-mars-le-difficile-metier-de-femme-au-kazakhstan",
+      "visible": true,
+      "order": 70,
+      "date": "2016-03-08",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.choisir.ch/images/societe/Gulnara_Utegalieva.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "8 mars: Le difficile métier de « femme » au Kazakhstan"
+      },
+      "articleUrl": "http://www.nawartpress.com/"
+    },
+    {
+      "id": "i-nuovi-desaparecidos-dalla-tunisia-in-italia-come-profughi-poi-spariti-nel-silenzio",
+      "visible": true,
+      "order": 71,
+      "date": "2016-05-04",
+      "video": null,
+      "thumbnail": {
+        "url": "http://i.static.vita.it/blobs/full/2/5/e/6/25e660b5-7528-4f84-aff5-40d3e12cd8f7.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "I nuovi desaparecidos. Dalla Tunisia in Italia come profughi. Poi spariti nel silenzio",
+        "en": "I nuovi desaparecidos. Dalla Tunisia in Italia come profughi. Poi spariti nel silenzio",
+        "fr": "I nuovi desaparecidos. Dalla Tunisia in Italia come profughi. Poi spariti nel silenzio"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3047"
+    },
+    {
+      "id": "i-turisti-della-sanita",
+      "visible": true,
+      "order": 72,
+      "date": "2016-05-23",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "I TURISTI DELLA SANITÀ",
+        "en": "I TURISTI DELLA SANITÀ",
+        "fr": "I TURISTI DELLA SANITÀ"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3062"
+    },
+    {
+      "id": "la-galaxie-dextreme-droite-autours-du-fn",
+      "visible": true,
+      "order": 73,
+      "date": "2016-12-21",
+      "video": null,
+      "thumbnail": {
+        "url": "https://www.choisir.ch/images/2016/Politique_internationale/schema_2016_siteLaHorde.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "La galaxie d\'extrême droite autour du FN"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3274"
+    },
+    {
+      "id": "gli-ottomila-salvati-a-pasqua-diario-di-bordo-di-una-missione-di-salvataggio-open-migration",
+      "visible": true,
+      "order": 74,
+      "date": "2017-05-03",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2017/05/iuventa-55-di-81.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Gli ottomila salvati a Pasqua: diario di bordo di una missione di salvataggio Open Migration",
+        "en": "The eight thousand migrants saved at Easter: logbook of a rescue mission",
+        "fr": "Gli ottomila salvati a Pasqua: diario di bordo di una missione di salvataggio Open Migration"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3459"
+    },
+    {
+      "id": "from-jugend-rettets-iuventa-in-the-libyan-sar-zone",
+      "visible": true,
+      "order": 75,
+      "date": "2017-05-09",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2017/05/iuventa-18-di-81-1.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Dalla Iuventa, barca dell\'ONG Jugend Rettet nella SAR zone libica",
+        "en": "From Jugend Rettet\'s Iuventa - in the Libyan SAR zone",
+        "fr": "Depuis le Iuventa, dans la SAR zone libyenne"
+      },
+      "articleUrl": "http://www.nawartpress.com/it/gli-ottomila-salvati-a-pasqua-diario-di-bordo-di-una-missione-di-salvataggio-open-migration/"
+    },
+    {
+      "id": "debate-on-violence-against-women-in-tunisia",
+      "visible": true,
+      "order": 76,
+      "date": "2017-05-17",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2017/05/reunion-de-travail.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "نقاش حول مناهضة العنف ضد المرأة في تونس",
+        "en": "Debate on Violence Against Women in Tunisia",
+        "fr": "La violence contre les femmes en débat en Tunisie"
+      },
+      "articleUrl": "http://orientxxi.info/langue_en"
+    },
+    {
+      "id": "i-pescatori-tunisini-che-danno-sepoltura-ai-migranti-senza-nome-openmigration",
+      "visible": true,
+      "order": 77,
+      "date": "2017-06-02",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2017/06/20.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "I pescatori tunisini che danno sepoltura ai migranti senza nome - OPENMIGRATION",
+        "en": "I pescatori tunisini che danno sepoltura ai migranti senza nome - OPENMIGRATION",
+        "fr": "I pescatori tunisini che danno sepoltura ai migranti senza nome - OPENMIGRATION"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3534"
+    },
+    {
+      "id": "il-rif-si-alza-marocco",
+      "visible": true,
+      "order": 78,
+      "date": "2017-06-09",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "IL RIF SI ALZA - Marocco",
+        "en": "IL RIF SI ALZA - Marocco",
+        "fr": "IL RIF SI ALZA - Marocco"
+      },
+      "articleUrl": "http://www.nigrizia.it/notizia/la-protesta-infiamma-il-rif"
+    },
+    {
+      "id": "sar-zone-a-la-recherche-de-vies-a-sauver-en-mediterranee-inkyfada",
+      "visible": true,
+      "order": 79,
+      "date": "2017-06-09",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2017/06/inkyfada-1-di-7.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "SAR ZONE: A LA RECHERCHE DE VIES À SAUVER EN MÉDITERRANÉE - INKYFADA"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3539"
+    },
+    {
+      "id": "tra-i-pescatori-di-zarzis-che-respingono-gli-xenofobi",
+      "visible": true,
+      "order": 80,
+      "date": "2017-09-18",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2017/09/left-2.png",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Tra i pescatori di Zarzis che respingono gli xenofobi",
+        "en": "Tra i pescatori di Zarzis che respingono gli xenofobi",
+        "fr": "Tra i pescatori di Zarzis che respingono gli xenofobi"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3680"
+    },
+    {
+      "id": "calais-non-e-finita",
+      "visible": true,
+      "order": 81,
+      "date": "2017-10-12",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2017/10/IMG-20170115-WA0001-1.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Calais, non è finita!",
+        "en": "Calais, non è finita!",
+        "fr": "Calais, c’est pas fini !"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3698"
+    },
+    {
+      "id": "per-daphne-caruana-galizia",
+      "visible": true,
+      "order": 82,
+      "date": "2017-10-17",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Per Daphne Caruana Galizia",
+        "en": "Per Daphne Caruana Galizia",
+        "fr": "Per Daphne Caruana Galizia"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3715"
+    },
+    {
+      "id": "collusione-nave-militare-tunisina-e-barcone-29-morti-accertati-ancora-molti-dispersi",
+      "visible": true,
+      "order": 83,
+      "date": "2017-10-17",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Collusione nave militare tunisina e barcone: 29 morti accertati, ancora molti dispersi",
+        "en": "Collusione nave militare tunisina e barcone: 29 morti accertati, ancora molti dispersi",
+        "fr": "Collusione nave militare tunisina e barcone: 29 morti accertati, ancora molti dispersi"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3706"
+    },
+    {
+      "id": "i-pescatori-tunisini-che-salvano-i-migranti",
+      "visible": true,
+      "order": 84,
+      "date": "2017-10-27",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "I pescatori tunisini che salvano i migranti",
+        "en": "I pescatori tunisini che salvano i migranti",
+        "fr": "I pescatori tunisini che salvano i migranti"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3724"
+    },
+    {
+      "id": "we-are-afraid-to-see-the-dead-tunisian-fishermen-on-frontline-of-migrant-tragedy",
+      "visible": true,
+      "order": 85,
+      "date": "2017-11-03",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.middleeasteye.net/sites/default/files/styles/main_image_article_page/public/Sardine%20Fishing%202.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "\'We are afraid to see the dead\': Tunisian fishermen on frontline of migrant tragedy",
+        "en": "\'We are afraid to see the dead\': Tunisian fishermen on frontline of migrant tragedy",
+        "fr": "\'We are afraid to see the dead\': Tunisian fishermen on frontline of migrant tragedy"
+      },
+      "articleUrl": "http://www.middleeasteye.net/news/msf-suspends-migrant-rescues-mediterranean-2133227521"
+    },
+    {
+      "id": "le-cimetiere-des-inconnus-echoues-a-zarzis",
+      "visible": true,
+      "order": 86,
+      "date": "2017-11-04",
+      "video": null,
+      "thumbnail": {
+        "url": "https://www.choisir.ch/images/2017/Societe/Giulia_Zarzis2.jpeg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "",
+        "en": "",
+        "fr": "Le cimetière des inconnus échoués à Zarzis"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3739"
+    },
+    {
+      "id": "sciopero-femminista-8-marzo",
+      "visible": true,
+      "order": 87,
+      "date": "2018-03-09",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Sciopero Femminista 8 marzo",
+        "en": "Sciopero Femminista 8 marzo",
+        "fr": "Sciopero Femminista 8 marzo"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=3858"
     }
   ]
 }

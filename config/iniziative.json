@@ -1,4 +1,4 @@
-{
+﻿{
   "category": {
     "it": "Iniziative Proprie",
     "en": "Personal Projects",
@@ -6,27 +6,106 @@
   },
   "projects": [
     {
-      "id": "progetto-sperimentale",
+      "id": "thats-interesting",
       "visible": true,
       "order": 1,
-      "video": {
-        "type": "youtube",
-        "id": "dQw4w9WgXcQ"
-      },
+      "date": "2015-03-05",
+      "video": null,
       "thumbnail": {
         "url": "",
-        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%)"
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
       },
       "title": {
-        "it": "Progetto Sperimentale",
-        "en": "Experimental Project",
-        "fr": "Projet Expérimental"
+        "it": "Dal 15 marzo su Crowdfunding!",
+        "en": "Dal 15 marzo su Crowdfunding!",
+        "fr": "Dal 15 marzo su Crowdfunding!"
       },
-      "description": {
-        "it": "Un'esplorazione delle possibilità del linguaggio cinematografico attraverso tecniche innovative e visuali audaci.",
-        "en": "An exploration of cinematic language possibilities through innovative techniques and bold visuals.",
-        "fr": "Une exploration des possibilités du langage cinématographique à travers des techniques innovantes et des visuels audacieux."
-      }
+      "articleUrl": "http://www.nawartpress.com/projects/"
+    },
+    {
+      "id": "118-libri-in-viaggio-letterario-con-nawart-press",
+      "visible": true,
+      "order": 2,
+      "date": "2015-03-06",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/03/118libri-logo1.png",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "118 Libri in viaggio letterario con Nawart Press",
+        "en": "The ER of Literature \\"118 Libri\\" will follow Nawart Press with a literary journey",
+        "fr": "Première Urgence Litteraire \\"118 Libri\\" suivra Nawart Press en voyage litteraire"
+      },
+      "articleUrl": "http://www.nawartpress.com/?p=917"
+    },
+    {
+      "id": "crowdfunding",
+      "visible": true,
+      "order": 3,
+      "date": "2015-03-07",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Crowdfunding",
+        "en": "Crowdfunding",
+        "fr": "Crowdfunding"
+      },
+      "articleUrl": "http://www.nawartpress.com/thats-interesting/"
+    },
+    {
+      "id": "donne-al-centro-per-l8-marzo",
+      "visible": true,
+      "order": 4,
+      "date": "2015-03-07",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Donne al Centro per l\'8 marzo",
+        "en": "Donne al Centro per l\'8 marzo",
+        "fr": "Donne al Centro per l\'8 marzo"
+      },
+      "articleUrl": "http://www.nawartpress.com/donne-al-centro/"
+    },
+    {
+      "id": "campagna-crowdfunding-the-railway-diaries",
+      "visible": true,
+      "order": 5,
+      "date": "2015-03-24",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Campagna Crowdfunding The Railway Diaries",
+        "en": "Campagna Crowdfunding The Railway Diaries",
+        "fr": "Campagna Crowdfunding The Railway Diaries"
+      },
+      "articleUrl": "http://www.nawartpress.com/il-crowdfunding-del-progetto-the-railway-diaries-su-becrowdy/"
+    },
+    {
+      "id": "il-crowdfunding-del-progetto-the-railway-diaries-su-becrowdy",
+      "visible": true,
+      "order": 6,
+      "date": "2015-03-24",
+      "video": null,
+      "thumbnail": {
+        "url": "http://www.nawartpress.com/wp-content/uploads/2015/03/therailwaydiaries-becrowdy.jpg",
+        "fallbackGradient": "linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%)"
+      },
+      "title": {
+        "it": "Il crowdfunding del progetto The Railway Diaries su BeCrowdy",
+        "en": "Il crowdfunding del progetto The Railway Diaries su BeCrowdy",
+        "fr": "Il crowdfunding del progetto The Railway Diaries su BeCrowdy"
+      },
+      "articleUrl": "http://www.nawartpress.com/projects/"
     }
   ]
 }
