@@ -96,15 +96,14 @@
                 var isDropdownToggle = navLink.classList.contains('dropdown-toggle');
                 var navTarget = navLink.getAttribute('data-nav');
 
-                if (!isDropdownToggle) {
-                    e.preventDefault();
+                // Dropdown toggles: only open/close the submenu, don't navigate
+                if (isDropdownToggle) {
+                    return;
                 }
 
-                // Portfolio click → show carousel with mainpage projects
-                if (navTarget === 'portfolio' && isDropdownToggle) {
-                    currentFilterCat = null;
-                    showMainpageProjects();
-                } else if (navTarget === 'all-projects') {
+                e.preventDefault();
+
+                if (navTarget === 'all-projects') {
                     showAllProjectsGrid();
                     navTo('all-projects');
                 } else {
