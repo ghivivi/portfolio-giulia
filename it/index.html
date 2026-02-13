@@ -26,15 +26,6 @@
             <nav class="sidebar-nav">
                 <ul class="sidebar-links">
                     <li class="sidebar-dropdown">
-                        <a href="#" class="sidebar-link dropdown-toggle" data-nav="progetti">
-                            Progetti
-                            <span class="dropdown-arrow">&#8226;</span>
-                        </a>
-                        <ul class="dropdown-menu" id="projects-dropdown">
-                            <!-- Populated by JS from projects.json -->
-                        </ul>
-                    </li>
-                    <li class="sidebar-dropdown">
                         <a href="#" class="sidebar-link dropdown-toggle" data-nav="portfolio">
                             Portfolio
                             <span class="dropdown-arrow">&#8226;</span>
@@ -93,8 +84,8 @@
                 <p class="hero-description">7 anni di copertura nelle zone di crisi dal Medio Oriente all'Africa, raccontando storie di resilienza e umanità.</p>
             </section>
 
-            <!-- PROGETTI (carousel built by JS) -->
-            <section class="page-section" id="section-progetti">
+            <!-- PORTFOLIO (carousel built by JS — mainpage projects) -->
+            <section class="page-section" id="section-portfolio">
                 <div class="carousel" id="projects-carousel">
                     <div class="carousel-slides" id="carousel-slides">
                         <!-- Slides injected by JS from projects.json -->
@@ -104,44 +95,18 @@
                     <div class="carousel-dots" id="carousel-dots">
                         <!-- Dots injected by JS -->
                     </div>
+                    <div class="carousel-view-all" id="carousel-view-all">
+                        <a href="#" class="view-all-link" data-nav="all-projects">Vedi tutti i progetti &rarr;</a>
+                    </div>
                 </div>
             </section>
 
-            <!-- PORTFOLIO / SERVIZI -->
-            <section class="page-section" id="section-portfolio">
-                <h2 class="section-heading">Servizi</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-                        </div>
-                        <h3 class="service-title">Progetti Umanitari</h3>
-                        <p class="service-description">Progetti documentari a lungo termine con organizzazioni umanitarie internazionali.</p>
-                        <a href="#" class="service-link" data-nav="progetti">Scopri &rarr;</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2"/></svg>
-                        </div>
-                        <h3 class="service-title">Giornalismo &amp; Reportage</h3>
-                        <p class="service-description">Reportage scritti e visivi per media internazionali da zone di crisi.</p>
-                        <a href="#" class="service-link" data-nav="progetti">Scopri &rarr;</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-                        </div>
-                        <h3 class="service-title">Documentari</h3>
-                        <p class="service-description">Film documentari per broadcast, piattaforme streaming e festival internazionali.</p>
-                        <a href="#" class="service-link" data-nav="progetti">Scopri &rarr;</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                        </div>
-                        <h3 class="service-title">Consulenza &amp; Coordinamento</h3>
-                        <p class="service-description">Pianificazione contenuti e coordinamento team per progetti multimediali.</p>
-                        <a href="#" class="service-link" data-nav="consulenze">Scopri &rarr;</a>
+            <!-- ALL PROJECTS (grid of clickable boxes) -->
+            <section class="page-section" id="section-all-projects">
+                <div class="all-projects-wrapper">
+                    <h2 class="section-heading">Tutti i Progetti</h2>
+                    <div class="all-projects-grid" id="all-projects-grid">
+                        <!-- Populated by JS -->
                     </div>
                 </div>
             </section>

@@ -642,14 +642,12 @@ h1, h2, h3 {
 }
 
 /* ============================================
-   11. PORTFOLIO / SERVIZI SECTION
+   11. PORTFOLIO CAROUSEL SECTION
    ============================================ */
 
 #section-portfolio {
-    overflow-y: auto;
-    flex-direction: column;
-    padding: var(--space-md);
-    background: var(--color-bg);
+    overflow: hidden;
+    padding: 0;
 }
 
 .section-heading {
@@ -660,67 +658,123 @@ h1, h2, h3 {
     color: var(--color-text);
 }
 
-.services-grid {
+/* View All link at bottom of carousel */
+.carousel-view-all {
+    position: absolute;
+    bottom: var(--space-md);
+    left: var(--space-lg);
+    z-index: 10;
+}
+
+.view-all-link {
+    color: rgba(250, 248, 245, 0.85);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1.5px solid rgba(250, 248, 245, 0.5);
+    padding: 0.5rem 1.2rem;
+    transition: all var(--transition-base);
+}
+
+.view-all-link:hover {
+    background: rgba(250, 248, 245, 0.15);
+    border-color: #FAF8F5;
+    color: #FAF8F5;
+}
+
+/* ============================================
+   11b. ALL PROJECTS GRID SECTION
+   ============================================ */
+
+#section-all-projects {
+    overflow-y: auto;
+    flex-direction: column;
+    padding: var(--space-md);
+    background: var(--color-bg);
+}
+
+.all-projects-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.all-projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: var(--space-md);
 }
 
-.service-card {
-    padding: var(--space-md);
-    background: transparent;
+.project-box {
+    cursor: pointer;
     transition: all var(--transition-base);
+    background: var(--color-bg-elevated);
 }
 
-.service-card:hover {
+.project-box:hover {
     transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-.service-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: var(--space-sm);
-    color: var(--color-text);
-}
-
-.service-icon svg {
+.project-box-thumb {
     width: 100%;
-    height: 100%;
-    stroke: currentColor;
-    fill: none;
-    stroke-width: 1.5;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-border);
+    position: relative;
 }
 
-.service-title {
+.project-box-action {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #FAF8F5;
+    background: rgba(0, 0, 0, 0.5);
+    color: #FAF8F5;
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    opacity: 0.85;
+}
+
+.project-box-action:hover {
+    background: rgba(0, 0, 0, 0.75);
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+}
+
+.project-box-info {
+    padding: var(--space-sm);
+}
+
+.project-box-title {
     font-family: var(--font-heading);
-    font-size: 1.2rem;
+    font-size: 0.95rem;
     font-weight: 300;
-    margin: 0 0 var(--space-xs) 0;
     color: var(--color-text);
+    margin: 0 0 0.3rem 0;
+    line-height: 1.3;
 }
 
-.service-description {
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin: 0 0 var(--space-sm) 0;
-}
-
-.service-link {
-    font-size: 0.8rem;
-    font-weight: 300;
+.project-box-meta {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 400;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-text);
-    text-decoration: none;
-    transition: all var(--transition-base);
-    display: inline-block;
-}
-
-.service-link:hover {
-    color: var(--color-hover-dark);
-    transform: translateX(4px);
+    color: var(--color-text-muted);
+    margin: 0;
 }
 
 /* ============================================
@@ -1031,9 +1085,17 @@ h1, h2, h3 {
         font-size: 1.8rem;
     }
 
-    .services-grid,
     .consulting-grid {
         grid-template-columns: 1fr;
+    }
+
+    .all-projects-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: var(--space-sm);
+    }
+
+    .carousel-view-all {
+        left: var(--space-md);
     }
 
     .language-selector {
