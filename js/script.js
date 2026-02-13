@@ -179,20 +179,14 @@
         startAutoplay();
     }
 
-    function updateViewAllVisibility() {
-        var viewAllEl = document.getElementById('carousel-view-all');
-        if (!viewAllEl) return;
-        var isLastSlide = totalSlides > 0 && currentSlide === totalSlides - 1;
-        viewAllEl.classList.toggle('is-last-slide', isLastSlide);
-    }
-
     function goToSlide(index) {
         if (totalSlides === 0) return;
 
         if (index < 0) index = totalSlides - 1;
         if (index >= totalSlides) index = 0;
 
-        document.querySelectorAll('.carousel-slide').forEach(function(slide, i) {
+        var slides = document.querySelectorAll('.carousel-slide');
+        slides.forEach(function(slide, i) {
             slide.classList.toggle('is-active', i === index);
         });
         document.querySelectorAll('.carousel-dot').forEach(function(dot, i) {
@@ -200,7 +194,13 @@
         });
 
         currentSlide = index;
-        updateViewAllVisibility();
+
+        // Toggle dark theme for arrows/dots on view-all slide
+        var carousel = document.getElementById('projects-carousel');
+        if (carousel) {
+            var isViewAll = slides[index] && slides[index].classList.contains('carousel-slide--view-all');
+            carousel.classList.toggle('is-view-all', isViewAll);
+        }
     }
 
     // ---- 6b. CAROUSEL AUTOPLAY ----
@@ -275,9 +275,23 @@
                 createCarouselSlide(project, language, index));
         });
 
-        totalSlides = projects.length;
+        // Append "view all" slide as last page
+        var viewAllLabels = {
+            it: 'Vedi tutti i progetti',
+            en: 'View all projects',
+            fr: 'Voir tous les projets'
+        };
+        var viewAllSlide = '<div class="carousel-slide carousel-slide--view-all">' +
+            '<div class="view-all-slide-content">' +
+                '<a href="#" class="view-all-link" data-nav="all-projects">' +
+                    (viewAllLabels[language] || viewAllLabels.it) + ' &rarr;' +
+                '</a>' +
+            '</div>' +
+        '</div>';
+        slidesContainer.insertAdjacentHTML('beforeend', viewAllSlide);
+
+        totalSlides = projects.length + 1;
         currentSlide = 0;
-        updateViewAllVisibility();
 
         if (dotsContainer) {
             for (var i = 0; i < totalSlides; i++) {
