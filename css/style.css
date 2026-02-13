@@ -1096,6 +1096,11 @@ h1, h2, h3 {
 
     .carousel-view-all {
         left: var(--space-md);
+        display: none;
+    }
+
+    .carousel-view-all.is-last-slide {
+        display: block;
     }
 
     .language-selector {

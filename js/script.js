@@ -21,6 +21,8 @@
     var allCategories = {};
     var allCategoryOrder = [];
     var currentFilterCat = null;
+    var autoplayTimer = null;
+    var AUTOPLAY_INTERVAL = 6000;
 
     // ---- 2. LANGUAGE DETECTION ----
     function detectLanguage() {
@@ -96,15 +98,14 @@
                 var isDropdownToggle = navLink.classList.contains('dropdown-toggle');
                 var navTarget = navLink.getAttribute('data-nav');
 
-                if (!isDropdownToggle) {
-                    e.preventDefault();
+                // Dropdown toggles: only open/close the submenu, don't navigate
+                if (isDropdownToggle) {
+                    return;
                 }
 
-                // Portfolio click → show carousel with mainpage projects
-                if (navTarget === 'portfolio' && isDropdownToggle) {
-                    currentFilterCat = null;
-                    showMainpageProjects();
-                } else if (navTarget === 'all-projects') {
+                e.preventDefault();
+
+                if (navTarget === 'all-projects') {
                     showAllProjectsGrid();
                     navTo('all-projects');
                 } else {
@@ -152,11 +153,13 @@
         if (prevBtn) {
             prevBtn.addEventListener('click', function() {
                 goToSlide(currentSlide - 1);
+                resetAutoplay();
             });
         }
         if (nextBtn) {
             nextBtn.addEventListener('click', function() {
                 goToSlide(currentSlide + 1);
+                resetAutoplay();
             });
         }
 
@@ -166,10 +169,21 @@
 
             if (e.key === 'ArrowLeft') {
                 goToSlide(currentSlide - 1);
+                resetAutoplay();
             } else if (e.key === 'ArrowRight') {
                 goToSlide(currentSlide + 1);
+                resetAutoplay();
             }
         });
+
+        startAutoplay();
+    }
+
+    function updateViewAllVisibility() {
+        var viewAllEl = document.getElementById('carousel-view-all');
+        if (!viewAllEl) return;
+        var isLastSlide = totalSlides > 0 && currentSlide === totalSlides - 1;
+        viewAllEl.classList.toggle('is-last-slide', isLastSlide);
     }
 
     function goToSlide(index) {
@@ -186,6 +200,29 @@
         });
 
         currentSlide = index;
+        updateViewAllVisibility();
+    }
+
+    // ---- 6b. CAROUSEL AUTOPLAY ----
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = setInterval(function() {
+            var carouselSection = document.getElementById('section-portfolio');
+            if (carouselSection && carouselSection.classList.contains('is-active')) {
+                goToSlide(currentSlide + 1);
+            }
+        }, AUTOPLAY_INTERVAL);
+    }
+
+    function stopAutoplay() {
+        if (autoplayTimer) {
+            clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+    }
+
+    function resetAutoplay() {
+        startAutoplay();
     }
 
     // ---- 7. LOAD AND RENDER PROJECTS ----
@@ -240,6 +277,7 @@
 
         totalSlides = projects.length;
         currentSlide = 0;
+        updateViewAllVisibility();
 
         if (dotsContainer) {
             for (var i = 0; i < totalSlides; i++) {
@@ -249,6 +287,7 @@
                 (function(idx) {
                     dot.addEventListener('click', function() {
                         goToSlide(idx);
+                        resetAutoplay();
                     });
                 })(i);
                 dotsContainer.appendChild(dot);
@@ -327,8 +366,8 @@
 
         portfolioDropdown.innerHTML = '';
 
-        // "All" option — mainpage projects across all categories
-        var mainpageCount = projects.filter(function(p) { return p.mainpage === true; }).length;
+        // "All" option — all visible projects across all categories
+        var mainpageCount = projects.length;
         var allLi = document.createElement('li');
         var allA = document.createElement('a');
         allA.className = 'dropdown-link';
@@ -342,7 +381,7 @@
         categoryOrder.forEach(function(catId) {
             var catName = categories[catId] ? (categories[catId][language] || categories[catId].it) : catId;
             var count = projects.filter(function(p) {
-                return p.mainpage === true && p.categories && p.categories.indexOf(catId) !== -1;
+                return p.categories && p.categories.indexOf(catId) !== -1;
             }).length;
 
             if (count === 0) return;
