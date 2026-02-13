@@ -718,7 +718,8 @@
       "articleUrl": "http://www.nawartpress.com/?p=518",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "curious",
@@ -1801,7 +1802,8 @@
       "articleUrl": "https://www.youtube.com/watch?v=CUh5iNMIIrs",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "english-egyptian-protesters-demand-end-to-sexual-harassment-middle-east-eye-tv",
@@ -1870,7 +1872,8 @@
       "articleUrl": "http://www.nawartpress.com/?p=757",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "english-religious-tensions-simmer-in-egypts-minya-middle-east-eye-tv",
@@ -1985,7 +1988,8 @@
       "articleUrl": "http://www.nawartpress.com/?p=1105",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "essere-un-travestito-a-tirana",
@@ -2031,7 +2035,8 @@
       "articleUrl": "http://www.nawartpress.com/?p=1444",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "english-video-migrants-tragedy-overwhelms-greek-island-of-lesvos",
@@ -2120,7 +2125,8 @@
       "articleUrl": "",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "made-in-tunisia-women-textile-workers-resist-poor-working-conditions",
@@ -2143,7 +2149,8 @@
       "articleUrl": "http://www.nawartpress.com/?p=3092",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "trono-di-sale-marocco",
@@ -2163,7 +2170,8 @@
       "articleUrl": "http://www.nawartpress.com/?p=3260",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "senza-vie-legali-in-tunisia-si-diventa-harraga",
@@ -2344,7 +2352,8 @@
       "articleUrl": "https://www.raiplay.it/video/2019/08/Doc-3-Strange-Fish-73a3ecf5-8c72-4a2e-be28-ad11df3fd987.html?fbclid=IwAR1aHrAeM_-Q2xYJckRBgA-DrIeUPPQQWbyrBeBKmvtBwVBTsMYyOnq7jUg#",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "thats-interesting",
@@ -2485,7 +2494,8 @@
       "categories": [
         "documentary-films",
         "multimedia-projects"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "living-in-kharkivs-metro",
@@ -2505,7 +2515,8 @@
       "articleUrl": "",
       "categories": [
         "conflict-zones"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "syria-12-years-of-war-cholera",
@@ -2525,7 +2536,8 @@
       "articleUrl": "",
       "categories": [
         "conflict-zones"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "caminantes-venezuelan-exodus",
@@ -2545,7 +2557,8 @@
       "articleUrl": "",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "ukraine-displaced-persons-west",
@@ -2565,7 +2578,8 @@
       "articleUrl": "",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "mainpage": true
     },
     {
       "id": "photoclimat-2023-2025",
@@ -2585,7 +2599,8 @@
       "articleUrl": "",
       "categories": [
         "multimedia-projects"
-      ]
+      ],
+      "mainpage": true
     }
   ]
 }

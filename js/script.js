@@ -18,6 +18,9 @@
     var currentSlide = 0;
     var totalSlides = 0;
     var allProjects = [];
+    var allCategories = {};
+    var allCategoryOrder = [];
+    var currentFilterCat = null;
 
     // ---- 2. LANGUAGE DETECTION ----
     function detectLanguage() {
@@ -28,23 +31,37 @@
         return 'it';
     }
 
-    // ---- 3. SECTION NAVIGATION ----
+    // ---- 3. VIDEO THUMBNAIL HELPER ----
+    function getVideoThumbnailUrl(project) {
+        if (!project.video || !project.video.type) return '';
+        if (project.video.type === 'youtube' && project.video.id) {
+            return 'https://img.youtube.com/vi/' + project.video.id + '/hqdefault.jpg';
+        }
+        if (project.video.type === 'vimeo' && project.video.id) {
+            return 'https://vumbnail.com/' + project.video.id + '.jpg';
+        }
+        return '';
+    }
+
+    function getProjectThumbnailUrl(project) {
+        if (project.thumbnail && project.thumbnail.url && project.thumbnail.url !== '') {
+            return project.thumbnail.url;
+        }
+        return getVideoThumbnailUrl(project);
+    }
+
+    // ---- 4. SECTION NAVIGATION ----
     function navTo(sectionId) {
-        // Hide all sections
         document.querySelectorAll('.page-section').forEach(function(section) {
             section.classList.remove('is-active');
         });
 
-        // Show target section
         var target = document.getElementById('section-' + sectionId);
         if (target) {
             target.classList.add('is-active');
         }
 
-        // Update active nav state
         updateActiveNav(sectionId);
-
-        // Close mobile sidebar
         closeMobileSidebar();
     }
 
@@ -53,8 +70,10 @@
             link.classList.remove('active');
         });
 
-        // Activate matching link
-        var activeLink = document.querySelector('.sidebar-link[data-nav="' + sectionId + '"]');
+        var navId = sectionId;
+        if (navId === 'all-projects') navId = 'portfolio';
+
+        var activeLink = document.querySelector('.sidebar-link[data-nav="' + navId + '"]');
         if (activeLink) {
             activeLink.classList.add('active');
         }
@@ -68,27 +87,29 @@
         }
     }
 
-    // ---- 4. EVENT DELEGATION ----
+    // ---- 5. EVENT DELEGATION ----
     function initEventDelegation() {
         document.addEventListener('click', function(e) {
             // Handle [data-nav] clicks
             var navLink = e.target.closest('[data-nav]');
             if (navLink) {
-                // Don't prevent default for dropdown toggles — they also handle dropdown open/close
                 var isDropdownToggle = navLink.classList.contains('dropdown-toggle');
+                var navTarget = navLink.getAttribute('data-nav');
+
                 if (!isDropdownToggle) {
                     e.preventDefault();
                 }
-                navTo(navLink.getAttribute('data-nav'));
-                return;
-            }
 
-            // Handle [data-slide-to] clicks
-            var slideLink = e.target.closest('[data-slide-to]');
-            if (slideLink) {
-                e.preventDefault();
-                var slideIndex = parseInt(slideLink.getAttribute('data-slide-to'), 10);
-                goToProjectSlide(slideIndex);
+                // Portfolio click → show carousel with mainpage projects
+                if (navTarget === 'portfolio' && isDropdownToggle) {
+                    currentFilterCat = null;
+                    showMainpageProjects();
+                } else if (navTarget === 'all-projects') {
+                    showAllProjectsGrid();
+                    navTo('all-projects');
+                } else {
+                    navTo(navTarget);
+                }
                 return;
             }
 
@@ -100,10 +121,30 @@
                 filterByCategory(catId);
                 return;
             }
+
+            // Handle [data-open-project] clicks (all-projects grid)
+            var projectBox = e.target.closest('[data-open-project]');
+            if (projectBox) {
+                e.preventDefault();
+                var url = projectBox.getAttribute('data-open-project');
+                if (url) {
+                    window.open(url, '_blank', 'noopener');
+                }
+                return;
+            }
+
+            // Handle [data-play-video] clicks (all-projects grid video buttons)
+            var videoBtn = e.target.closest('[data-play-video]');
+            if (videoBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+                openVideoModal(videoBtn);
+                return;
+            }
         });
     }
 
-    // ---- 5. CAROUSEL ----
+    // ---- 6. CAROUSEL ----
     function initCarousel() {
         var prevBtn = document.getElementById('carousel-prev');
         var nextBtn = document.getElementById('carousel-next');
@@ -119,9 +160,8 @@
             });
         }
 
-        // Keyboard navigation when carousel section is active
         document.addEventListener('keydown', function(e) {
-            var carouselSection = document.getElementById('section-progetti');
+            var carouselSection = document.getElementById('section-portfolio');
             if (!carouselSection || !carouselSection.classList.contains('is-active')) return;
 
             if (e.key === 'ArrowLeft') {
@@ -148,40 +188,35 @@
         currentSlide = index;
     }
 
-    function goToProjectSlide(projectIndex) {
-        navTo('progetti');
-        goToSlide(projectIndex);
-    }
-
-    // ---- 6. LOAD AND RENDER PROJECTS ----
+    // ---- 7. LOAD AND RENDER PROJECTS ----
     async function loadAndRenderProjects(language) {
         try {
             var response = await fetch('../config/projects.json');
             var data = await response.json();
 
-            var categories = data.categories;
-            var categoryOrder = data.categoryOrder;
+            allCategories = data.categories;
+            allCategoryOrder = data.categoryOrder;
             var projects = data.projects.filter(function(p) {
                 return p.visible !== false;
             });
 
-            // Sort by order
             projects.sort(function(a, b) {
                 return (a.order || 999) - (b.order || 999);
             });
 
             allProjects = projects;
 
-            // Build carousel
-            buildCarousel(projects, language);
+            // Build carousel with mainpage projects only
+            var mainpageProjects = projects.filter(function(p) {
+                return p.mainpage === true;
+            });
+            buildCarousel(mainpageProjects, language);
 
-            // Populate sidebar dropdowns
-            populateDropdowns(projects, categories, categoryOrder, language);
+            // Populate sidebar portfolio dropdown (categories)
+            populatePortfolioDropdown(projects, allCategories, allCategoryOrder, language);
 
             // Init video listeners for carousel
             initVideoListenersForCarousel();
-
-            // Init thumbnail fallbacks
             initThumbnailFallbacks();
 
         } catch (error) {
@@ -206,7 +241,6 @@
         totalSlides = projects.length;
         currentSlide = 0;
 
-        // Create dots
         if (dotsContainer) {
             for (var i = 0; i < totalSlides; i++) {
                 var dot = document.createElement('button');
@@ -222,7 +256,7 @@
         }
     }
 
-    // ---- 7. CREATE CAROUSEL SLIDE ----
+    // ---- 8. CREATE CAROUSEL SLIDE ----
     function createCarouselSlide(project, language, index) {
         var title = project.title[language] || project.title.it || '';
         var description = '';
@@ -230,7 +264,6 @@
             description = project.description[language] || project.description.it || '';
         }
 
-        // Build category tags
         var categoryLabels = [];
         if (project.categories && project.categories.length > 0) {
             categoryLabels = project.categories.filter(function(c) { return c !== 'TODO'; });
@@ -244,10 +277,11 @@
             }
         }
 
-        // Background style
+        // Background style — use video thumbnail if no custom thumbnail
+        var thumbUrl = getProjectThumbnailUrl(project);
         var bgStyle = '';
-        if (project.thumbnail && project.thumbnail.url) {
-            bgStyle = "background-image: url('" + project.thumbnail.url + "');";
+        if (thumbUrl) {
+            bgStyle = "background-image: url('" + thumbUrl + "');";
         } else if (project.thumbnail && project.thumbnail.fallbackGradient) {
             bgStyle = 'background: ' + project.thumbnail.fallbackGradient + ';';
         } else {
@@ -265,7 +299,6 @@
             }
         }
 
-        // Action button
         var playLabels = { it: 'Guarda', en: 'Watch', fr: 'Regarder' };
         var readLabels = { it: 'Leggi articolo', en: 'Read article', fr: "Lire l'article" };
 
@@ -287,84 +320,163 @@
         '</div>';
     }
 
-    // ---- 8. POPULATE SIDEBAR DROPDOWNS ----
-    function populateDropdowns(projects, categories, categoryOrder, language) {
-        // PROGETTI dropdown — list individual project names (video projects first)
-        var projectsDropdown = document.getElementById('projects-dropdown');
-        if (projectsDropdown) {
-            projectsDropdown.innerHTML = '';
-
-            projects.forEach(function(project, index) {
-                var title = project.title[language] || project.title.it || '';
-                if (!title) return;
-
-                var li = document.createElement('li');
-                var a = document.createElement('a');
-                a.className = 'dropdown-link';
-                a.href = '#';
-                a.setAttribute('data-slide-to', index);
-                a.textContent = title;
-                li.appendChild(a);
-                projectsDropdown.appendChild(li);
-            });
-        }
-
-        // PORTFOLIO dropdown — list categories with counts
+    // ---- 9. POPULATE PORTFOLIO DROPDOWN ----
+    function populatePortfolioDropdown(projects, categories, categoryOrder, language) {
         var portfolioDropdown = document.getElementById('portfolio-dropdown');
-        if (portfolioDropdown) {
-            portfolioDropdown.innerHTML = '';
+        if (!portfolioDropdown) return;
 
-            // "All" option
-            var allLi = document.createElement('li');
-            var allA = document.createElement('a');
-            allA.className = 'dropdown-link';
-            allA.href = '#';
-            allA.setAttribute('data-filter-cat', 'all');
-            allA.innerHTML = (language === 'en' ? 'All Projects' : language === 'fr' ? 'Tous les projets' : 'Tutti i Progetti') +
-                ' <span class="dropdown-count">' + projects.length + '</span>';
-            allLi.appendChild(allA);
-            portfolioDropdown.appendChild(allLi);
+        portfolioDropdown.innerHTML = '';
 
-            categoryOrder.forEach(function(catId) {
-                var catName = categories[catId] ? (categories[catId][language] || categories[catId].it) : catId;
-                var count = projects.filter(function(p) {
-                    return p.categories && p.categories.indexOf(catId) !== -1;
-                }).length;
+        // "All" option — mainpage projects across all categories
+        var mainpageCount = projects.filter(function(p) { return p.mainpage === true; }).length;
+        var allLi = document.createElement('li');
+        var allA = document.createElement('a');
+        allA.className = 'dropdown-link';
+        allA.href = '#';
+        allA.setAttribute('data-filter-cat', 'all');
+        allA.innerHTML = (language === 'en' ? 'All' : language === 'fr' ? 'Tous' : 'Tutti') +
+            ' <span class="dropdown-count">' + mainpageCount + '</span>';
+        allLi.appendChild(allA);
+        portfolioDropdown.appendChild(allLi);
 
-                if (count === 0) return;
+        categoryOrder.forEach(function(catId) {
+            var catName = categories[catId] ? (categories[catId][language] || categories[catId].it) : catId;
+            var count = projects.filter(function(p) {
+                return p.mainpage === true && p.categories && p.categories.indexOf(catId) !== -1;
+            }).length;
 
-                var li = document.createElement('li');
-                var a = document.createElement('a');
-                a.className = 'dropdown-link';
-                a.href = '#';
-                a.setAttribute('data-filter-cat', catId);
-                a.innerHTML = catName + ' <span class="dropdown-count">' + count + '</span>';
-                li.appendChild(a);
-                portfolioDropdown.appendChild(li);
-            });
-        }
+            if (count === 0) return;
+
+            var li = document.createElement('li');
+            var a = document.createElement('a');
+            a.className = 'dropdown-link';
+            a.href = '#';
+            a.setAttribute('data-filter-cat', catId);
+            a.innerHTML = catName + ' <span class="dropdown-count">' + count + '</span>';
+            li.appendChild(a);
+            portfolioDropdown.appendChild(li);
+        });
     }
 
-    // ---- 9. CATEGORY FILTERING ----
+    // ---- 10. CATEGORY FILTERING (mainpage only) ----
     function filterByCategory(catId) {
         var language = detectLanguage();
         var filtered;
 
+        currentFilterCat = catId;
+
         if (catId === 'all') {
-            filtered = allProjects;
+            filtered = allProjects.filter(function(p) {
+                return p.mainpage === true;
+            });
         } else {
             filtered = allProjects.filter(function(p) {
-                return p.categories && p.categories.indexOf(catId) !== -1;
+                return p.mainpage === true && p.categories && p.categories.indexOf(catId) !== -1;
             });
         }
 
         buildCarousel(filtered, language);
         initVideoListenersForCarousel();
         initThumbnailFallbacks();
-        navTo('progetti');
+        navTo('portfolio');
     }
 
-    // ---- 10. MOBILE SIDEBAR TOGGLE ----
+    // ---- 11. SHOW MAINPAGE PROJECTS (Portfolio click) ----
+    function showMainpageProjects() {
+        var language = detectLanguage();
+        currentFilterCat = null;
+
+        var mainpageProjects = allProjects.filter(function(p) {
+            return p.mainpage === true;
+        });
+
+        buildCarousel(mainpageProjects, language);
+        initVideoListenersForCarousel();
+        initThumbnailFallbacks();
+        navTo('portfolio');
+    }
+
+    // ---- 12. ALL PROJECTS GRID ----
+    function showAllProjectsGrid() {
+        var language = detectLanguage();
+        var gridContainer = document.getElementById('all-projects-grid');
+        if (!gridContainer) return;
+
+        // Show all visible projects, optionally filtered by current category
+        var projects = allProjects;
+        if (currentFilterCat && currentFilterCat !== 'all') {
+            projects = allProjects.filter(function(p) {
+                return p.categories && p.categories.indexOf(currentFilterCat) !== -1;
+            });
+        }
+
+        gridContainer.innerHTML = '';
+
+        projects.forEach(function(project) {
+            var title = project.title[language] || project.title.it || '';
+            if (!title) return;
+
+            var thumbUrl = getProjectThumbnailUrl(project);
+            var bgStyle = '';
+            if (thumbUrl) {
+                bgStyle = "background-image: url('" + thumbUrl + "');";
+            } else if (project.thumbnail && project.thumbnail.fallbackGradient) {
+                bgStyle = 'background: ' + project.thumbnail.fallbackGradient + ';';
+            } else {
+                bgStyle = 'background: linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%);';
+            }
+
+            var hasVideo = project.video && project.video.type;
+            var linkUrl = hasVideo ? '' : (project.articleUrl || '');
+            var videoAttrs = '';
+            if (hasVideo) {
+                if (project.video.type === 'local') {
+                    videoAttrs = 'data-video-type="local" data-video-src="' + project.video.src + '"';
+                } else {
+                    videoAttrs = 'data-video-type="' + project.video.type + '" data-video-id="' + project.video.id + '"';
+                }
+            }
+
+            var year = project.date ? project.date.substring(0, 4) : '';
+            var catLabel = '';
+            if (project.categories && project.categories.length > 0) {
+                var firstCat = project.categories.filter(function(c) { return c !== 'TODO'; })[0];
+                if (firstCat && allCategories[firstCat]) {
+                    catLabel = allCategories[firstCat][language] || allCategories[firstCat].it || '';
+                }
+            }
+
+            var actionHtml = '';
+            if (hasVideo) {
+                actionHtml = '<button class="project-box-action" data-play-video="1" ' + videoAttrs + '>&#9654;</button>';
+            }
+
+            var box = '<div class="project-box" ' + (linkUrl ? 'data-open-project="' + linkUrl + '"' : '') + '>' +
+                '<div class="project-box-thumb" style="' + bgStyle + '">' +
+                    actionHtml +
+                '</div>' +
+                '<div class="project-box-info">' +
+                    '<h3 class="project-box-title">' + title + '</h3>' +
+                    (year || catLabel ? '<p class="project-box-meta">' + (year ? year : '') + (year && catLabel ? ' &bull; ' : '') + catLabel + '</p>' : '') +
+                '</div>' +
+            '</div>';
+
+            gridContainer.insertAdjacentHTML('beforeend', box);
+        });
+
+        // Update heading with category name if filtered
+        var heading = document.querySelector('#section-all-projects .section-heading');
+        if (heading) {
+            if (currentFilterCat && currentFilterCat !== 'all' && allCategories[currentFilterCat]) {
+                heading.textContent = allCategories[currentFilterCat][language] || allCategories[currentFilterCat].it;
+            } else {
+                var headingLabels = { it: 'Tutti i Progetti', en: 'All Projects', fr: 'Tous les Projets' };
+                heading.textContent = headingLabels[language] || headingLabels.it;
+            }
+        }
+    }
+
+    // ---- 13. MOBILE SIDEBAR TOGGLE ----
     function initMobileSidebar() {
         if (!navToggle || !sidebar) return;
 
@@ -375,7 +487,7 @@
         });
     }
 
-    // ---- 11. DROPDOWNS ----
+    // ---- 14. DROPDOWNS ----
     function initDropdowns() {
         document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
             var dropdown = toggle.closest('.sidebar-dropdown');
@@ -384,7 +496,6 @@
             toggle.addEventListener('click', function(e) {
                 e.preventDefault();
 
-                // Close other dropdowns
                 document.querySelectorAll('.sidebar-dropdown').forEach(function(d) {
                     if (d !== dropdown) d.classList.remove('is-open');
                 });
@@ -394,7 +505,7 @@
         });
     }
 
-    // ---- 12. VIDEO MODAL ----
+    // ---- 15. VIDEO MODAL ----
     function openVideoModal(element) {
         if (!videoModal || !modalVideoWrapper) return;
 
@@ -458,7 +569,7 @@
         });
     }
 
-    // ---- 13. THUMBNAIL FALLBACK ----
+    // ---- 16. THUMBNAIL FALLBACK ----
     function initThumbnailFallbacks() {
         document.querySelectorAll('.carousel-slide').forEach(function(slide) {
             var bgImage = slide.style.backgroundImage;
@@ -476,7 +587,7 @@
         });
     }
 
-    // ---- 14. INITIALIZATION ----
+    // ---- 17. INITIALIZATION ----
     async function init() {
         initMobileSidebar();
         initDropdowns();
