@@ -1,5 +1,6 @@
 /* ============================================
-   Portfolio Giulia - Main Script
+   Portfolio Giulia Bertoluzzi - Main Script
+   Design: Light Editorial with Section Navigation
    ============================================ */
 
 (function() {
@@ -13,6 +14,11 @@
     var videoModalClose = videoModal ? videoModal.querySelector('.modal-close') : null;
     var videoModalOverlay = videoModal ? videoModal.querySelector('.modal-overlay') : null;
 
+    // Carousel state
+    var currentSlide = 0;
+    var totalSlides = 0;
+    var allProjects = [];
+
     // ---- 2. LANGUAGE DETECTION ----
     function detectLanguage() {
         var path = window.location.pathname;
@@ -22,13 +28,133 @@
         return 'it';
     }
 
-    // ---- 3. LOAD AND RENDER PROJECTS ----
+    // ---- 3. SECTION NAVIGATION ----
+    function navTo(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('.page-section').forEach(function(section) {
+            section.classList.remove('is-active');
+        });
+
+        // Show target section
+        var target = document.getElementById('section-' + sectionId);
+        if (target) {
+            target.classList.add('is-active');
+        }
+
+        // Update active nav state
+        updateActiveNav(sectionId);
+
+        // Close mobile sidebar
+        closeMobileSidebar();
+    }
+
+    function updateActiveNav(sectionId) {
+        document.querySelectorAll('.sidebar-link').forEach(function(link) {
+            link.classList.remove('active');
+        });
+
+        // Activate matching link
+        var activeLink = document.querySelector('.sidebar-link[data-nav="' + sectionId + '"]');
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+    }
+
+    function closeMobileSidebar() {
+        if (navToggle && sidebar) {
+            navToggle.classList.remove('is-active');
+            sidebar.classList.remove('is-active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    // ---- 4. EVENT DELEGATION ----
+    function initEventDelegation() {
+        document.addEventListener('click', function(e) {
+            // Handle [data-nav] clicks
+            var navLink = e.target.closest('[data-nav]');
+            if (navLink) {
+                // Don't prevent default for dropdown toggles — they also handle dropdown open/close
+                var isDropdownToggle = navLink.classList.contains('dropdown-toggle');
+                if (!isDropdownToggle) {
+                    e.preventDefault();
+                }
+                navTo(navLink.getAttribute('data-nav'));
+                return;
+            }
+
+            // Handle [data-slide-to] clicks
+            var slideLink = e.target.closest('[data-slide-to]');
+            if (slideLink) {
+                e.preventDefault();
+                var slideIndex = parseInt(slideLink.getAttribute('data-slide-to'), 10);
+                goToProjectSlide(slideIndex);
+                return;
+            }
+
+            // Handle [data-filter-cat] clicks
+            var filterLink = e.target.closest('[data-filter-cat]');
+            if (filterLink) {
+                e.preventDefault();
+                var catId = filterLink.getAttribute('data-filter-cat');
+                filterByCategory(catId);
+                return;
+            }
+        });
+    }
+
+    // ---- 5. CAROUSEL ----
+    function initCarousel() {
+        var prevBtn = document.getElementById('carousel-prev');
+        var nextBtn = document.getElementById('carousel-next');
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function() {
+                goToSlide(currentSlide - 1);
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function() {
+                goToSlide(currentSlide + 1);
+            });
+        }
+
+        // Keyboard navigation when carousel section is active
+        document.addEventListener('keydown', function(e) {
+            var carouselSection = document.getElementById('section-progetti');
+            if (!carouselSection || !carouselSection.classList.contains('is-active')) return;
+
+            if (e.key === 'ArrowLeft') {
+                goToSlide(currentSlide - 1);
+            } else if (e.key === 'ArrowRight') {
+                goToSlide(currentSlide + 1);
+            }
+        });
+    }
+
+    function goToSlide(index) {
+        if (totalSlides === 0) return;
+
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+
+        document.querySelectorAll('.carousel-slide').forEach(function(slide, i) {
+            slide.classList.toggle('is-active', i === index);
+        });
+        document.querySelectorAll('.carousel-dot').forEach(function(dot, i) {
+            dot.classList.toggle('is-active', i === index);
+        });
+
+        currentSlide = index;
+    }
+
+    function goToProjectSlide(projectIndex) {
+        navTo('progetti');
+        goToSlide(projectIndex);
+    }
+
+    // ---- 6. LOAD AND RENDER PROJECTS ----
     async function loadAndRenderProjects(language) {
-        var mainContent = document.getElementById('main-content');
-        if (!mainContent) return;
-
-        mainContent.innerHTML = '';
-
         try {
             var response = await fetch('../config/projects.json');
             var data = await response.json();
@@ -39,86 +165,98 @@
                 return p.visible !== false;
             });
 
-            // Render each category section
-            for (var i = 0; i < categoryOrder.length; i++) {
-                var catId = categoryOrder[i];
-                var catName = categories[catId] ? (categories[catId][language] || categories[catId].it) : catId;
-
-                // Filter projects for this category
-                var catProjects = projects.filter(function(p) {
-                    return p.categories && p.categories.indexOf(catId) !== -1;
-                });
-
-                if (catProjects.length === 0) continue;
-
-                catProjects.sort(function(a, b) {
-                    return (a.order || 999) - (b.order || 999);
-                });
-
-                var sectionHTML = '<section class="category-section fade-in" id="' + catId + '">' +
-                    '<h2 class="category-title">' + catName + '</h2>' +
-                    '<div class="category-row">';
-
-                catProjects.forEach(function(project) {
-                    sectionHTML += createProjectCard(project, language, categories);
-                });
-
-                sectionHTML += '</div></section>';
-                mainContent.insertAdjacentHTML('beforeend', sectionHTML);
-            }
-
-            // Render TOTAG category if any
-            var totagProjects = projects.filter(function(p) {
-                return p.categories && p.categories.indexOf('TODO') !== -1;
+            // Sort by order
+            projects.sort(function(a, b) {
+                return (a.order || 999) - (b.order || 999);
             });
 
-            if (totagProjects.length > 0) {
-                var totagLabels = { it: 'Da Categorizzare', en: 'To Tag', fr: 'À Catégoriser' };
-                var totagHTML = '<section class="category-section fade-in" id="totag">' +
-                    '<h2 class="category-title">' + (totagLabels[language] || totagLabels.it) + '</h2>' +
-                    '<div class="category-row">';
+            allProjects = projects;
 
-                totagProjects.forEach(function(project) {
-                    totagHTML += createProjectCard(project, language, categories);
-                });
+            // Build carousel
+            buildCarousel(projects, language);
 
-                totagHTML += '</div></section>';
-                mainContent.insertAdjacentHTML('beforeend', totagHTML);
-            }
+            // Populate sidebar dropdowns
+            populateDropdowns(projects, categories, categoryOrder, language);
 
-            // Update dropdown counters and hide empty links
-            updateDropdownCounts(projects, categoryOrder, totagProjects.length);
+            // Init video listeners for carousel
+            initVideoListenersForCarousel();
 
-            initVideoListeners();
-            initScrollAnimations();
+            // Init thumbnail fallbacks
             initThumbnailFallbacks();
+
         } catch (error) {
             console.error('Error loading projects:', error);
         }
     }
 
-    // ---- 4. CREATE PROJECT CARD HTML ----
-    function createProjectCard(project, language, categories) {
+    function buildCarousel(projects, language) {
+        var slidesContainer = document.getElementById('carousel-slides');
+        var dotsContainer = document.getElementById('carousel-dots');
+
+        if (!slidesContainer) return;
+
+        slidesContainer.innerHTML = '';
+        if (dotsContainer) dotsContainer.innerHTML = '';
+
+        projects.forEach(function(project, index) {
+            slidesContainer.insertAdjacentHTML('beforeend',
+                createCarouselSlide(project, language, index));
+        });
+
+        totalSlides = projects.length;
+        currentSlide = 0;
+
+        // Create dots
+        if (dotsContainer) {
+            for (var i = 0; i < totalSlides; i++) {
+                var dot = document.createElement('button');
+                dot.className = 'carousel-dot' + (i === 0 ? ' is-active' : '');
+                dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                (function(idx) {
+                    dot.addEventListener('click', function() {
+                        goToSlide(idx);
+                    });
+                })(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+    }
+
+    // ---- 7. CREATE CAROUSEL SLIDE ----
+    function createCarouselSlide(project, language, index) {
         var title = project.title[language] || project.title.it || '';
         var description = '';
         if (project.description) {
             description = project.description[language] || project.description.it || '';
         }
 
-        // Build category tags from categories array
+        // Build category tags
         var categoryLabels = [];
-        if (project.categories) {
-            project.categories.forEach(function(catId) {
-                if (catId !== 'TODO' && categories[catId]) {
-                    categoryLabels.push(categories[catId][language] || categories[catId].it);
-                }
-            });
+        if (project.categories && project.categories.length > 0) {
+            categoryLabels = project.categories.filter(function(c) { return c !== 'TODO'; });
         }
-        var categoryText = categoryLabels.join(' / ');
+        var tagText = '';
+        if (project.date) {
+            var year = project.date.substring(0, 4);
+            tagText = year;
+            if (categoryLabels.length > 0) {
+                tagText += ' &bull; ' + categoryLabels[0].replace(/-/g, ' ').toUpperCase();
+            }
+        }
 
+        // Background style
+        var bgStyle = '';
+        if (project.thumbnail && project.thumbnail.url) {
+            bgStyle = "background-image: url('" + project.thumbnail.url + "');";
+        } else if (project.thumbnail && project.thumbnail.fallbackGradient) {
+            bgStyle = 'background: ' + project.thumbnail.fallbackGradient + ';';
+        } else {
+            bgStyle = 'background: linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%);';
+        }
+
+        // Video data attributes
         var hasVideo = project.video && project.video.type;
         var videoAttrs = '';
-
         if (hasVideo) {
             if (project.video.type === 'local') {
                 videoAttrs = 'data-video-type="local" data-video-src="' + project.video.src + '"';
@@ -127,98 +265,106 @@
             }
         }
 
-        var thumbnailStyle = '';
-        if (project.thumbnail && project.thumbnail.url) {
-            thumbnailStyle = "background-image: url('" + project.thumbnail.url + "'); background-size: cover; background-position: center;";
-        } else if (project.thumbnail && project.thumbnail.fallbackGradient) {
-            thumbnailStyle = 'background: ' + project.thumbnail.fallbackGradient + ';';
-        } else {
-            thumbnailStyle = 'background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);';
-        }
+        // Action button
+        var playLabels = { it: 'Guarda', en: 'Watch', fr: 'Regarder' };
+        var readLabels = { it: 'Leggi articolo', en: 'Read article', fr: "Lire l'article" };
 
-        var playLabels = {
-            it: 'Riproduci video',
-            en: 'Play video',
-            fr: 'Lire la vidéo'
-        };
-        var readLabels = {
-            it: 'Leggi articolo',
-            en: 'Read article',
-            fr: "Lire l'article"
-        };
-
-        var cardAttrs = 'class="project-card"';
+        var actionHTML = '';
         if (hasVideo) {
-            cardAttrs += ' ' + videoAttrs;
+            actionHTML = '<button class="slide-play-btn" ' + videoAttrs + '>&#9654; ' + (playLabels[language] || 'Watch') + '</button>';
         } else if (project.articleUrl) {
-            cardAttrs += ' data-article-url="' + project.articleUrl + '"';
+            actionHTML = '<a href="' + project.articleUrl + '" target="_blank" rel="noopener" class="slide-read-btn">' + (readLabels[language] || 'Read') + ' &rarr;</a>';
         }
 
-        var actionBtnHTML = '';
-        if (hasVideo) {
-            actionBtnHTML = '<button class="play-btn" aria-label="' + playLabels[language] + '">' +
-                '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>' +
-            '</button>';
-        } else if (project.articleUrl) {
-            actionBtnHTML = '<a href="' + project.articleUrl + '" target="_blank" rel="noopener" class="article-link-btn" aria-label="' + readLabels[language] + '">' +
-                '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7zm-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7H12z"/></svg>' +
-            '</a>';
-        }
-
-        return '<article ' + cardAttrs + '>' +
-            '<div class="video-container">' +
-                '<div class="video-thumbnail" style="' + thumbnailStyle + '"></div>' +
-                actionBtnHTML +
+        return '<div class="carousel-slide' + (index === 0 ? ' is-active' : '') + '" style="' + bgStyle + '">' +
+            '<div class="carousel-slide-overlay"></div>' +
+            '<div class="carousel-slide-content">' +
+                (tagText ? '<p class="slide-tag">' + tagText + '</p>' : '') +
+                '<h2 class="slide-title">' + title + '</h2>' +
+                (description ? '<p class="slide-description">' + description + '</p>' : '') +
+                actionHTML +
             '</div>' +
-            '<div class="project-info">' +
-                '<h3 class="project-title">' + title + '</h3>' +
-                (categoryText ? '<p class="project-category">' + categoryText + '</p>' : '') +
-                (description ? '<p class="project-description">' + description + '</p>' : '') +
-            '</div>' +
-        '</article>';
+        '</div>';
     }
 
-    // ---- 4b. UPDATE DROPDOWN COUNTS & HIDE EMPTY ----
-    function updateDropdownCounts(projects, categoryOrder, totagCount) {
-        var dropdownLinks = document.querySelectorAll('.dropdown-link');
-        var totalVisible = 0;
+    // ---- 8. POPULATE SIDEBAR DROPDOWNS ----
+    function populateDropdowns(projects, categories, categoryOrder, language) {
+        // PROGETTI dropdown — list individual project names (video projects first)
+        var projectsDropdown = document.getElementById('projects-dropdown');
+        if (projectsDropdown) {
+            projectsDropdown.innerHTML = '';
 
-        dropdownLinks.forEach(function(link) {
-            var href = link.getAttribute('href');
-            var filter = link.getAttribute('data-filter');
+            projects.forEach(function(project, index) {
+                var title = project.title[language] || project.title.it || '';
+                if (!title) return;
 
-            if (filter === 'all') return; // handle "All" separately
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+                a.className = 'dropdown-link';
+                a.href = '#';
+                a.setAttribute('data-slide-to', index);
+                a.textContent = title;
+                li.appendChild(a);
+                projectsDropdown.appendChild(li);
+            });
+        }
 
-            // Extract category id from href (e.g. "#documentary-films" -> "documentary-films")
-            var catId = href ? href.replace('#', '') : '';
-            var count = 0;
+        // PORTFOLIO dropdown — list categories with counts
+        var portfolioDropdown = document.getElementById('portfolio-dropdown');
+        if (portfolioDropdown) {
+            portfolioDropdown.innerHTML = '';
 
-            if (catId === 'totag') {
-                count = totagCount;
-            } else {
-                count = projects.filter(function(p) {
-                    return p.visible !== false && p.categories && p.categories.indexOf(catId) !== -1;
+            // "All" option
+            var allLi = document.createElement('li');
+            var allA = document.createElement('a');
+            allA.className = 'dropdown-link';
+            allA.href = '#';
+            allA.setAttribute('data-filter-cat', 'all');
+            allA.innerHTML = (language === 'en' ? 'All Projects' : language === 'fr' ? 'Tous les projets' : 'Tutti i Progetti') +
+                ' <span class="dropdown-count">' + projects.length + '</span>';
+            allLi.appendChild(allA);
+            portfolioDropdown.appendChild(allLi);
+
+            categoryOrder.forEach(function(catId) {
+                var catName = categories[catId] ? (categories[catId][language] || categories[catId].it) : catId;
+                var count = projects.filter(function(p) {
+                    return p.categories && p.categories.indexOf(catId) !== -1;
                 }).length;
-            }
 
-            if (count === 0) {
-                // Hide dropdown link for empty categories
-                link.closest('li').style.display = 'none';
-            } else {
-                totalVisible += count;
-                // Append count badge
-                link.insertAdjacentHTML('beforeend', ' <span class="dropdown-count">' + count + '</span>');
-            }
-        });
+                if (count === 0) return;
 
-        // Update "All Projects" count
-        var allLink = document.querySelector('.dropdown-link[data-filter="all"]');
-        if (allLink) {
-            allLink.insertAdjacentHTML('beforeend', ' <span class="dropdown-count">' + totalVisible + '</span>');
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+                a.className = 'dropdown-link';
+                a.href = '#';
+                a.setAttribute('data-filter-cat', catId);
+                a.innerHTML = catName + ' <span class="dropdown-count">' + count + '</span>';
+                li.appendChild(a);
+                portfolioDropdown.appendChild(li);
+            });
         }
     }
 
-    // ---- 5. MOBILE SIDEBAR TOGGLE ----
+    // ---- 9. CATEGORY FILTERING ----
+    function filterByCategory(catId) {
+        var language = detectLanguage();
+        var filtered;
+
+        if (catId === 'all') {
+            filtered = allProjects;
+        } else {
+            filtered = allProjects.filter(function(p) {
+                return p.categories && p.categories.indexOf(catId) !== -1;
+            });
+        }
+
+        buildCarousel(filtered, language);
+        initVideoListenersForCarousel();
+        initThumbnailFallbacks();
+        navTo('progetti');
+    }
+
+    // ---- 10. MOBILE SIDEBAR TOGGLE ----
     function initMobileSidebar() {
         if (!navToggle || !sidebar) return;
 
@@ -226,106 +372,35 @@
             var isActive = navToggle.classList.toggle('is-active');
             sidebar.classList.toggle('is-active');
             navToggle.setAttribute('aria-expanded', isActive);
-            document.body.style.overflow = isActive ? 'hidden' : '';
-        });
-
-        // Close sidebar when clicking a link (including dropdown links)
-        sidebar.querySelectorAll('.sidebar-link, .dropdown-link').forEach(function(link) {
-            link.addEventListener('click', function() {
-                if (link.classList.contains('dropdown-toggle')) return;
-                navToggle.classList.remove('is-active');
-                sidebar.classList.remove('is-active');
-                navToggle.setAttribute('aria-expanded', 'false');
-                document.body.style.overflow = '';
-            });
         });
     }
 
-    // ---- 6. WORKS DROPDOWN ----
-    function initWorksDropdown() {
-        var dropdownToggle = document.querySelector('.dropdown-toggle');
-        var dropdown = dropdownToggle ? dropdownToggle.closest('.sidebar-dropdown') : null;
+    // ---- 11. DROPDOWNS ----
+    function initDropdowns() {
+        document.querySelectorAll('.dropdown-toggle').forEach(function(toggle) {
+            var dropdown = toggle.closest('.sidebar-dropdown');
+            if (!dropdown) return;
 
-        if (!dropdownToggle || !dropdown) return;
-
-        // Open dropdown by default on desktop
-        if (window.innerWidth >= 768) {
-            dropdown.classList.add('is-open');
-        }
-
-        dropdownToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            dropdown.classList.toggle('is-open');
-        });
-
-        // Close dropdown when clicking a sub-link
-        dropdown.querySelectorAll('.dropdown-link').forEach(function(link) {
-            link.addEventListener('click', function() {
-                dropdown.classList.remove('is-open');
-            });
-        });
-    }
-
-    // ---- 7. CONTENT MODALS (About / Contact / Services) ----
-    function initContentModals() {
-        var modalLinks = document.querySelectorAll('[data-modal]');
-
-        modalLinks.forEach(function(link) {
-            link.addEventListener('click', function(e) {
+            toggle.addEventListener('click', function(e) {
                 e.preventDefault();
-                var modalId = link.getAttribute('data-modal') + '-modal';
-                var modal = document.getElementById(modalId);
-                if (modal) {
-                    modal.classList.add('is-active');
-                    modal.setAttribute('aria-hidden', 'false');
-                    document.body.style.overflow = 'hidden';
-                }
+
+                // Close other dropdowns
+                document.querySelectorAll('.sidebar-dropdown').forEach(function(d) {
+                    if (d !== dropdown) d.classList.remove('is-open');
+                });
+
+                dropdown.classList.toggle('is-open');
             });
         });
-
-        // Close buttons and overlays for content modals
-        document.querySelectorAll('.content-modal').forEach(function(modal) {
-            var closeBtn = modal.querySelector('.modal-close');
-            var overlay = modal.querySelector('.modal-overlay');
-
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function() {
-                    closeContentModal(modal);
-                });
-            }
-            if (overlay) {
-                overlay.addEventListener('click', function() {
-                    closeContentModal(modal);
-                });
-            }
-        });
-
-        // ESC key for content modals
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.content-modal.is-active').forEach(function(modal) {
-                    closeContentModal(modal);
-                });
-            }
-        });
     }
 
-    function closeContentModal(modal) {
-        modal.classList.remove('is-active');
-        modal.setAttribute('aria-hidden', 'true');
-        if (!document.querySelector('.content-modal.is-active') &&
-            !(videoModal && videoModal.classList.contains('is-active'))) {
-            document.body.style.overflow = '';
-        }
-    }
-
-    // ---- 8. VIDEO MODAL ----
-    function openVideoModal(card) {
+    // ---- 12. VIDEO MODAL ----
+    function openVideoModal(element) {
         if (!videoModal || !modalVideoWrapper) return;
 
-        var type = card.dataset.videoType;
-        var videoId = card.dataset.videoId;
-        var videoSrc = card.dataset.videoSrc;
+        var type = element.dataset.videoType;
+        var videoId = element.dataset.videoId;
+        var videoSrc = element.dataset.videoSrc;
 
         var content = '';
 
@@ -344,7 +419,6 @@
         modalVideoWrapper.innerHTML = content;
         videoModal.classList.add('is-active');
         videoModal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
     }
 
     function closeVideoModal() {
@@ -352,35 +426,18 @@
 
         videoModal.classList.remove('is-active');
         videoModal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
         modalVideoWrapper.innerHTML = '';
     }
 
-    function initVideoListeners() {
-        document.querySelectorAll('.play-btn').forEach(function(btn) {
+    function initVideoListenersForCarousel() {
+        document.querySelectorAll('.slide-play-btn').forEach(function(btn) {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 e.stopPropagation();
-                var card = btn.closest('.project-card');
-                if (card.dataset.videoType && videoModal) {
-                    openVideoModal(card);
+                if (btn.dataset.videoType && videoModal) {
+                    openVideoModal(btn);
                 }
             });
-        });
-
-        document.querySelectorAll('.video-container').forEach(function(container) {
-            var card = container.closest('.project-card');
-            if (card.dataset.videoType && videoModal) {
-                container.addEventListener('click', function() {
-                    openVideoModal(card);
-                });
-                container.style.cursor = 'pointer';
-            } else if (card.dataset.articleUrl) {
-                container.addEventListener('click', function() {
-                    window.open(card.dataset.articleUrl, '_blank');
-                });
-                container.style.cursor = 'pointer';
-            }
         });
     }
 
@@ -401,37 +458,15 @@
         });
     }
 
-    // ---- 9. SCROLL ANIMATIONS ----
-    function initScrollAnimations() {
-        var fadeEls = document.querySelectorAll('.fade-in:not(.is-visible)');
-        if (fadeEls.length === 0) return;
-
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -30px 0px'
-        });
-
-        fadeEls.forEach(function(el) {
-            observer.observe(el);
-        });
-    }
-
-    // ---- 10. THUMBNAIL FALLBACK ----
+    // ---- 13. THUMBNAIL FALLBACK ----
     function initThumbnailFallbacks() {
-        document.querySelectorAll('.video-thumbnail').forEach(function(thumb) {
-            var bgImage = thumb.style.backgroundImage;
+        document.querySelectorAll('.carousel-slide').forEach(function(slide) {
+            var bgImage = slide.style.backgroundImage;
             if (bgImage && bgImage !== 'none' && bgImage.indexOf('url') !== -1) {
                 var img = new Image();
                 img.onerror = function() {
-                    thumb.style.backgroundImage = 'none';
-                    thumb.style.background = 'linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%)';
+                    slide.style.backgroundImage = 'none';
+                    slide.style.background = 'linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)';
                 };
                 var match = bgImage.match(/url\(['"]?([^'"]+)['"]?\)/);
                 if (match) {
@@ -441,47 +476,19 @@
         });
     }
 
-    // ---- 11. SIDEBAR ACTIVE LINK TRACKING ----
-    function initSidebarActiveTracking() {
-        var sections = document.querySelectorAll('.category-section[id]');
-        var sidebarLinks = document.querySelectorAll('.sidebar-link[href^="#"], .dropdown-link[href^="#"]');
-        if (sections.length === 0 || sidebarLinks.length === 0) return;
-
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    var id = entry.target.getAttribute('id');
-                    sidebarLinks.forEach(function(link) {
-                        link.classList.toggle('active',
-                            link.getAttribute('href') === '#' + id
-                        );
-                    });
-                }
-            });
-        }, {
-            rootMargin: '-20% 0px -60% 0px'
-        });
-
-        sections.forEach(function(section) {
-            observer.observe(section);
-        });
-    }
-
-    // ---- 12. INITIALIZATION ----
+    // ---- 14. INITIALIZATION ----
     async function init() {
         initMobileSidebar();
-        initWorksDropdown();
-        initContentModals();
+        initDropdowns();
         initVideoModalClose();
+        initEventDelegation();
+        initCarousel();
 
         var mainContent = document.getElementById('main-content');
         if (mainContent) {
             var language = detectLanguage();
             await loadAndRenderProjects(language);
-            initSidebarActiveTracking();
         }
-
-        initScrollAnimations();
     }
 
     if (document.readyState === 'loading') {

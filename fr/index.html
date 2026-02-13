@@ -3,160 +3,212 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Giulia - Vidéaste. Productions vidéo, documentaires, courts métrages et contenus créatifs.">
-    <title>Giulia | Portfolio Vidéaste</title>
+    <meta name="description" content="Portfolio de Giulia Bertoluzzi - Journaliste Multimédia. Documentaires, reportages, projets humanitaires et contenus multimédias.">
+    <title>Giulia Bertoluzzi | Journaliste Multimédia</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!-- SIDEBAR -->
-    <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <a href="#" class="sidebar-logo">GIULIA</a>
-            <p class="sidebar-tagline">Vidéaste &amp; Conteuse</p>
-        </div>
-
-        <nav class="sidebar-nav">
-            <ul class="sidebar-links">
-                <li class="sidebar-dropdown">
-                    <a href="#" class="sidebar-link dropdown-toggle">Works <svg class="dropdown-arrow" viewBox="0 0 24 24" width="12" height="12"><path d="M7 10l5 5 5-5z" fill="currentColor"/></svg></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#" class="dropdown-link" data-filter="all">Tous les Projets</a></li>
-                        <li><a href="#documentary-films" class="dropdown-link">Films Documentaires</a></li>
-                        <li><a href="#conflict-zones" class="dropdown-link">Zones de Conflit</a></li>
-                        <li><a href="#migration-displacement" class="dropdown-link">Migration et Déplacement</a></li>
-                        <li><a href="#multimedia-projects" class="dropdown-link">Projets Multimédias</a></li>
-                        <li><a href="#longform-reportage" class="dropdown-link">Longform et Reportage</a></li>
-                        <li><a href="#humanitarian-projects" class="dropdown-link">Projets Humanitaires</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="sidebar-links sidebar-links--secondary">
-                <li><a href="#" class="sidebar-link" data-modal="about">À Propos</a></li>
-                <li><a href="#" class="sidebar-link" data-modal="services">Services</a></li>
-                <li><a href="#" class="sidebar-link" data-modal="contact">Contact</a></li>
-            </ul>
-        </nav>
-
-        <div class="sidebar-footer">
-            <ul class="lang-switcher">
-                <li><a href="../it/" class="lang-link">IT</a></li>
-                <li class="lang-separator">|</li>
-                <li><a href="../en/" class="lang-link">EN</a></li>
-                <li class="lang-separator">|</li>
-                <li><a href="../fr/" class="lang-link active">FR</a></li>
-            </ul>
-            <div class="social-links">
-                <a href="https://instagram.com" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
-                </a>
-                <a href="https://youtube.com" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/></svg>
-                </a>
-                <a href="https://vimeo.com" class="social-link" aria-label="Vimeo" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M22,7.42C21.91,9.37 20.55,12.04 17.92,15.44C15.2,19 12.9,20.75 11,20.75C9.85,20.75 8.86,19.67 8.05,17.5C7.5,15.54 7,13.58 6.44,11.62C5.84,9.46 5.2,8.37 4.5,8.37C4.36,8.37 3.84,8.69 2.96,9.33L2,8.07C3,7.2 3.96,6.33 4.92,5.47C6.24,4.31 7.24,3.7 7.92,3.63C9.45,3.47 10.45,4.53 10.92,6.81C11.42,9.3 11.79,10.87 12.03,11.5C12.63,13.67 13.29,14.75 14,14.75C14.54,14.75 15.29,13.9 16.25,12.19C17.2,10.5 17.7,9.2 17.75,8.3C17.85,6.87 17.29,6.16 16.06,6.16C15.5,6.16 14.92,6.3 14.32,6.58C15.27,3.37 17.04,1.82 19.63,1.93C21.54,2 22.41,3.33 22,7.42Z"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/giulia-bertoluzzi-2962806b/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-                    <svg viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg>
-                </a>
+    <div id="wrapper">
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <button class="sidebar-logo" data-nav="hero">GIULIA BERTOLUZZI</button>
+                <p class="sidebar-tagline">Journaliste Multimédia</p>
             </div>
-        </div>
-    </aside>
 
-    <!-- MOBILE HEADER -->
-    <header class="mobile-header" id="mobile-header">
-        <a href="#" class="sidebar-logo">GIULIA</a>
-        <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
-    </header>
+            <nav class="sidebar-nav">
+                <ul class="sidebar-links">
+                    <li class="sidebar-dropdown">
+                        <a href="#" class="sidebar-link dropdown-toggle" data-nav="progetti">
+                            Projets
+                            <span class="dropdown-arrow">&#8226;</span>
+                        </a>
+                        <ul class="dropdown-menu" id="projects-dropdown"></ul>
+                    </li>
+                    <li class="sidebar-dropdown">
+                        <a href="#" class="sidebar-link dropdown-toggle" data-nav="portfolio">
+                            Portfolio
+                            <span class="dropdown-arrow">&#8226;</span>
+                        </a>
+                        <ul class="dropdown-menu" id="portfolio-dropdown"></ul>
+                    </li>
+                    <li><a href="#" class="sidebar-link" data-nav="consulenze">Consultations</a></li>
+                    <li><a href="#" class="sidebar-link" data-nav="contatti">Contact</a></li>
+                </ul>
+            </nav>
 
-    <!-- MAIN CONTENT -->
-    <main class="main-content" id="main-content">
-        <!-- Categories rendered dynamically from config/*.json -->
-    </main>
-
-    <!-- MODAL: À Propos -->
-    <div class="content-modal" id="about-modal" aria-hidden="true">
-        <div class="modal-overlay"></div>
-        <div class="content-modal-inner">
-            <button class="modal-close" aria-label="Fermer">&times;</button>
-            <div class="about-modal-content">
-                <h2 class="section-title">À Propos</h2>
-                <p class="about-bio">
-                    Je suis une vidéaste basée en Italie, spécialisée dans la création de contenus visuels qui racontent des histoires authentiques.
-                    Ma passion est de capturer des moments significatifs et de les transformer en récits cinématographiques captivants.
-                </p>
-                <p class="about-bio">
-                    Avec des années d'expérience dans les productions documentaires, les courts métrages et les contenus commerciaux,
-                    je donne vie à chaque projet avec un œil attentif aux détails et une sensibilité narrative unique.
-                </p>
-                <div class="about-skills">
-                    <span class="skill-tag">Réalisation</span>
-                    <span class="skill-tag">Montage</span>
-                    <span class="skill-tag">Étalonnage</span>
-                    <span class="skill-tag">Documentaires</span>
-                    <span class="skill-tag">Narration</span>
-                    <span class="skill-tag">Cinématographie</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- MODAL: Contact -->
-    <div class="content-modal" id="contact-modal" aria-hidden="true">
-        <div class="modal-overlay"></div>
-        <div class="content-modal-inner">
-            <button class="modal-close" aria-label="Fermer">&times;</button>
-            <div class="contact-modal-content">
-                <h2 class="section-title">Contact</h2>
-                <p class="section-subtitle">Vous avez un projet en tête ? Parlons-en.</p>
-                <div class="contact-info">
-                    <a href="mailto:giulia@example.com" class="contact-link">
-                        <span class="contact-icon">
-                            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                        </span>
-                        giulia@example.com
+            <div class="sidebar-footer">
+                <ul class="lang-switcher">
+                    <li><a href="../it/" class="lang-link">IT</a></li>
+                    <li class="lang-separator">|</li>
+                    <li><a href="../en/" class="lang-link">EN</a></li>
+                    <li class="lang-separator">|</li>
+                    <li><a href="../fr/" class="lang-link active">FR</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="https://instagram.com" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
                     </a>
-                    <a href="tel:+39000000000" class="contact-link">
-                        <span class="contact-icon">
-                            <svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                        </span>
-                        +39 000 000 0000
+                    <a href="https://youtube.com" class="social-link" aria-label="YouTube" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/></svg>
+                    </a>
+                    <a href="https://vimeo.com" class="social-link" aria-label="Vimeo" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M22,7.42C21.91,9.37 20.55,12.04 17.92,15.44C15.2,19 12.9,20.75 11,20.75C9.85,20.75 8.86,19.67 8.05,17.5C7.5,15.54 7,13.58 6.44,11.62C5.84,9.46 5.2,8.37 4.5,8.37C4.36,8.37 3.84,8.69 2.96,9.33L2,8.07C3,7.2 3.96,6.33 4.92,5.47C6.24,4.31 7.24,3.7 7.92,3.63C9.45,3.47 10.45,4.53 10.92,6.81C11.42,9.3 11.79,10.87 12.03,11.5C12.63,13.67 13.29,14.75 14,14.75C14.54,14.75 15.29,13.9 16.25,12.19C17.2,10.5 17.7,9.2 17.75,8.3C17.85,6.87 17.29,6.16 16.06,6.16C15.5,6.16 14.92,6.3 14.32,6.58C15.27,3.37 17.04,1.82 19.63,1.93C21.54,2 22.41,3.33 22,7.42Z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/giulia-bertoluzzi-2962806b/" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg>
                     </a>
                 </div>
             </div>
-        </div>
-    </div>
+        </aside>
 
-    <!-- MODAL: Services -->
-    <div class="content-modal" id="services-modal" aria-hidden="true">
-        <div class="modal-overlay"></div>
-        <div class="content-modal-inner">
-            <button class="modal-close" aria-label="Fermer">&times;</button>
-            <div class="services-modal-content">
-                <h2 class="section-title">Services</h2>
-                <p class="section-subtitle">Ce que je peux faire pour votre projet.</p>
-                <div class="about-skills">
-                    <span class="skill-tag">Réalisation</span>
-                    <span class="skill-tag">Production Vidéo</span>
-                    <span class="skill-tag">Documentaires</span>
-                    <span class="skill-tag">Reportage</span>
-                    <span class="skill-tag">Montage</span>
-                    <span class="skill-tag">Étalonnage</span>
-                    <span class="skill-tag">Narration</span>
-                    <span class="skill-tag">Projets Multimédias</span>
+        <!-- MOBILE HEADER -->
+        <header class="mobile-header" id="mobile-header">
+            <button class="sidebar-logo" data-nav="hero">GIULIA BERTOLUZZI</button>
+            <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content" id="main-content">
+
+            <!-- HERO -->
+            <section class="page-section is-active" id="section-hero">
+                <h1 class="hero-name">GIULIA<br>BERTOLUZZI</h1>
+                <p class="hero-subtitle">Journaliste Multimédia</p>
+                <p class="hero-description">7 ans de couverture dans les zones de crise du Moyen-Orient à l'Afrique, racontant des histoires de résilience et d'humanité.</p>
+            </section>
+
+            <!-- PROJETS (carousel built by JS) -->
+            <section class="page-section" id="section-progetti">
+                <div class="carousel" id="projects-carousel">
+                    <div class="carousel-slides" id="carousel-slides"></div>
+                    <button class="carousel-arrow carousel-arrow--prev" id="carousel-prev">&larr;</button>
+                    <button class="carousel-arrow carousel-arrow--next" id="carousel-next">&rarr;</button>
+                    <div class="carousel-dots" id="carousel-dots"></div>
                 </div>
-            </div>
-        </div>
+            </section>
+
+            <!-- PORTFOLIO / SERVICES -->
+            <section class="page-section" id="section-portfolio">
+                <h2 class="section-heading">Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+                        </div>
+                        <h3 class="service-title">Projets Humanitaires</h3>
+                        <p class="service-description">Projets documentaires à long terme avec des organisations humanitaires internationales.</p>
+                        <a href="#" class="service-link" data-nav="progetti">Découvrir &rarr;</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2"/></svg>
+                        </div>
+                        <h3 class="service-title">Journalisme &amp; Reportage</h3>
+                        <p class="service-description">Reportages écrits et visuels pour les médias internationaux depuis les zones de crise.</p>
+                        <a href="#" class="service-link" data-nav="progetti">Découvrir &rarr;</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                        </div>
+                        <h3 class="service-title">Documentaires</h3>
+                        <p class="service-description">Films documentaires pour la diffusion, les plateformes de streaming et les festivals internationaux.</p>
+                        <a href="#" class="service-link" data-nav="progetti">Découvrir &rarr;</a>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                        </div>
+                        <h3 class="service-title">Consultation &amp; Coordination</h3>
+                        <p class="service-description">Planification de contenu et coordination d'équipe pour les projets multimédias.</p>
+                        <a href="#" class="service-link" data-nav="consulenze">Découvrir &rarr;</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONSULTATIONS -->
+            <section class="page-section" id="section-consulenze">
+                <div class="consulting-wrapper">
+                    <h2 class="section-heading">Services de Consultation</h2>
+                    <div class="consulting-grid">
+                        <div class="consulting-card">
+                            <h3>Stratégie Éditoriale</h3>
+                            <p class="consulting-card-tag">Planification</p>
+                            <p class="consulting-description">Développement de stratégies éditoriales pour la couverture de zones de crise et de questions humanitaires.</p>
+                            <ul class="consulting-features">
+                                <li>Analyse de scénarios géopolitiques</li>
+                                <li>Planification éditoriale</li>
+                                <li>Évaluation des risques</li>
+                            </ul>
+                        </div>
+                        <div class="consulting-card">
+                            <h3>Formation d'Équipe</h3>
+                            <p class="consulting-card-tag">Formation</p>
+                            <p class="consulting-description">Formation spécialisée pour journalistes et opérateurs dans des environnements difficiles.</p>
+                            <ul class="consulting-features">
+                                <li>Formation sécurité</li>
+                                <li>Techniques de reportage avancées</li>
+                                <li>Gestion du stress et du trauma</li>
+                            </ul>
+                        </div>
+                        <div class="consulting-card">
+                            <h3>Production de Contenu</h3>
+                            <p class="consulting-card-tag">Production</p>
+                            <p class="consulting-description">Supervision de projets documentaires et de reportages multimédias complexes.</p>
+                            <ul class="consulting-features">
+                                <li>Supervision de production</li>
+                                <li>Coordination d'équipe</li>
+                                <li>Assurance qualité</li>
+                            </ul>
+                        </div>
+                        <div class="consulting-card">
+                            <h3>Conseil Spécialisé</h3>
+                            <p class="consulting-card-tag">Expertise</p>
+                            <p class="consulting-description">Consultation sur la géopolitique régionale, les conflits et les questions humanitaires.</p>
+                            <ul class="consulting-features">
+                                <li>Recherche de fond</li>
+                                <li>Analyse des contextes locaux</li>
+                                <li>Conseil stratégique</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="consulting-cta-box">
+                        <p class="consulting-cta-text">Intéressée par une consultation ?</p>
+                        <button class="consulting-cta-btn" data-nav="contatti">Contactez-moi</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section class="page-section" id="section-contatti">
+                <h2 class="section-heading">Contact</h2>
+                <p class="contact-tagline">Disponible pour des missions, collaborations et projets de consulting</p>
+                <a href="mailto:giulia@example.com" class="contact-email">giulia@example.com</a>
+                <div class="contact-social">
+                    <a href="https://www.linkedin.com/in/giulia-bertoluzzi-2962806b/" class="contact-social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg>
+                    </a>
+                    <a href="https://instagram.com" class="contact-social-icon" aria-label="Instagram" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
+                    </a>
+                    <a href="https://vimeo.com" class="contact-social-icon" aria-label="Vimeo" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24"><path d="M22,7.42C21.91,9.37 20.55,12.04 17.92,15.44C15.2,19 12.9,20.75 11,20.75C9.85,20.75 8.86,19.67 8.05,17.5C7.5,15.54 7,13.58 6.44,11.62C5.84,9.46 5.2,8.37 4.5,8.37C4.36,8.37 3.84,8.69 2.96,9.33L2,8.07C3,7.2 3.96,6.33 4.92,5.47C6.24,4.31 7.24,3.7 7.92,3.63C9.45,3.47 10.45,4.53 10.92,6.81C11.42,9.3 11.79,10.87 12.03,11.5C12.63,13.67 13.29,14.75 14,14.75C14.54,14.75 15.29,13.9 16.25,12.19C17.2,10.5 17.7,9.2 17.75,8.3C17.85,6.87 17.29,6.16 16.06,6.16C15.5,6.16 14.92,6.3 14.32,6.58C15.27,3.37 17.04,1.82 19.63,1.93C21.54,2 22.41,3.33 22,7.42Z"/></svg>
+                    </a>
+                </div>
+            </section>
+        </main>
     </div>
 
     <!-- VIDEO MODAL -->
