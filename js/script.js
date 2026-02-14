@@ -23,6 +23,7 @@
     var currentFilterCat = null;
     var autoplayTimer = null;
     var AUTOPLAY_INTERVAL = 6000;
+    var previousSection = 'portfolio';
 
     // ---- 2. LANGUAGE DETECTION ----
     function detectLanguage() {
@@ -52,6 +53,13 @@
         return getVideoThumbnailUrl(project);
     }
 
+    // ---- 3b. PROJECT DETAIL HELPER ----
+    function projectHasDetail(project) {
+        var hasTesto = project.testo && (project.testo.it || project.testo.en || project.testo.fr);
+        var hasAllegati = project.allegati && project.allegati.length > 0;
+        return hasTesto || hasAllegati;
+    }
+
     // ---- 4. SECTION NAVIGATION ----
     function navTo(sectionId) {
         document.querySelectorAll('.page-section').forEach(function(section) {
@@ -61,6 +69,12 @@
         var target = document.getElementById('section-' + sectionId);
         if (target) {
             target.classList.add('is-active');
+        }
+
+        // Cleanup detail page video when navigating away
+        if (sectionId !== 'project-detail') {
+            var detailContent = document.getElementById('project-detail-content');
+            if (detailContent) detailContent.innerHTML = '';
         }
 
         updateActiveNav(sectionId);
@@ -73,7 +87,7 @@
         });
 
         var navId = sectionId;
-        if (navId === 'all-projects') navId = 'portfolio';
+        if (navId === 'all-projects' || navId === 'project-detail') navId = 'portfolio';
 
         var activeLink = document.querySelector('.sidebar-link[data-nav="' + navId + '"]');
         if (activeLink) {
@@ -140,6 +154,18 @@
                 e.preventDefault();
                 e.stopPropagation();
                 openVideoModal(videoBtn);
+                return;
+            }
+
+            // Handle [data-show-detail] clicks
+            var detailBtn = e.target.closest('[data-show-detail]');
+            if (detailBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+                var projectId = detailBtn.getAttribute('data-show-detail');
+                if (projectId) {
+                    showProjectDetail(projectId);
+                }
                 return;
             }
         });
@@ -354,12 +380,18 @@
 
         var playLabels = { it: 'Guarda', en: 'Watch', fr: 'Regarder' };
         var readLabels = { it: 'Leggi articolo', en: 'Read article', fr: "Lire l'article" };
+        var detailLabels = { it: 'Dettaglio', en: 'Details', fr: 'D\u00e9tails' };
 
         var actionHTML = '';
         if (hasVideo) {
             actionHTML = '<button class="slide-play-btn" ' + videoAttrs + '>&#9654; ' + (playLabels[language] || 'Watch') + '</button>';
         } else if (project.articleUrl) {
             actionHTML = '<a href="' + project.articleUrl + '" target="_blank" rel="noopener" class="slide-read-btn">' + (readLabels[language] || 'Read') + ' &rarr;</a>';
+        }
+
+        // Add detail button if project has text or attachments
+        if (projectHasDetail(project)) {
+            actionHTML += ' <button class="slide-detail-btn" data-show-detail="' + project.id + '">' + (detailLabels[language] || 'Dettaglio') + ' &rarr;</button>';
         }
 
         return '<div class="carousel-slide' + (index === 0 ? ' is-active' : '') + '" style="' + bgStyle + '">' +
@@ -529,6 +561,99 @@
         }
     }
 
+    // ---- 12b. PROJECT DETAIL ----
+    function showProjectDetail(projectId) {
+        var language = detectLanguage();
+        var project = allProjects.find(function(p) { return p.id === projectId; });
+        if (!project) return;
+
+        var contentEl = document.getElementById('project-detail-content');
+        if (!contentEl) return;
+
+        // Track where we came from for the back button
+        var activeSections = document.querySelectorAll('.page-section.is-active');
+        if (activeSections.length > 0) {
+            previousSection = activeSections[0].id.replace('section-', '');
+        }
+
+        // Title
+        var title = project.title[language] || project.title.it || '';
+
+        // Meta (year + categories)
+        var year = project.date ? project.date.substring(0, 4) : '';
+        var catLabels = [];
+        if (project.categories && project.categories.length > 0) {
+            project.categories.forEach(function(catId) {
+                if (catId !== 'TODO' && allCategories[catId]) {
+                    catLabels.push(allCategories[catId][language] || allCategories[catId].it);
+                }
+            });
+        }
+        var metaText = year;
+        if (catLabels.length > 0) {
+            metaText += (metaText ? ' \u2022 ' : '') + catLabels.join(', ');
+        }
+
+        // Video embed
+        var videoHTML = '';
+        if (project.video && project.video.type) {
+            var embedContent = '';
+            switch (project.video.type) {
+                case 'youtube':
+                    embedContent = '<iframe src="https://www.youtube.com/embed/' + project.video.id + '?rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+                    break;
+                case 'vimeo':
+                    embedContent = '<iframe src="https://player.vimeo.com/video/' + project.video.id + '" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+                    break;
+                case 'local':
+                    embedContent = '<video controls><source src="' + project.video.src + '" type="video/mp4"></video>';
+                    break;
+            }
+            if (embedContent) {
+                videoHTML = '<div class="project-detail-video"><div class="project-detail-video-wrapper">' + embedContent + '</div></div>';
+            }
+        }
+
+        // Text content
+        var textContent = '';
+        if (project.testo) {
+            textContent = project.testo[language] || project.testo.it || '';
+        }
+        var textHTML = textContent ? '<div class="project-detail-text">' + textContent + '</div>' : '';
+
+        // Attachments
+        var attachLabels = { it: 'Allegati', en: 'Attachments', fr: 'Pi\u00e8ces jointes' };
+        var attachHTML = '';
+        if (project.allegati && project.allegati.length > 0) {
+            var items = project.allegati.map(function(url) {
+                var filename = url.split('/').pop();
+                return '<li><a href="' + url + '" target="_blank" rel="noopener">' + filename + '</a></li>';
+            }).join('');
+            attachHTML = '<div class="project-detail-attachments">' +
+                '<h3>' + (attachLabels[language] || attachLabels.it) + '</h3>' +
+                '<ul>' + items + '</ul>' +
+            '</div>';
+        }
+
+        // Article link
+        var articleLabels = { it: 'Leggi articolo', en: 'Read article', fr: "Lire l'article" };
+        var articleHTML = '';
+        if (project.articleUrl) {
+            articleHTML = '<p style="margin-top: var(--space-sm);"><a href="' + project.articleUrl + '" target="_blank" rel="noopener" style="color: var(--color-text-secondary); text-decoration: underline; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">' + (articleLabels[language] || articleLabels.it) + ' &rarr;</a></p>';
+        }
+
+        // Assemble
+        contentEl.innerHTML =
+            '<h2 class="project-detail-title">' + title + '</h2>' +
+            (metaText ? '<p class="project-detail-meta">' + metaText + '</p>' : '') +
+            videoHTML +
+            textHTML +
+            attachHTML +
+            articleHTML;
+
+        navTo('project-detail');
+    }
+
     // ---- 13. MOBILE SIDEBAR TOGGLE ----
     function initMobileSidebar() {
         if (!navToggle || !sidebar) return;
@@ -647,6 +772,14 @@
         initVideoModalClose();
         initEventDelegation();
         initCarousel();
+
+        // Back button for project detail
+        var detailBackBtn = document.getElementById('project-detail-back');
+        if (detailBackBtn) {
+            detailBackBtn.addEventListener('click', function() {
+                navTo(previousSection);
+            });
+        }
 
         var mainContent = document.getElementById('main-content');
         if (mainContent) {
