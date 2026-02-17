@@ -18,12 +18,14 @@
     var currentSlide = 0;
     var totalSlides = 0;
     var allProjects = [];
-    var allCategories = {};
-    var allCategoryOrder = [];
+    var allSections = {};
     var currentFilterCat = null;
     var autoplayTimer = null;
     var AUTOPLAY_INTERVAL = 6000;
     var previousSection = 'portfolio';
+
+    // i18n
+    var translations = {};
 
     // ---- 2. LANGUAGE DETECTION ----
     function detectLanguage() {
@@ -32,6 +34,47 @@
         if (path.indexOf('/en/') !== -1) return 'en';
         if (path.indexOf('/fr/') !== -1) return 'fr';
         return 'it';
+    }
+
+    // ---- 2b. i18n SYSTEM ----
+    function getNestedValue(obj, keyPath) {
+        var keys = keyPath.split('.');
+        var current = obj;
+        for (var i = 0; i < keys.length; i++) {
+            if (current == null) return null;
+            current = current[keys[i]];
+        }
+        return current;
+    }
+
+    function t(key) {
+        return getNestedValue(translations, key) || key;
+    }
+
+    async function loadTranslations(language) {
+        try {
+            var response = await fetch('../config/i18n/' + language + '.json');
+            translations = await response.json();
+            applyTranslations();
+        } catch (error) {
+            console.error('Error loading translations:', error);
+        }
+    }
+
+    function applyTranslations() {
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            var key = el.getAttribute('data-i18n');
+            var value = getNestedValue(translations, key);
+            if (value) {
+                if (el.tagName === 'META') {
+                    el.setAttribute('content', value);
+                } else if (el.id === 'project-detail-back') {
+                    el.innerHTML = '&larr; ' + value;
+                } else {
+                    el.textContent = value;
+                }
+            }
+        });
     }
 
     // ---- 3. VIDEO THUMBNAIL HELPER ----
@@ -89,9 +132,16 @@
         var navId = sectionId;
         if (navId === 'all-projects' || navId === 'project-detail') navId = 'portfolio';
 
-        var activeLink = document.querySelector('.sidebar-link[data-nav="' + navId + '"]');
-        if (activeLink) {
-            activeLink.classList.add('active');
+        // For portfolio, highlight the dropdown toggle that matches current section filter
+        if (navId === 'portfolio') {
+            document.querySelectorAll('.sidebar-link[data-nav="portfolio"]').forEach(function(link) {
+                link.classList.add('active');
+            });
+        } else {
+            var activeLink = document.querySelector('.sidebar-link[data-nav="' + navId + '"]');
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
         }
     }
 
@@ -257,8 +307,7 @@
             var response = await fetch('../config/projects.json');
             var data = await response.json();
 
-            allCategories = data.categories;
-            allCategoryOrder = data.categoryOrder;
+            allSections = data.sections || {};
             var projects = data.projects.filter(function(p) {
                 return p.visible !== false;
             });
@@ -275,8 +324,8 @@
             });
             buildCarousel(mainpageProjects, language);
 
-            // Populate sidebar portfolio dropdown (categories)
-            populatePortfolioDropdown(projects, allCategories, allCategoryOrder, language);
+            // Populate sidebar dropdown menus (journalism + ngo)
+            populateMenuDropdowns(projects);
 
             // Init video listeners for carousel
             initVideoListenersForCarousel();
@@ -302,15 +351,10 @@
         });
 
         // Append "view all" slide as last page
-        var viewAllLabels = {
-            it: 'Vedi tutti i progetti',
-            en: 'View all projects',
-            fr: 'Voir tous les projets'
-        };
         var viewAllSlide = '<div class="carousel-slide carousel-slide--view-all">' +
             '<div class="view-all-slide-content">' +
                 '<a href="#" class="view-all-link" data-nav="all-projects">' +
-                    (viewAllLabels[language] || viewAllLabels.it) + ' &rarr;' +
+                    t('ui.viewAllProjects') + ' &rarr;' +
                 '</a>' +
             '</div>' +
         '</div>';
@@ -352,7 +396,12 @@
             var year = project.date.substring(0, 4);
             tagText = year;
             if (categoryLabels.length > 0) {
-                tagText += ' &bull; ' + categoryLabels[0].replace(/-/g, ' ').toUpperCase();
+                var catName = t('categories.' + categoryLabels[0]);
+                if (catName !== 'categories.' + categoryLabels[0]) {
+                    tagText += ' &bull; ' + catName.toUpperCase();
+                } else {
+                    tagText += ' &bull; ' + categoryLabels[0].replace(/-/g, ' ').toUpperCase();
+                }
             }
         }
 
@@ -378,20 +427,16 @@
             }
         }
 
-        var playLabels = { it: 'Guarda', en: 'Watch', fr: 'Regarder' };
-        var readLabels = { it: 'Leggi articolo', en: 'Read article', fr: "Lire l'article" };
-        var detailLabels = { it: 'Dettaglio', en: 'Details', fr: 'D\u00e9tails' };
-
         var actionHTML = '';
         if (hasVideo) {
-            actionHTML = '<button class="slide-play-btn" ' + videoAttrs + '>&#9654; ' + (playLabels[language] || 'Watch') + '</button>';
+            actionHTML = '<button class="slide-play-btn" ' + videoAttrs + '>&#9654; ' + t('ui.watch') + '</button>';
         } else if (project.articleUrl) {
-            actionHTML = '<a href="' + project.articleUrl + '" target="_blank" rel="noopener" class="slide-read-btn">' + (readLabels[language] || 'Read') + ' &rarr;</a>';
+            actionHTML = '<a href="' + project.articleUrl + '" target="_blank" rel="noopener" class="slide-read-btn">' + t('ui.readArticle') + ' &rarr;</a>';
         }
 
         // Add detail button if project has text or attachments
         if (projectHasDetail(project)) {
-            actionHTML += ' <button class="slide-detail-btn" data-show-detail="' + project.id + '">' + (detailLabels[language] || 'Dettaglio') + ' &rarr;</button>';
+            actionHTML += ' <button class="slide-detail-btn" data-show-detail="' + project.id + '">' + t('ui.details') + ' &rarr;</button>';
         }
 
         return '<div class="carousel-slide' + (index === 0 ? ' is-active' : '') + '" style="' + bgStyle + '">' +
@@ -405,60 +450,49 @@
         '</div>';
     }
 
-    // ---- 9. POPULATE PORTFOLIO DROPDOWN ----
-    function populatePortfolioDropdown(projects, categories, categoryOrder, language) {
-        var portfolioDropdown = document.getElementById('portfolio-dropdown');
-        if (!portfolioDropdown) return;
+    // ---- 9. POPULATE MENU DROPDOWNS (journalism + ngo) ----
+    function populateMenuDropdowns(projects) {
+        ['journalism', 'ngo'].forEach(function(sectionId) {
+            var dropdown = document.getElementById(sectionId + '-dropdown');
+            if (!dropdown || !allSections[sectionId]) return;
 
-        portfolioDropdown.innerHTML = '';
+            dropdown.innerHTML = '';
 
-        // "All" option — all visible projects across all categories
-        var mainpageCount = projects.length;
-        var allLi = document.createElement('li');
-        var allA = document.createElement('a');
-        allA.className = 'dropdown-link';
-        allA.href = '#';
-        allA.setAttribute('data-filter-cat', 'all');
-        allA.innerHTML = (language === 'en' ? 'All' : language === 'fr' ? 'Tous' : 'Tutti') +
-            ' <span class="dropdown-count">' + mainpageCount + '</span>';
-        allLi.appendChild(allA);
-        portfolioDropdown.appendChild(allLi);
+            var sectionCats = allSections[sectionId].order || [];
+            sectionCats.forEach(function(catId) {
+                var catName = t('categories.' + catId);
+                if (catName === 'categories.' + catId) {
+                    catName = catId.replace(/-/g, ' ');
+                }
 
-        categoryOrder.forEach(function(catId) {
-            var catName = categories[catId] ? (categories[catId][language] || categories[catId].it) : catId;
-            var count = projects.filter(function(p) {
-                return p.categories && p.categories.indexOf(catId) !== -1;
-            }).length;
+                var count = projects.filter(function(p) {
+                    return p.categories && p.categories.indexOf(catId) !== -1;
+                }).length;
 
-            if (count === 0) return;
+                if (count === 0) return;
 
-            var li = document.createElement('li');
-            var a = document.createElement('a');
-            a.className = 'dropdown-link';
-            a.href = '#';
-            a.setAttribute('data-filter-cat', catId);
-            a.innerHTML = catName + ' <span class="dropdown-count">' + count + '</span>';
-            li.appendChild(a);
-            portfolioDropdown.appendChild(li);
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+                a.className = 'dropdown-link';
+                a.href = '#';
+                a.setAttribute('data-filter-cat', catId);
+                a.setAttribute('data-section', sectionId);
+                a.innerHTML = catName + ' <span class="dropdown-count">' + count + '</span>';
+                li.appendChild(a);
+                dropdown.appendChild(li);
+            });
         });
     }
 
-    // ---- 10. CATEGORY FILTERING (mainpage only) ----
+    // ---- 10. CATEGORY FILTERING ----
     function filterByCategory(catId) {
         var language = detectLanguage();
-        var filtered;
 
         currentFilterCat = catId;
 
-        if (catId === 'all') {
-            filtered = allProjects.filter(function(p) {
-                return p.mainpage === true;
-            });
-        } else {
-            filtered = allProjects.filter(function(p) {
-                return p.mainpage === true && p.categories && p.categories.indexOf(catId) !== -1;
-            });
-        }
+        var filtered = allProjects.filter(function(p) {
+            return p.categories && p.categories.indexOf(catId) !== -1;
+        });
 
         buildCarousel(filtered, language);
         initVideoListenersForCarousel();
@@ -526,8 +560,9 @@
             var catLabel = '';
             if (project.categories && project.categories.length > 0) {
                 var firstCat = project.categories.filter(function(c) { return c !== 'TODO'; })[0];
-                if (firstCat && allCategories[firstCat]) {
-                    catLabel = allCategories[firstCat][language] || allCategories[firstCat].it || '';
+                if (firstCat) {
+                    var translated = t('categories.' + firstCat);
+                    catLabel = (translated !== 'categories.' + firstCat) ? translated : '';
                 }
             }
 
@@ -552,11 +587,11 @@
         // Update heading with category name if filtered
         var heading = document.querySelector('#section-all-projects .section-heading');
         if (heading) {
-            if (currentFilterCat && currentFilterCat !== 'all' && allCategories[currentFilterCat]) {
-                heading.textContent = allCategories[currentFilterCat][language] || allCategories[currentFilterCat].it;
+            if (currentFilterCat && currentFilterCat !== 'all') {
+                var catName = t('categories.' + currentFilterCat);
+                heading.textContent = (catName !== 'categories.' + currentFilterCat) ? catName : t('sections.allProjects');
             } else {
-                var headingLabels = { it: 'Tutti i Progetti', en: 'All Projects', fr: 'Tous les Projets' };
-                heading.textContent = headingLabels[language] || headingLabels.it;
+                heading.textContent = t('sections.allProjects');
             }
         }
     }
@@ -584,8 +619,11 @@
         var catLabels = [];
         if (project.categories && project.categories.length > 0) {
             project.categories.forEach(function(catId) {
-                if (catId !== 'TODO' && allCategories[catId]) {
-                    catLabels.push(allCategories[catId][language] || allCategories[catId].it);
+                if (catId !== 'TODO') {
+                    var translated = t('categories.' + catId);
+                    if (translated !== 'categories.' + catId) {
+                        catLabels.push(translated);
+                    }
                 }
             });
         }
@@ -622,7 +660,6 @@
         var textHTML = textContent ? '<div class="project-detail-text">' + textContent + '</div>' : '';
 
         // Attachments
-        var attachLabels = { it: 'Allegati', en: 'Attachments', fr: 'Pi\u00e8ces jointes' };
         var attachHTML = '';
         if (project.allegati && project.allegati.length > 0) {
             var items = project.allegati.map(function(url) {
@@ -630,16 +667,15 @@
                 return '<li><a href="' + url + '" target="_blank" rel="noopener">' + filename + '</a></li>';
             }).join('');
             attachHTML = '<div class="project-detail-attachments">' +
-                '<h3>' + (attachLabels[language] || attachLabels.it) + '</h3>' +
+                '<h3>' + t('ui.attachments') + '</h3>' +
                 '<ul>' + items + '</ul>' +
             '</div>';
         }
 
         // Article link
-        var articleLabels = { it: 'Leggi articolo', en: 'Read article', fr: "Lire l'article" };
         var articleHTML = '';
         if (project.articleUrl) {
-            articleHTML = '<p style="margin-top: var(--space-sm);"><a href="' + project.articleUrl + '" target="_blank" rel="noopener" style="color: var(--color-text-secondary); text-decoration: underline; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">' + (articleLabels[language] || articleLabels.it) + ' &rarr;</a></p>';
+            articleHTML = '<p style="margin-top: var(--space-sm);"><a href="' + project.articleUrl + '" target="_blank" rel="noopener" style="color: var(--color-text-secondary); text-decoration: underline; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">' + t('ui.readArticle') + ' &rarr;</a></p>';
         }
 
         // Assemble
@@ -784,6 +820,7 @@
         var mainContent = document.getElementById('main-content');
         if (mainContent) {
             var language = detectLanguage();
+            await loadTranslations(language);
             await loadAndRenderProjects(language);
         }
     }
