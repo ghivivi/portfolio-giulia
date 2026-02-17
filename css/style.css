@@ -331,6 +331,14 @@ h1, h2, h3 {
     color: var(--color-border);
 }
 
+/* Copyright */
+.copyright {
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    margin-top: var(--space-sm);
+    letter-spacing: 0.05em;
+}
+
 /* Social Links */
 .social-links {
     display: flex;
@@ -581,9 +589,27 @@ h1, h2, h3 {
 }
 
 .slide-play-btn:hover,
-.slide-read-btn:hover {
+.slide-read-btn:hover,
+.slide-detail-btn:hover {
     background: rgba(250, 248, 245, 0.15);
     border-color: #FAF8F5;
+}
+
+.slide-detail-btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    border: 1.5px solid rgba(250, 248, 245, 0.6);
+    background: transparent;
+    color: #FAF8F5;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 0.5rem;
 }
 
 /* Carousel Navigation */
@@ -792,6 +818,126 @@ h1, h2, h3 {
 }
 
 /* ============================================
+   11c. PROJECT DETAIL SECTION
+   ============================================ */
+
+#section-project-detail {
+    overflow-y: auto;
+    flex-direction: column;
+    padding: var(--space-md);
+    background: var(--color-bg);
+}
+
+.project-detail-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.project-detail-back {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0.3rem 0;
+    margin-bottom: var(--space-md);
+    transition: color var(--transition-base);
+    display: inline-block;
+}
+
+.project-detail-back:hover {
+    color: var(--color-text);
+}
+
+.project-detail-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 300;
+    margin: 0 0 var(--space-sm) 0;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.project-detail-meta {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-md) 0;
+}
+
+.project-detail-video {
+    margin-bottom: var(--space-md);
+}
+
+.project-detail-video-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+    background: #000;
+}
+
+.project-detail-video-wrapper iframe,
+.project-detail-video-wrapper video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.project-detail-text {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+}
+
+.project-detail-attachments {
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.project-detail-attachments h3 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0 0 var(--space-sm) 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+}
+
+.project-detail-attachments ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-detail-attachments li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.project-detail-attachments a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color var(--transition-base);
+}
+
+.project-detail-attachments a:hover {
+    color: var(--color-text);
+}
+
+/* ============================================
    12. CONSULENZE SECTION
    ============================================ */
 
@@ -808,10 +954,19 @@ h1, h2, h3 {
     width: 100%;
 }
 
+.consulting-intro {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    max-width: 600px;
+    margin: 0 0 var(--space-md) 0;
+}
+
 .consulting-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    grid-template-columns: 1fr;
+    gap: 2rem;
     margin-bottom: var(--space-md);
 }
 
@@ -835,42 +990,12 @@ h1, h2, h3 {
     color: var(--color-text);
 }
 
-.consulting-card-tag {
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--color-text-secondary);
-    margin: 0 0 var(--space-sm) 0;
-    font-weight: 400;
-}
-
 .consulting-description {
     font-size: 0.9rem;
     font-weight: 300;
     color: var(--color-text-muted);
     line-height: 1.6;
-    margin: 0 0 var(--space-sm) 0;
-}
-
-.consulting-features {
-    list-style: none;
     margin: 0;
-    padding: 0;
-    font-size: 0.85rem;
-    color: var(--color-text-secondary);
-    font-weight: 300;
-}
-
-.consulting-features li {
-    padding: 0.3rem 0 0.3rem 1.2rem;
-    position: relative;
-}
-
-.consulting-features li::before {
-    content: '\2192';
-    position: absolute;
-    left: 0;
-    color: var(--color-text);
 }
 
 .consulting-cta-box {
@@ -1099,13 +1224,18 @@ h1, h2, h3 {
         font-size: 1.8rem;
     }
 
-    .consulting-grid {
-        grid-template-columns: 1fr;
-    }
-
     .all-projects-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: var(--space-sm);
+    }
+
+    .project-detail-wrapper {
+        padding: 0 var(--space-sm);
+    }
+
+    .slide-detail-btn {
+        margin-left: 0;
+        margin-top: 0.5rem;
     }
 
     .language-selector {
@@ -1122,6 +1252,10 @@ h1, h2, h3 {
 @media (min-width: 768px) {
     .mobile-header {
         display: none;
+    }
+
+    .consulting-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
