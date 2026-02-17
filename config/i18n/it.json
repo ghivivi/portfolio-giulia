@@ -1,0 +1,48 @@
+{
+  "meta": {
+    "description": "Portfolio di Giulia Bertoluzzi - Giornalista Multimedia. Documentari, reportage, progetti umanitari e contenuti multimediali.",
+    "title": "Giulia Bertoluzzi | Giornalista Multimedia"
+  },
+  "nav": {
+    "journalism": "Journalism",
+    "ngoWork": "NGO Work",
+    "services": "Services",
+    "contatti": "Contatti"
+  },
+  "hero": {
+    "subtitle": "Giornalista Multimedia",
+    "description": "7 anni di copertura nelle zone di crisi dal Medio Oriente all'Africa, raccontando storie di resilienza e umanità."
+  },
+  "sections": {
+    "allProjects": "Tutti i Progetti",
+    "back": "Indietro",
+    "services": "Consulenze",
+    "servicesIntro": "Sono disponibile per lavorare su strategia dei contenuti e coordinamento della produzione per storie sociali, umanitarie, politiche e ambientali in tutto il mondo.",
+    "servicesCard1Title": "Strategia Editoriale",
+    "servicesCard1Desc": "Sviluppo di approcci editoriali per raccontare le persone che vivono nelle zone di crisi. Questo include la pianificazione editoriale che bilancia impatto ed etica, e la valutazione dei rischi per le operazioni sul campo nelle zone di conflitto.",
+    "servicesCard2Title": "Coordinamento Produzione",
+    "servicesCard2Desc": "Gestione di progetti di produzione multimediale dalla pre-produzione alla consegna. Coordino team internazionali di fotografi, videomaker e giornalisti che lavorano in diversi paesi, garantendo qualità e coerenza.",
+    "servicesCard3Title": "Formazione & Mentorship",
+    "servicesCard3Desc": "Formazione di giornalisti e comunicatori umanitari per il lavoro sul campo. Le sessioni coprono il racconto etico in contesti vulnerabili, tecniche multimediali avanzate e la gestione dell'impatto psicologico del giornalismo di crisi.",
+    "servicesCta": "Contattami",
+    "contactTitle": "Contatti",
+    "contactTagline": "Disponibile per incarichi, collaborazioni e progetti di consulting",
+    "modalClose": "Chiudi"
+  },
+  "ui": {
+    "all": "Tutti",
+    "watch": "Guarda",
+    "readArticle": "Leggi articolo",
+    "details": "Dettaglio",
+    "viewAllProjects": "Vedi tutti i progetti",
+    "attachments": "Allegati"
+  },
+  "categories": {
+    "documentary-films": "Film Documentari",
+    "multimedia-projects": "Progetti Multimediali",
+    "longform-reportage": "Longform e Reportage",
+    "documentary-series": "Serie Documentarie",
+    "field-missions": "Missioni sul Campo",
+    "photo-exhibitions": "Mostre Fotografiche"
+  }
+}
