@@ -20,20 +20,27 @@
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <button class="sidebar-logo" data-nav="hero">GIULIA BERTOLUZZI</button>
-                <p class="sidebar-tagline">Journaliste Multimédia</p>
+                <p class="sidebar-tagline" data-i18n="hero.subtitle">Journaliste Multimédia</p>
             </div>
 
             <nav class="sidebar-nav">
                 <ul class="sidebar-links">
                     <li class="sidebar-dropdown">
-                        <a href="#" class="sidebar-link dropdown-toggle" data-nav="portfolio">
-                            Works
+                        <a href="#" class="sidebar-link dropdown-toggle" data-nav="portfolio" data-section="journalism">
+                            <span data-i18n="nav.journalism">Journalism</span>
                             <span class="dropdown-arrow">&#8226;</span>
                         </a>
-                        <ul class="dropdown-menu" id="portfolio-dropdown"></ul>
+                        <ul class="dropdown-menu" id="journalism-dropdown"></ul>
                     </li>
-                    <li><a href="#" class="sidebar-link" data-nav="consulenze">Consultations</a></li>
-                    <li><a href="#" class="sidebar-link" data-nav="contatti">Contact</a></li>
+                    <li class="sidebar-dropdown">
+                        <a href="#" class="sidebar-link dropdown-toggle" data-nav="portfolio" data-section="ngo">
+                            <span data-i18n="nav.ngoWork">NGO Work</span>
+                            <span class="dropdown-arrow">&#8226;</span>
+                        </a>
+                        <ul class="dropdown-menu" id="ngo-dropdown"></ul>
+                    </li>
+                    <li><a href="#" class="sidebar-link" data-nav="consulenze" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#" class="sidebar-link" data-nav="contatti" data-i18n="nav.contatti">Contact</a></li>
                 </ul>
             </nav>
 
@@ -79,8 +86,8 @@
             <!-- HERO -->
             <section class="page-section is-active" id="section-hero">
                 <h1 class="hero-name">GIULIA<br>BERTOLUZZI</h1>
-                <p class="hero-subtitle">Journaliste Multimédia</p>
-                <p class="hero-description">7 ans de couverture dans les zones de crise du Moyen-Orient à l'Afrique, racontant des histoires de résilience et d'humanité.</p>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Journaliste Multimédia</p>
+                <p class="hero-description" data-i18n="hero.description">7 ans de couverture dans les zones de crise du Moyen-Orient à l'Afrique, racontant des histoires de résilience et d'humanité.</p>
             </section>
 
             <!-- PORTFOLIO (carousel built by JS — mainpage projects) -->
@@ -96,7 +103,7 @@
             <!-- ALL PROJECTS (grid of clickable boxes) -->
             <section class="page-section" id="section-all-projects">
                 <div class="all-projects-wrapper">
-                    <h2 class="section-heading">Tous les Projets</h2>
+                    <h2 class="section-heading" data-i18n="sections.allProjects">Tous les Projets</h2>
                     <div class="all-projects-grid" id="all-projects-grid"></div>
                 </div>
             </section>
@@ -104,7 +111,7 @@
             <!-- PROJECT DETAIL -->
             <section class="page-section" id="section-project-detail">
                 <div class="project-detail-wrapper">
-                    <button class="project-detail-back" id="project-detail-back">&larr; Retour</button>
+                    <button class="project-detail-back" id="project-detail-back" data-i18n="sections.back">&larr; Retour</button>
                     <div class="project-detail-content" id="project-detail-content"></div>
                 </div>
             </section>
@@ -112,32 +119,32 @@
             <!-- CONSULTATIONS -->
             <section class="page-section" id="section-consulenze">
                 <div class="consulting-wrapper">
-                    <h2 class="section-heading">Consultations</h2>
-                    <p class="consulting-intro">Je suis disponible pour travailler sur la strat&eacute;gie de contenu et la coordination de production pour des r&eacute;cits sociaux, humanitaires, politiques et environnementaux dans le monde entier.</p>
+                    <h2 class="section-heading" data-i18n="sections.services">Consultations</h2>
+                    <p class="consulting-intro" data-i18n="sections.servicesIntro">Je suis disponible pour travailler sur la stratégie de contenu et la coordination de production pour des récits sociaux, humanitaires, politiques et environnementaux dans le monde entier.</p>
                     <div class="consulting-grid">
                         <div class="consulting-card">
-                            <h3>Strat&eacute;gie &Eacute;ditoriale</h3>
-                            <p class="consulting-description">D&eacute;veloppement d'approches &eacute;ditoriales pour mettre en lumi&egrave;re les personnes vivant dans les zones de crise. Cela comprend la planification &eacute;ditoriale qui &eacute;quilibre impact et &eacute;thique, et l'&eacute;valuation des risques pour les op&eacute;rations de terrain dans les zones de conflit.</p>
+                            <h3 data-i18n="sections.servicesCard1Title">Stratégie Éditoriale</h3>
+                            <p class="consulting-description" data-i18n="sections.servicesCard1Desc">Développement d'approches éditoriales pour mettre en lumière les personnes vivant dans les zones de crise. Cela comprend la planification éditoriale qui équilibre impact et éthique, et l'évaluation des risques pour les opérations de terrain dans les zones de conflit.</p>
                         </div>
                         <div class="consulting-card">
-                            <h3>Coordination de Production</h3>
-                            <p class="consulting-description">Gestion de projets de production multim&eacute;dia de la pr&eacute;-production &agrave; la livraison. Je coordonne des &eacute;quipes internationales de photographes, vid&eacute;astes et journalistes travaillant dans plusieurs pays, en garantissant qualit&eacute; et coh&eacute;rence.</p>
+                            <h3 data-i18n="sections.servicesCard2Title">Coordination de Production</h3>
+                            <p class="consulting-description" data-i18n="sections.servicesCard2Desc">Gestion de projets de production multimédia de la pré-production à la livraison. Je coordonne des équipes internationales de photographes, vidéastes et journalistes travaillant dans plusieurs pays, en garantissant qualité et cohérence.</p>
                         </div>
                         <div class="consulting-card">
-                            <h3>Formation &amp; Mentorat</h3>
-                            <p class="consulting-description">Formation de journalistes et de communicateurs humanitaires pour le travail de terrain. Les sessions couvrent le r&eacute;cit &eacute;thique dans les contextes vuln&eacute;rables, les techniques multim&eacute;dia avanc&eacute;es et la gestion de l'impact psychologique du journalisme de crise.</p>
+                            <h3 data-i18n="sections.servicesCard3Title">Formation &amp; Mentorat</h3>
+                            <p class="consulting-description" data-i18n="sections.servicesCard3Desc">Formation de journalistes et de communicateurs humanitaires pour le travail de terrain. Les sessions couvrent le récit éthique dans les contextes vulnérables, les techniques multimédia avancées et la gestion de l'impact psychologique du journalisme de crise.</p>
                         </div>
                     </div>
                     <div class="consulting-cta-box">
-                        <button class="consulting-cta-btn" data-nav="contatti">Contactez-moi</button>
+                        <button class="consulting-cta-btn" data-nav="contatti" data-i18n="sections.servicesCta">Contactez-moi</button>
                     </div>
                 </div>
             </section>
 
             <!-- CONTACT -->
             <section class="page-section" id="section-contatti">
-                <h2 class="section-heading">Contact</h2>
-                <p class="contact-tagline">Disponible pour des missions, collaborations et projets de consulting</p>
+                <h2 class="section-heading" data-i18n="sections.contactTitle">Contact</h2>
+                <p class="contact-tagline" data-i18n="sections.contactTagline">Disponible pour des missions, collaborations et projets de consulting</p>
                 <a href="mailto:giulia@example.com" class="contact-email">giulia@example.com</a>
                 <div class="contact-social">
                     <a href="https://www.linkedin.com/in/giulia-bertoluzzi-2962806b/" class="contact-social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
