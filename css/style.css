@@ -716,6 +716,16 @@ h1, h2, h3 {
     color: var(--color-bg);
 }
 
+.view-all-category-name {
+    font-family: var(--font-heading);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-weight: 300;
+    color: var(--color-text);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+}
+
 /* Dark arrows/dots when view-all slide is shown */
 .carousel.is-view-all .carousel-arrow {
     color: var(--color-text);
@@ -742,7 +752,8 @@ h1, h2, h3 {
     width: 100%;
 }
 
-.all-projects-grid {
+.all-projects-grid,
+.projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: var(--space-md);
@@ -818,6 +829,109 @@ h1, h2, h3 {
 }
 
 /* ============================================
+   11a2. SECTION LANDING PAGES (Journalism / NGO Work)
+   ============================================ */
+
+#section-journalism-landing,
+#section-ngo-landing {
+    overflow: hidden;
+    padding: 0;
+}
+
+.section-landing {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.landing-column {
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: flex var(--transition-slow);
+}
+
+.landing-column:hover {
+    flex: 1.3;
+}
+
+.landing-column-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform var(--transition-slow);
+}
+
+.landing-column:hover .landing-column-bg {
+    transform: scale(1.05);
+}
+
+.landing-column-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(26, 22, 20, 0.85) 0%, rgba(26, 22, 20, 0.4) 50%, rgba(26, 22, 20, 0.2) 100%);
+    transition: background var(--transition-base);
+}
+
+.landing-column:hover .landing-column-overlay {
+    background: linear-gradient(to top, rgba(26, 22, 20, 0.9) 0%, rgba(26, 22, 20, 0.3) 50%, rgba(26, 22, 20, 0.1) 100%);
+}
+
+.landing-column-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-lg);
+    z-index: 2;
+    color: #FAF8F5;
+}
+
+.landing-column-category {
+    font-family: var(--font-heading);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0 0 var(--space-xs) 0;
+    color: #FAF8F5;
+}
+
+.landing-column-count {
+    font-family: var(--font-body);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(250, 248, 245, 0.6);
+    margin: 0 0 var(--space-sm) 0;
+}
+
+.landing-column-featured {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(250, 248, 245, 0.75);
+    margin: 0;
+    line-height: 1.4;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--transition-base);
+}
+
+.landing-column:hover .landing-column-featured {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Separator line between columns */
+.landing-column + .landing-column {
+    border-left: 1px solid rgba(250, 248, 245, 0.15);
+}
+
+/* ============================================
    11b2. CATEGORY PAGE (grid with subsections)
    ============================================ */
 
@@ -868,12 +982,6 @@ h1, h2, h3 {
     width: 80px;
     height: 2px;
     background: #1A1614;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: var(--space-md);
 }
 
 /* ============================================
@@ -1283,9 +1391,47 @@ h1, h2, h3 {
         font-size: 1.8rem;
     }
 
-    .all-projects-grid {
+    .all-projects-grid,
+    .projects-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: var(--space-sm);
+    }
+
+    /* Landing pages: stack columns vertically on mobile with horizontal scroll */
+    .section-landing {
+        flex-direction: row;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+    }
+
+    .landing-column {
+        min-width: 85vw;
+        scroll-snap-align: start;
+        flex: none;
+    }
+
+    .landing-column:hover {
+        flex: none;
+    }
+
+    .landing-column-content {
+        padding: var(--space-md);
+    }
+
+    .landing-column-featured {
+        opacity: 1;
+        transform: none;
+    }
+
+    /* Category page responsive */
+    .category-page-wrapper {
+        padding: var(--space-md);
+    }
+
+    .subsection-title {
+        margin: 40px 0 20px 0;
+        font-size: 15px;
     }
 
     .project-detail-wrapper {

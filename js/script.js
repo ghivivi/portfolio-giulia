@@ -131,6 +131,7 @@
 
         var navId = sectionId;
         if (navId === 'all-projects' || navId === 'project-detail' || navId === 'category-page') navId = 'portfolio';
+        if (navId === 'journalism-landing' || navId === 'ngo-landing') navId = 'portfolio';
 
         // For portfolio, highlight the dropdown toggle that matches current section filter
         if (navId === 'portfolio') {
@@ -162,8 +163,12 @@
                 var isDropdownToggle = navLink.classList.contains('dropdown-toggle');
                 var navTarget = navLink.getAttribute('data-nav');
 
-                // Dropdown toggles: only open/close the submenu, don't navigate
+                // Dropdown toggles: open/close submenu AND show section landing
                 if (isDropdownToggle) {
+                    var sectionAttr = navLink.getAttribute('data-section');
+                    if (sectionAttr) {
+                        showSectionLanding(sectionAttr);
+                    }
                     return;
                 }
 
@@ -184,6 +189,17 @@
                 e.preventDefault();
                 var catId = filterLink.getAttribute('data-filter-cat');
                 filterByCategory(catId);
+                return;
+            }
+
+            // Handle [data-show-all-cat] clicks (view all for a category)
+            var showAllCat = e.target.closest('[data-show-all-cat]');
+            if (showAllCat) {
+                e.preventDefault();
+                var catId = showAllCat.getAttribute('data-show-all-cat');
+                currentFilterCat = catId;
+                showAllProjectsGrid();
+                navTo('all-projects');
                 return;
             }
 
@@ -350,11 +366,23 @@
                 createCarouselSlide(project, language, index));
         });
 
-        // Append "view all" slide as last page
+        // Append "view all" slide as last page — category-specific if filtered
+        var viewAllLabel = t('ui.viewAllProjects');
+        var viewAllAction = 'data-nav="all-projects"';
+
+        if (currentFilterCat) {
+            var catName = t('categories.' + currentFilterCat);
+            if (catName !== 'categories.' + currentFilterCat) {
+                viewAllLabel = catName;
+            }
+            viewAllAction = 'data-show-all-cat="' + currentFilterCat + '"';
+        }
+
         var viewAllSlide = '<div class="carousel-slide carousel-slide--view-all">' +
             '<div class="view-all-slide-content">' +
-                '<a href="#" class="view-all-link" data-nav="all-projects">' +
-                    t('ui.viewAllProjects') + ' &rarr;' +
+                '<p class="view-all-category-name">' + viewAllLabel + '</p>' +
+                '<a href="#" class="view-all-link" ' + viewAllAction + '>' +
+                    t('ui.viewAllContents') + ' &rarr;' +
                 '</a>' +
             '</div>' +
         '</div>';
@@ -540,58 +568,9 @@
         }
 
         gridContainer.innerHTML = '';
-
         projects.forEach(function(project) {
-            var title = project.title[language] || project.title.it || '';
-            if (!title) return;
-
-            var thumbUrl = getProjectThumbnailUrl(project);
-            var bgStyle = '';
-            if (thumbUrl) {
-                bgStyle = "background-image: url('" + thumbUrl + "');";
-            } else if (project.thumbnail && project.thumbnail.fallbackGradient) {
-                bgStyle = 'background: ' + project.thumbnail.fallbackGradient + ';';
-            } else {
-                bgStyle = 'background: linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%);';
-            }
-
-            var hasVideo = project.video && project.video.type;
-            var linkUrl = hasVideo ? '' : (project.articleUrl || '');
-            var videoAttrs = '';
-            if (hasVideo) {
-                if (project.video.type === 'local') {
-                    videoAttrs = 'data-video-type="local" data-video-src="' + project.video.src + '"';
-                } else {
-                    videoAttrs = 'data-video-type="' + project.video.type + '" data-video-id="' + project.video.id + '"';
-                }
-            }
-
-            var year = project.date ? project.date.substring(0, 4) : '';
-            var catLabel = '';
-            if (project.categories && project.categories.length > 0) {
-                var firstCat = project.categories.filter(function(c) { return c !== 'TODO'; })[0];
-                if (firstCat) {
-                    var translated = t('categories.' + firstCat);
-                    catLabel = (translated !== 'categories.' + firstCat) ? translated : '';
-                }
-            }
-
-            var actionHtml = '';
-            if (hasVideo) {
-                actionHtml = '<button class="project-box-action" data-play-video="1" ' + videoAttrs + '>&#9654;</button>';
-            }
-
-            var box = '<div class="project-box" ' + (linkUrl ? 'data-open-project="' + linkUrl + '"' : '') + '>' +
-                '<div class="project-box-thumb" style="' + bgStyle + '">' +
-                    actionHtml +
-                '</div>' +
-                '<div class="project-box-info">' +
-                    '<h3 class="project-box-title">' + title + '</h3>' +
-                    (year || catLabel ? '<p class="project-box-meta">' + (year ? year : '') + (year && catLabel ? ' &bull; ' : '') + catLabel + '</p>' : '') +
-                '</div>' +
-            '</div>';
-
-            gridContainer.insertAdjacentHTML('beforeend', box);
+            var card = createProjectCard(project, language);
+            if (card) gridContainer.insertAdjacentHTML('beforeend', card);
         });
 
         // Update heading with category name if filtered
@@ -604,6 +583,58 @@
                 heading.textContent = t('sections.allProjects');
             }
         }
+        initThumbnailFallbacks();
+    }
+
+    // ---- 12a. SECTION LANDING PAGE (Journalism / NGO Work) ----
+    function showSectionLanding(sectionId) {
+        var language = detectLanguage();
+        var container = document.getElementById(sectionId + '-landing-content');
+        if (!container || !allSections[sectionId]) return;
+
+        var sectionCats = allSections[sectionId].order || [];
+        var html = '';
+
+        sectionCats.forEach(function(catId) {
+            var catName = t('categories.' + catId);
+            if (catName === 'categories.' + catId) {
+                catName = catId.replace(/-/g, ' ');
+            }
+
+            var catProjects = allProjects.filter(function(p) {
+                return p.categories && p.categories.indexOf(catId) !== -1;
+            });
+
+            var count = catProjects.length;
+            if (count === 0) return;
+
+            // Find featured project (first one with a thumbnail or video)
+            var featured = catProjects[0];
+            var bgStyle = '';
+            var thumbUrl = getProjectThumbnailUrl(featured);
+            if (thumbUrl) {
+                bgStyle = "background-image: url('" + thumbUrl + "');";
+            } else if (featured.thumbnail && featured.thumbnail.fallbackGradient) {
+                bgStyle = 'background: ' + featured.thumbnail.fallbackGradient + ';';
+            } else {
+                bgStyle = 'background: linear-gradient(135deg, #3D3731 0%, #1A1614 100%);';
+            }
+
+            var featuredTitle = featured.title[language] || featured.title.it || '';
+
+            html += '<div class="landing-column" data-filter-cat="' + catId + '">' +
+                '<div class="landing-column-bg" style="' + bgStyle + '"></div>' +
+                '<div class="landing-column-overlay"></div>' +
+                '<div class="landing-column-content">' +
+                    '<h3 class="landing-column-category">' + catName + '</h3>' +
+                    '<p class="landing-column-count">' + count + ' ' + (count === 1 ? 'project' : 'projects') + '</p>' +
+                    '<p class="landing-column-featured">' + featuredTitle + '</p>' +
+                '</div>' +
+            '</div>';
+        });
+
+        container.innerHTML = html;
+        navTo(sectionId + '-landing');
     }
 
     // ---- 12b. CREATE PROJECT CARD (shared by grid views) ----
