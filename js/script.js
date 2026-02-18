@@ -192,6 +192,39 @@
                 return;
             }
 
+            // Handle [data-section-landing] clicks (All Journalism/NGO Projects)
+            var sectionLandingLink = e.target.closest('[data-section-landing]');
+            if (sectionLandingLink) {
+                e.preventDefault();
+                var secId = sectionLandingLink.getAttribute('data-section-landing');
+                showSectionLanding(secId);
+                closeMobileSidebar();
+                return;
+            }
+
+            // Handle [data-filter-subcat] clicks (subcategory in dropdown)
+            var subcatLink = e.target.closest('[data-filter-subcat]');
+            if (subcatLink) {
+                e.preventDefault();
+                var parentCat = subcatLink.getAttribute('data-parent-cat');
+                var subId = subcatLink.getAttribute('data-filter-subcat');
+                // Show category page scrolled/focused to that subcategory
+                currentFilterCat = parentCat;
+                showCategoryPage(parentCat);
+                // Scroll to the subcategory section after render
+                setTimeout(function() {
+                    var subHeadings = document.querySelectorAll('#category-page-content .subsection-title');
+                    var subName = t('subcategories.' + subId);
+                    subHeadings.forEach(function(h) {
+                        if (h.textContent === subName) {
+                            h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+                }, 100);
+                closeMobileSidebar();
+                return;
+            }
+
             // Handle [data-show-all-cat] clicks (view all for a category)
             var showAllCat = e.target.closest('[data-show-all-cat]');
             if (showAllCat) {
@@ -487,6 +520,34 @@
             dropdown.innerHTML = '';
 
             var sectionCats = allSections[sectionId].order || [];
+
+            // Count all projects in this section
+            var totalCount = 0;
+            sectionCats.forEach(function(catId) {
+                totalCount += projects.filter(function(p) {
+                    return p.categories && p.categories.indexOf(catId) !== -1;
+                }).length;
+            });
+
+            // "All X Projects" link at top
+            var allLi = document.createElement('li');
+            var allA = document.createElement('a');
+            allA.className = 'dropdown-link dropdown-link--all';
+            allA.href = '#';
+            allA.setAttribute('data-section-landing', sectionId);
+            var sectionLabel = sectionId === 'journalism' ? t('nav.journalism') : t('nav.ngoWork');
+            allA.innerHTML = t('ui.allSectionProjects') + ' ' + sectionLabel + ' <span class="dropdown-count">' + totalCount + '</span>';
+            allLi.appendChild(allA);
+            dropdown.appendChild(allLi);
+
+            // Separator
+            var sepLi = document.createElement('li');
+            sepLi.className = 'dropdown-separator';
+            dropdown.appendChild(sepLi);
+
+            // Category items
+            var subcatsConfig = (allSections[sectionId] && allSections[sectionId].subcategories) || {};
+
             sectionCats.forEach(function(catId) {
                 var catName = t('categories.' + catId);
                 if (catName === 'categories.' + catId) {
@@ -497,8 +558,6 @@
                     return p.categories && p.categories.indexOf(catId) !== -1;
                 }).length;
 
-                if (count === 0) return;
-
                 var li = document.createElement('li');
                 var a = document.createElement('a');
                 a.className = 'dropdown-link';
@@ -508,6 +567,30 @@
                 a.innerHTML = catName + ' <span class="dropdown-count">' + count + '</span>';
                 li.appendChild(a);
                 dropdown.appendChild(li);
+
+                // Add nested subcategories if this category has them
+                if (subcatsConfig[catId]) {
+                    var subList = document.createElement('ul');
+                    subList.className = 'dropdown-subcategories';
+
+                    subcatsConfig[catId].forEach(function(subId) {
+                        var subName = t('subcategories.' + subId);
+                        if (subName === 'subcategories.' + subId) {
+                            subName = subId.replace(/-/g, ' ');
+                        }
+                        var subLi = document.createElement('li');
+                        var subA = document.createElement('a');
+                        subA.className = 'dropdown-link dropdown-link--sub';
+                        subA.href = '#';
+                        subA.setAttribute('data-filter-subcat', subId);
+                        subA.setAttribute('data-parent-cat', catId);
+                        subA.textContent = subName;
+                        subLi.appendChild(subA);
+                        subList.appendChild(subLi);
+                    });
+
+                    li.appendChild(subList);
+                }
             });
         });
     }
