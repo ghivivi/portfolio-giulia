@@ -9,9 +9,9 @@
       "subcategories": {
         "longform-reportage": [
           "migration-displacement",
-          "war-zones-frontlines",
+          "international-crisis",
           "middle-east-north-africa",
-          "social-justice-gender"
+          "political-social-justice-gender"
         ]
       }
     },
@@ -19,6 +19,7 @@
       "order": [
         "documentary-series",
         "field-missions",
+        "multimedia-projects-coordination",
         "photo-exhibitions"
       ]
     }
@@ -214,7 +215,7 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "war-zones-frontlines"
+      "subcategory": "international-crisis"
     },
     {
       "id": "in-egitto-si-celebrano-le-finte-elezioni-il-caffe",
@@ -269,7 +270,7 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "social-justice-gender"
+      "subcategory": "political-social-justice-gender"
     },
     {
       "id": "giornata-nazionale-contro-le-mutilazioni-genitali-femminili-in-egitto-donne-e-bambine-raccontano-il-loro-dolore-video-inchiesta-huffington-post",
@@ -324,7 +325,7 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "war-zones-frontlines"
+      "subcategory": "international-crisis"
     },
     {
       "id": "al-sisi-incontra-renzi-in-egitto-proseguono-gli-arresti-di-massa-pagina-99",
@@ -1325,7 +1326,7 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "war-zones-frontlines"
+      "subcategory": "international-crisis"
     },
     {
       "id": "a-pranzo-con-le-sacerdotesse-zoroastriane",
@@ -1407,7 +1408,7 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "social-justice-gender"
+      "subcategory": "political-social-justice-gender"
     },
     {
       "id": "english-the-zoroastrian-priestesses-of-iran-middle-east-eye",
@@ -2860,7 +2861,7 @@
         "en": "",
         "fr": ""
       },
-      "subcategory": "social-justice-gender"
+      "subcategory": "political-social-justice-gender"
     },
     {
       "id": "trono-di-sale-marocco",

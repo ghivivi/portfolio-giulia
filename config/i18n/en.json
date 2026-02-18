@@ -36,6 +36,7 @@
     "details": "Details",
     "viewAllProjects": "View all projects",
     "viewAllContents": "View all contents",
+    "allSectionProjects": "All projects",
     "attachments": "Attachments"
   },
   "categories": {
@@ -44,13 +45,14 @@
     "longform-reportage": "Longform & Reportage",
     "documentary-series": "Documentary Series",
     "field-missions": "Field Missions",
+    "multimedia-projects-coordination": "Multimedia Projects Coordination",
     "photo-exhibitions": "Photo Exhibitions"
   },
   "subcategories": {
     "migration-displacement": "Migration & Displacement",
-    "war-zones-frontlines": "War Zones & Frontlines",
+    "international-crisis": "International Crisis",
     "middle-east-north-africa": "Middle East & North Africa",
-    "social-justice-gender": "Social Justice & Gender"
+    "political-social-justice-gender": "Political and Social Justice & Gender"
   },
   "sectionIntros": {
     "longform-reportage": "In-depth investigations and field reporting across migration, conflict, and social justice (2013–2018)"
