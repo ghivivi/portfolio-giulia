@@ -5,7 +5,15 @@
         "documentary-films",
         "multimedia-projects",
         "longform-reportage"
-      ]
+      ],
+      "subcategories": {
+        "longform-reportage": [
+          "migration-displacement",
+          "war-zones-frontlines",
+          "middle-east-north-africa",
+          "social-justice-gender"
+        ]
+      }
     },
     "ngo": {
       "order": [
@@ -95,7 +103,8 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "subcategory": "middle-east-north-africa"
     },
     {
       "id": "english-for-young-israelis-the-other-side-simply-does-not-exist-middle-east-eye",
@@ -122,7 +131,8 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "subcategory": "middle-east-north-africa"
     },
     {
       "id": "holot-il-ghetto-nero-nigrizia",
@@ -203,7 +213,8 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "subcategory": "war-zones-frontlines"
     },
     {
       "id": "in-egitto-si-celebrano-le-finte-elezioni-il-caffe",
@@ -257,7 +268,8 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "subcategory": "social-justice-gender"
     },
     {
       "id": "giornata-nazionale-contro-le-mutilazioni-genitali-femminili-in-egitto-donne-e-bambine-raccontano-il-loro-dolore-video-inchiesta-huffington-post",
@@ -311,7 +323,8 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "subcategory": "war-zones-frontlines"
     },
     {
       "id": "al-sisi-incontra-renzi-in-egitto-proseguono-gli-arresti-di-massa-pagina-99",
@@ -554,7 +567,8 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "subcategory": "middle-east-north-africa"
     },
     {
       "id": "pronta-la-nuova-costituzione-la-tunisia-e-un-po-piu-laica-pagina99",
@@ -1310,7 +1324,8 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "subcategory": "war-zones-frontlines"
     },
     {
       "id": "a-pranzo-con-le-sacerdotesse-zoroastriane",
@@ -1391,7 +1406,8 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "subcategory": "social-justice-gender"
     },
     {
       "id": "english-the-zoroastrian-priestesses-of-iran-middle-east-eye",
@@ -1472,7 +1488,8 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "subcategory": "migration-displacement"
     },
     {
       "id": "vierges-au-masculin-choisir",
@@ -2282,7 +2299,8 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "subcategory": "migration-displacement"
     },
     {
       "id": "we-are-afraid-to-see-the-dead-tunisian-fishermen-on-frontline-of-migrant-tragedy",
@@ -2693,7 +2711,8 @@
         "it": "",
         "en": "",
         "fr": ""
-      }
+      },
+      "subcategory": "migration-displacement"
     },
     {
       "id": "english-video-migrants-tragedy-overwhelms-greek-island-of-lesvos",
@@ -2840,7 +2859,8 @@
         "it": "",
         "en": "",
         "fr": ""
-      }
+      },
+      "subcategory": "social-justice-gender"
     },
     {
       "id": "trono-di-sale-marocco",
@@ -2897,7 +2917,8 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "subcategory": "middle-east-north-africa"
     },
     {
       "id": "documentary-far-right-a-new-frightening-normal",

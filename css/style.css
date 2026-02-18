@@ -818,6 +818,65 @@ h1, h2, h3 {
 }
 
 /* ============================================
+   11b2. CATEGORY PAGE (grid with subsections)
+   ============================================ */
+
+#section-category-page {
+    overflow-y: auto;
+    flex-direction: column;
+    background: var(--color-bg);
+}
+
+.category-page-wrapper {
+    padding: var(--space-lg);
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.section-intro {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+.subsection-title {
+    font-family: var(--font-body);
+    font-size: 18px;
+    font-weight: 400;
+    color: #3D3731;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 60px 0 30px 0;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.category-page-wrapper .subsection-title:first-child {
+    margin-top: 0;
+}
+
+.subsection-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: #1A1614;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: var(--space-md);
+}
+
+/* ============================================
    11c. PROJECT DETAIL SECTION
    ============================================ */
 

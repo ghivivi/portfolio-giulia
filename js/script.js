@@ -130,7 +130,7 @@
         });
 
         var navId = sectionId;
-        if (navId === 'all-projects' || navId === 'project-detail') navId = 'portfolio';
+        if (navId === 'all-projects' || navId === 'project-detail' || navId === 'category-page') navId = 'portfolio';
 
         // For portfolio, highlight the dropdown toggle that matches current section filter
         if (navId === 'portfolio') {
@@ -486,18 +486,28 @@
 
     // ---- 10. CATEGORY FILTERING ----
     function filterByCategory(catId) {
-        var language = detectLanguage();
-
         currentFilterCat = catId;
 
-        var filtered = allProjects.filter(function(p) {
-            return p.categories && p.categories.indexOf(catId) !== -1;
+        // Check if this category has subcategories defined
+        var hasSubcats = false;
+        ['journalism', 'ngo'].forEach(function(sec) {
+            if (allSections[sec] && allSections[sec].subcategories &&
+                allSections[sec].subcategories[catId]) {
+                hasSubcats = true;
+            }
         });
 
-        buildCarousel(filtered, language);
-        initVideoListenersForCarousel();
-        initThumbnailFallbacks();
-        navTo('portfolio');
+        if (hasSubcats) {
+            showCategoryPage(catId);
+        } else {
+            var filtered = allProjects.filter(function(p) {
+                return p.categories && p.categories.indexOf(catId) !== -1;
+            });
+            buildCarousel(filtered, detectLanguage());
+            initVideoListenersForCarousel();
+            initThumbnailFallbacks();
+            navTo('portfolio');
+        }
     }
 
     // ---- 11. SHOW MAINPAGE PROJECTS (Portfolio click) ----
@@ -596,7 +606,121 @@
         }
     }
 
-    // ---- 12b. PROJECT DETAIL ----
+    // ---- 12b. CREATE PROJECT CARD (shared by grid views) ----
+    function createProjectCard(project, language) {
+        var title = project.title[language] || project.title.it || '';
+        if (!title) return '';
+
+        var thumbUrl = getProjectThumbnailUrl(project);
+        var bgStyle = '';
+        if (thumbUrl) {
+            bgStyle = "background-image: url('" + thumbUrl + "');";
+        } else if (project.thumbnail && project.thumbnail.fallbackGradient) {
+            bgStyle = 'background: ' + project.thumbnail.fallbackGradient + ';';
+        } else {
+            bgStyle = 'background: linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%);';
+        }
+
+        var hasVideo = project.video && project.video.type;
+        var linkUrl = hasVideo ? '' : (project.articleUrl || '');
+        var videoAttrs = '';
+        if (hasVideo) {
+            if (project.video.type === 'local') {
+                videoAttrs = 'data-video-type="local" data-video-src="' + project.video.src + '"';
+            } else {
+                videoAttrs = 'data-video-type="' + project.video.type + '" data-video-id="' + project.video.id + '"';
+            }
+        }
+
+        var year = project.date ? project.date.substring(0, 4) : '';
+
+        var actionHtml = '';
+        if (hasVideo) {
+            actionHtml = '<button class="project-box-action" data-play-video="1" ' + videoAttrs + '>&#9654;</button>';
+        }
+
+        return '<div class="project-box" ' + (linkUrl ? 'data-open-project="' + linkUrl + '"' : '') + '>' +
+            '<div class="project-box-thumb" style="' + bgStyle + '">' +
+                actionHtml +
+            '</div>' +
+            '<div class="project-box-info">' +
+                '<h3 class="project-box-title">' + title + '</h3>' +
+                (year ? '<p class="project-box-meta">' + year + '</p>' : '') +
+            '</div>' +
+        '</div>';
+    }
+
+    // ---- 12c. CATEGORY PAGE (grid with subsections) ----
+    function showCategoryPage(catId) {
+        var language = detectLanguage();
+        var container = document.getElementById('category-page-content');
+        var titleEl = document.getElementById('category-page-title');
+        var introEl = document.getElementById('category-page-intro');
+
+        if (!container || !titleEl) return;
+
+        // Set title
+        var catName = t('categories.' + catId);
+        titleEl.textContent = (catName !== 'categories.' + catId) ? catName : catId.replace(/-/g, ' ');
+
+        // Set intro
+        var intro = t('sectionIntros.' + catId);
+        if (introEl) {
+            introEl.textContent = (intro !== 'sectionIntros.' + catId) ? intro : '';
+            introEl.style.display = (intro !== 'sectionIntros.' + catId) ? '' : 'none';
+        }
+
+        container.innerHTML = '';
+
+        // Find subcategories config
+        var subcats = null;
+        ['journalism', 'ngo'].forEach(function(sec) {
+            if (allSections[sec] && allSections[sec].subcategories &&
+                allSections[sec].subcategories[catId]) {
+                subcats = allSections[sec].subcategories[catId];
+            }
+        });
+
+        // Get projects for this category
+        var projects = allProjects.filter(function(p) {
+            return p.categories && p.categories.indexOf(catId) !== -1;
+        });
+
+        var html = '';
+
+        if (subcats) {
+            subcats.forEach(function(subId) {
+                var subProjects = projects.filter(function(p) {
+                    return p.subcategory === subId;
+                });
+                if (subProjects.length === 0) return;
+
+                var subTitle = t('subcategories.' + subId);
+                if (subTitle === 'subcategories.' + subId) {
+                    subTitle = subId.replace(/-/g, ' ');
+                }
+
+                html += '<h3 class="subsection-title">' + subTitle + '</h3>';
+                html += '<div class="projects-grid">';
+                subProjects.forEach(function(p) {
+                    html += createProjectCard(p, language);
+                });
+                html += '</div>';
+            });
+        } else {
+            html += '<div class="projects-grid">';
+            projects.forEach(function(p) {
+                html += createProjectCard(p, language);
+            });
+            html += '</div>';
+        }
+
+        container.innerHTML = html;
+        initThumbnailFallbacks();
+        navTo('category-page');
+    }
+
+    // ---- 12d. PROJECT DETAIL ----
     function showProjectDetail(projectId) {
         var language = detectLanguage();
         var project = allProjects.find(function(p) { return p.id === projectId; });
