@@ -44,5 +44,14 @@
     "documentary-series": "Serie Documentarie",
     "field-missions": "Missioni sul Campo",
     "photo-exhibitions": "Mostre Fotografiche"
+  },
+  "subcategories": {
+    "migration-displacement": "Migrazione e Sfollamento",
+    "war-zones-frontlines": "Zone di Guerra e Frontiere",
+    "middle-east-north-africa": "Medio Oriente e Nord Africa",
+    "social-justice-gender": "Giustizia Sociale e Genere"
+  },
+  "sectionIntros": {
+    "longform-reportage": "Inchieste approfondite e reportage sul campo su migrazione, conflitti e giustizia sociale (2013–2018)"
   }
 }
