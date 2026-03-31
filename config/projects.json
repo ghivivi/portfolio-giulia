@@ -1,7 +1,6 @@
 {
   "sections": {
     "journalism": {
-<<<<<<< HEAD
       "label": {
         "it": "Giornalismo",
         "en": "Journalism",
@@ -93,29 +92,6 @@
       "it": "Coordinamento Progetti Multimediali",
       "en": "Multimedia Projects Coordination",
       "fr": "Coordination de Projets Multimédias"
-=======
-      "order": [
-        "documentary-films",
-        "multimedia-projects",
-        "longform-reportage"
-      ],
-      "subcategories": {
-        "longform-reportage": [
-          "migration-displacement",
-          "international-crisis",
-          "middle-east-north-africa",
-          "political-social-justice-gender"
-        ]
-      }
-    },
-    "ngo": {
-      "order": [
-        "documentary-series",
-        "field-missions",
-        "multimedia-projects-coordination",
-        "photo-exhibitions"
-      ]
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     }
   },
   "projects": [
@@ -136,20 +112,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=283",
       "categories": [
-<<<<<<< HEAD
         "international-crisis"
       ]
-=======
-        "conflict-zones"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "english-theatre-and-revolution-artshub",
@@ -168,21 +132,9 @@
       },
       "articleUrl": "http://www.artshub.co.uk/news-article/features/public-policy/theatre-of-the-revolution-197246",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "sinai-deserto-e-affari-left",
@@ -284,20 +236,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=693",
       "categories": [
-<<<<<<< HEAD
         "international-crisis"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "la-guerra-siriana-vista-dal-golan-sempre-piu-vicino-a-israele-europa",
@@ -316,22 +256,9 @@
       },
       "articleUrl": "http://www.europaquotidiano.it/2014/09/30/la-guerra-siriana-vista-dal-golan-sempre-piu-vicino-a-israele/",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "international-crisis"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": true,
-      "subcategory": "international-crisis"
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "in-egitto-si-celebrano-le-finte-elezioni-il-caffe",
@@ -350,21 +277,9 @@
       },
       "articleUrl": "http://www.caffe.ch/stories/cronaca/47077_in_egitto_si_celebrano_le_finte_elezioni/",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "le-donne-del-cairo-in-piazza-contro-gli-stupri-pagina-99",
@@ -383,22 +298,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=636",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": true,
-      "subcategory": "political-social-justice-gender"
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "giornata-nazionale-contro-le-mutilazioni-genitali-femminili-in-egitto-donne-e-bambine-raccontano-il-loro-dolore-video-inchiesta-huffington-post",
@@ -417,21 +319,9 @@
       },
       "articleUrl": "http://www.huffingtonpost.it/2015/02/06/mgf-mutuilazioni-video-egitto_n_6628904.html",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "tra-i-profughi-curdi-di-kobane-fuggiti-in-poche-ore-combattiamo-per-liberare-la-citta-dallis-repubblica",
@@ -450,23 +340,10 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=704",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "international-crisis",
         "migration-displacement"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": true,
-      "subcategory": "international-crisis"
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "al-sisi-incontra-renzi-in-egitto-proseguono-gli-arresti-di-massa-pagina-99",
@@ -485,21 +362,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=760",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "francais-caricaturer-legypte-choisir",
@@ -545,21 +410,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=784",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "english-who-was-egypts-omar-mustafa-middle-east-eye",
@@ -605,20 +458,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=723",
       "categories": [
-<<<<<<< HEAD
         "international-crisis"
       ]
-=======
-        "conflict-zones"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "francais-kobane-suruc-7-km-de-distance-2-pays-1-peuple-choisir",
@@ -637,20 +478,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=727",
       "categories": [
-<<<<<<< HEAD
         "international-crisis"
       ]
-=======
-        "conflict-zones"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "legitto-bombarda-le-sue-case-per-combattere-i-jihadisti-pagina99",
@@ -669,21 +498,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=733",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "international-crisis"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "english-egypt-speak-day-1-and-2-of-vote-middle-east-eye",
@@ -838,21 +655,9 @@
       },
       "articleUrl": "http://www.caffe.ch/stories/cronaca/47907_sotto_razzi_e_bombe_nel_kibbutz_di_beeri/",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "international-crisis"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "lo-stato-islamico-del-sinai-una-guerra-alle-porte-di-israele-europa",
@@ -871,21 +676,9 @@
       },
       "articleUrl": "http://www.europaquotidiano.it/2013/10/06/egitto-sinai/",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "international-crisis"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "la-disperazione-che-infrange-i-sogni-il-caffe",
@@ -1039,21 +832,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=535",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "sinai-business-beduino-nigrizia",
@@ -1180,21 +961,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1041",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "international-crisis"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "donne-e-confini-nel-dibattito-allanpi-di-parma",
@@ -1213,21 +982,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1069",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "buon-newroz-il-capodanno-raccontato-da-aicha-attivista-curda",
@@ -1246,20 +1003,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1094",
       "categories": [
-<<<<<<< HEAD
         "international-crisis"
       ]
-=======
-        "conflict-zones"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "non-un-numero-non-un-ombra-i-migranti-nei-dormitori-di-caritas",
@@ -1440,21 +1185,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/essere-un-travestito-a-tirana/",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "francais-les-mines-de-trepca",
@@ -1527,21 +1260,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1521",
       "categories": [
-<<<<<<< HEAD
         "international-crisis"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": true,
-      "subcategory": "international-crisis"
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "a-pranzo-con-le-sacerdotesse-zoroastriane",
@@ -1751,22 +1471,10 @@
       },
       "articleUrl": "",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice",
         "international-crisis"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "le-desk-una-nuova-sfida-al-giornalismo-in-marocco-il-blog-di-vita",
@@ -1920,21 +1628,9 @@
       },
       "articleUrl": "",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "donne-e-icone-di-steve-mccurry-a-forli-il-blog-di-vita",
@@ -1953,21 +1649,9 @@
       },
       "articleUrl": "",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "marocco-apre-la-piu-grande-centrale-solare-termodinamica-del-mondo",
@@ -2094,21 +1778,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=2895",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "unione-africana-burundi-cpi-e-parita-di-genere",
@@ -2127,21 +1799,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=2892",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "8-mars-le-difficile-metier-de-femme-au-kazakhstan",
@@ -2160,21 +1820,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "i-nuovi-desaparecidos-dalla-tunisia-in-italia-come-profughi-poi-spariti-nel-silenzio",
@@ -2247,21 +1895,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3274",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "gli-ottomila-salvati-a-pasqua-diario-di-bordo-di-una-missione-di-salvataggio-open-migration",
@@ -2334,21 +1970,9 @@
       },
       "articleUrl": "http://orientxxi.info/langue_en",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "i-pescatori-tunisini-che-danno-sepoltura-ai-migranti-senza-nome-openmigration",
@@ -2638,21 +2262,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3858",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "",
@@ -2704,21 +2316,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=615",
       "categories": [
-<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "english-video-turks-kurds-express-their-fears-as-is-advances-on-kobane-middle-east-eye-tv",
@@ -2740,20 +2340,8 @@
       },
       "articleUrl": "http://www.middleeasteye.net/news/turks-and-kurds-express-their-fears-islamic-state-advances-kobane-273753702#sthash.p1GIifYN.dpuf",
       "categories": [
-<<<<<<< HEAD
         "international-crisis"
       ]
-=======
-        "longform-reportage"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "documentario-una-storia-sommersa-premio-morrione",
@@ -2835,20 +2423,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=466",
       "categories": [
-<<<<<<< HEAD
         "international-crisis"
       ]
-=======
-        "conflict-zones"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      },
-      "mainpage": false
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "trailer-una-storia-sommersa-documentario-premio-morrione",
@@ -3622,11 +3198,7 @@
       },
       "articleUrl": "",
       "categories": [
-<<<<<<< HEAD
         "international-crisis"
-=======
-        "field-missions"
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
       ],
       "mainpage": true,
       "allegati": [],
@@ -3653,11 +3225,7 @@
       },
       "articleUrl": "",
       "categories": [
-<<<<<<< HEAD
         "international-crisis"
-=======
-        "field-missions"
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
       ],
       "mainpage": true,
       "allegati": [],
