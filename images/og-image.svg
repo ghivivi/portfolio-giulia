@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <rect width="1200" height="630" fill="#FAF8F5"/>
+  <line x1="100" y1="315" x2="400" y2="315" stroke="#E5DDD4" stroke-width="1"/>
+  <line x1="800" y1="315" x2="1100" y2="315" stroke="#E5DDD4" stroke-width="1"/>
+  <text x="600" y="280" text-anchor="middle" font-family="'Josefin Sans', serif" font-weight="300" font-size="64" fill="#1A1614" letter-spacing="8">GIULIA</text>
+  <text x="600" y="350" text-anchor="middle" font-family="'Josefin Sans', serif" font-weight="300" font-size="64" fill="#1A1614" letter-spacing="8">BERTOLUZZI</text>
+  <text x="600" y="420" text-anchor="middle" font-family="'Karla', sans-serif" font-weight="300" font-size="22" fill="#6B635C" letter-spacing="4">MULTIMEDIA JOURNALIST</text>
+</svg>

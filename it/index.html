@@ -11,8 +11,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
 
+    <!-- SEO -->
+    <link rel="canonical" href="https://giuliabertoluzzi.com/it/">
+    <link rel="alternate" hreflang="x-default" href="https://giuliabertoluzzi.com/">
+    <link rel="alternate" hreflang="it" href="https://giuliabertoluzzi.com/it/">
+    <link rel="alternate" hreflang="en" href="https://giuliabertoluzzi.com/en/">
+    <link rel="alternate" hreflang="fr" href="https://giuliabertoluzzi.com/fr/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Giulia Bertoluzzi | Giornalista Multimedia">
+    <meta property="og:description" content="Portfolio di Giulia Bertoluzzi - Giornalista Multimedia. Documentari, reportage, progetti umanitari e contenuti multimediali.">
+    <meta property="og:image" content="https://giuliabertoluzzi.com/images/og-image.svg">
+    <meta property="og:url" content="https://giuliabertoluzzi.com/it/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="it_IT">
+        <meta property="og:locale:alternate" content="en_GB">
+    <meta property="og:locale:alternate" content="fr_FR">
+    <meta property="og:site_name" content="Giulia Bertoluzzi">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Giulia Bertoluzzi | Giornalista Multimedia">
+    <meta name="twitter:description" content="Portfolio di Giulia Bertoluzzi - Giornalista Multimedia.">
+    <meta name="twitter:image" content="https://giuliabertoluzzi.com/images/og-image.svg">
+
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- Preload -->
+    <link rel="preload" href="../config/projects.json" as="fetch" crossorigin>
 </head>
 <body>
     <div id="wrapper">
@@ -27,14 +55,23 @@
                 <ul class="sidebar-links">
                     <li class="sidebar-dropdown">
                         <a href="#" class="sidebar-link dropdown-toggle" data-nav="portfolio">
-                            Portfolio
+                            Giornalismo
                             <span class="dropdown-arrow">&#8226;</span>
                         </a>
-                        <ul class="dropdown-menu" id="portfolio-dropdown">
-                            <!-- Populated by JS from projects.json categories -->
+                        <ul class="dropdown-menu" id="dropdown-journalism">
+                            <!-- Populated by JS -->
                         </ul>
                     </li>
-                    <li><a href="#" class="sidebar-link" data-nav="consulenze">Consulenze</a></li>
+                    <li class="sidebar-dropdown">
+                        <a href="#" class="sidebar-link dropdown-toggle" data-nav="portfolio">
+                            Lavoro ONG
+                            <span class="dropdown-arrow">&#8226;</span>
+                        </a>
+                        <ul class="dropdown-menu" id="dropdown-ngo">
+                            <!-- Populated by JS -->
+                        </ul>
+                    </li>
+                    <li><a href="#" class="sidebar-link" data-nav="consulenze">Servizi</a></li>
                     <li><a href="#" class="sidebar-link" data-nav="contatti">Contatti</a></li>
                 </ul>
             </nav>
@@ -43,9 +80,9 @@
                 <ul class="lang-switcher">
                     <li><a href="../it/" class="lang-link active">IT</a></li>
                     <li class="lang-separator">|</li>
-                    <li><a href="../en/" class="lang-link">EN</a></li>
+                    <li><a href="../en/" class="lang-link ">EN</a></li>
                     <li class="lang-separator">|</li>
-                    <li><a href="../fr/" class="lang-link">FR</a></li>
+                    <li><a href="../fr/" class="lang-link ">FR</a></li>
                 </ul>
                 <div class="social-links">
                     <a href="https://instagram.com" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
@@ -190,6 +227,6 @@
         </div>
     </div>
 
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js" defer></script>
 </body>
 </html>

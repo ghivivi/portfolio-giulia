@@ -1,19 +1,49 @@
 {
+  "sections": {
+    "journalism": {
+      "label": {
+        "it": "Giornalismo",
+        "en": "Journalism",
+        "fr": "Journalisme"
+      },
+      "allLabel": {
+        "it": "Tutti i progetti giornalismo",
+        "en": "All Journalism Projects",
+        "fr": "Tous les projets journalisme"
+      },
+      "categoryOrder": [
+        "documentary-films",
+        "multimedia-projects",
+        "longform-reportage"
+      ]
+    },
+    "ngo": {
+      "label": {
+        "it": "Lavoro ONG",
+        "en": "NGO Work",
+        "fr": "Travail ONG"
+      },
+      "allLabel": {
+        "it": "Tutti i progetti ONG",
+        "en": "All NGO Projects",
+        "fr": "Tous les projets ONG"
+      },
+      "categoryOrder": [
+        "documentary-series",
+        "field-missions",
+        "multimedia-coordination"
+      ]
+    }
+  },
+  "sectionOrder": [
+    "journalism",
+    "ngo"
+  ],
   "categories": {
     "documentary-films": {
       "it": "Film Documentari",
       "en": "Documentary Films",
       "fr": "Films Documentaires"
-    },
-    "conflict-zones": {
-      "it": "Zone di Conflitto",
-      "en": "Conflict Zones",
-      "fr": "Zones de Conflit"
-    },
-    "migration-displacement": {
-      "it": "Migrazione e Sfollamento",
-      "en": "Migration & Displacement",
-      "fr": "Migration et Déplacement"
     },
     "multimedia-projects": {
       "it": "Progetti Multimediali",
@@ -23,22 +53,47 @@
     "longform-reportage": {
       "it": "Longform e Reportage",
       "en": "Longform & Reportage",
-      "fr": "Longform et Reportage"
+      "fr": "Longform et Reportage",
+      "children": [
+        "migration-displacement",
+        "international-crisis",
+        "political-social-justice"
+      ]
     },
-    "humanitarian-projects": {
-      "it": "Progetti Umanitari",
-      "en": "Humanitarian Projects",
-      "fr": "Projets Humanitaires"
+    "migration-displacement": {
+      "it": "Migrazione e Sfollamento",
+      "en": "Migration & Displacement",
+      "fr": "Migration et Déplacement",
+      "parent": "longform-reportage"
+    },
+    "international-crisis": {
+      "it": "Crisi Internazionali",
+      "en": "International Crisis",
+      "fr": "Crises Internationales",
+      "parent": "longform-reportage"
+    },
+    "political-social-justice": {
+      "it": "Giustizia Sociale, Politica e Genere",
+      "en": "Political and Social Justice & Gender",
+      "fr": "Justice Sociale, Politique et Genre",
+      "parent": "longform-reportage"
+    },
+    "documentary-series": {
+      "it": "Serie Documentarie",
+      "en": "Documentary Series",
+      "fr": "Séries Documentaires"
+    },
+    "field-missions": {
+      "it": "Missioni sul Campo",
+      "en": "Field Missions",
+      "fr": "Missions de Terrain"
+    },
+    "multimedia-coordination": {
+      "it": "Coordinamento Progetti Multimediali",
+      "en": "Multimedia Projects Coordination",
+      "fr": "Coordination de Projets Multimédias"
     }
   },
-  "categoryOrder": [
-    "documentary-films",
-    "conflict-zones",
-    "migration-displacement",
-    "multimedia-projects",
-    "longform-reportage",
-    "humanitarian-projects"
-  ],
   "projects": [
     {
       "id": "italiano-siria-zahraa-e-nubl-villaggi-simbolo-dello-scontro-sunniti-sciiti",
@@ -57,7 +112,7 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=283",
       "categories": [
-        "conflict-zones"
+        "international-crisis"
       ]
     },
     {
@@ -77,7 +132,8 @@
       },
       "articleUrl": "http://www.artshub.co.uk/news-article/features/public-policy/theatre-of-the-revolution-197246",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -157,7 +213,7 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=693",
       "categories": [
-        "conflict-zones"
+        "international-crisis"
       ]
     },
     {
@@ -177,7 +233,8 @@
       },
       "articleUrl": "http://www.europaquotidiano.it/2014/09/30/la-guerra-siriana-vista-dal-golan-sempre-piu-vicino-a-israele/",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "international-crisis"
       ]
     },
     {
@@ -197,7 +254,8 @@
       },
       "articleUrl": "http://www.caffe.ch/stories/cronaca/47077_in_egitto_si_celebrano_le_finte_elezioni/",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -217,7 +275,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=636",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -237,7 +296,8 @@
       },
       "articleUrl": "http://www.huffingtonpost.it/2015/02/06/mgf-mutuilazioni-video-egitto_n_6628904.html",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -257,7 +317,9 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=704",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "international-crisis",
+        "migration-displacement"
       ]
     },
     {
@@ -277,7 +339,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=760",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -317,7 +380,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=784",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -357,7 +421,7 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=723",
       "categories": [
-        "conflict-zones"
+        "international-crisis"
       ]
     },
     {
@@ -377,7 +441,7 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=727",
       "categories": [
-        "conflict-zones"
+        "international-crisis"
       ]
     },
     {
@@ -397,7 +461,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=733",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "international-crisis"
       ]
     },
     {
@@ -517,7 +582,8 @@
       },
       "articleUrl": "http://www.caffe.ch/stories/cronaca/47907_sotto_razzi_e_bombe_nel_kibbutz_di_beeri/",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "international-crisis"
       ]
     },
     {
@@ -537,7 +603,8 @@
       },
       "articleUrl": "http://www.europaquotidiano.it/2013/10/06/egitto-sinai/",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "international-crisis"
       ]
     },
     {
@@ -657,7 +724,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=535",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -758,7 +826,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1041",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "international-crisis"
       ]
     },
     {
@@ -778,7 +847,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1069",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -798,7 +868,7 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1094",
       "categories": [
-        "conflict-zones"
+        "international-crisis"
       ]
     },
     {
@@ -938,7 +1008,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/essere-un-travestito-a-tirana/",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -998,7 +1069,7 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1521",
       "categories": [
-        "conflict-zones"
+        "international-crisis"
       ]
     },
     {
@@ -1158,7 +1229,9 @@
       },
       "articleUrl": "",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice",
+        "international-crisis"
       ]
     },
     {
@@ -1278,7 +1351,8 @@
       },
       "articleUrl": "",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -1298,7 +1372,8 @@
       },
       "articleUrl": "",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -1398,7 +1473,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=2895",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -1418,7 +1494,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=2892",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -1438,7 +1515,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -1498,7 +1576,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3274",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -1558,7 +1637,8 @@
       },
       "articleUrl": "http://orientxxi.info/langue_en",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -1778,7 +1858,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3858",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -1825,7 +1906,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=615",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ]
     },
     {
@@ -1848,7 +1930,7 @@
       },
       "articleUrl": "http://www.middleeasteye.net/news/turks-and-kurds-express-their-fears-islamic-state-advances-kobane-273753702#sthash.p1GIifYN.dpuf",
       "categories": [
-        "conflict-zones"
+        "international-crisis"
       ]
     },
     {
@@ -1918,7 +2000,7 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=466",
       "categories": [
-        "conflict-zones"
+        "international-crisis"
       ]
     },
     {
@@ -2148,7 +2230,8 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3092",
       "categories": [
-        "longform-reportage"
+        "longform-reportage",
+        "political-social-justice"
       ],
       "mainpage": true
     },
@@ -2514,7 +2597,7 @@
       },
       "articleUrl": "",
       "categories": [
-        "conflict-zones"
+        "international-crisis"
       ],
       "mainpage": true
     },
@@ -2535,7 +2618,7 @@
       },
       "articleUrl": "",
       "categories": [
-        "conflict-zones"
+        "international-crisis"
       ],
       "mainpage": true
     },

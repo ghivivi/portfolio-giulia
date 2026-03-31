@@ -294,6 +294,24 @@ h1, h2, h3 {
     margin-left: 0.3rem;
 }
 
+.dropdown-separator {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 0.3rem 0;
+}
+
+/* Nested sub-categories */
+.dropdown-subcategories {
+    list-style: none;
+    padding-left: 1rem;
+    margin-top: 0.1rem;
+}
+
+.dropdown-subcategories .dropdown-link {
+    font-size: 0.72rem;
+    padding: 0.15rem 0;
+}
+
 /* Sidebar Footer */
 .sidebar-footer {
     margin-top: auto;
