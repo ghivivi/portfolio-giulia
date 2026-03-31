@@ -18,13 +18,21 @@
     var currentSlide = 0;
     var totalSlides = 0;
     var allProjects = [];
+<<<<<<< HEAD
     var allCategories = {};
     var allSections = {};
     var allSectionOrder = [];
+=======
+    var allSections = {};
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     var currentFilterCat = null;
     var currentFilterSection = null;
     var autoplayTimer = null;
     var AUTOPLAY_INTERVAL = 6000;
+    var previousSection = 'portfolio';
+
+    // i18n
+    var translations = {};
 
     // ---- 2. LANGUAGE DETECTION (cached) ----
     var cachedLang = null;
@@ -36,6 +44,47 @@
         else if (path.indexOf('/fr/') !== -1) cachedLang = 'fr';
         else cachedLang = 'it';
         return cachedLang;
+    }
+
+    // ---- 2b. i18n SYSTEM ----
+    function getNestedValue(obj, keyPath) {
+        var keys = keyPath.split('.');
+        var current = obj;
+        for (var i = 0; i < keys.length; i++) {
+            if (current == null) return null;
+            current = current[keys[i]];
+        }
+        return current;
+    }
+
+    function t(key) {
+        return getNestedValue(translations, key) || key;
+    }
+
+    async function loadTranslations(language) {
+        try {
+            var response = await fetch('../config/i18n/' + language + '.json');
+            translations = await response.json();
+            applyTranslations();
+        } catch (error) {
+            console.error('Error loading translations:', error);
+        }
+    }
+
+    function applyTranslations() {
+        document.querySelectorAll('[data-i18n]').forEach(function(el) {
+            var key = el.getAttribute('data-i18n');
+            var value = getNestedValue(translations, key);
+            if (value) {
+                if (el.tagName === 'META') {
+                    el.setAttribute('content', value);
+                } else if (el.id === 'project-detail-back') {
+                    el.innerHTML = '&larr; ' + value;
+                } else {
+                    el.textContent = value;
+                }
+            }
+        });
     }
 
     // ---- 3. VIDEO THUMBNAIL HELPER ----
@@ -57,6 +106,13 @@
         return getVideoThumbnailUrl(project);
     }
 
+    // ---- 3b. PROJECT DETAIL HELPER ----
+    function projectHasDetail(project) {
+        var hasTesto = project.testo && (project.testo.it || project.testo.en || project.testo.fr);
+        var hasAllegati = project.allegati && project.allegati.length > 0;
+        return hasTesto || hasAllegati;
+    }
+
     // ---- 4. SECTION NAVIGATION ----
     function navTo(sectionId) {
         document.querySelectorAll('.page-section').forEach(function(section) {
@@ -66,6 +122,12 @@
         var target = document.getElementById('section-' + sectionId);
         if (target) {
             target.classList.add('is-active');
+        }
+
+        // Cleanup detail page video when navigating away
+        if (sectionId !== 'project-detail') {
+            var detailContent = document.getElementById('project-detail-content');
+            if (detailContent) detailContent.innerHTML = '';
         }
 
         updateActiveNav(sectionId);
@@ -78,11 +140,19 @@
         });
 
         var navId = sectionId;
-        if (navId === 'all-projects') navId = 'portfolio';
+        if (navId === 'all-projects' || navId === 'project-detail' || navId === 'category-page') navId = 'portfolio';
+        if (navId === 'journalism-landing' || navId === 'ngo-landing') navId = 'portfolio';
 
-        var activeLink = document.querySelector('.sidebar-link[data-nav="' + navId + '"]');
-        if (activeLink) {
-            activeLink.classList.add('active');
+        // For portfolio, highlight the dropdown toggle that matches current section filter
+        if (navId === 'portfolio') {
+            document.querySelectorAll('.sidebar-link[data-nav="portfolio"]').forEach(function(link) {
+                link.classList.add('active');
+            });
+        } else {
+            var activeLink = document.querySelector('.sidebar-link[data-nav="' + navId + '"]');
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
         }
     }
 
@@ -103,8 +173,12 @@
                 var isDropdownToggle = navLink.classList.contains('dropdown-toggle');
                 var navTarget = navLink.getAttribute('data-nav');
 
-                // Dropdown toggles: only open/close the submenu, don't navigate
+                // Dropdown toggles: open/close submenu AND show section landing
                 if (isDropdownToggle) {
+                    var sectionAttr = navLink.getAttribute('data-section');
+                    if (sectionAttr) {
+                        showSectionLanding(sectionAttr);
+                    }
                     return;
                 }
 
@@ -129,6 +203,50 @@
                 return;
             }
 
+            // Handle [data-section-landing] clicks (All Journalism/NGO Projects)
+            var sectionLandingLink = e.target.closest('[data-section-landing]');
+            if (sectionLandingLink) {
+                e.preventDefault();
+                var secId = sectionLandingLink.getAttribute('data-section-landing');
+                showSectionLanding(secId);
+                closeMobileSidebar();
+                return;
+            }
+
+            // Handle [data-filter-subcat] clicks (subcategory in dropdown)
+            var subcatLink = e.target.closest('[data-filter-subcat]');
+            if (subcatLink) {
+                e.preventDefault();
+                var parentCat = subcatLink.getAttribute('data-parent-cat');
+                var subId = subcatLink.getAttribute('data-filter-subcat');
+                // Show category page scrolled/focused to that subcategory
+                currentFilterCat = parentCat;
+                showCategoryPage(parentCat);
+                // Scroll to the subcategory section after render
+                setTimeout(function() {
+                    var subHeadings = document.querySelectorAll('#category-page-content .subsection-title');
+                    var subName = t('subcategories.' + subId);
+                    subHeadings.forEach(function(h) {
+                        if (h.textContent === subName) {
+                            h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+                }, 100);
+                closeMobileSidebar();
+                return;
+            }
+
+            // Handle [data-show-all-cat] clicks (view all for a category)
+            var showAllCat = e.target.closest('[data-show-all-cat]');
+            if (showAllCat) {
+                e.preventDefault();
+                var catId = showAllCat.getAttribute('data-show-all-cat');
+                currentFilterCat = catId;
+                showAllProjectsGrid();
+                navTo('all-projects');
+                return;
+            }
+
             // Handle [data-open-project] clicks (all-projects grid)
             var projectBox = e.target.closest('[data-open-project]');
             if (projectBox) {
@@ -146,6 +264,18 @@
                 e.preventDefault();
                 e.stopPropagation();
                 openVideoModal(videoBtn);
+                return;
+            }
+
+            // Handle [data-show-detail] clicks
+            var detailBtn = e.target.closest('[data-show-detail]');
+            if (detailBtn) {
+                e.preventDefault();
+                e.stopPropagation();
+                var projectId = detailBtn.getAttribute('data-show-detail');
+                if (projectId) {
+                    showProjectDetail(projectId);
+                }
                 return;
             }
         });
@@ -237,9 +367,13 @@
             var response = await fetch('../config/projects.json');
             var data = await response.json();
 
+<<<<<<< HEAD
             allCategories = data.categories;
             allSections = data.sections;
             allSectionOrder = data.sectionOrder || Object.keys(data.sections);
+=======
+            allSections = data.sections || {};
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
             var projects = data.projects.filter(function(p) {
                 return p.visible !== false;
             });
@@ -256,8 +390,13 @@
             });
             buildCarousel(mainpageProjects, language);
 
+<<<<<<< HEAD
             // Populate sidebar section dropdowns
             populateSectionDropdowns(projects, language);
+=======
+            // Populate sidebar dropdown menus (journalism + ngo)
+            populateMenuDropdowns(projects);
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
 
             // Init video listeners for carousel
             initVideoListenersForCarousel();
@@ -283,6 +422,7 @@
             slidesHtml += createCarouselSlide(project, language, index);
         });
 
+<<<<<<< HEAD
         // Append "view all" slide as last page
         var viewAllLabels = {
             it: 'Vedi tutti i progetti',
@@ -290,9 +430,25 @@
             fr: 'Voir tous les projets'
         };
         slidesHtml += '<div class="carousel-slide carousel-slide--view-all">' +
+=======
+        // Append "view all" slide as last page — category-specific if filtered
+        var viewAllLabel = t('ui.viewAllProjects');
+        var viewAllAction = 'data-nav="all-projects"';
+
+        if (currentFilterCat) {
+            var catName = t('categories.' + currentFilterCat);
+            if (catName !== 'categories.' + currentFilterCat) {
+                viewAllLabel = catName;
+            }
+            viewAllAction = 'data-show-all-cat="' + currentFilterCat + '"';
+        }
+
+        var viewAllSlide = '<div class="carousel-slide carousel-slide--view-all">' +
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
             '<div class="view-all-slide-content">' +
-                '<a href="#" class="view-all-link" data-nav="all-projects">' +
-                    (viewAllLabels[language] || viewAllLabels.it) + ' &rarr;' +
+                '<p class="view-all-category-name">' + viewAllLabel + '</p>' +
+                '<a href="#" class="view-all-link" ' + viewAllAction + '>' +
+                    t('ui.viewAllContents') + ' &rarr;' +
                 '</a>' +
             '</div>' +
         '</div>';
@@ -334,7 +490,12 @@
             var year = project.date.substring(0, 4);
             tagText = year;
             if (categoryLabels.length > 0) {
-                tagText += ' &bull; ' + categoryLabels[0].replace(/-/g, ' ').toUpperCase();
+                var catName = t('categories.' + categoryLabels[0]);
+                if (catName !== 'categories.' + categoryLabels[0]) {
+                    tagText += ' &bull; ' + catName.toUpperCase();
+                } else {
+                    tagText += ' &bull; ' + categoryLabels[0].replace(/-/g, ' ').toUpperCase();
+                }
             }
         }
 
@@ -360,14 +521,16 @@
             }
         }
 
-        var playLabels = { it: 'Guarda', en: 'Watch', fr: 'Regarder' };
-        var readLabels = { it: 'Leggi articolo', en: 'Read article', fr: "Lire l'article" };
-
         var actionHTML = '';
         if (hasVideo) {
-            actionHTML = '<button class="slide-play-btn" ' + videoAttrs + '>&#9654; ' + (playLabels[language] || 'Watch') + '</button>';
+            actionHTML = '<button class="slide-play-btn" ' + videoAttrs + '>&#9654; ' + t('ui.watch') + '</button>';
         } else if (project.articleUrl) {
-            actionHTML = '<a href="' + project.articleUrl + '" target="_blank" rel="noopener" class="slide-read-btn">' + (readLabels[language] || 'Read') + ' &rarr;</a>';
+            actionHTML = '<a href="' + project.articleUrl + '" target="_blank" rel="noopener" class="slide-read-btn">' + t('ui.readArticle') + ' &rarr;</a>';
+        }
+
+        // Add detail button if project has text or attachments
+        if (projectHasDetail(project)) {
+            actionHTML += ' <button class="slide-detail-btn" data-show-detail="' + project.id + '">' + t('ui.details') + ' &rarr;</button>';
         }
 
         return '<div class="carousel-slide' + (index === 0 ? ' is-active' : '') + '" style="' + bgStyle + '">' +
@@ -381,6 +544,7 @@
         '</div>';
     }
 
+<<<<<<< HEAD
     // ---- 9. POPULATE SECTION DROPDOWNS ----
     function getProjectsForSection(projects, sectionId) {
         var section = allSections[sectionId];
@@ -399,10 +563,93 @@
         return projects.filter(function(p) {
             return p.categories && p.categories.some(function(c) {
                 return allCatIds.indexOf(c) !== -1;
+=======
+    // ---- 9. POPULATE MENU DROPDOWNS (journalism + ngo) ----
+    function populateMenuDropdowns(projects) {
+        ['journalism', 'ngo'].forEach(function(sectionId) {
+            var dropdown = document.getElementById(sectionId + '-dropdown');
+            if (!dropdown || !allSections[sectionId]) return;
+
+            dropdown.innerHTML = '';
+
+            var sectionCats = allSections[sectionId].order || [];
+
+            // Count all projects in this section
+            var totalCount = 0;
+            sectionCats.forEach(function(catId) {
+                totalCount += projects.filter(function(p) {
+                    return p.categories && p.categories.indexOf(catId) !== -1;
+                }).length;
+            });
+
+            // "All X Projects" link at top
+            var allLi = document.createElement('li');
+            var allA = document.createElement('a');
+            allA.className = 'dropdown-link dropdown-link--all';
+            allA.href = '#';
+            allA.setAttribute('data-section-landing', sectionId);
+            var sectionLabel = sectionId === 'journalism' ? t('nav.journalism') : t('nav.ngoWork');
+            allA.innerHTML = t('ui.allSectionProjects') + ' ' + sectionLabel + ' <span class="dropdown-count">' + totalCount + '</span>';
+            allLi.appendChild(allA);
+            dropdown.appendChild(allLi);
+
+            // Separator
+            var sepLi = document.createElement('li');
+            sepLi.className = 'dropdown-separator';
+            dropdown.appendChild(sepLi);
+
+            // Category items
+            var subcatsConfig = (allSections[sectionId] && allSections[sectionId].subcategories) || {};
+
+            sectionCats.forEach(function(catId) {
+                var catName = t('categories.' + catId);
+                if (catName === 'categories.' + catId) {
+                    catName = catId.replace(/-/g, ' ');
+                }
+
+                var count = projects.filter(function(p) {
+                    return p.categories && p.categories.indexOf(catId) !== -1;
+                }).length;
+
+                var li = document.createElement('li');
+                var a = document.createElement('a');
+                a.className = 'dropdown-link';
+                a.href = '#';
+                a.setAttribute('data-filter-cat', catId);
+                a.setAttribute('data-section', sectionId);
+                a.innerHTML = catName + ' <span class="dropdown-count">' + count + '</span>';
+                li.appendChild(a);
+                dropdown.appendChild(li);
+
+                // Add nested subcategories if this category has them
+                if (subcatsConfig[catId]) {
+                    var subList = document.createElement('ul');
+                    subList.className = 'dropdown-subcategories';
+
+                    subcatsConfig[catId].forEach(function(subId) {
+                        var subName = t('subcategories.' + subId);
+                        if (subName === 'subcategories.' + subId) {
+                            subName = subId.replace(/-/g, ' ');
+                        }
+                        var subLi = document.createElement('li');
+                        var subA = document.createElement('a');
+                        subA.className = 'dropdown-link dropdown-link--sub';
+                        subA.href = '#';
+                        subA.setAttribute('data-filter-subcat', subId);
+                        subA.setAttribute('data-parent-cat', catId);
+                        subA.textContent = subName;
+                        subLi.appendChild(subA);
+                        subList.appendChild(subLi);
+                    });
+
+                    li.appendChild(subList);
+                }
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
             });
         });
     }
 
+<<<<<<< HEAD
     function getCategoryCount(projects, catId) {
         var catIds = [catId];
         if (allCategories[catId] && allCategories[catId].children) {
@@ -506,9 +753,14 @@
         var language = detectLanguage();
         var filtered;
 
+=======
+    // ---- 10. CATEGORY FILTERING ----
+    function filterByCategory(catId) {
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
         currentFilterCat = catId;
         currentFilterSection = sectionId || null;
 
+<<<<<<< HEAD
         if (catId === 'all' && sectionId) {
             // All projects in a section
             filtered = getProjectsForSection(allProjects, sectionId);
@@ -524,11 +776,28 @@
                 });
             });
         }
+=======
+        // Check if this category has subcategories defined
+        var hasSubcats = false;
+        ['journalism', 'ngo'].forEach(function(sec) {
+            if (allSections[sec] && allSections[sec].subcategories &&
+                allSections[sec].subcategories[catId]) {
+                hasSubcats = true;
+            }
+        });
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
 
-        buildCarousel(filtered, language);
-        initVideoListenersForCarousel();
-        initThumbnailFallbacks();
-        navTo('portfolio');
+        if (hasSubcats) {
+            showCategoryPage(catId);
+        } else {
+            var filtered = allProjects.filter(function(p) {
+                return p.categories && p.categories.indexOf(catId) !== -1;
+            });
+            buildCarousel(filtered, detectLanguage());
+            initVideoListenersForCarousel();
+            initThumbnailFallbacks();
+            navTo('portfolio');
+        }
     }
 
     // ---- 11. SHOW MAINPAGE PROJECTS (Portfolio click) ----
@@ -566,6 +835,7 @@
             });
         }
 
+<<<<<<< HEAD
         // Batch all project boxes into a single HTML string
         var gridHtml = '';
         projects.forEach(function(project) {
@@ -616,22 +886,293 @@
                     (year || catLabel ? '<p class="project-box-meta">' + (year ? year : '') + (year && catLabel ? ' &bull; ' : '') + catLabel + '</p>' : '') +
                 '</div>' +
             '</div>';
+=======
+        gridContainer.innerHTML = '';
+        projects.forEach(function(project) {
+            var card = createProjectCard(project, language);
+            if (card) gridContainer.insertAdjacentHTML('beforeend', card);
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
         });
         gridContainer.innerHTML = gridHtml;
 
         // Update heading with category or section name if filtered
         var heading = document.querySelector('#section-all-projects .section-heading');
         if (heading) {
+<<<<<<< HEAD
             if (currentFilterCat && currentFilterCat !== 'all' && allCategories[currentFilterCat]) {
                 heading.textContent = allCategories[currentFilterCat][language] || allCategories[currentFilterCat].it;
             } else if (currentFilterSection && allSections[currentFilterSection]) {
                 var sectionLabel = allSections[currentFilterSection].allLabel;
                 heading.textContent = sectionLabel[language] || sectionLabel.it;
+=======
+            if (currentFilterCat && currentFilterCat !== 'all') {
+                var catName = t('categories.' + currentFilterCat);
+                heading.textContent = (catName !== 'categories.' + currentFilterCat) ? catName : t('sections.allProjects');
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
             } else {
-                var headingLabels = { it: 'Tutti i Progetti', en: 'All Projects', fr: 'Tous les Projets' };
-                heading.textContent = headingLabels[language] || headingLabels.it;
+                heading.textContent = t('sections.allProjects');
             }
         }
+        initThumbnailFallbacks();
+    }
+
+    // ---- 12a. SECTION LANDING PAGE (Journalism / NGO Work) ----
+    function showSectionLanding(sectionId) {
+        var language = detectLanguage();
+        var container = document.getElementById(sectionId + '-landing-content');
+        if (!container || !allSections[sectionId]) return;
+
+        var sectionCats = allSections[sectionId].order || [];
+        var html = '';
+
+        sectionCats.forEach(function(catId) {
+            var catName = t('categories.' + catId);
+            if (catName === 'categories.' + catId) {
+                catName = catId.replace(/-/g, ' ');
+            }
+
+            var catProjects = allProjects.filter(function(p) {
+                return p.categories && p.categories.indexOf(catId) !== -1;
+            });
+
+            var count = catProjects.length;
+            if (count === 0) return;
+
+            // Find featured project (first one with a thumbnail or video)
+            var featured = catProjects[0];
+            var bgStyle = '';
+            var thumbUrl = getProjectThumbnailUrl(featured);
+            if (thumbUrl) {
+                bgStyle = "background-image: url('" + thumbUrl + "');";
+            } else if (featured.thumbnail && featured.thumbnail.fallbackGradient) {
+                bgStyle = 'background: ' + featured.thumbnail.fallbackGradient + ';';
+            } else {
+                bgStyle = 'background: linear-gradient(135deg, #3D3731 0%, #1A1614 100%);';
+            }
+
+            var featuredTitle = featured.title[language] || featured.title.it || '';
+
+            html += '<div class="landing-column" data-filter-cat="' + catId + '">' +
+                '<div class="landing-column-bg" style="' + bgStyle + '"></div>' +
+                '<div class="landing-column-overlay"></div>' +
+                '<div class="landing-column-content">' +
+                    '<h3 class="landing-column-category">' + catName + '</h3>' +
+                    '<p class="landing-column-count">' + count + ' ' + (count === 1 ? 'project' : 'projects') + '</p>' +
+                    '<p class="landing-column-featured">' + featuredTitle + '</p>' +
+                '</div>' +
+            '</div>';
+        });
+
+        container.innerHTML = html;
+        navTo(sectionId + '-landing');
+    }
+
+    // ---- 12b. CREATE PROJECT CARD (shared by grid views) ----
+    function createProjectCard(project, language) {
+        var title = project.title[language] || project.title.it || '';
+        if (!title) return '';
+
+        var thumbUrl = getProjectThumbnailUrl(project);
+        var bgStyle = '';
+        if (thumbUrl) {
+            bgStyle = "background-image: url('" + thumbUrl + "');";
+        } else if (project.thumbnail && project.thumbnail.fallbackGradient) {
+            bgStyle = 'background: ' + project.thumbnail.fallbackGradient + ';';
+        } else {
+            bgStyle = 'background: linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%);';
+        }
+
+        var hasVideo = project.video && project.video.type;
+        var linkUrl = hasVideo ? '' : (project.articleUrl || '');
+        var videoAttrs = '';
+        if (hasVideo) {
+            if (project.video.type === 'local') {
+                videoAttrs = 'data-video-type="local" data-video-src="' + project.video.src + '"';
+            } else {
+                videoAttrs = 'data-video-type="' + project.video.type + '" data-video-id="' + project.video.id + '"';
+            }
+        }
+
+        var year = project.date ? project.date.substring(0, 4) : '';
+
+        var actionHtml = '';
+        if (hasVideo) {
+            actionHtml = '<button class="project-box-action" data-play-video="1" ' + videoAttrs + '>&#9654;</button>';
+        }
+
+        return '<div class="project-box" ' + (linkUrl ? 'data-open-project="' + linkUrl + '"' : '') + '>' +
+            '<div class="project-box-thumb" style="' + bgStyle + '">' +
+                actionHtml +
+            '</div>' +
+            '<div class="project-box-info">' +
+                '<h3 class="project-box-title">' + title + '</h3>' +
+                (year ? '<p class="project-box-meta">' + year + '</p>' : '') +
+            '</div>' +
+        '</div>';
+    }
+
+    // ---- 12c. CATEGORY PAGE (grid with subsections) ----
+    function showCategoryPage(catId) {
+        var language = detectLanguage();
+        var container = document.getElementById('category-page-content');
+        var titleEl = document.getElementById('category-page-title');
+        var introEl = document.getElementById('category-page-intro');
+
+        if (!container || !titleEl) return;
+
+        // Set title
+        var catName = t('categories.' + catId);
+        titleEl.textContent = (catName !== 'categories.' + catId) ? catName : catId.replace(/-/g, ' ');
+
+        // Set intro
+        var intro = t('sectionIntros.' + catId);
+        if (introEl) {
+            introEl.textContent = (intro !== 'sectionIntros.' + catId) ? intro : '';
+            introEl.style.display = (intro !== 'sectionIntros.' + catId) ? '' : 'none';
+        }
+
+        container.innerHTML = '';
+
+        // Find subcategories config
+        var subcats = null;
+        ['journalism', 'ngo'].forEach(function(sec) {
+            if (allSections[sec] && allSections[sec].subcategories &&
+                allSections[sec].subcategories[catId]) {
+                subcats = allSections[sec].subcategories[catId];
+            }
+        });
+
+        // Get projects for this category
+        var projects = allProjects.filter(function(p) {
+            return p.categories && p.categories.indexOf(catId) !== -1;
+        });
+
+        var html = '';
+
+        if (subcats) {
+            subcats.forEach(function(subId) {
+                var subProjects = projects.filter(function(p) {
+                    return p.subcategory === subId;
+                });
+                if (subProjects.length === 0) return;
+
+                var subTitle = t('subcategories.' + subId);
+                if (subTitle === 'subcategories.' + subId) {
+                    subTitle = subId.replace(/-/g, ' ');
+                }
+
+                html += '<h3 class="subsection-title">' + subTitle + '</h3>';
+                html += '<div class="projects-grid">';
+                subProjects.forEach(function(p) {
+                    html += createProjectCard(p, language);
+                });
+                html += '</div>';
+            });
+        } else {
+            html += '<div class="projects-grid">';
+            projects.forEach(function(p) {
+                html += createProjectCard(p, language);
+            });
+            html += '</div>';
+        }
+
+        container.innerHTML = html;
+        initThumbnailFallbacks();
+        navTo('category-page');
+    }
+
+    // ---- 12d. PROJECT DETAIL ----
+    function showProjectDetail(projectId) {
+        var language = detectLanguage();
+        var project = allProjects.find(function(p) { return p.id === projectId; });
+        if (!project) return;
+
+        var contentEl = document.getElementById('project-detail-content');
+        if (!contentEl) return;
+
+        // Track where we came from for the back button
+        var activeSections = document.querySelectorAll('.page-section.is-active');
+        if (activeSections.length > 0) {
+            previousSection = activeSections[0].id.replace('section-', '');
+        }
+
+        // Title
+        var title = project.title[language] || project.title.it || '';
+
+        // Meta (year + categories)
+        var year = project.date ? project.date.substring(0, 4) : '';
+        var catLabels = [];
+        if (project.categories && project.categories.length > 0) {
+            project.categories.forEach(function(catId) {
+                if (catId !== 'TODO') {
+                    var translated = t('categories.' + catId);
+                    if (translated !== 'categories.' + catId) {
+                        catLabels.push(translated);
+                    }
+                }
+            });
+        }
+        var metaText = year;
+        if (catLabels.length > 0) {
+            metaText += (metaText ? ' \u2022 ' : '') + catLabels.join(', ');
+        }
+
+        // Video embed
+        var videoHTML = '';
+        if (project.video && project.video.type) {
+            var embedContent = '';
+            switch (project.video.type) {
+                case 'youtube':
+                    embedContent = '<iframe src="https://www.youtube.com/embed/' + project.video.id + '?rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>';
+                    break;
+                case 'vimeo':
+                    embedContent = '<iframe src="https://player.vimeo.com/video/' + project.video.id + '" allow="autoplay; fullscreen" allowfullscreen></iframe>';
+                    break;
+                case 'local':
+                    embedContent = '<video controls><source src="' + project.video.src + '" type="video/mp4"></video>';
+                    break;
+            }
+            if (embedContent) {
+                videoHTML = '<div class="project-detail-video"><div class="project-detail-video-wrapper">' + embedContent + '</div></div>';
+            }
+        }
+
+        // Text content
+        var textContent = '';
+        if (project.testo) {
+            textContent = project.testo[language] || project.testo.it || '';
+        }
+        var textHTML = textContent ? '<div class="project-detail-text">' + textContent + '</div>' : '';
+
+        // Attachments
+        var attachHTML = '';
+        if (project.allegati && project.allegati.length > 0) {
+            var items = project.allegati.map(function(url) {
+                var filename = url.split('/').pop();
+                return '<li><a href="' + url + '" target="_blank" rel="noopener">' + filename + '</a></li>';
+            }).join('');
+            attachHTML = '<div class="project-detail-attachments">' +
+                '<h3>' + t('ui.attachments') + '</h3>' +
+                '<ul>' + items + '</ul>' +
+            '</div>';
+        }
+
+        // Article link
+        var articleHTML = '';
+        if (project.articleUrl) {
+            articleHTML = '<p style="margin-top: var(--space-sm);"><a href="' + project.articleUrl + '" target="_blank" rel="noopener" style="color: var(--color-text-secondary); text-decoration: underline; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;">' + t('ui.readArticle') + ' &rarr;</a></p>';
+        }
+
+        // Assemble
+        contentEl.innerHTML =
+            '<h2 class="project-detail-title">' + title + '</h2>' +
+            (metaText ? '<p class="project-detail-meta">' + metaText + '</p>' : '') +
+            videoHTML +
+            textHTML +
+            attachHTML +
+            articleHTML;
+
+        navTo('project-detail');
     }
 
     // ---- 13. MOBILE SIDEBAR TOGGLE ----
@@ -753,9 +1294,18 @@
         initEventDelegation();
         initCarousel();
 
+        // Back button for project detail
+        var detailBackBtn = document.getElementById('project-detail-back');
+        if (detailBackBtn) {
+            detailBackBtn.addEventListener('click', function() {
+                navTo(previousSection);
+            });
+        }
+
         var mainContent = document.getElementById('main-content');
         if (mainContent) {
             var language = detectLanguage();
+            await loadTranslations(language);
             await loadAndRenderProjects(language);
         }
     }

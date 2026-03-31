@@ -1,6 +1,7 @@
 {
   "sections": {
     "journalism": {
+<<<<<<< HEAD
       "label": {
         "it": "Giornalismo",
         "en": "Journalism",
@@ -92,12 +93,35 @@
       "it": "Coordinamento Progetti Multimediali",
       "en": "Multimedia Projects Coordination",
       "fr": "Coordination de Projets Multimédias"
+=======
+      "order": [
+        "documentary-films",
+        "multimedia-projects",
+        "longform-reportage"
+      ],
+      "subcategories": {
+        "longform-reportage": [
+          "migration-displacement",
+          "international-crisis",
+          "middle-east-north-africa",
+          "political-social-justice-gender"
+        ]
+      }
+    },
+    "ngo": {
+      "order": [
+        "documentary-series",
+        "field-missions",
+        "multimedia-projects-coordination",
+        "photo-exhibitions"
+      ]
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     }
   },
   "projects": [
     {
       "id": "italiano-siria-zahraa-e-nubl-villaggi-simbolo-dello-scontro-sunniti-sciiti",
-      "visible": true,
+      "visible": false,
       "order": 1,
       "date": "2015-02-25",
       "video": null,
@@ -112,12 +136,24 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=283",
       "categories": [
+<<<<<<< HEAD
         "international-crisis"
       ]
+=======
+        "conflict-zones"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "english-theatre-and-revolution-artshub",
-      "visible": true,
+      "visible": false,
       "order": 2,
       "date": "2015-02-28",
       "video": null,
@@ -132,9 +168,21 @@
       },
       "articleUrl": "http://www.artshub.co.uk/news-article/features/public-policy/theatre-of-the-revolution-197246",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "sinai-deserto-e-affari-left",
@@ -154,7 +202,15 @@
       "articleUrl": "http://www.nawartpress.com/?p=365",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true,
+      "subcategory": "middle-east-north-africa"
     },
     {
       "id": "english-for-young-israelis-the-other-side-simply-does-not-exist-middle-east-eye",
@@ -174,11 +230,19 @@
       "articleUrl": "http://www.nawartpress.com/?p=678",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true,
+      "subcategory": "middle-east-north-africa"
     },
     {
       "id": "holot-il-ghetto-nero-nigrizia",
-      "visible": true,
+      "visible": false,
       "order": 5,
       "date": "2015-03-01",
       "video": null,
@@ -194,11 +258,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=681",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "perche-la-turchia-lascia-che-lis-avanzi-su-kobane-pagina99",
-      "visible": true,
+      "visible": false,
       "order": 6,
       "date": "2015-03-01",
       "video": null,
@@ -213,8 +284,20 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=693",
       "categories": [
+<<<<<<< HEAD
         "international-crisis"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "la-guerra-siriana-vista-dal-golan-sempre-piu-vicino-a-israele-europa",
@@ -233,13 +316,26 @@
       },
       "articleUrl": "http://www.europaquotidiano.it/2014/09/30/la-guerra-siriana-vista-dal-golan-sempre-piu-vicino-a-israele/",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "international-crisis"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true,
+      "subcategory": "international-crisis"
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "in-egitto-si-celebrano-le-finte-elezioni-il-caffe",
-      "visible": true,
+      "visible": false,
       "order": 8,
       "date": "2015-03-01",
       "video": null,
@@ -254,9 +350,21 @@
       },
       "articleUrl": "http://www.caffe.ch/stories/cronaca/47077_in_egitto_si_celebrano_le_finte_elezioni/",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "le-donne-del-cairo-in-piazza-contro-gli-stupri-pagina-99",
@@ -275,13 +383,26 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=636",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true,
+      "subcategory": "political-social-justice-gender"
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "giornata-nazionale-contro-le-mutilazioni-genitali-femminili-in-egitto-donne-e-bambine-raccontano-il-loro-dolore-video-inchiesta-huffington-post",
-      "visible": true,
+      "visible": false,
       "order": 10,
       "date": "2015-03-01",
       "video": null,
@@ -296,9 +417,21 @@
       },
       "articleUrl": "http://www.huffingtonpost.it/2015/02/06/mgf-mutuilazioni-video-egitto_n_6628904.html",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "tra-i-profughi-curdi-di-kobane-fuggiti-in-poche-ore-combattiamo-per-liberare-la-citta-dallis-repubblica",
@@ -317,14 +450,27 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=704",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "international-crisis",
         "migration-displacement"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true,
+      "subcategory": "international-crisis"
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "al-sisi-incontra-renzi-in-egitto-proseguono-gli-arresti-di-massa-pagina-99",
-      "visible": true,
+      "visible": false,
       "order": 12,
       "date": "2015-03-01",
       "video": null,
@@ -339,13 +485,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=760",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "francais-caricaturer-legypte-choisir",
-      "visible": true,
+      "visible": false,
       "order": 13,
       "date": "2015-03-01",
       "video": null,
@@ -361,11 +519,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=780",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "egitto-dove-la-satira-puo-costare-la-liberta-repubblica",
-      "visible": true,
+      "visible": false,
       "order": 14,
       "date": "2015-03-01",
       "video": null,
@@ -380,13 +545,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=784",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "english-who-was-egypts-omar-mustafa-middle-east-eye",
-      "visible": true,
+      "visible": false,
       "order": 15,
       "date": "2015-03-01",
       "video": null,
@@ -402,11 +579,18 @@
       "articleUrl": "http://www.middleeasteye.net/news/egypt-issues-security-clearances-its-citizen-travellers-101752372",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "francais-rojava-et-la-question-kurde-choisir",
-      "visible": true,
+      "visible": false,
       "order": 16,
       "date": "2015-03-01",
       "video": null,
@@ -421,12 +605,24 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=723",
       "categories": [
+<<<<<<< HEAD
         "international-crisis"
       ]
+=======
+        "conflict-zones"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "francais-kobane-suruc-7-km-de-distance-2-pays-1-peuple-choisir",
-      "visible": true,
+      "visible": false,
       "order": 17,
       "date": "2015-03-01",
       "video": null,
@@ -441,12 +637,24 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=727",
       "categories": [
+<<<<<<< HEAD
         "international-crisis"
       ]
+=======
+        "conflict-zones"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "legitto-bombarda-le-sue-case-per-combattere-i-jihadisti-pagina99",
-      "visible": true,
+      "visible": false,
       "order": 18,
       "date": "2015-03-01",
       "video": null,
@@ -461,13 +669,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=733",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "international-crisis"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "english-egypt-speak-day-1-and-2-of-vote-middle-east-eye",
-      "visible": true,
+      "visible": false,
       "order": 19,
       "date": "2015-03-01",
       "video": null,
@@ -483,7 +703,14 @@
       "articleUrl": "http://www.nawartpress.com/?p=595",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "francais-syriens-en-egypte-de-refugies-a-terroristes-choisir",
@@ -503,11 +730,19 @@
       "articleUrl": "http://www.nawartpress.com/?p=495",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true,
+      "subcategory": "middle-east-north-africa"
     },
     {
       "id": "pronta-la-nuova-costituzione-la-tunisia-e-un-po-piu-laica-pagina99",
-      "visible": true,
+      "visible": false,
       "order": 21,
       "date": "2015-03-01",
       "video": null,
@@ -523,11 +758,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=498",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "la-gatta-di-tunisi-che-lotta-contro-la-normalizzazione-pagina99",
-      "visible": true,
+      "visible": false,
       "order": 22,
       "date": "2015-03-01",
       "video": null,
@@ -543,11 +785,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=501",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "il-viaggio-della-morte-testimonianze-da-alessandria-degitto-paralleli",
-      "visible": true,
+      "visible": false,
       "order": 23,
       "date": "2015-03-01",
       "video": null,
@@ -563,11 +812,18 @@
       "articleUrl": "http://www.mediteu.org/?q=users/paralleli",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "sotto-razzi-e-bombe-nel-kibbutz-di-beeri-il-caffe",
-      "visible": true,
+      "visible": false,
       "order": 24,
       "date": "2015-03-01",
       "video": null,
@@ -582,13 +838,25 @@
       },
       "articleUrl": "http://www.caffe.ch/stories/cronaca/47907_sotto_razzi_e_bombe_nel_kibbutz_di_beeri/",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "international-crisis"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "lo-stato-islamico-del-sinai-una-guerra-alle-porte-di-israele-europa",
-      "visible": true,
+      "visible": false,
       "order": 25,
       "date": "2015-03-01",
       "video": null,
@@ -603,13 +871,25 @@
       },
       "articleUrl": "http://www.europaquotidiano.it/2013/10/06/egitto-sinai/",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "international-crisis"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "la-disperazione-che-infrange-i-sogni-il-caffe",
-      "visible": true,
+      "visible": false,
       "order": 26,
       "date": "2015-03-01",
       "video": null,
@@ -625,11 +905,18 @@
       "articleUrl": "http://www.caffe.ch/stories/cultura/45246_la_disperazione_che_infrange_i_sogni/",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "egitto-con-gli-occhi-dei-ragazzi-di-strada-pagina99",
-      "visible": true,
+      "visible": false,
       "order": 27,
       "date": "2015-03-01",
       "video": null,
@@ -645,11 +932,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=505",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "risa-emozioni-silenzi-il-cairo-si-rivede-in-piazza-pagina99",
-      "visible": true,
+      "visible": false,
       "order": 28,
       "date": "2015-03-01",
       "video": null,
@@ -665,11 +959,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=541",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "una-piazza-da-oscar-left",
-      "visible": true,
+      "visible": false,
       "order": 29,
       "date": "2015-03-01",
       "video": null,
@@ -685,11 +986,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=547",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "voto-dobbedienza-nigrizia",
-      "visible": true,
+      "visible": false,
       "order": 30,
       "date": "2015-03-01",
       "video": null,
@@ -705,11 +1013,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=579",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "la-rivoluzione-rubata-tre-anni-dopo-mubarak-pagina99",
-      "visible": true,
+      "visible": false,
       "order": 31,
       "date": "2015-03-01",
       "video": null,
@@ -724,13 +1039,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=535",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "sinai-business-beduino-nigrizia",
-      "visible": true,
+      "visible": false,
       "order": 32,
       "date": "2015-03-01",
       "video": null,
@@ -746,11 +1073,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=510",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "sinai-terra-di-nessuno-vita-trentina",
-      "visible": true,
+      "visible": false,
       "order": 33,
       "date": "2015-03-01",
       "video": null,
@@ -766,11 +1100,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=513",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "english-the-priest-the-bedouins-and-the-kidnapped-africans-esquire",
-      "visible": true,
+      "visible": false,
       "order": 34,
       "date": "2015-03-01",
       "video": null,
@@ -787,11 +1128,17 @@
       "categories": [
         "longform-reportage"
       ],
-      "mainpage": true
+      "mainpage": false,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "curious",
-      "visible": true,
+      "visible": false,
       "order": 35,
       "date": "2015-03-05",
       "video": null,
@@ -807,11 +1154,18 @@
       "articleUrl": "",
       "categories": [
         "multimedia-projects"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "il-faraone-contro-il-califfo-nel-sinai-east",
-      "visible": true,
+      "visible": false,
       "order": 36,
       "date": "2015-03-13",
       "video": null,
@@ -826,13 +1180,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1041",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "international-crisis"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "donne-e-confini-nel-dibattito-allanpi-di-parma",
-      "visible": true,
+      "visible": false,
       "order": 37,
       "date": "2015-03-19",
       "video": null,
@@ -847,13 +1213,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1069",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "buon-newroz-il-capodanno-raccontato-da-aicha-attivista-curda",
-      "visible": true,
+      "visible": false,
       "order": 38,
       "date": "2015-03-22",
       "video": null,
@@ -868,12 +1246,24 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1094",
       "categories": [
+<<<<<<< HEAD
         "international-crisis"
       ]
+=======
+        "conflict-zones"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "non-un-numero-non-un-ombra-i-migranti-nei-dormitori-di-caritas",
-      "visible": true,
+      "visible": false,
       "order": 39,
       "date": "2015-03-23",
       "video": null,
@@ -889,11 +1279,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=1075",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "grazie-a-chi-sta-contribuendo-a-rendere-questo-progetto-realta",
-      "visible": true,
+      "visible": false,
       "order": 40,
       "date": "2015-04-01",
       "video": null,
@@ -909,11 +1306,18 @@
       "articleUrl": "http://www.nawartpress.com/nawart-press-su-limpresa-eccezionale-a-radio-popolare-podcast/",
       "categories": [
         "TODO"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "un-artista-in-cammino-francis-alys-macla-lab",
-      "visible": true,
+      "visible": false,
       "order": 41,
       "date": "2015-04-05",
       "video": null,
@@ -929,11 +1333,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=1167",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "campagna-riuscita",
-      "visible": true,
+      "visible": false,
       "order": 42,
       "date": "2015-04-16",
       "video": null,
@@ -949,11 +1360,18 @@
       "articleUrl": "http://www.nawartpress.com/nawart-press-su-limpresa-eccezionale-a-radio-popolare-podcast/",
       "categories": [
         "TODO"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "la-casa-prigione-di-gjurakoc",
-      "visible": true,
+      "visible": false,
       "order": 43,
       "date": "2015-05-07",
       "video": null,
@@ -969,11 +1387,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=1263",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "gipsy-groove-al-peralla-festival-di-gjakova",
-      "visible": true,
+      "visible": false,
       "order": 44,
       "date": "2015-05-11",
       "video": null,
@@ -989,11 +1414,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=1316",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "essere-un-travestito-a-tirana-2",
-      "visible": true,
+      "visible": false,
       "order": 45,
       "date": "2015-05-21",
       "video": null,
@@ -1008,13 +1440,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/essere-un-travestito-a-tirana/",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "francais-les-mines-de-trepca",
-      "visible": true,
+      "visible": false,
       "order": 46,
       "date": "2015-06-02",
       "video": null,
@@ -1030,11 +1474,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=1440",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "francais-mais-pourquoi-partent-ils",
-      "visible": true,
+      "visible": false,
       "order": 47,
       "date": "2015-06-02",
       "video": null,
@@ -1050,7 +1501,14 @@
       "articleUrl": "http://www.nawartpress.com/?p=1435",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "servizio-tg-da-akcakale-emergenza-profughi-al-confine-con-tal-abyiad",
@@ -1069,12 +1527,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1521",
       "categories": [
+<<<<<<< HEAD
         "international-crisis"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true,
+      "subcategory": "international-crisis"
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "a-pranzo-con-le-sacerdotesse-zoroastriane",
-      "visible": true,
+      "visible": false,
       "order": 49,
       "date": "2015-07-09",
       "video": null,
@@ -1089,12 +1560,19 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1576",
       "categories": [
-        "documentary-films"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "galleria-fotografica-uzbekistan",
-      "visible": true,
+      "visible": false,
       "order": 50,
       "date": "2015-07-23",
       "video": null,
@@ -1110,7 +1588,14 @@
       "articleUrl": "http://www.nawartpress.com/?p=1693",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "english-the-zoroastrian-priestesses-of-iran",
@@ -1129,12 +1614,20 @@
       },
       "articleUrl": "http://www.nawartpress.com/english-the-zoroastrian-priestesses-of-iran-middle-east-eye/",
       "categories": [
-        "documentary-films"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true,
+      "subcategory": "political-social-justice-gender"
     },
     {
       "id": "english-the-zoroastrian-priestesses-of-iran-middle-east-eye",
-      "visible": true,
+      "visible": false,
       "order": 52,
       "date": "2015-07-28",
       "video": null,
@@ -1149,12 +1642,19 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1704",
       "categories": [
-        "documentary-films"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "francais-pretresses-zoroastriennes-en-iran-orientxxi",
-      "visible": true,
+      "visible": false,
       "order": 53,
       "date": "2015-09-25",
       "video": null,
@@ -1169,8 +1669,15 @@
       },
       "articleUrl": "http://orientxxi.info/",
       "categories": [
-        "documentary-films"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "frontiera-melilla-per-i-siriani-un-nuovo-muro-prima-delleuropa-repubblica",
@@ -1189,12 +1696,20 @@
       },
       "articleUrl": "",
       "categories": [
-        "migration-displacement"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true,
+      "subcategory": "migration-displacement"
     },
     {
       "id": "vierges-au-masculin-choisir",
-      "visible": true,
+      "visible": false,
       "order": 55,
       "date": "2015-11-03",
       "video": null,
@@ -1210,11 +1725,18 @@
       "articleUrl": "",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "il-blog-di-nawart-su-vita",
-      "visible": true,
+      "visible": false,
       "order": 56,
       "date": "2015-11-03",
       "video": null,
@@ -1229,14 +1751,26 @@
       },
       "articleUrl": "",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice",
         "international-crisis"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "le-desk-una-nuova-sfida-al-giornalismo-in-marocco-il-blog-di-vita",
-      "visible": true,
+      "visible": false,
       "order": 57,
       "date": "2015-11-23",
       "video": null,
@@ -1252,11 +1786,18 @@
       "articleUrl": "",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "iran-la-revolution-discrete-des-zoroastriens",
-      "visible": true,
+      "visible": false,
       "order": 58,
       "date": "2015-12-01",
       "video": null,
@@ -1272,11 +1813,18 @@
       "articleUrl": "",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "abbiamo-bisogno-di-tante-wangari-maathai-il-blog-di-vita",
-      "visible": true,
+      "visible": false,
       "order": 59,
       "date": "2015-12-01",
       "video": null,
@@ -1292,11 +1840,18 @@
       "articleUrl": "",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "se-il-sole-del-deserto-diventa-energia-pulita",
-      "visible": true,
+      "visible": false,
       "order": 60,
       "date": "2015-12-01",
       "video": null,
@@ -1312,11 +1867,18 @@
       "articleUrl": "",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "noor-1-premiere-centrale-delectricite-solaire-du-maroc",
-      "visible": true,
+      "visible": false,
       "order": 61,
       "date": "2016-01-03",
       "video": null,
@@ -1332,11 +1894,18 @@
       "articleUrl": "http://orientxxi.info/",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "la-satira-dopo-charlie-hebdo-doaa-el-adl-disegnatrice-egiziana-il-blog-di-vita",
-      "visible": true,
+      "visible": false,
       "order": 62,
       "date": "2016-01-12",
       "video": null,
@@ -1351,13 +1920,25 @@
       },
       "articleUrl": "",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "donne-e-icone-di-steve-mccurry-a-forli-il-blog-di-vita",
-      "visible": true,
+      "visible": false,
       "order": 63,
       "date": "2016-01-12",
       "video": null,
@@ -1372,13 +1953,25 @@
       },
       "articleUrl": "",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "marocco-apre-la-piu-grande-centrale-solare-termodinamica-del-mondo",
-      "visible": true,
+      "visible": false,
       "order": 64,
       "date": "2016-01-12",
       "video": null,
@@ -1394,11 +1987,18 @@
       "articleUrl": "",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "retata-continua",
-      "visible": true,
+      "visible": false,
       "order": 65,
       "date": "2016-01-13",
       "video": null,
@@ -1414,11 +2014,18 @@
       "articleUrl": "",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "seguire-le-piste-arabe-al-ritmo-della-techno-hadra",
-      "visible": true,
+      "visible": false,
       "order": 66,
       "date": "2016-01-18",
       "video": null,
@@ -1434,11 +2041,18 @@
       "articleUrl": "",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "leuropa-promessa",
-      "visible": true,
+      "visible": false,
       "order": 67,
       "date": "2016-02-08",
       "video": null,
@@ -1454,11 +2068,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=2886",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "1000-donne-per-la-pace",
-      "visible": true,
+      "visible": false,
       "order": 68,
       "date": "2016-02-09",
       "video": null,
@@ -1473,13 +2094,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=2895",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "unione-africana-burundi-cpi-e-parita-di-genere",
-      "visible": true,
+      "visible": false,
       "order": 69,
       "date": "2016-02-09",
       "video": null,
@@ -1494,13 +2127,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=2892",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "8-mars-le-difficile-metier-de-femme-au-kazakhstan",
-      "visible": true,
+      "visible": false,
       "order": 70,
       "date": "2016-03-08",
       "video": null,
@@ -1515,13 +2160,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "i-nuovi-desaparecidos-dalla-tunisia-in-italia-come-profughi-poi-spariti-nel-silenzio",
-      "visible": true,
+      "visible": false,
       "order": 71,
       "date": "2016-05-04",
       "video": null,
@@ -1537,11 +2194,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=3047",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "i-turisti-della-sanita",
-      "visible": true,
+      "visible": false,
       "order": 72,
       "date": "2016-05-23",
       "video": null,
@@ -1557,11 +2221,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=3062",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "la-galaxie-dextreme-droite-autours-du-fn",
-      "visible": true,
+      "visible": false,
       "order": 73,
       "date": "2016-12-21",
       "video": null,
@@ -1576,13 +2247,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3274",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "gli-ottomila-salvati-a-pasqua-diario-di-bordo-di-una-missione-di-salvataggio-open-migration",
-      "visible": true,
+      "visible": false,
       "order": 74,
       "date": "2017-05-03",
       "video": null,
@@ -1597,12 +2280,19 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3459",
       "categories": [
-        "migration-displacement"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "from-jugend-rettets-iuventa-in-the-libyan-sar-zone",
-      "visible": true,
+      "visible": false,
       "order": 75,
       "date": "2017-05-09",
       "video": null,
@@ -1617,12 +2307,19 @@
       },
       "articleUrl": "http://www.nawartpress.com/it/gli-ottomila-salvati-a-pasqua-diario-di-bordo-di-una-missione-di-salvataggio-open-migration/",
       "categories": [
-        "migration-displacement"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "debate-on-violence-against-women-in-tunisia",
-      "visible": true,
+      "visible": false,
       "order": 76,
       "date": "2017-05-17",
       "video": null,
@@ -1637,13 +2334,25 @@
       },
       "articleUrl": "http://orientxxi.info/langue_en",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "i-pescatori-tunisini-che-danno-sepoltura-ai-migranti-senza-nome-openmigration",
-      "visible": true,
+      "visible": false,
       "order": 77,
       "date": "2017-06-02",
       "video": null,
@@ -1658,12 +2367,19 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3534",
       "categories": [
-        "migration-displacement"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "il-rif-si-alza-marocco",
-      "visible": true,
+      "visible": false,
       "order": 78,
       "date": "2017-06-09",
       "video": null,
@@ -1679,11 +2395,18 @@
       "articleUrl": "http://www.nigrizia.it/notizia/la-protesta-infiamma-il-rif",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "sar-zone-a-la-recherche-de-vies-a-sauver-en-mediterranee-inkyfada",
-      "visible": true,
+      "visible": false,
       "order": 79,
       "date": "2017-06-09",
       "video": null,
@@ -1698,12 +2421,19 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3539",
       "categories": [
-        "migration-displacement"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "tra-i-pescatori-di-zarzis-che-respingono-gli-xenofobi",
-      "visible": true,
+      "visible": false,
       "order": 80,
       "date": "2017-09-18",
       "video": null,
@@ -1718,12 +2448,19 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3680",
       "categories": [
-        "migration-displacement"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "calais-non-e-finita",
-      "visible": true,
+      "visible": false,
       "order": 81,
       "date": "2017-10-12",
       "video": null,
@@ -1739,11 +2476,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=3698",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "per-daphne-caruana-galizia",
-      "visible": true,
+      "visible": false,
       "order": 82,
       "date": "2017-10-17",
       "video": null,
@@ -1759,11 +2503,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=3715",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "collusione-nave-militare-tunisina-e-barcone-29-morti-accertati-ancora-molti-dispersi",
-      "visible": true,
+      "visible": false,
       "order": 83,
       "date": "2017-10-17",
       "video": null,
@@ -1779,7 +2530,14 @@
       "articleUrl": "http://www.nawartpress.com/?p=3706",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "i-pescatori-tunisini-che-salvano-i-migranti",
@@ -1798,12 +2556,20 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3724",
       "categories": [
-        "migration-displacement"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true,
+      "subcategory": "migration-displacement"
     },
     {
       "id": "we-are-afraid-to-see-the-dead-tunisian-fishermen-on-frontline-of-migrant-tragedy",
-      "visible": true,
+      "visible": false,
       "order": 85,
       "date": "2017-11-03",
       "video": null,
@@ -1818,12 +2584,19 @@
       },
       "articleUrl": "http://www.middleeasteye.net/news/msf-suspends-migrant-rescues-mediterranean-2133227521",
       "categories": [
-        "migration-displacement"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "le-cimetiere-des-inconnus-echoues-a-zarzis",
-      "visible": true,
+      "visible": false,
       "order": 86,
       "date": "2017-11-04",
       "video": null,
@@ -1839,11 +2612,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=3739",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "sciopero-femminista-8-marzo",
-      "visible": true,
+      "visible": false,
       "order": 87,
       "date": "2018-03-09",
       "video": null,
@@ -1858,9 +2638,21 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3858",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "",
@@ -1884,11 +2676,17 @@
       "categories": [
         "documentary-films"
       ],
-      "mainpage": true
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "english-egyptian-protesters-demand-end-to-sexual-harassment-middle-east-eye-tv",
-      "visible": true,
+      "visible": false,
       "order": 100,
       "date": "2015-03-01",
       "video": {
@@ -1906,13 +2704,25 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=615",
       "categories": [
+<<<<<<< HEAD
         "longform-reportage",
         "political-social-justice"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "english-video-turks-kurds-express-their-fears-as-is-advances-on-kobane-middle-east-eye-tv",
-      "visible": true,
+      "visible": false,
       "order": 2,
       "date": "2015-03-01",
       "video": {
@@ -1930,8 +2740,20 @@
       },
       "articleUrl": "http://www.middleeasteye.net/news/turks-and-kurds-express-their-fears-islamic-state-advances-kobane-273753702#sthash.p1GIifYN.dpuf",
       "categories": [
+<<<<<<< HEAD
         "international-crisis"
       ]
+=======
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "documentario-una-storia-sommersa-premio-morrione",
@@ -1955,11 +2777,17 @@
       "categories": [
         "documentary-films"
       ],
-      "mainpage": true
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "english-religious-tensions-simmer-in-egypts-minya-middle-east-eye-tv",
-      "visible": true,
+      "visible": false,
       "order": 4,
       "date": "2015-03-01",
       "video": {
@@ -1978,11 +2806,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=588",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "466",
-      "visible": true,
+      "visible": false,
       "order": 5,
       "date": "2015-03-01",
       "video": {
@@ -2000,12 +2835,24 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=466",
       "categories": [
+<<<<<<< HEAD
         "international-crisis"
       ]
+=======
+        "conflict-zones"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     },
     {
       "id": "trailer-una-storia-sommersa-documentario-premio-morrione",
-      "visible": true,
+      "visible": false,
       "order": 6,
       "date": "2015-03-01",
       "video": {
@@ -2024,11 +2871,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=582",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "english-religious-tensions-simmer-in-egypts-minya-middle-east-eye",
-      "visible": true,
+      "visible": false,
       "order": 7,
       "date": "2015-03-01",
       "video": {
@@ -2047,11 +2901,18 @@
       "articleUrl": "http://www.middleeasteye.net/news/sisi-win-egypts-election-962-percent-vote",
       "categories": [
         "longform-reportage"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "wild",
-      "visible": true,
+      "visible": false,
       "order": 8,
       "date": "2015-03-24",
       "video": {
@@ -2071,11 +2932,17 @@
       "categories": [
         "documentary-films"
       ],
-      "mainpage": true
+      "mainpage": false,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "essere-un-travestito-a-tirana",
-      "visible": true,
+      "visible": false,
       "order": 9,
       "date": "2015-05-20",
       "video": {
@@ -2094,7 +2961,14 @@
       "articleUrl": "http://www.nawartpress.com/?p=1367",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "lesvos-dyarbakir-in-48h",
@@ -2116,13 +2990,20 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=1444",
       "categories": [
-        "migration-displacement"
+        "longform-reportage"
       ],
-      "mainpage": true
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "subcategory": "migration-displacement"
     },
     {
       "id": "english-video-migrants-tragedy-overwhelms-greek-island-of-lesvos",
-      "visible": true,
+      "visible": false,
       "order": 11,
       "date": "2015-06-10",
       "video": {
@@ -2140,12 +3021,19 @@
       },
       "articleUrl": "http://www.middleeasteye.net/news/video-migrants-targedy-overwhelms-greek-island-lesvos-76206394",
       "categories": [
-        "migration-displacement"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "english-mee-speaks-to-fabrunyer-aykol-female-co-mayor-of-the-municipality-of-mardin",
-      "visible": true,
+      "visible": false,
       "order": 12,
       "date": "2015-06-14",
       "video": {
@@ -2164,11 +3052,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=1504",
       "categories": [
         "multimedia-projects"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "francais-lesbos-lautre-porte-de-leurope-pour-des-refugies-en-perdition-orientxxi",
-      "visible": true,
+      "visible": false,
       "order": 13,
       "date": "2015-07-31",
       "video": {
@@ -2187,11 +3082,18 @@
       "articleUrl": "http://orientxxi.info/",
       "categories": [
         "migration-displacement"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "un-mondo-di-donne-raistoria",
-      "visible": true,
+      "visible": false,
       "order": 14,
       "date": "2015-11-03",
       "video": null,
@@ -2208,7 +3110,13 @@
       "categories": [
         "documentary-films"
       ],
-      "mainpage": true
+      "mainpage": false,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "made-in-tunisia-women-textile-workers-resist-poor-working-conditions",
@@ -2233,11 +3141,18 @@
         "longform-reportage",
         "political-social-justice"
       ],
-      "mainpage": true
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "subcategory": "political-social-justice-gender"
     },
     {
       "id": "trono-di-sale-marocco",
-      "visible": true,
+      "visible": false,
       "order": 16,
       "date": "2016-11-01",
       "video": null,
@@ -2254,7 +3169,13 @@
       "categories": [
         "documentary-films"
       ],
-      "mainpage": true
+      "mainpage": false,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "senza-vie-legali-in-tunisia-si-diventa-harraga",
@@ -2276,8 +3197,16 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3767",
       "categories": [
-        "migration-displacement"
-      ]
+        "longform-reportage"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true,
+      "subcategory": "middle-east-north-africa"
     },
     {
       "id": "documentary-far-right-a-new-frightening-normal",
@@ -2299,12 +3228,19 @@
       },
       "articleUrl": "http://www.nawartpress.com/?p=3841",
       "categories": [
-        "documentary-films"
-      ]
+        "multimedia-projects"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": true
     },
     {
       "id": "teaser-of-a-kurdish-women-dream-2015",
-      "visible": true,
+      "visible": false,
       "order": 19,
       "date": "2018-02-21",
       "video": {
@@ -2323,11 +3259,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=3836",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "world-refugee-day-2016-giz-video",
-      "visible": true,
+      "visible": false,
       "order": 20,
       "date": "2018-05-15",
       "video": {
@@ -2346,11 +3289,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=3934",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "strange-fish-nominated-at-visioni-dal-mondo-festival",
-      "visible": true,
+      "visible": false,
       "order": 21,
       "date": "2018-07-17",
       "video": {
@@ -2369,11 +3319,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=4003",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "scirocco-short-animation-film-realized-by-the-brush-bow-collective-and-leonard-ermel",
-      "visible": true,
+      "visible": false,
       "order": 22,
       "date": "2018-08-06",
       "video": {
@@ -2392,11 +3349,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=4020",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "bnp-award-and-special-mention-of-the-jury-to-strange-fish-visioni-dal-mondo",
-      "visible": true,
+      "visible": false,
       "order": 23,
       "date": "2018-09-20",
       "video": null,
@@ -2412,7 +3376,14 @@
       "articleUrl": "http://www.nawartpress.com/?p=4029",
       "categories": [
         "documentary-films"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "strange-fish-film-e-prossime-date",
@@ -2434,13 +3405,20 @@
       },
       "articleUrl": "https://www.raiplay.it/video/2019/08/Doc-3-Strange-Fish-73a3ecf5-8c72-4a2e-be28-ad11df3fd987.html?fbclid=IwAR1aHrAeM_-Q2xYJckRBgA-DrIeUPPQQWbyrBeBKmvtBwVBTsMYyOnq7jUg#",
       "categories": [
-        "documentary-films"
+        "documentary-films",
+        "multimedia-projects"
       ],
-      "mainpage": true
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "thats-interesting",
-      "visible": true,
+      "visible": false,
       "order": 1,
       "date": "2015-03-05",
       "video": null,
@@ -2456,11 +3434,18 @@
       "articleUrl": "http://www.nawartpress.com/projects/",
       "categories": [
         "TODO"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "118-libri-in-viaggio-letterario-con-nawart-press",
-      "visible": true,
+      "visible": false,
       "order": 2,
       "date": "2015-03-06",
       "video": null,
@@ -2476,11 +3461,18 @@
       "articleUrl": "http://www.nawartpress.com/?p=917",
       "categories": [
         "TODO"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "crowdfunding",
-      "visible": true,
+      "visible": false,
       "order": 3,
       "date": "2015-03-07",
       "video": null,
@@ -2496,11 +3488,18 @@
       "articleUrl": "http://www.nawartpress.com/thats-interesting/",
       "categories": [
         "TODO"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "donne-al-centro-per-l8-marzo",
-      "visible": true,
+      "visible": false,
       "order": 4,
       "date": "2015-03-07",
       "video": null,
@@ -2516,11 +3515,18 @@
       "articleUrl": "http://www.nawartpress.com/donne-al-centro/",
       "categories": [
         "TODO"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "campagna-crowdfunding-the-railway-diaries",
-      "visible": true,
+      "visible": false,
       "order": 5,
       "date": "2015-03-24",
       "video": null,
@@ -2536,11 +3542,18 @@
       "articleUrl": "http://www.nawartpress.com/il-crowdfunding-del-progetto-the-railway-diaries-su-becrowdy/",
       "categories": [
         "multimedia-projects"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "il-crowdfunding-del-progetto-the-railway-diaries-su-becrowdy",
-      "visible": true,
+      "visible": false,
       "order": 6,
       "date": "2015-03-24",
       "video": null,
@@ -2556,7 +3569,14 @@
       "articleUrl": "http://www.nawartpress.com/projects/",
       "categories": [
         "multimedia-projects"
-      ]
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "mainpage": false
     },
     {
       "id": "de-vos-propres-yeux-s6",
@@ -2575,10 +3595,15 @@
       },
       "articleUrl": "",
       "categories": [
-        "documentary-films",
-        "multimedia-projects"
+        "documentary-series"
       ],
-      "mainpage": true
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "living-in-kharkivs-metro",
@@ -2597,9 +3622,19 @@
       },
       "articleUrl": "",
       "categories": [
+<<<<<<< HEAD
         "international-crisis"
+=======
+        "field-missions"
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
       ],
-      "mainpage": true
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "syria-12-years-of-war-cholera",
@@ -2618,9 +3653,19 @@
       },
       "articleUrl": "",
       "categories": [
+<<<<<<< HEAD
         "international-crisis"
+=======
+        "field-missions"
+>>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
       ],
-      "mainpage": true
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "caminantes-venezuelan-exodus",
@@ -2639,9 +3684,15 @@
       },
       "articleUrl": "",
       "categories": [
-        "migration-displacement"
+        "field-missions"
       ],
-      "mainpage": true
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "ukraine-displaced-persons-west",
@@ -2660,9 +3711,15 @@
       },
       "articleUrl": "",
       "categories": [
-        "migration-displacement"
+        "field-missions"
       ],
-      "mainpage": true
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     },
     {
       "id": "photoclimat-2023-2025",
@@ -2681,9 +3738,143 @@
       },
       "articleUrl": "",
       "categories": [
+        "photo-exhibitions"
+      ],
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "de-vos-propres-yeux-s5",
+      "visible": false,
+      "mainpage": false,
+      "order": 200,
+      "date": "2020-01-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
+      },
+      "title": {
+        "it": "De Vos Propres Yeux - Stagione 5: Colombia",
+        "en": "De Vos Propres Yeux - Season 5: Colombia",
+        "fr": "De Vos Propres Yeux - Saison 5 : Colombie"
+      },
+      "description": {
+        "it": "Serie documentaria Solidarités International - Stagione 5, Colombia (2020)",
+        "en": "Solidarités International documentary series - Season 5, Colombia (2020)",
+        "fr": "Série documentaire Solidarités International - Saison 5, Colombie (2020)"
+      },
+      "articleUrl": "",
+      "categories": [
+        "documentary-series"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "the-railway-diaries",
+      "visible": false,
+      "mainpage": false,
+      "order": 201,
+      "date": "2015-06-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
+      },
+      "title": {
+        "it": "The Railway Diaries - Via della Seta",
+        "en": "The Railway Diaries - Silk Road",
+        "fr": "The Railway Diaries - Route de la Soie"
+      },
+      "description": {
+        "it": "Viaggio attraverso 12 paesi lungo la Via della Seta + Magazine Nawart #1 (2015)",
+        "en": "Journey through 12 countries along the Silk Road + Nawart Magazine #1 (2015)",
+        "fr": "Voyage à travers 12 pays le long de la Route de la Soie + Magazine Nawart #1 (2015)"
+      },
+      "articleUrl": "",
+      "categories": [
         "multimedia-projects"
       ],
-      "mainpage": true
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "de-vos-propres-yeux-s5",
+      "visible": true,
+      "mainpage": true,
+      "order": 200,
+      "date": "2020-01-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
+      },
+      "title": {
+        "it": "De Vos Propres Yeux - Stagione 5: Colombia",
+        "en": "De Vos Propres Yeux - Season 5: Colombia",
+        "fr": "De Vos Propres Yeux - Saison 5 : Colombie"
+      },
+      "description": {
+        "it": "Serie documentaria Solidarités International - Stagione 5, Colombia (2020)",
+        "en": "Solidarités International documentary series - Season 5, Colombia (2020)",
+        "fr": "Série documentaire Solidarités International - Saison 5, Colombie (2020)"
+      },
+      "articleUrl": "",
+      "categories": [
+        "documentary-series"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
+    },
+    {
+      "id": "the-railway-diaries",
+      "visible": true,
+      "mainpage": true,
+      "order": 201,
+      "date": "2015-06-01",
+      "video": null,
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
+      },
+      "title": {
+        "it": "The Railway Diaries - Via della Seta",
+        "en": "The Railway Diaries - Silk Road",
+        "fr": "The Railway Diaries - Route de la Soie"
+      },
+      "description": {
+        "it": "Viaggio attraverso 12 paesi lungo la Via della Seta + Magazine Nawart #1 (2015)",
+        "en": "Journey through 12 countries along the Silk Road + Nawart Magazine #1 (2015)",
+        "fr": "Voyage à travers 12 pays le long de la Route de la Soie + Magazine Nawart #1 (2015)"
+      },
+      "articleUrl": "",
+      "categories": [
+        "multimedia-projects"
+      ],
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      }
     }
   ]
 }

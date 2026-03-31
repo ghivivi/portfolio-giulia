@@ -1,0 +1,35 @@
+name: Sync CSV to JSON
+
+on:
+  push:
+    paths:
+      - 'config/projects.csv'
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run CSV-to-JSON sync
+        run: node scripts/csv-to-json.js
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet config/projects.json || (
+            git add config/projects.json &&
+            git commit -m "Auto-sync: update projects.json from CSV" &&
+            git push
+          )
