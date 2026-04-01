@@ -81,7 +81,7 @@
     function getVideoThumbnailUrl(project) {
         if (!project.video || !project.video.type) return '';
         if (project.video.type === 'youtube' && project.video.id) {
-            return 'https://img.youtube.com/vi/' + project.video.id + '/hqdefault.jpg';
+            return 'https://img.youtube.com/vi/' + project.video.id + '/maxresdefault.jpg';
         }
         if (project.video.type === 'vimeo' && project.video.id) {
             return 'https://vumbnail.com/' + project.video.id + '.jpg';
@@ -163,12 +163,9 @@
                 var isDropdownToggle = navLink.classList.contains('dropdown-toggle');
                 var navTarget = navLink.getAttribute('data-nav');
 
-                // Dropdown toggles: open/close submenu AND show section landing
+                // Dropdown toggles: only toggle submenu, do NOT navigate or close sidebar
                 if (isDropdownToggle) {
-                    var sectionAttr = navLink.getAttribute('data-section');
-                    if (sectionAttr) {
-                        showSectionLanding(sectionAttr);
-                    }
+                    e.preventDefault();
                     return;
                 }
 
@@ -736,7 +733,7 @@
         }
 
         var hasVideo = project.video && project.video.type;
-        var linkUrl = hasVideo ? '' : (project.articleUrl || '');
+        var hasDetail = projectHasDetail(project);
         var videoAttrs = '';
         if (hasVideo) {
             if (project.video.type === 'local') {
@@ -749,11 +746,19 @@
         var year = project.date ? project.date.substring(0, 4) : '';
 
         var actionHtml = '';
-        if (hasVideo) {
+        if (hasVideo && !hasDetail) {
             actionHtml = '<button class="project-box-action" data-play-video="1" ' + videoAttrs + '>&#9654;</button>';
         }
 
-        return '<div class="project-box" ' + (linkUrl ? 'data-open-project="' + linkUrl + '"' : '') + '>' +
+        // If project has detail (text/allegati), open detail page; otherwise open article link
+        var boxAttr = '';
+        if (hasDetail) {
+            boxAttr = 'data-show-detail="' + project.id + '"';
+        } else if (!hasVideo && project.articleUrl) {
+            boxAttr = 'data-open-project="' + project.articleUrl + '"';
+        }
+
+        return '<div class="project-box" ' + boxAttr + '>' +
             '<div class="project-box-thumb" style="' + bgStyle + '">' +
                 actionHtml +
             '</div>' +
@@ -900,9 +905,10 @@
         // Attachments
         var attachHTML = '';
         if (project.allegati && project.allegati.length > 0) {
-            var items = project.allegati.map(function(url) {
-                var filename = url.split('/').pop();
-                return '<li><a href="' + url + '" target="_blank" rel="noopener">' + filename + '</a></li>';
+            var items = project.allegati.map(function(item) {
+                var url = typeof item === 'string' ? item : item.url;
+                var label = typeof item === 'string' ? url.split('/').pop() : (item.label || url.split('/').pop());
+                return '<li><a href="' + url + '" target="_blank" rel="noopener">' + label + '</a></li>';
             }).join('');
             attachHTML = '<div class="project-detail-attachments">' +
                 '<h3>' + t('ui.attachments') + '</h3>' +

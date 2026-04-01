@@ -84,7 +84,7 @@
       "date": "2015-02-28",
       "video": null,
       "thumbnail": {
-        "url": "http://www.nawartpress.com/wp-content/uploads/2015/02/image03.png",
+        "url": "../media/thumbnails/sinai-deserto-e-affari-left.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -211,7 +211,7 @@
       "date": "2015-03-01",
       "video": null,
       "thumbnail": {
-        "url": "",
+        "url": "../media/thumbnails/la-guerra-siriana-vista-dal-golan-sempre-piu-vicino-a-israele-europa.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -248,7 +248,7 @@
       "date": "2015-03-01",
       "video": null,
       "thumbnail": {
-        "url": "http://new.caffe.ch/media/2014/05/22494_3_medium.jpg",
+        "url": "../media/thumbnails/in-egitto-si-celebrano-le-finte-elezioni-il-caffe.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -336,7 +336,7 @@
       "date": "2015-03-01",
       "video": null,
       "thumbnail": {
-        "url": "http://www.repstatic.it/content/nazionale/img/2014/10/09/161743703-dde2f2cd-cddf-4408-ac00-0abc914a516a.jpg",
+        "url": "../media/thumbnails/tra-i-profughi-curdi-di-kobane-fuggiti-in-poche-ore-combattiamo-per-liberare-la-.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -1440,7 +1440,7 @@
       "date": "2015-07-28",
       "video": null,
       "thumbnail": {
-        "url": "",
+        "url": "../media/thumbnails/english-the-zoroastrian-priestesses-of-iran.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -1531,7 +1531,7 @@
       "date": "2015-11-03",
       "video": null,
       "thumbnail": {
-        "url": "http://www.nawartpress.com/wp-content/uploads/2015/10/IMG_5555-23.jpg",
+        "url": "../media/thumbnails/frontiera-melilla-per-i-siriani-un-nuovo-muro-prima-delleuropa-repubblica.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -2351,7 +2351,7 @@
       "date": "2017-10-27",
       "video": null,
       "thumbnail": {
-        "url": "",
+        "url": "../media/thumbnails/i-pescatori-tunisini-che-salvano-i-migranti.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -2768,7 +2768,7 @@
         "id": "O0MV1BAspos"
       },
       "thumbnail": {
-        "url": "",
+        "url": "../media/thumbnails/lesvos-dyarbakir-in-48h.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -2921,7 +2921,7 @@
         "id": "6oTz64k2Dqk"
       },
       "thumbnail": {
-        "url": "",
+        "url": "../media/thumbnails/made-in-tunisia-women-textile-workers-resist-poor-working-conditions.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3019,7 +3019,7 @@
         "id": "CUh5iNMIIrs"
       },
       "thumbnail": {
-        "url": "",
+        "url": "../media/thumbnails/documentary-far-right-a-new-frightening-normal.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3660,7 +3660,7 @@
       "date": "2015-06-01",
       "video": null,
       "thumbnail": {
-        "url": "",
+        "url": "../media/thumbnails/the-railway-diaries.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
