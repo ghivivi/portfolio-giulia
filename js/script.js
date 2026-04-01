@@ -908,12 +908,30 @@
             }
         }
 
-        // Text content
-        var textContent = '';
+        // Text content - split plain text into paragraphs
+        var textHTML = '';
         if (project.testo) {
-            textContent = project.testo[language] || project.testo.it || '';
+            var textContent = project.testo[language] || project.testo.it || '';
+            if (textContent) {
+                var paragraphs = textContent.split('\n\n');
+                textHTML = '<div class="project-detail-text">' +
+                    paragraphs.map(function(p) {
+                        return '<p>' + p.replace(/\n/g, '<br>') + '</p>';
+                    }).join('') +
+                '</div>';
+            }
         }
-        var textHTML = textContent ? '<div class="project-detail-text">' + textContent + '</div>' : '';
+
+        // Tags
+        var tagsHTML = '';
+        if (project.tags && Object.keys(project.tags).length > 0) {
+            var tagItems = Object.keys(project.tags).map(function(key) {
+                var label = t('tags.' + key);
+                if (label === 'tags.' + key) label = key.charAt(0).toUpperCase() + key.slice(1);
+                return '<span class="project-detail-tag"><strong>' + label + ':</strong> ' + project.tags[key] + '</span>';
+            }).join('');
+            tagsHTML = '<div class="project-detail-tags">' + tagItems + '</div>';
+        }
 
         // Attachments
         var attachHTML = '';
@@ -939,6 +957,7 @@
         contentEl.innerHTML =
             '<h2 class="project-detail-title">' + title + '</h2>' +
             (metaText ? '<p class="project-detail-meta">' + metaText + '</p>' : '') +
+            tagsHTML +
             videoHTML +
             textHTML +
             attachHTML +

@@ -51,8 +51,21 @@
   "subcategories": {
     "migration-displacement": "Migrazione e Sfollamento",
     "international-crisis": "Crisi Internazionali",
-    "middle-east-north-africa": "Medio Oriente e Nord Africa",
     "political-social-justice-gender": "Giustizia Sociale, Politica e di Genere"
+  },
+  "tags": {
+    "director": "Regia",
+    "photography": "Fotografia",
+    "duration": "Durata",
+    "production": "Produzione",
+    "client": "Committente",
+    "format": "Formato",
+    "recognition": "Riconoscimenti",
+    "collective": "Collettivo",
+    "featuring": "Con",
+    "role": "Ruolo",
+    "location": "Luogo",
+    "language": "Lingua"
   },
   "sectionIntros": {
     "journalism": "Lavoro giornalistico indipendente 2013-2018",
