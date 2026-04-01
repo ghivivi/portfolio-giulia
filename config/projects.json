@@ -96,7 +96,24 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/longform-reportage/international-crisis/sinai-beduini-left.pdf",
+          "label": "Sinai e beduini (Left)"
+        },
+        {
+          "url": "../media/longform-reportage/international-crisis/sinai-reportage-europa.pdf",
+          "label": "Sinai reportage (Europa)"
+        },
+        {
+          "url": "../media/longform-reportage/international-crisis/sinai-reportage-limes-1.pdf",
+          "label": "Sinai reportage (Limes)"
+        },
+        {
+          "url": "../media/longform-reportage/international-crisis/sinai-traffico-esseri-umani.pdf",
+          "label": "Sinai, traffico di esseri umani"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
@@ -206,7 +223,16 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/longform-reportage/international-crisis/siria-guerra-vista-dal-golan.pdf",
+          "label": "La guerra siriana vista dal Golan"
+        },
+        {
+          "url": "../media/longform-reportage/international-crisis/siria-calcoli-regime-il-caffe.pdf",
+          "label": "Siria, i calcoli del regime (Il Caffè)"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
@@ -217,7 +243,7 @@
     },
     {
       "id": "in-egitto-si-celebrano-le-finte-elezioni-il-caffe",
-      "visible": false,
+      "visible": true,
       "order": 8,
       "date": "2015-03-01",
       "video": null,
@@ -234,13 +260,19 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/longform-reportage/international-crisis/egitto-elezioni-voto-obbedienza.pdf",
+          "label": "Egitto, elezioni e voto di obbedienza"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
         "fr": ""
       },
-      "mainpage": false
+      "mainpage": false,
+      "subcategory": "international-crisis"
     },
     {
       "id": "le-donne-del-cairo-in-piazza-contro-gli-stupri-pagina-99",
@@ -316,7 +348,24 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/longform-reportage/international-crisis/kobane-confine-siria-turchia-repubblica.pdf",
+          "label": "Kobane, confine Siria-Turchia (Repubblica)"
+        },
+        {
+          "url": "../media/longform-reportage/international-crisis/kobane-curdi-in-fuga-azione.pdf",
+          "label": "Kobane, curdi in fuga (Azione)"
+        },
+        {
+          "url": "../media/longform-reportage/international-crisis/kobane-tent-cities-middleeasteye.pdf",
+          "label": "Kobane tent cities (Middle East Eye)"
+        },
+        {
+          "url": "../media/longform-reportage/international-crisis/curdi-lotta-giugno-azione.pdf",
+          "label": "Curdi, la lotta (Azione)"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
@@ -548,7 +597,7 @@
       "date": "2015-03-01",
       "video": null,
       "thumbnail": {
-        "url": "",
+        "url": "../media/longform-reportage/international-crisis/rifugiati-siriani-egitto-rainews-youtube.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -1399,7 +1448,16 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/longform-reportage/political-and-social-justice-gender/sacerdotesse-zoroastriane-iran.pdf",
+          "label": "Sacerdotesse zoroastriane Iran"
+        },
+        {
+          "url": "../media/longform-reportage/political-and-social-justice-gender/sacerdotesse-zoroastriane-middleeasteye.pdf",
+          "label": "Zoroastrian Priestesses (Middle East Eye)"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
@@ -1481,7 +1539,16 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/longform-reportage/migration-displacement/melilla-marocco-non-si-passa-nigrizia.pdf",
+          "label": "Melilla, Marocco: non si passa (Nigrizia)"
+        },
+        {
+          "url": "../media/longform-reportage/migration-displacement/melilla-rotta-migranti-il-caffe.pdf",
+          "label": "Melilla, rotta migranti (Il Caffè)"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
@@ -2482,7 +2549,7 @@
         "id": "feVWYvSLKXA"
       },
       "thumbnail": {
-        "url": "",
+        "url": "../media/documentary-films/una-storia-sommersa-youtube.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -2705,7 +2772,12 @@
         "longform-reportage"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/longform-reportage/migration-displacement/lesvos-refugies-orientxxi.pdf",
+          "label": "Lesvos réfugiés (Orient XXI)"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
@@ -2853,7 +2925,16 @@
         "longform-reportage"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/longform-reportage/political-and-social-justice-gender/tunisia-mamotex-middleeasteye.pdf",
+          "label": "Tunisia Mamotex (Middle East Eye)"
+        },
+        {
+          "url": "../media/longform-reportage/political-and-social-justice-gender/tunisia-mamotex-operaie-orientxxi.pdf",
+          "label": "Tunisia Mamotex operaie (Orient XXI)"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
@@ -2941,7 +3022,12 @@
       "categories": [
         "multimedia-projects"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/multimedia-projects/far-right-nawart-magazine.pdf",
+          "label": "Far Right (Nawart Magazine)"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
@@ -3296,7 +3382,7 @@
       "date": "2021-01-01",
       "video": null,
       "thumbnail": {
-        "url": "",
+        "url": "../media/ngo-work/documentary-series/de-vos-propres-yeux-season6-france.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3309,7 +3395,12 @@
         "documentary-series"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/ngo-work/documentary-series/de-vos-propres-yeux-season6-france.pdf",
+          "label": "De Vos Propres Yeux S6 France"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
@@ -3323,7 +3414,7 @@
       "date": "2022-01-01",
       "video": null,
       "thumbnail": {
-        "url": "",
+        "url": "../media/ngo-work/field-missions/kharkiv-metro-youtube.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3350,7 +3441,7 @@
       "date": "2023-01-01",
       "video": null,
       "thumbnail": {
-        "url": "",
+        "url": "../media/ngo-work/field-missions/siria-colera-youtube.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3377,7 +3468,7 @@
       "date": "2021-01-01",
       "video": null,
       "thumbnail": {
-        "url": "",
+        "url": "../media/ngo-work/field-missions/caminantes-youtube-1.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3431,7 +3522,7 @@
       "date": "2023-01-01",
       "video": null,
       "thumbnail": {
-        "url": "",
+        "url": "../media/ngo-work/multimedia-projects-coordination/photoclimat-youtube.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3523,7 +3614,7 @@
       "date": "2020-01-01",
       "video": null,
       "thumbnail": {
-        "url": "",
+        "url": "../media/ngo-work/documentary-series/de-vos-propres-yeux-season5-colombia.png",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3540,7 +3631,12 @@
       "categories": [
         "documentary-series"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/ngo-work/documentary-series/de-vos-propres-yeux-season5-colombia.pdf",
+          "label": "De Vos Propres Yeux S5 Colombia"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
@@ -3572,7 +3668,20 @@
       "categories": [
         "multimedia-projects"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/multimedia-projects/railway-diaries-copertina-il-caffe.pdf",
+          "label": "Railway Diaries - copertina (Il Caffè)"
+        },
+        {
+          "url": "../media/multimedia-projects/railway-diaries-donne-curde-il-caffe.pdf",
+          "label": "Railway Diaries - donne curde (Il Caffè)"
+        },
+        {
+          "url": "../media/multimedia-projects/railway-diaries-kosovo-il-caffe.pdf",
+          "label": "Railway Diaries - Kosovo (Il Caffè)"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
