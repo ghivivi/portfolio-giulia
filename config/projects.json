@@ -115,9 +115,9 @@
         }
       ],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "The Sinai Peninsula—a desert borderland between Egypt, Israel, and Gaza—operates beyond state control. Bedouin tribes, smuggling networks, and emerging jihadist groups fill the power vacuum left by Cairo’s neglect.\n\nThis investigative series explores the peninsula’s informal power structures: from tribal sheikhs managing smuggling routes to the rise of what would become ISIS-affiliated militants. The work includes the extraordinary story of a Coptic priest, Bedouin guides, and kidnapping networks operating across Sinai.\n\nLong-form investigative journalism combining field reporting, source cultivation in restricted areas, and analysis of power structures in Egypt’s forgotten frontier.",
+        "it": "La penisola del Sinai—una terra di confine desertica tra Egitto, Israele e Gaza—opera al di fuori del controllo statale. Tribù beduine, reti di contrabbando e gruppi jihadisti emergenti riempiono il vuoto di potere lasciato dalla negligenza del Cairo.\n\nQuesta serie investigativa esplora le strutture di potere informali della penisola: dagli sceicchi tribali che gestiscono le rotte del contrabbando all’ascesa di quelli che sarebbero diventati militanti affiliati all’ISIS. Il lavoro include la storia straordinaria di un prete copto, guide beduine e reti di rapimento che operano nel Sinai.\n\nGiornalismo investigativo di lungo formato che combina reportage sul campo, coltivazione di fonti in aree ristrette e analisi delle strutture di potere nella frontiera dimenticata dell’Egitto.",
+        "fr": "La péninsule du Sinaï—une terre frontalière désertique entre l’Égypte, Israël et Gaza—échappe au contrôle de l’État. Tribus bédouines, réseaux de contrebande et groupes djihadistes émergents comblent le vide de pouvoir laissé par la négligence du Caire.\n\nCette série d’investigation explore les structures de pouvoir informelles de la péninsule : des cheikhs tribaux gérant les routes de contrebande à la montée de ceux qui deviendraient des militants affiliés à Daech. Le travail inclut l’histoire extraordinaire d’un prêtre copte, de guides bédouins et de réseaux de kidnapping opérant à travers le Sinaï.\n\nJournalisme d’investigation de long format combinant reportage de terrain, cultivation de sources dans des zones restreintes et analyse des structures de pouvoir dans la frontière oubliée de l’Égypte."
       },
       "mainpage": true,
       "subcategory": "political-social-justice-gender",
@@ -125,6 +125,9 @@
         "en": "Egyptian Sinai: Smuggling & Jihadism (2013-14)",
         "it": "Sinai egiziano: contrabbando e jihadismo (2013-14)",
         "fr": "Sinaï égyptien : contrebande et djihadisme (2013-14)"
+      },
+      "tags": {
+        "format": "Investigative reportage"
       }
     },
     {
@@ -244,9 +247,9 @@
         }
       ],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "From the Israeli-occupied Golan Heights, Syria’s war is visible and audible. This reportage documents life on the strategic plateau as conflict approaches the border fence—Israeli communities watching smoke rise from Syrian villages, and the complex geopolitics of observing war from occupied territory.\n\nA perspective on the Syrian conflict from its periphery: displacement, military movements, and civilians on both sides of a contested border.",
+        "it": "Dalle Alture del Golan occupate da Israele, la guerra in Siria è visibile e udibile. Questo reportage documenta la vita sull’altopiano strategico mentre il conflitto si avvicina alla recinzione di confine—comunità israeliane che osservano il fumo salire dai villaggi siriani, e la complessa geopolitica dell’osservare la guerra da un territorio occupato.\n\nUna prospettiva sul conflitto siriano dalla sua periferia: sfollamento, movimenti militari e civili su entrambi i lati di un confine conteso.",
+        "fr": "Depuis le plateau du Golan occupé par Israël, la guerre en Syrie est visible et audible. Ce reportage documente la vie sur le plateau stratégique alors que le conflit s’approche de la clôture frontalière—des communautés israéliennes observant la fumée s’élever des villages syriens, et la géopolitique complexe de l’observation de la guerre depuis un territoire occupé.\n\nUne perspective sur le conflit syrien depuis sa périphérie : déplacements, mouvements militaires et civils des deux côtés d’une frontière contestée."
       },
       "mainpage": true,
       "subcategory": "international-crisis",
@@ -254,6 +257,9 @@
         "en": "Syria from the Golan Heights (2014)",
         "it": "La Siria vista dalle alture del Golan (2014)",
         "fr": "La Syrie vue des hauteurs du Golan (2014)"
+      },
+      "tags": {
+        "format": "Written reportage + Photography"
       }
     },
     {
@@ -391,9 +397,9 @@
         }
       ],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "October 2014. ISIS laid siege to the Syrian Kurdish town of Kobane. Over 200,000 civilians fled across the Turkish border in days, creating one of the largest single-week displacement events of the Syrian war.\n\nI covered the exodus from Suruç—seven kilometers from Kobane but in another country. Tent cities appeared overnight. Turkish police used tear gas on crowds. Smoke rose from Kobane as coalition airstrikes hit ISIS positions.",
+        "it": "Ottobre 2014. L’ISIS ha posto sotto assedio la città curdo-siriana di Kobane. Oltre 200.000 civili sono fuggiti oltre il confine turco in pochi giorni, creando uno dei più grandi eventi di sfollamento in una sola settimana della guerra siriana.\n\nHo coperto l’esodo da Suruç—a sette chilometri da Kobane ma in un altro paese. Le tendopoli sono sorte da un giorno all’altro. La polizia turca ha usato gas lacrimogeni sulla folla. Il fumo saliva da Kobane mentre i bombardamenti della coalizione colpivano le posizioni dell’ISIS.",
+        "fr": "Octobre 2014. Daech a assiégé la ville kurde syrienne de Kobané. Plus de 200 000 civils ont fui à travers la frontière turque en quelques jours, créant l’un des plus grands événements de déplacement en une seule semaine de la guerre syrienne.\n\nJ’ai couvert l’exode depuis Suruç—à sept kilomètres de Kobané mais dans un autre pays. Des camps de tentes sont apparus du jour au lendemain. La police turque a utilisé des gaz lacrymogènes sur la foule. La fumée s’élevait de Kobané tandis que les frappes aériennes de la coalition frappaient les positions de Daech."
       },
       "mainpage": true,
       "subcategory": "international-crisis",
@@ -401,6 +407,9 @@
         "en": "Kobane Crisis (Turkey-Syria Border, 2014)",
         "it": "Crisi di Kobane (confine Turchia-Siria, 2014)",
         "fr": "Crise de Kobane (frontière Turquie-Syrie, 2014)"
+      },
+      "tags": {
+        "format": "Photo + Video + Written dispatches"
       }
     },
     {
@@ -640,9 +649,9 @@
       ],
       "allegati": [],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "As Syria’s war intensified in 2012-2013, hundreds of thousands fled to Egypt seeking refuge. But Egypt’s own political crisis—the 2013 coup and crackdown—made Syrians targets of suspicion, detention, and violence.\n\nThis project documents Syrian displacement in Egypt: families escaping war only to face a new crisis, communities navigating xenophobia and political instability, and the precarious limbo of seeking safety in an unsafe place.\n\nSyrian refugee crisis meeting Egypt’s post-coup political crisis—displacement compounded by xenophobia, arbitrary detention, and deteriorating conditions that would eventually push many Syrians to attempt Mediterranean crossings.",
+        "it": "Mentre la guerra in Siria si intensificava nel 2012-2013, centinaia di migliaia di persone fuggirono in Egitto in cerca di rifugio. Ma la crisi politica dell’Egitto stesso—il colpo di stato del 2013 e la repressione—ha reso i siriani bersagli di sospetti, detenzione e violenza.\n\nQuesto progetto documenta lo sfollamento siriano in Egitto: famiglie in fuga dalla guerra che si trovano ad affrontare una nuova crisi, comunità che navigano la xenofobia e l’instabilità politica, e il limbo precario di chi cerca sicurezza in un luogo insicuro.\n\nLa crisi dei rifugiati siriani incontra la crisi politica post-golpe dell’Egitto—sfollamento aggravato da xenofobia, detenzione arbitraria e condizioni in deterioramento che avrebbero spinto molti siriani a tentare la traversata del Mediterraneo.",
+        "fr": "Alors que la guerre en Syrie s’intensifiait en 2012-2013, des centaines de milliers de personnes ont fui vers l’Égypte. Mais la propre crise politique de l’Égypte—le coup d’État de 2013 et la répression—a fait des Syriens des cibles de suspicion, de détention et de violence.\n\nCe projet documente le déplacement syrien en Égypte : des familles fuyant la guerre pour affronter une nouvelle crise, des communautés naviguant la xénophobie et l’instabilité politique, et le limbe précaire de ceux qui cherchent la sécurité dans un lieu dangereux.\n\nLa crise des réfugiés syriens rencontre la crise politique post-coup d’État de l’Égypte—déplacement aggravé par la xénophobie, la détention arbitraire et des conditions détériorées qui pousseraient finalement de nombreux Syriens à tenter la traversée de la Méditerranée."
       },
       "mainpage": true,
       "subcategory": "political-social-justice-gender",
@@ -650,6 +659,9 @@
         "en": "Syrian Refugees in Egypt (2013)",
         "it": "Rifugiati siriani in Egitto (2013)",
         "fr": "Réfugiés syriens en Égypte (2013)"
+      },
+      "tags": {
+        "format": "TV documentary + Written features"
       }
     },
     {
@@ -1402,9 +1414,9 @@
       ],
       "allegati": [],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "Summer 2015. Kurdish regions across Turkey and Iraq navigated twin pressures: the war against ISIS in Syria and Iraq, and escalating conflict with the Turkish state. This reporting documented Kurdish communities caught between multiple conflicts.\n\nCoverage included PKK conflict zones in southeastern Turkey, Kurdish political movements during Turkish elections, Iraqi Kurdistan’s role in the anti-ISIS coalition, and the displacement and humanitarian impact. Part of The Railway Diaries journey through Kurdish regions.",
+        "it": "Estate 2015. Le regioni curde in Turchia e Iraq affrontavano una doppia pressione: la guerra contro l’ISIS in Siria e Iraq e l’escalation del conflitto con lo stato turco. Questo reportage ha documentato le comunità curde intrappolate tra molteplici conflitti.\n\nLa copertura ha incluso le zone di conflitto del PKK nel sud-est della Turchia, i movimenti politici curdi durante le elezioni turche, il ruolo del Kurdistan iracheno nella coalizione anti-ISIS e l’impatto umanitario e degli sfollamenti. Parte del viaggio di The Railway Diaries attraverso le regioni curde.",
+        "fr": "Été 2015. Les régions kurdes de Turquie et d’Irak faisaient face à une double pression : la guerre contre Daech en Syrie et en Irak, et l’escalade du conflit avec l’État turc. Ce reportage a documenté les communautés kurdes prises entre de multiples conflits.\n\nLa couverture a inclus les zones de conflit du PKK dans le sud-est de la Turquie, les mouvements politiques kurdes pendant les élections turques, le rôle du Kurdistan irakien dans la coalition anti-Daech, et l’impact humanitaire et les déplacements. Partie du voyage de The Railway Diaries à travers les régions kurdes."
       },
       "mainpage": true,
       "subcategory": "international-crisis",
@@ -1412,6 +1424,9 @@
         "en": "Turkey & Iraq: Kurdish Struggle (2015)",
         "it": "Turchia e Iraq: la lotta curda (2015)",
         "fr": "Turquie et Irak : la lutte kurde (2015)"
+      },
+      "tags": {
+        "format": "Video + Written reportage"
       }
     },
     {
@@ -1594,9 +1609,9 @@
         }
       ],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "Melilla: a Spanish enclave in Morocco, surrounded by triple-layer fences topped with razor wire. For African and Middle Eastern migrants, this border represents a brutal alternative route to Europe.\n\nThis reportage documents Syrians and others attempting to enter Europe through North Africa—living in Moroccan forests, planning fence crossings, facing police violence.",
+        "it": "Melilla: un’enclave spagnola in Marocco, circondata da recinzioni a triplo strato sormontate da filo spinato. Per i migranti africani e mediorientali, questo confine rappresenta una via alternativa brutale verso l’Europa.\n\nQuesto reportage documenta i siriani e altri che tentano di entrare in Europa attraverso il Nord Africa—vivendo nelle foreste marocchine, pianificando l’attraversamento delle recinzioni, affrontando la violenza della polizia.",
+        "fr": "Melilla : une enclave espagnole au Maroc, entourée de clôtures à triple couche surmontées de fil barbelé. Pour les migrants africains et moyen-orientaux, cette frontière représente une voie alternative brutale vers l’Europe.\n\nCe reportage documente les Syriens et d’autres tentant d’entrer en Europe par l’Afrique du Nord—vivant dans les forêts marocaines, planifiant le franchissement des clôtures, affrontant la violence policière."
       },
       "mainpage": true,
       "subcategory": "migration-displacement",
@@ -1604,6 +1619,9 @@
         "en": "Melilla: New Wall Before Europe (2015)",
         "it": "Melilla: un nuovo muro prima dell'Europa (2015)",
         "fr": "Melilla : un nouveau mur avant l'Europe (2015)"
+      },
+      "tags": {
+        "format": "Reportage"
       }
     },
     {
@@ -2860,15 +2878,18 @@
         }
       ],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "Summer 2015. The Greek island of Lesvos became Europe’s front door for the largest refugee movement since WWII. Hundreds—sometimes thousands—arrived daily on overcrowded boats from Turkey.\n\nThis photo essay documents the crisis at its peak: arrivals on beaches, overwhelmed volunteers, families in transit, and a community collapsing under humanitarian emergency.",
+        "it": "Estate 2015. L’isola greca di Lesbo è diventata la porta d’ingresso dell’Europa per il più grande movimento di rifugiati dalla Seconda Guerra Mondiale. Centinaia—a volte migliaia—arrivavano ogni giorno su barche sovraffollate dalla Turchia.\n\nQuesto saggio fotografico documenta la crisi al suo apice: gli arrivi sulle spiagge, i volontari sopraffatti, le famiglie in transito e una comunità che crolla sotto l’emergenza umanitaria.",
+        "fr": "Été 2015. L’île grecque de Lesbos est devenue la porte d’entrée de l’Europe pour le plus grand mouvement de réfugiés depuis la Seconde Guerre mondiale. Des centaines—parfois des milliers—arrivaient chaque jour sur des bateaux surchargés depuis la Turquie.\n\nCet essai photographique documente la crise à son paroxysme : les arrivées sur les plages, les bénévoles débordés, les familles en transit et une communauté qui s’effondre sous l’urgence humanitaire."
       },
       "subcategory": "migration-displacement",
       "description": {
         "en": "Lesvos Migrant Crisis (Greece, 2015)",
         "it": "Crisi migranti a Lesvos (Grecia, 2015)",
         "fr": "Crise migratoire à Lesvos (Grèce, 2015)"
+      },
+      "tags": {
+        "format": "Photo reportage"
       }
     },
     {
