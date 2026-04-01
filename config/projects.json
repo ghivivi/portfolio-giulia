@@ -151,9 +151,9 @@
       ],
       "allegati": [],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "Two investigations into Israel’s borderlands: the Golan Heights as the Syrian war approaches, and Holot—Israel’s desert detention center for African migrants.\n\nFrom the Israeli-occupied Golan, Syria’s war is visible and audible. This reportage documents life on the strategic plateau as conflict approaches the border fence—Israeli communities watching smoke rise from Syrian villages, and the complex geopolitics of a war zone observed from occupied territory.\n\nDeep in Israel’s Negev Desert, Holot holds African asylum seekers in indefinite detention. This investigation explores Israel’s “voluntary” detention policy targeting Eritrean and Sudanese refugees—a system designed to coerce departure while maintaining plausible deniability.",
+        "it": "Due inchieste sulle terre di confine di Israele: le Alture del Golan mentre la guerra siriana si avvicina, e Holot—il centro di detenzione israeliano nel deserto per migranti africani.\n\nDal Golan occupato da Israele, la guerra in Siria è visibile e udibile. Questo reportage documenta la vita sull’altopiano strategico mentre il conflitto si avvicina alla recinzione di confine—comunità israeliane che osservano il fumo salire dai villaggi siriani, e la complessa geopolitica di una zona di guerra osservata da un territorio occupato.\n\nNel profondo del deserto del Negev, Holot trattiene i richiedenti asilo africani in detenzione a tempo indeterminato. Questa inchiesta esplora la politica di detenzione “volontaria” di Israele rivolta ai rifugiati eritrei e sudanesi—un sistema progettato per costringere alla partenza mantenendo una negabilità plausibile.",
+        "fr": "Deux enquêtes sur les terres frontalières d’Israël : le plateau du Golan alors que la guerre syrienne approche, et Holot—le centre de détention israélien dans le désert pour les migrants africains.\n\nDepuis le Golan occupé par Israël, la guerre en Syrie est visible et audible. Ce reportage documente la vie sur le plateau stratégique alors que le conflit s’approche de la clôture frontalière—des communautés israéliennes observant la fumée s’élever des villages syriens, et la géopolitique complexe d’une zone de guerre observée depuis un territoire occupé.\n\nAu cœur du désert du Néguev, Holot détient des demandeurs d’asile africains en détention indéfinie. Cette enquête explore la politique de détention « volontaire » d’Israël ciblant les réfugiés érythréens et soudanais—un système conçu pour contraindre au départ tout en maintenant un déni plausible."
       },
       "mainpage": true,
       "subcategory": "political-social-justice-gender",
@@ -161,6 +161,9 @@
         "en": "Israel/Palestine & Detention (2014)",
         "it": "Israele/Palestina e detenzione (2014)",
         "fr": "Israël/Palestine et détention (2014)"
+      },
+      "tags": {
+        "format": "Written investigative reportage"
       }
     },
     {
@@ -316,9 +319,9 @@
       ],
       "allegati": [],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "Cairo, June 2014. Hundreds marched demanding an end to sexual harassment—a pervasive crisis in Egyptian public life. The protest followed mass assaults during el-Sisi’s presidential inauguration.\n\nThis video captures a rare moment of feminist activism in Sisi’s Egypt—where political protest was criminalized but sexual violence was too normalized to silence.",
+        "it": "Il Cairo, giugno 2014. Centinaia di persone hanno manifestato chiedendo la fine delle molestie sessuali—una crisi pervasiva nella vita pubblica egiziana. La protesta ha fatto seguito alle aggressioni di massa durante l’inaugurazione presidenziale di al-Sisi.\n\nQuesto video cattura un raro momento di attivismo femminista nell’Egitto di Sisi—dove la protesta politica era criminalizzata ma la violenza sessuale era troppo normalizzata per essere messa a tacere.",
+        "fr": "Le Caire, juin 2014. Des centaines de personnes ont manifesté pour demander la fin du harcèlement sexuel—une crise omniprésente dans la vie publique égyptienne. La manifestation a suivi les agressions de masse lors de l’investiture présidentielle d’al-Sissi.\n\nCette vidéo capture un rare moment d’activisme féministe dans l’Égypte de Sissi—où la protestation politique était criminalisée mais la violence sexuelle trop normalisée pour être réduite au silence."
       },
       "mainpage": true,
       "subcategory": "political-social-justice-gender",
@@ -326,6 +329,9 @@
         "en": "Egypt: Sexual Harassment Protests (2014)",
         "it": "Egitto: proteste contro le molestie sessuali (2014)",
         "fr": "Égypte : manifestations contre le harcèlement sexuel (2014)"
+      },
+      "tags": {
+        "format": "Video reportage"
       }
     },
     {
@@ -1513,9 +1519,9 @@
         }
       ],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "For the first time in millennia, women are becoming Zoroastrian priests in Iran. Female mobeds now lead prayers, tend sacred fires, and challenge religious hierarchy in one of the world’s oldest faiths.\n\nThis documentary profiles Iran’s first female Zoroastrian priests: their spiritual journeys, the resistance they face, and what their presence means for an ancient religion adapting to modernity.",
+        "it": "Per la prima volta in millenni, le donne stanno diventando sacerdotesse zoroastriane in Iran. Le mobed donne ora guidano le preghiere, custodiscono i fuochi sacri e sfidano la gerarchia religiosa in una delle fedi più antiche del mondo.\n\nQuesto documentario racconta le prime sacerdotesse zoroastriane dell’Iran: i loro percorsi spirituali, la resistenza che affrontano e cosa significa la loro presenza per una religione antica che si adatta alla modernità.",
+        "fr": "Pour la première fois depuis des millénaires, des femmes deviennent prêtresses zoroastriennes en Iran. Les femmes mobeds dirigent désormais les prières, entretiennent les feux sacrés et défient la hiérarchie religieuse dans l’une des plus anciennes religions du monde.\n\nCe documentaire dresse le portrait des premières prêtresses zoroastriennes d’Iran : leurs parcours spirituels, la résistance qu’elles rencontrent et ce que leur présence signifie pour une religion ancienne qui s’adapte à la modernité."
       },
       "mainpage": true,
       "subcategory": "political-social-justice-gender",
@@ -1523,6 +1529,10 @@
         "en": "Iranian Zoroastrian Priestesses (2015)",
         "it": "Le sacerdotesse zoroastriane dell'Iran (2015)",
         "fr": "Les prêtresses zoroastriennes d'Iran (2015)"
+      },
+      "tags": {
+        "format": "Video documentary",
+        "duration": "8-12'"
       }
     },
     {
@@ -3043,15 +3053,18 @@
         }
       ],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "When French textile company Mamotex abandoned its Tunisian factory in 2014, the women workers did something extraordinary: they occupied the factory and restarted production as a cooperative.\n\nThis project documents Tunisia’s only worker-managed factory—seamstresses running their own business, fighting for dignity and survival.",
+        "it": "Quando l’azienda tessile francese Mamotex ha abbandonato la sua fabbrica tunisina nel 2014, le operaie hanno fatto qualcosa di straordinario: hanno occupato la fabbrica e ripreso la produzione come cooperativa.\n\nQuesto progetto documenta l’unica fabbrica autogestita della Tunisia—sarte che gestiscono la propria attività, lottando per la dignità e la sopravvivenza.",
+        "fr": "Quand l’entreprise textile française Mamotex a abandonné son usine tunisienne en 2014, les ouvrières ont fait quelque chose d’extraordinaire : elles ont occupé l’usine et repris la production en coopérative.\n\nCe projet documente la seule usine autogérée de Tunisie—des couturières gérant leur propre entreprise, luttant pour la dignité et la survie."
       },
       "subcategory": "political-social-justice-gender",
       "description": {
         "en": "Tunisia: Mamotex Workers' Struggle (2016)",
         "it": "Tunisia: la lotta delle operaie Mamotex (2016)",
         "fr": "Tunisie : la lutte des ouvrières de Mamotex (2016)"
+      },
+      "tags": {
+        "format": "Video + Written + Photos"
       }
     },
     {
@@ -3105,9 +3118,9 @@
       ],
       "allegati": [],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "Tunisia became the world’s largest per-capita exporter of jihadists—6,000-7,000 joined ISIS. This investigation explores why, focusing on families left behind and mothers who lost daughters to radicalization.\n\nCoverage includes a Tunisian mother’s story: two daughters lost to ISIS, and the impossible question of how radicalization happens within families.",
+        "it": "La Tunisia è diventata il più grande esportatore pro capite di jihadisti al mondo—6.000-7.000 si sono uniti all’ISIS. Questa inchiesta esplora il perché, concentrandosi sulle famiglie rimaste e sulle madri che hanno perso le figlie a causa della radicalizzazione.\n\nLa copertura include la storia di una madre tunisina: due figlie perse a causa dell’ISIS, e la domanda impossibile su come la radicalizzazione avvenga all’interno delle famiglie.",
+        "fr": "La Tunisie est devenue le plus grand exportateur par habitant de djihadistes au monde—6 000 à 7 000 ont rejoint Daech. Cette enquête explore pourquoi, en se concentrant sur les familles restées et les mères qui ont perdu leurs filles à cause de la radicalisation.\n\nLa couverture inclut l’histoire d’une mère tunisienne : deux filles perdues à cause de Daech, et la question impossible de comment la radicalisation se produit au sein des familles."
       },
       "mainpage": true,
       "subcategory": "political-social-justice-gender",
@@ -3115,6 +3128,9 @@
         "en": "Tunisia Foreign Fighters (2017)",
         "it": "Tunisia: combattenti stranieri (2017)",
         "fr": "Tunisie : combattants étrangers (2017)"
+      },
+      "tags": {
+        "format": "Radio documentary + Written feature"
       }
     },
     {
@@ -3576,14 +3592,22 @@
         }
       ],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "Hundreds of thousands live in slums and squats across France—without running water, sanitation, or basic dignity. For Season 6 of this testimonial series, actor Roschdy Zem visits these forgotten populations with Solidarités International teams.\n\nThe season also features the Colombian chapter with Venezuelan migrants.",
+        "it": "Centinaia di migliaia di persone vivono in baraccopoli e squat in tutta la Francia—senza acqua corrente, servizi igienici o dignità di base. Per la Stagione 6 di questa serie testimoniale, l’attore Roschdy Zem visita queste popolazioni dimenticate con le squadre di Solidarités International.\n\nLa stagione include anche il capitolo colombiano con i migranti venezuelani.",
+        "fr": "Des centaines de milliers de personnes vivent dans des bidonvilles et des squats à travers la France—sans eau courante, assainissement ni dignité élémentaire. Pour la Saison 6 de cette série testimoniale, l’acteur Roschdy Zem rend visite à ces populations oubliées avec les équipes de Solidarités International.\n\nLa saison comprend également le chapitre colombien avec les migrants vénézuéliens."
       },
       "description": {
         "en": "Solidarités International documentary series - Season 6, France (2020-21)",
         "it": "Serie documentaria Solidarités International - Stagione 6, Francia (2020-21)",
         "fr": "Série documentaire Solidarités International - Saison 6, France (2020-21)"
+      },
+      "tags": {
+        "client": "Solidarités International",
+        "director": "Xavier de Lauzanne",
+        "featuring": "Roschdy Zem",
+        "photography": "Michaël Bunel",
+        "role": "Production coordination",
+        "duration": "25'"
       }
     },
     {
@@ -3778,9 +3802,16 @@
         }
       ],
       "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
+        "en": "Season 5 follows the “caminantes”—Venezuelan migrants walking hundreds of kilometers across Colombia in search of safety and survival. Instagram influencer Julie Bourges accompanied Solidarités International teams on the migration route from the Venezuelan border to Bogotá.\n\nThis season brought the Venezuelan migration crisis to younger, digitally-native audiences through Bourges’ social media platform, while documenting Solidarités International’s humanitarian response.",
+        "it": "La Stagione 5 segue i “caminantes”—migranti venezuelani che camminano per centinaia di chilometri attraverso la Colombia in cerca di sicurezza e sopravvivenza. L’influencer Julie Bourges ha accompagnato le squadre di Solidarités International sulla rotta migratoria dal confine venezuelano a Bogotá.\n\nQuesta stagione ha portato la crisi migratoria venezuelana a un pubblico più giovane e digitalmente nativo attraverso la piattaforma social di Bourges, documentando al contempo la risposta umanitaria di Solidarités International.",
+        "fr": "La Saison 5 suit les « caminantes »—des migrants vénézuéliens marchant des centaines de kilomètres à travers la Colombie en quête de sécurité et de survie. L’influenceuse Julie Bourges a accompagné les équipes de Solidarités International sur la route migratoire de la frontière vénézuélienne à Bogotá.\n\nCette saison a porté la crise migratoire vénézuélienne auprès d’un public plus jeune et numérique à travers la plateforme de Bourges, tout en documentant la réponse humanitaire de Solidarités International."
+      },
+      "tags": {
+        "client": "Solidarités International",
+        "director": "Mélanie Zadeh",
+        "production": "Yes Sir Films",
+        "featuring": "Julie Bourges",
+        "role": "Production coordination"
       }
     },
     {
