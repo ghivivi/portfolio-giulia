@@ -2359,7 +2359,12 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/longform-reportage/migration-displacement/donne-migranti-mediterraneo-il-caffe.pdf",
+          "label": "Donne migranti nel Mediterraneo (Il Caffè)"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
