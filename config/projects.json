@@ -243,7 +243,7 @@
     },
     {
       "id": "in-egitto-si-celebrano-le-finte-elezioni-il-caffe",
-      "visible": false,
+      "visible": true,
       "order": 8,
       "date": "2015-03-01",
       "video": null,
@@ -260,13 +260,19 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "../media/longform-reportage/international-crisis/egitto-elezioni-voto-obbedienza.pdf",
+          "label": "Egitto, elezioni e voto di obbedienza"
+        }
+      ],
       "testo": {
         "it": "",
         "en": "",
         "fr": ""
       },
-      "mainpage": false
+      "mainpage": false,
+      "subcategory": "international-crisis"
     },
     {
       "id": "le-donne-del-cairo-in-piazza-contro-gli-stupri-pagina-99",
