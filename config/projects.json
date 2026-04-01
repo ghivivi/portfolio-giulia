@@ -10,7 +10,6 @@
         "longform-reportage": [
           "migration-displacement",
           "international-crisis",
-          "middle-east-north-africa",
           "political-social-justice-gender"
         ]
       }
@@ -19,8 +18,7 @@
       "order": [
         "documentary-series",
         "field-missions",
-        "multimedia-projects-coordination",
-        "photo-exhibitions"
+        "multimedia-projects-coordination"
       ]
     }
   },
@@ -105,7 +103,7 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "middle-east-north-africa"
+      "subcategory": "international-crisis"
     },
     {
       "id": "english-for-young-israelis-the-other-side-simply-does-not-exist-middle-east-eye",
@@ -133,7 +131,7 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "middle-east-north-africa"
+      "subcategory": "international-crisis"
     },
     {
       "id": "holot-il-ghetto-nero-nigrizia",
@@ -569,7 +567,7 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "middle-east-north-africa"
+      "subcategory": "international-crisis"
     },
     {
       "id": "pronta-la-nuova-costituzione-la-tunisia-e-un-po-piu-laica-pagina99",
@@ -2919,7 +2917,7 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "middle-east-north-africa"
+      "subcategory": "international-crisis"
     },
     {
       "id": "documentary-far-right-a-new-frightening-normal",
@@ -3443,7 +3441,7 @@
       },
       "articleUrl": "",
       "categories": [
-        "photo-exhibitions"
+        "multimedia-projects-coordination"
       ],
       "mainpage": true,
       "allegati": [],
