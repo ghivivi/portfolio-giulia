@@ -3291,8 +3291,7 @@
       },
       "articleUrl": "https://www.raiplay.it/video/2019/08/Doc-3-Strange-Fish-73a3ecf5-8c72-4a2e-be28-ad11df3fd987.html?fbclid=IwAR1aHrAeM_-Q2xYJckRBgA-DrIeUPPQQWbyrBeBKmvtBwVBTsMYyOnq7jUg#",
       "categories": [
-        "documentary-films",
-        "multimedia-projects"
+        "documentary-films"
       ],
       "mainpage": true,
       "allegati": [],
@@ -3305,6 +3304,42 @@
         "en": "Documentary 52' + Inkyfada investigation + Open Migration reportage",
         "it": "Documentario 52' + inchiesta Inkyfada + reportage Open Migration",
         "fr": "Documentaire 52' + enquête Inkyfada + reportage Open Migration"
+      }
+    },
+    {
+      "id": "strange-fish-multimedia-investigation",
+      "visible": true,
+      "order": 1,
+      "date": "2018-01-01",
+      "video": {
+        "type": "vimeo",
+        "id": "299668760"
+      },
+      "thumbnail": {
+        "url": "",
+        "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
+      },
+      "title": {
+        "it": "Strange Fish - Inchiesta Multimediale",
+        "en": "Strange Fish - Multimedia Investigation",
+        "fr": "Strange Fish - Enquête Multimédia"
+      },
+      "articleUrl": "",
+      "categories": [
+        "multimedia-projects"
+      ],
+      "mainpage": true,
+      "allegati": [],
+      "testo": {
+        "it": "",
+        "en": "",
+        "fr": ""
+      },
+      "tags": {},
+      "description": {
+        "en": "Cross-platform investigation: documentary + Inkyfada investigation + Open Migration reportage",
+        "it": "Inchiesta cross-mediale: documentario + inchiesta Inkyfada + reportage Open Migration",
+        "fr": "Enquête cross-média : documentaire + enquête Inkyfada + reportage Open Migration"
       }
     },
     {
@@ -3664,70 +3699,6 @@
         "en": "Exhibition coordination, 10+ international photographers",
         "it": "Coordinamento mostre, 10+ fotografi internazionali",
         "fr": "Coordination d'expositions, 10+ photographes internationaux"
-      }
-    },
-    {
-      "id": "de-vos-propres-yeux-s5",
-      "visible": false,
-      "mainpage": false,
-      "order": 200,
-      "date": "2020-01-01",
-      "video": null,
-      "thumbnail": {
-        "url": "",
-        "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
-      },
-      "title": {
-        "it": "De Vos Propres Yeux - Stagione 5: Colombia",
-        "en": "De Vos Propres Yeux - Season 5: Colombia",
-        "fr": "De Vos Propres Yeux - Saison 5 : Colombie"
-      },
-      "description": {
-        "it": "Serie documentaria Solidarités International - Stagione 5, Colombia (2020)",
-        "en": "Solidarités International documentary series - Season 5, Colombia (2020)",
-        "fr": "Série documentaire Solidarités International - Saison 5, Colombie (2020)"
-      },
-      "articleUrl": "",
-      "categories": [
-        "documentary-series"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
-      }
-    },
-    {
-      "id": "the-railway-diaries",
-      "visible": false,
-      "mainpage": false,
-      "order": 201,
-      "date": "2015-06-01",
-      "video": null,
-      "thumbnail": {
-        "url": "",
-        "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
-      },
-      "title": {
-        "it": "The Railway Diaries - Via della Seta",
-        "en": "The Railway Diaries - Silk Road",
-        "fr": "The Railway Diaries - Route de la Soie"
-      },
-      "description": {
-        "it": "Viaggio attraverso 12 paesi lungo la Via della Seta + Magazine Nawart #1 (2015)",
-        "en": "Journey through 12 countries along the Silk Road + Nawart Magazine #1 (2015)",
-        "fr": "Voyage à travers 12 pays le long de la Route de la Soie + Magazine Nawart #1 (2015)"
-      },
-      "articleUrl": "",
-      "categories": [
-        "multimedia-projects"
-      ],
-      "allegati": [],
-      "testo": {
-        "it": "",
-        "en": "",
-        "fr": ""
       }
     },
     {

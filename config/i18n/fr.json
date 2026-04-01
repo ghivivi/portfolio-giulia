@@ -51,8 +51,21 @@
   "subcategories": {
     "migration-displacement": "Migration et Déplacement",
     "international-crisis": "Crises Internationales",
-    "middle-east-north-africa": "Moyen-Orient et Afrique du Nord",
     "political-social-justice-gender": "Justice Sociale, Politique et de Genre"
+  },
+  "tags": {
+    "director": "Réalisation",
+    "photography": "Photographie",
+    "duration": "Durée",
+    "production": "Production",
+    "client": "Client",
+    "format": "Format",
+    "recognition": "Reconnaissances",
+    "collective": "Collectif",
+    "featuring": "Avec",
+    "role": "Rôle",
+    "location": "Lieu",
+    "language": "Langue"
   },
   "sectionIntros": {
     "journalism": "Journalisme indépendant 2013-2018",
