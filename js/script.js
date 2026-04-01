@@ -672,6 +672,14 @@
         var container = document.getElementById(sectionId + '-landing-content');
         if (!container || !allSections[sectionId]) return;
 
+        // Section intro
+        var introEl = document.getElementById(sectionId + '-landing-intro');
+        if (introEl) {
+            var intro = t('sectionIntros.' + sectionId);
+            introEl.textContent = (intro !== 'sectionIntros.' + sectionId) ? intro : '';
+            introEl.style.display = (intro !== 'sectionIntros.' + sectionId) ? '' : 'none';
+        }
+
         var sectionCats = allSections[sectionId].order || [];
         var html = '';
 
@@ -744,6 +752,10 @@
         }
 
         var year = project.date ? project.date.substring(0, 4) : '';
+        var desc = '';
+        if (project.description) {
+            desc = project.description[language] || project.description.it || '';
+        }
 
         var actionHtml = '';
         if (hasVideo && !hasDetail) {
@@ -764,6 +776,7 @@
             '</div>' +
             '<div class="project-box-info">' +
                 '<h3 class="project-box-title">' + title + '</h3>' +
+                (desc ? '<p class="project-box-desc">' + desc + '</p>' : '') +
                 (year ? '<p class="project-box-meta">' + year + '</p>' : '') +
             '</div>' +
         '</div>';

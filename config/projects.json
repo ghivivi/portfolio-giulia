@@ -120,7 +120,12 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "international-crisis"
+      "subcategory": "political-social-justice-gender",
+      "description": {
+        "en": "Egyptian Sinai: Smuggling & Jihadism (2013-14)",
+        "it": "Sinai egiziano: contrabbando e jihadismo (2013-14)",
+        "fr": "Sinaï égyptien : contrebande et djihadisme (2013-14)"
+      }
     },
     {
       "id": "english-for-young-israelis-the-other-side-simply-does-not-exist-middle-east-eye",
@@ -148,7 +153,12 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "international-crisis"
+      "subcategory": "political-social-justice-gender",
+      "description": {
+        "en": "Israel/Palestine & Detention (2014)",
+        "it": "Israele/Palestina e detenzione (2014)",
+        "fr": "Israël/Palestine et détention (2014)"
+      }
     },
     {
       "id": "holot-il-ghetto-nero-nigrizia",
@@ -239,11 +249,16 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "international-crisis"
+      "subcategory": "international-crisis",
+      "description": {
+        "en": "Syria from the Golan Heights (2014)",
+        "it": "La Siria vista dalle alture del Golan (2014)",
+        "fr": "La Syrie vue des hauteurs du Golan (2014)"
+      }
     },
     {
       "id": "in-egitto-si-celebrano-le-finte-elezioni-il-caffe",
-      "visible": true,
+      "visible": false,
       "order": 8,
       "date": "2015-03-01",
       "video": null,
@@ -300,7 +315,12 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "political-social-justice-gender"
+      "subcategory": "political-social-justice-gender",
+      "description": {
+        "en": "Egypt: Sexual Harassment Protests (2014)",
+        "it": "Egitto: proteste contro le molestie sessuali (2014)",
+        "fr": "Égypte : manifestations contre le harcèlement sexuel (2014)"
+      }
     },
     {
       "id": "giornata-nazionale-contro-le-mutilazioni-genitali-femminili-in-egitto-donne-e-bambine-raccontano-il-loro-dolore-video-inchiesta-huffington-post",
@@ -376,7 +396,12 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "international-crisis"
+      "subcategory": "international-crisis",
+      "description": {
+        "en": "Kobane Crisis (Turkey-Syria Border, 2014)",
+        "it": "Crisi di Kobane (confine Turchia-Siria, 2014)",
+        "fr": "Crise de Kobane (frontière Turquie-Syrie, 2014)"
+      }
     },
     {
       "id": "al-sisi-incontra-renzi-in-egitto-proseguono-gli-arresti-di-massa-pagina-99",
@@ -605,8 +630,8 @@
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
-        "it": "",
-        "en": "",
+        "it": "Siriani in Egitto: da rifugiati a 'terroristi' - Choisir",
+        "en": "Syrians in Egypt: From Refugees to 'Terrorists' - Choisir",
         "fr": "Syriens en Egypte. De réfugiés à \"terroristes\" - Choisir"
       },
       "articleUrl": "http://www.nawartpress.com/?p=495",
@@ -620,7 +645,12 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "international-crisis"
+      "subcategory": "political-social-justice-gender",
+      "description": {
+        "en": "Syrian Refugees in Egypt (2013)",
+        "it": "Rifugiati siriani in Egitto (2013)",
+        "fr": "Réfugiés syriens en Égypte (2013)"
+      }
     },
     {
       "id": "pronta-la-nuova-costituzione-la-tunisia-e-un-po-piu-laica-pagina99",
@@ -1377,7 +1407,12 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "international-crisis"
+      "subcategory": "international-crisis",
+      "description": {
+        "en": "Turkey & Iraq: Kurdish Struggle (2015)",
+        "it": "Turchia e Iraq: la lotta curda (2015)",
+        "fr": "Turquie et Irak : la lutte kurde (2015)"
+      }
     },
     {
       "id": "a-pranzo-con-le-sacerdotesse-zoroastriane",
@@ -1468,7 +1503,12 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "political-social-justice-gender"
+      "subcategory": "political-social-justice-gender",
+      "description": {
+        "en": "Iranian Zoroastrian Priestesses (2015)",
+        "it": "Le sacerdotesse zoroastriane dell'Iran (2015)",
+        "fr": "Les prêtresses zoroastriennes d'Iran (2015)"
+      }
     },
     {
       "id": "english-the-zoroastrian-priestesses-of-iran-middle-east-eye",
@@ -1559,7 +1599,12 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "migration-displacement"
+      "subcategory": "migration-displacement",
+      "description": {
+        "en": "Melilla: New Wall Before Europe (2015)",
+        "it": "Melilla: un nuovo muro prima dell'Europa (2015)",
+        "fr": "Melilla : un nouveau mur avant l'Europe (2015)"
+      }
     },
     {
       "id": "vierges-au-masculin-choisir",
@@ -2375,7 +2420,12 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "migration-displacement"
+      "subcategory": "migration-displacement",
+      "description": {
+        "en": "Mediterranean Migration: Libya-Tunisia Route (2017)",
+        "it": "Migrazione nel Mediterraneo: rotta Libia-Tunisia (2017)",
+        "fr": "Migration méditerranéenne : route Libye-Tunisie (2017)"
+      }
     },
     {
       "id": "we-are-afraid-to-see-the-dead-tunisian-fishermen-on-frontline-of-migrant-tragedy",
@@ -2459,10 +2509,10 @@
       "mainpage": false
     },
     {
-      "id": "",
+      "id": "far-right-documentary-film",
       "visible": true,
       "order": 1,
-      "date": "",
+      "date": "2016-01-01",
       "video": {
         "type": "youtube",
         "id": "CUh5iNMIIrs"
@@ -2486,6 +2536,11 @@
         "it": "",
         "en": "",
         "fr": ""
+      },
+      "description": {
+        "en": "Documentary 52' - Europe, far-right normalization",
+        "it": "Documentario 52' - Europa, normalizzazione dell'estrema destra",
+        "fr": "Documentaire 52' - Europe, normalisation de l'extrême droite"
       }
     },
     {
@@ -2576,6 +2631,11 @@
         "it": "",
         "en": "",
         "fr": ""
+      },
+      "description": {
+        "en": "Egypt, antiquities trafficking (2013-2014)",
+        "it": "Egitto, traffico di antichità (2013-2014)",
+        "fr": "Égypte, trafic d'antiquités (2013-2014)"
       }
     },
     {
@@ -2792,7 +2852,12 @@
         "en": "",
         "fr": ""
       },
-      "subcategory": "migration-displacement"
+      "subcategory": "migration-displacement",
+      "description": {
+        "en": "Lesvos Migrant Crisis (Greece, 2015)",
+        "it": "Crisi migranti a Lesvos (Grecia, 2015)",
+        "fr": "Crise migratoire à Lesvos (Grèce, 2015)"
+      }
     },
     {
       "id": "english-video-migrants-tragedy-overwhelms-greek-island-of-lesvos",
@@ -2949,7 +3014,12 @@
         "en": "",
         "fr": ""
       },
-      "subcategory": "political-social-justice-gender"
+      "subcategory": "political-social-justice-gender",
+      "description": {
+        "en": "Tunisia: Mamotex Workers' Struggle (2016)",
+        "it": "Tunisia: la lotta delle operaie Mamotex (2016)",
+        "fr": "Tunisie : la lutte des ouvrières de Mamotex (2016)"
+      }
     },
     {
       "id": "trono-di-sale-marocco",
@@ -3007,7 +3077,12 @@
         "fr": ""
       },
       "mainpage": true,
-      "subcategory": "international-crisis"
+      "subcategory": "political-social-justice-gender",
+      "description": {
+        "en": "Tunisia Foreign Fighters (2017)",
+        "it": "Tunisia: combattenti stranieri (2017)",
+        "fr": "Tunisie : combattants étrangers (2017)"
+      }
     },
     {
       "id": "documentary-far-right-a-new-frightening-normal",
@@ -3042,7 +3117,12 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": true
+      "mainpage": true,
+      "description": {
+        "en": "Documentary + investigations + Magazine Nawart #2",
+        "it": "Documentario + inchieste + Magazine Nawart #2",
+        "fr": "Documentaire + enquêtes + Magazine Nawart #2"
+      }
     },
     {
       "id": "teaser-of-a-kurdish-women-dream-2015",
@@ -3220,6 +3300,11 @@
         "it": "",
         "en": "",
         "fr": ""
+      },
+      "description": {
+        "en": "Documentary 52' + Inkyfada investigation + Open Migration reportage",
+        "it": "Documentario 52' + inchiesta Inkyfada + reportage Open Migration",
+        "fr": "Documentaire 52' + enquête Inkyfada + reportage Open Migration"
       }
     },
     {
@@ -3414,6 +3499,11 @@
         "it": "",
         "en": "",
         "fr": ""
+      },
+      "description": {
+        "en": "Solidarités International documentary series - Season 6, France (2020-21)",
+        "it": "Serie documentaria Solidarités International - Stagione 6, Francia (2020-21)",
+        "fr": "Série documentaire Solidarités International - Saison 6, France (2020-21)"
       }
     },
     {
@@ -3441,6 +3531,11 @@
         "it": "",
         "en": "",
         "fr": ""
+      },
+      "description": {
+        "en": "Ukraine, 2022",
+        "it": "Ucraina, 2022",
+        "fr": "Ukraine, 2022"
       }
     },
     {
@@ -3468,6 +3563,11 @@
         "it": "",
         "en": "",
         "fr": ""
+      },
+      "description": {
+        "en": "Syria, 2023",
+        "it": "Siria, 2023",
+        "fr": "Syrie, 2023"
       }
     },
     {
@@ -3495,6 +3595,11 @@
         "it": "",
         "en": "",
         "fr": ""
+      },
+      "description": {
+        "en": "Colombia, 2020-21",
+        "it": "Colombia, 2020-21",
+        "fr": "Colombie, 2020-21"
       }
     },
     {
@@ -3522,6 +3627,11 @@
         "it": "",
         "en": "",
         "fr": ""
+      },
+      "description": {
+        "en": "Ukraine, 2022",
+        "it": "Ucraina, 2022",
+        "fr": "Ukraine, 2022"
       }
     },
     {
@@ -3549,6 +3659,11 @@
         "it": "",
         "en": "",
         "fr": ""
+      },
+      "description": {
+        "en": "Exhibition coordination, 10+ international photographers",
+        "it": "Coordinamento mostre, 10+ fotografi internazionali",
+        "fr": "Coordination d'expositions, 10+ photographes internationaux"
       }
     },
     {
