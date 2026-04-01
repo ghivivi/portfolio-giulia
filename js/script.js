@@ -18,15 +18,8 @@
     var currentSlide = 0;
     var totalSlides = 0;
     var allProjects = [];
-<<<<<<< HEAD
-    var allCategories = {};
     var allSections = {};
-    var allSectionOrder = [];
-=======
-    var allSections = {};
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
     var currentFilterCat = null;
-    var currentFilterSection = null;
     var autoplayTimer = null;
     var AUTOPLAY_INTERVAL = 6000;
     var previousSection = 'portfolio';
@@ -34,16 +27,13 @@
     // i18n
     var translations = {};
 
-    // ---- 2. LANGUAGE DETECTION (cached) ----
-    var cachedLang = null;
+    // ---- 2. LANGUAGE DETECTION ----
     function detectLanguage() {
-        if (cachedLang) return cachedLang;
         var path = window.location.pathname;
-        if (path.indexOf('/it/') !== -1) cachedLang = 'it';
-        else if (path.indexOf('/en/') !== -1) cachedLang = 'en';
-        else if (path.indexOf('/fr/') !== -1) cachedLang = 'fr';
-        else cachedLang = 'it';
-        return cachedLang;
+        if (path.indexOf('/it/') !== -1) return 'it';
+        if (path.indexOf('/en/') !== -1) return 'en';
+        if (path.indexOf('/fr/') !== -1) return 'fr';
+        return 'it';
     }
 
     // ---- 2b. i18n SYSTEM ----
@@ -198,8 +188,7 @@
             if (filterLink) {
                 e.preventDefault();
                 var catId = filterLink.getAttribute('data-filter-cat');
-                var sectionId = filterLink.getAttribute('data-filter-section') || null;
-                filterByCategory(catId, sectionId);
+                filterByCategory(catId);
                 return;
             }
 
@@ -367,13 +356,7 @@
             var response = await fetch('../config/projects.json');
             var data = await response.json();
 
-<<<<<<< HEAD
-            allCategories = data.categories;
-            allSections = data.sections;
-            allSectionOrder = data.sectionOrder || Object.keys(data.sections);
-=======
             allSections = data.sections || {};
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
             var projects = data.projects.filter(function(p) {
                 return p.visible !== false;
             });
@@ -390,13 +373,8 @@
             });
             buildCarousel(mainpageProjects, language);
 
-<<<<<<< HEAD
-            // Populate sidebar section dropdowns
-            populateSectionDropdowns(projects, language);
-=======
             // Populate sidebar dropdown menus (journalism + ngo)
             populateMenuDropdowns(projects);
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
 
             // Init video listeners for carousel
             initVideoListenersForCarousel();
@@ -416,21 +394,11 @@
         slidesContainer.innerHTML = '';
         if (dotsContainer) dotsContainer.innerHTML = '';
 
-        // Batch all slides into a single HTML string
-        var slidesHtml = '';
         projects.forEach(function(project, index) {
-            slidesHtml += createCarouselSlide(project, language, index);
+            slidesContainer.insertAdjacentHTML('beforeend',
+                createCarouselSlide(project, language, index));
         });
 
-<<<<<<< HEAD
-        // Append "view all" slide as last page
-        var viewAllLabels = {
-            it: 'Vedi tutti i progetti',
-            en: 'View all projects',
-            fr: 'Voir tous les projets'
-        };
-        slidesHtml += '<div class="carousel-slide carousel-slide--view-all">' +
-=======
         // Append "view all" slide as last page — category-specific if filtered
         var viewAllLabel = t('ui.viewAllProjects');
         var viewAllAction = 'data-nav="all-projects"';
@@ -444,7 +412,6 @@
         }
 
         var viewAllSlide = '<div class="carousel-slide carousel-slide--view-all">' +
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
             '<div class="view-all-slide-content">' +
                 '<p class="view-all-category-name">' + viewAllLabel + '</p>' +
                 '<a href="#" class="view-all-link" ' + viewAllAction + '>' +
@@ -452,7 +419,7 @@
                 '</a>' +
             '</div>' +
         '</div>';
-        slidesContainer.innerHTML = slidesHtml;
+        slidesContainer.insertAdjacentHTML('beforeend', viewAllSlide);
 
         totalSlides = projects.length + 1;
         currentSlide = 0;
@@ -544,26 +511,6 @@
         '</div>';
     }
 
-<<<<<<< HEAD
-    // ---- 9. POPULATE SECTION DROPDOWNS ----
-    function getProjectsForSection(projects, sectionId) {
-        var section = allSections[sectionId];
-        if (!section) return [];
-        var sectionCats = section.categoryOrder || [];
-        // Collect all category IDs including children
-        var allCatIds = [];
-        sectionCats.forEach(function(catId) {
-            allCatIds.push(catId);
-            if (allCategories[catId] && allCategories[catId].children) {
-                allCategories[catId].children.forEach(function(childId) {
-                    allCatIds.push(childId);
-                });
-            }
-        });
-        return projects.filter(function(p) {
-            return p.categories && p.categories.some(function(c) {
-                return allCatIds.indexOf(c) !== -1;
-=======
     // ---- 9. POPULATE MENU DROPDOWNS (journalism + ngo) ----
     function populateMenuDropdowns(projects) {
         ['journalism', 'ngo'].forEach(function(sectionId) {
@@ -644,139 +591,14 @@
 
                     li.appendChild(subList);
                 }
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
             });
         });
     }
 
-<<<<<<< HEAD
-    function getCategoryCount(projects, catId) {
-        var catIds = [catId];
-        if (allCategories[catId] && allCategories[catId].children) {
-            catIds = catIds.concat(allCategories[catId].children);
-        }
-        return projects.filter(function(p) {
-            return p.categories && p.categories.some(function(c) {
-                return catIds.indexOf(c) !== -1;
-            });
-        }).length;
-    }
-
-    function populateSectionDropdowns(projects, language) {
-        allSectionOrder.forEach(function(sectionId) {
-            var dropdown = document.getElementById('dropdown-' + sectionId);
-            if (!dropdown) return;
-
-            var section = allSections[sectionId];
-            var sectionProjects = getProjectsForSection(projects, sectionId);
-
-            dropdown.innerHTML = '';
-
-            // "All" option for this section
-            var allLi = document.createElement('li');
-            var allA = document.createElement('a');
-            allA.className = 'dropdown-link';
-            allA.href = '#';
-            allA.setAttribute('data-filter-section', sectionId);
-            allA.setAttribute('data-filter-cat', 'all');
-            var allLabel = section.allLabel ? (section.allLabel[language] || section.allLabel.it) : 'All';
-            allA.innerHTML = allLabel + ' <span class="dropdown-count">' + sectionProjects.length + '</span>';
-            allLi.appendChild(allA);
-            dropdown.appendChild(allLi);
-
-            // Separator
-            var sepLi = document.createElement('li');
-            var hr = document.createElement('hr');
-            hr.className = 'dropdown-separator';
-            sepLi.appendChild(hr);
-            dropdown.appendChild(sepLi);
-
-            // Categories for this section
-            var categoryOrder = section.categoryOrder || [];
-            categoryOrder.forEach(function(catId) {
-                var cat = allCategories[catId];
-                if (!cat) return;
-                var catName = cat[language] || cat.it || catId;
-                var count = getCategoryCount(sectionProjects, catId);
-
-                if (count === 0) return;
-
-                var li = document.createElement('li');
-                var a = document.createElement('a');
-                a.className = 'dropdown-link';
-                a.href = '#';
-                a.setAttribute('data-filter-section', sectionId);
-                a.setAttribute('data-filter-cat', catId);
-                a.innerHTML = catName + ' <span class="dropdown-count">' + count + '</span>';
-                li.appendChild(a);
-                dropdown.appendChild(li);
-
-                // Render children (sub-categories) if present
-                if (cat.children && cat.children.length > 0) {
-                    var subUl = document.createElement('ul');
-                    subUl.className = 'dropdown-subcategories';
-                    cat.children.forEach(function(childId) {
-                        var childCat = allCategories[childId];
-                        if (!childCat) return;
-                        var childName = childCat[language] || childCat.it || childId;
-                        var childCount = projects.filter(function(p) {
-                            return p.categories && p.categories.indexOf(childId) !== -1;
-                        }).length;
-                        if (childCount === 0) return;
-
-                        var childLi = document.createElement('li');
-                        var childA = document.createElement('a');
-                        childA.className = 'dropdown-link';
-                        childA.href = '#';
-                        childA.setAttribute('data-filter-section', sectionId);
-                        childA.setAttribute('data-filter-cat', childId);
-                        childA.innerHTML = childName + ' <span class="dropdown-count">' + childCount + '</span>';
-                        childLi.appendChild(childA);
-                        subUl.appendChild(childLi);
-                    });
-                    li.appendChild(subUl);
-                }
-            });
-        });
-    }
-
-    // ---- 10. CATEGORY FILTERING ----
-    function getExpandedCatIds(catId) {
-        var ids = [catId];
-        if (allCategories[catId] && allCategories[catId].children) {
-            ids = ids.concat(allCategories[catId].children);
-        }
-        return ids;
-    }
-
-    function filterByCategory(catId, sectionId) {
-        var language = detectLanguage();
-        var filtered;
-
-=======
     // ---- 10. CATEGORY FILTERING ----
     function filterByCategory(catId) {
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
         currentFilterCat = catId;
-        currentFilterSection = sectionId || null;
 
-<<<<<<< HEAD
-        if (catId === 'all' && sectionId) {
-            // All projects in a section
-            filtered = getProjectsForSection(allProjects, sectionId);
-        } else if (catId === 'all') {
-            filtered = allProjects.filter(function(p) {
-                return p.mainpage === true;
-            });
-        } else {
-            var catIds = getExpandedCatIds(catId);
-            filtered = allProjects.filter(function(p) {
-                return p.categories && p.categories.some(function(c) {
-                    return catIds.indexOf(c) !== -1;
-                });
-            });
-        }
-=======
         // Check if this category has subcategories defined
         var hasSubcats = false;
         ['journalism', 'ngo'].forEach(function(sec) {
@@ -785,7 +607,6 @@
                 hasSubcats = true;
             }
         });
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
 
         if (hasSubcats) {
             showCategoryPage(catId);
@@ -804,7 +625,6 @@
     function showMainpageProjects() {
         var language = detectLanguage();
         currentFilterCat = null;
-        currentFilterSection = null;
 
         var mainpageProjects = allProjects.filter(function(p) {
             return p.mainpage === true;
@@ -822,93 +642,26 @@
         var gridContainer = document.getElementById('all-projects-grid');
         if (!gridContainer) return;
 
-        // Show projects filtered by current section and/or category
+        // Show all visible projects, optionally filtered by current category
         var projects = allProjects;
-        if (currentFilterSection && currentFilterCat === 'all') {
-            projects = getProjectsForSection(allProjects, currentFilterSection);
-        } else if (currentFilterCat && currentFilterCat !== 'all') {
-            var catIds = getExpandedCatIds(currentFilterCat);
+        if (currentFilterCat && currentFilterCat !== 'all') {
             projects = allProjects.filter(function(p) {
-                return p.categories && p.categories.some(function(c) {
-                    return catIds.indexOf(c) !== -1;
-                });
+                return p.categories && p.categories.indexOf(currentFilterCat) !== -1;
             });
         }
 
-<<<<<<< HEAD
-        // Batch all project boxes into a single HTML string
-        var gridHtml = '';
-        projects.forEach(function(project) {
-            var title = project.title[language] || project.title.it || '';
-            if (!title) return;
-
-            var thumbUrl = getProjectThumbnailUrl(project);
-            var bgStyle = '';
-            if (thumbUrl) {
-                bgStyle = "background-image: url('" + thumbUrl + "');";
-            } else if (project.thumbnail && project.thumbnail.fallbackGradient) {
-                bgStyle = 'background: ' + project.thumbnail.fallbackGradient + ';';
-            } else {
-                bgStyle = 'background: linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%);';
-            }
-
-            var hasVideo = project.video && project.video.type;
-            var linkUrl = hasVideo ? '' : (project.articleUrl || '');
-            var videoAttrs = '';
-            if (hasVideo) {
-                if (project.video.type === 'local') {
-                    videoAttrs = 'data-video-type="local" data-video-src="' + project.video.src + '"';
-                } else {
-                    videoAttrs = 'data-video-type="' + project.video.type + '" data-video-id="' + project.video.id + '"';
-                }
-            }
-
-            var year = project.date ? project.date.substring(0, 4) : '';
-            var catLabel = '';
-            if (project.categories && project.categories.length > 0) {
-                var firstCat = project.categories.filter(function(c) { return c !== 'TODO'; })[0];
-                if (firstCat && allCategories[firstCat]) {
-                    catLabel = allCategories[firstCat][language] || allCategories[firstCat].it || '';
-                }
-            }
-
-            var actionHtml = '';
-            if (hasVideo) {
-                actionHtml = '<button class="project-box-action" data-play-video="1" ' + videoAttrs + '>&#9654;</button>';
-            }
-
-            gridHtml += '<div class="project-box" ' + (linkUrl ? 'data-open-project="' + linkUrl + '"' : '') + '>' +
-                '<div class="project-box-thumb" style="' + bgStyle + '">' +
-                    actionHtml +
-                '</div>' +
-                '<div class="project-box-info">' +
-                    '<h3 class="project-box-title">' + title + '</h3>' +
-                    (year || catLabel ? '<p class="project-box-meta">' + (year ? year : '') + (year && catLabel ? ' &bull; ' : '') + catLabel + '</p>' : '') +
-                '</div>' +
-            '</div>';
-=======
         gridContainer.innerHTML = '';
         projects.forEach(function(project) {
             var card = createProjectCard(project, language);
             if (card) gridContainer.insertAdjacentHTML('beforeend', card);
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
         });
-        gridContainer.innerHTML = gridHtml;
 
-        // Update heading with category or section name if filtered
+        // Update heading with category name if filtered
         var heading = document.querySelector('#section-all-projects .section-heading');
         if (heading) {
-<<<<<<< HEAD
-            if (currentFilterCat && currentFilterCat !== 'all' && allCategories[currentFilterCat]) {
-                heading.textContent = allCategories[currentFilterCat][language] || allCategories[currentFilterCat].it;
-            } else if (currentFilterSection && allSections[currentFilterSection]) {
-                var sectionLabel = allSections[currentFilterSection].allLabel;
-                heading.textContent = sectionLabel[language] || sectionLabel.it;
-=======
             if (currentFilterCat && currentFilterCat !== 'all') {
                 var catName = t('categories.' + currentFilterCat);
                 heading.textContent = (catName !== 'categories.' + currentFilterCat) ? catName : t('sections.allProjects');
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
             } else {
                 heading.textContent = t('sections.allProjects');
             }
