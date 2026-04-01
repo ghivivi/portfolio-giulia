@@ -10,7 +10,6 @@
         "longform-reportage": [
           "migration-displacement",
           "international-crisis",
-          "middle-east-north-africa",
           "political-social-justice-gender"
         ]
       }
@@ -19,8 +18,7 @@
       "order": [
         "documentary-series",
         "field-missions",
-        "multimedia-projects-coordination",
-        "photo-exhibitions"
+        "multimedia-projects-coordination"
       ]
     }
   },
