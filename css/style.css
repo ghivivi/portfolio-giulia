@@ -294,24 +294,6 @@ h1, h2, h3 {
     margin-left: 0.3rem;
 }
 
-<<<<<<< HEAD
-.dropdown-separator {
-    border: none;
-    border-top: 1px solid var(--color-border);
-    margin: 0.3rem 0;
-}
-
-/* Nested sub-categories */
-.dropdown-subcategories {
-    list-style: none;
-    padding-left: 1rem;
-    margin-top: 0.1rem;
-}
-
-.dropdown-subcategories .dropdown-link {
-    font-size: 0.72rem;
-    padding: 0.15rem 0;
-=======
 /* Dropdown: "All Projects" link */
 .dropdown-link--all {
     font-weight: 400;
@@ -348,7 +330,6 @@ h1, h2, h3 {
 .dropdown-link--sub:hover {
     color: var(--color-text);
     padding-left: 0.3rem;
->>>>>>> 8168dc903541897cd58774dc50191798e4e7e628
 }
 
 /* Sidebar Footer */
