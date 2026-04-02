@@ -497,8 +497,8 @@
             actionHTML += ' <button class="slide-detail-btn" data-show-detail="' + project.id + '">' + t('ui.details') + ' &rarr;</button>';
         }
 
-        return '<div class="carousel-slide' + (index === 0 ? ' is-active' : '') + '" style="' + bgStyle + '">' +
-            '<div class="carousel-slide-overlay"></div>' +
+        return '<div class="carousel-slide' + (index === 0 ? ' is-active' : '') + '" style="' + bgStyle + '" role="img" aria-label="' + title.replace(/"/g, '&quot;') + '">' +
+            '<div class="carousel-slide-overlay" aria-hidden="true"></div>' +
             '<div class="carousel-slide-content">' +
                 (tagText ? '<p class="slide-tag">' + tagText + '</p>' : '') +
                 '<h2 class="slide-title">' + title + '</h2>' +
@@ -711,7 +711,7 @@
             var featuredTitle = featured.title[language] || featured.title.it || '';
 
             html += '<div class="landing-column" data-filter-cat="' + catId + '">' +
-                '<div class="landing-column-bg" style="' + bgStyle + '"></div>' +
+                '<div class="landing-column-bg" style="' + bgStyle + '" aria-hidden="true"></div>' +
                 '<div class="landing-column-overlay"></div>' +
                 '<div class="landing-column-content">' +
                     '<h3 class="landing-column-category">' + catName + '</h3>' +
@@ -771,7 +771,7 @@
         }
 
         return '<div class="project-box" ' + boxAttr + '>' +
-            '<div class="project-box-thumb" style="' + bgStyle + '">' +
+            '<div class="project-box-thumb" style="' + bgStyle + '" aria-hidden="true">' +
                 actionHtml +
             '</div>' +
             '<div class="project-box-info">' +
