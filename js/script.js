@@ -664,6 +664,7 @@
             }
         }
         initThumbnailFallbacks();
+        initLazyBackgrounds();
     }
 
     // ---- 12a. SECTION LANDING PAGE (Journalism / NGO Work) ----
@@ -770,8 +771,17 @@
             boxAttr = 'data-open-project="' + project.articleUrl + '"';
         }
 
+        var thumbDataAttr = '';
+        var thumbPlaceholder = bgStyle;
+        if (thumbUrl) {
+            thumbDataAttr = ' data-bg="' + thumbUrl.replace(/"/g, '&quot;') + '"';
+            thumbPlaceholder = (project.thumbnail && project.thumbnail.fallbackGradient)
+                ? 'background: ' + project.thumbnail.fallbackGradient + ';'
+                : 'background: linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%);';
+        }
+
         return '<div class="project-box" ' + boxAttr + '>' +
-            '<div class="project-box-thumb" style="' + bgStyle + '" aria-hidden="true">' +
+            '<div class="project-box-thumb" style="' + thumbPlaceholder + '"' + thumbDataAttr + ' aria-hidden="true">' +
                 actionHtml +
             '</div>' +
             '<div class="project-box-info">' +
@@ -849,6 +859,7 @@
 
         container.innerHTML = html;
         initThumbnailFallbacks();
+        initLazyBackgrounds();
         navTo('category-page');
     }
 
@@ -1057,6 +1068,33 @@
                 closeVideoModal();
             }
         });
+    }
+
+    // ---- 15b. LAZY BACKGROUND IMAGES ----
+    function initLazyBackgrounds() {
+        var targets = document.querySelectorAll('[data-bg]');
+        if (!targets.length) return;
+
+        if (!('IntersectionObserver' in window)) {
+            targets.forEach(function(el) {
+                el.style.backgroundImage = "url('" + el.getAttribute('data-bg') + "')";
+                el.removeAttribute('data-bg');
+            });
+            return;
+        }
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var el = entry.target;
+                    el.style.backgroundImage = "url('" + el.getAttribute('data-bg') + "')";
+                    el.removeAttribute('data-bg');
+                    observer.unobserve(el);
+                }
+            });
+        }, { rootMargin: '150px' });
+
+        targets.forEach(function(el) { observer.observe(el); });
     }
 
     // ---- 16. THUMBNAIL FALLBACK ----
