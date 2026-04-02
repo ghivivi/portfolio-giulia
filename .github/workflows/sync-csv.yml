@@ -1,4 +1,4 @@
-name: Sync CSV to JSON
+name: Sync CSV to JSON and rebuild HTML
 
 on:
   push:
@@ -24,12 +24,15 @@ jobs:
       - name: Run CSV-to-JSON sync
         run: node scripts/csv-to-json.js
 
+      - name: Rebuild HTML from updated JSON
+        run: node build.js
+
       - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git diff --quiet config/projects.json || (
-            git add config/projects.json &&
-            git commit -m "Auto-sync: update projects.json from CSV" &&
+          git add config/projects.json it/ en/ fr/
+          git diff --cached --quiet || (
+            git commit -m "Auto-sync: update projects.json from CSV and regenerate HTML" &&
             git push
           )
