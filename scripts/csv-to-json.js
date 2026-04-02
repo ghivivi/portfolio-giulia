@@ -4,8 +4,14 @@
  * CSV-to-JSON sync script for Portfolio Giulia Bertoluzzi.
  *
  * Reads config/projects.csv (semicolon-delimited, RFC 4180 quoting)
- * and updates the "projects" array inside config/projects.json,
- * preserving the top-level "categories" and "categoryOrder" keys.
+ * and MERGES into the "projects" array inside config/projects.json:
+ *   - rows whose id matches an existing project → fields are updated
+ *   - rows whose id is not found → appended as new projects
+ *
+ * Preserves the top-level "sections" key unchanged.
+ * If the CSV has only a header row and no data rows, exits without touching the JSON.
+ *
+ * allegati column format: "url1|label1,url2|label2"
  *
  * Usage:  node scripts/csv-to-json.js
  */
@@ -29,7 +35,6 @@ function parseCSV(text, delimiter) {
         var row = [];
         while (true) {
             var field = '';
-            // Skip leading whitespace only if not quoted
             if (i < len && text[i] === '"') {
                 // Quoted field
                 i++; // skip opening quote
@@ -105,6 +110,28 @@ function csvToObjects(text) {
 
 // ---- Mapping logic ----
 
+/**
+ * Parse the allegati column.
+ * Format: "url1|label1,url2|label2"
+ * Returns: [{ url: "url1", label: "label1" }, ...]
+ * If a segment has no pipe, uses the whole segment as url with empty label.
+ */
+function parseAllegati(raw) {
+    if (!raw || !raw.trim()) return [];
+    return raw.split(',').map(function(segment) {
+        segment = segment.trim();
+        if (!segment) return null;
+        var pipeIdx = segment.indexOf('|');
+        if (pipeIdx === -1) {
+            return { url: segment, label: '' };
+        }
+        return {
+            url: segment.slice(0, pipeIdx).trim(),
+            label: segment.slice(pipeIdx + 1).trim()
+        };
+    }).filter(Boolean);
+}
+
 function csvRowToProject(row) {
     var project = {
         id: row.id || '',
@@ -122,13 +149,17 @@ function csvRowToProject(row) {
             fr: row.title_fr || ''
         },
         articleUrl: row.articleUrl || '',
-        categories: row.categories ? row.categories.split(',').map(function(s) { return s.trim(); }).filter(Boolean) : []
+        categories: row.categories
+            ? row.categories.split(',').map(function(s) { return s.trim(); }).filter(Boolean)
+            : [],
+        allegati: parseAllegati(row.allegati),
+        testo: {
+            it: row.testo_it || '',
+            en: row.testo_en || '',
+            fr: row.testo_fr || ''
+        },
+        mainpage: row.mainpage === 'true'
     };
-
-    // mainpage: only include if true (matches existing JSON convention)
-    if (row.mainpage === 'true') {
-        project.mainpage = true;
-    }
 
     // video: build object only if type is provided
     if (row.video_type && row.video_type.trim()) {
@@ -138,15 +169,30 @@ function csvRowToProject(row) {
         project.video = video;
     }
 
-    // allegati: comma-separated URLs
-    project.allegati = row.allegati ? row.allegati.split(',').map(function(s) { return s.trim(); }).filter(Boolean) : [];
+    // subcategory: optional, only include if non-empty
+    if (row.subcategory && row.subcategory.trim()) {
+        project.subcategory = row.subcategory.trim();
+    }
 
-    // testo: multilingual text content
-    project.testo = {
-        it: row.testo_it || '',
-        en: row.testo_en || '',
-        fr: row.testo_fr || ''
-    };
+    // description: optional multilingual block, only include if at least one language is non-empty
+    var desc_it = row.description_it || '';
+    var desc_en = row.description_en || '';
+    var desc_fr = row.description_fr || '';
+    if (desc_it || desc_en || desc_fr) {
+        project.description = { it: desc_it, en: desc_en, fr: desc_fr };
+    }
+
+    // tags: optional, only include if at least one tag field is non-empty
+    var tags_format   = row.tags_format   ? row.tags_format.trim()   : '';
+    var tags_role     = row.tags_role     ? row.tags_role.trim()     : '';
+    var tags_location = row.tags_location ? row.tags_location.trim() : '';
+    if (tags_format || tags_role || tags_location) {
+        var tags = {};
+        if (tags_format)   tags.format   = tags_format;
+        if (tags_role)     tags.role     = tags_role;
+        if (tags_location) tags.location = tags_location;
+        project.tags = tags;
+    }
 
     return project;
 }
@@ -158,28 +204,66 @@ function main() {
     var csvText = fs.readFileSync(CSV_PATH, 'utf8');
     var csvRows = csvToObjects(csvText);
 
-    // Read existing JSON to preserve categories and categoryOrder
-    var existingData = {};
+    if (csvRows.length === 0) {
+        console.log('No data rows in CSV. Nothing to do.');
+        return;
+    }
+
+    // Read existing JSON
+    var existingData = { sections: {}, projects: [] };
     try {
         existingData = JSON.parse(fs.readFileSync(JSON_PATH, 'utf8'));
     } catch (e) {
         console.error('Warning: could not read existing JSON, starting fresh.');
     }
 
-    // Convert CSV rows to project objects
-    var projects = csvRows.map(csvRowToProject);
+    var existingProjects = existingData.projects || [];
 
-    // Build output preserving top-level keys
+    // Build an index of existing projects by id for O(1) lookup
+    var projectIndex = {};
+    for (var i = 0; i < existingProjects.length; i++) {
+        if (existingProjects[i].id) {
+            projectIndex[existingProjects[i].id] = i;
+        }
+    }
+
+    var updated = 0;
+    var appended = 0;
+
+    for (var r = 0; r < csvRows.length; r++) {
+        var csvRow = csvRows[r];
+        if (!csvRow.id || !csvRow.id.trim()) {
+            console.warn('Warning: skipping row ' + (r + 1) + ' with missing id.');
+            continue;
+        }
+
+        var newProject = csvRowToProject(csvRow);
+
+        if (projectIndex.hasOwnProperty(csvRow.id)) {
+            // Merge: replace existing project at that index position
+            existingProjects[projectIndex[csvRow.id]] = newProject;
+            updated++;
+        } else {
+            // Append new project and update index
+            existingProjects.push(newProject);
+            projectIndex[csvRow.id] = existingProjects.length - 1;
+            appended++;
+        }
+    }
+
+    // Build output preserving top-level "sections" key
     var output = {
-        categories: existingData.categories || {},
-        categoryOrder: existingData.categoryOrder || [],
-        projects: projects
+        sections: existingData.sections || {},
+        projects: existingProjects
     };
 
     // Write JSON
     fs.writeFileSync(JSON_PATH, JSON.stringify(output, null, 2) + '\n', 'utf8');
 
-    console.log('Updated ' + JSON_PATH + ' with ' + projects.length + ' projects from CSV.');
+    console.log(
+        'Done. Updated: ' + updated + ' project(s), appended: ' + appended +
+        ' new project(s). Total: ' + existingProjects.length + ' projects in ' + JSON_PATH
+    );
 }
 
 main();
