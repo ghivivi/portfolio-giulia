@@ -716,7 +716,7 @@
                 '<div class="landing-column-overlay"></div>' +
                 '<div class="landing-column-content">' +
                     '<h3 class="landing-column-category">' + catName + '</h3>' +
-                    '<p class="landing-column-count">' + count + ' ' + (count === 1 ? 'project' : 'projects') + '</p>' +
+                    '<p class="landing-column-count">' + count + ' ' + (count === 1 ? t('ui.projectCountSingular') : t('ui.projectCount')) + '</p>' +
                     '<p class="landing-column-featured">' + featuredTitle + '</p>' +
                 '</div>' +
             '</div>';

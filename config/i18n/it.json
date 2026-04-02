@@ -4,9 +4,9 @@
     "title": "Giulia Bertoluzzi | Giornalista Multimedia"
   },
   "nav": {
-    "journalism": "Journalism",
-    "ngoWork": "NGO Work",
-    "services": "Services",
+    "journalism": "Giornalismo",
+    "ngoWork": "Lavoro ONG",
+    "services": "Servizi",
     "contatti": "Contatti"
   },
   "hero": {
@@ -37,7 +37,12 @@
     "viewAllProjects": "Vedi tutti i progetti",
     "viewAllContents": "Vedi tutti i contenuti",
     "allSectionProjects": "Tutti i progetti",
-    "attachments": "Allegati"
+    "attachments": "Allegati",
+    "skipLink": "Salta al contenuto principale",
+    "prevSlide": "Slide precedente",
+    "nextSlide": "Slide successiva",
+    "projectCount": "progetti",
+    "projectCountSingular": "progetto"
   },
   "categories": {
     "documentary-films": "Film Documentari",

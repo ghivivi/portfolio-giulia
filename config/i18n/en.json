@@ -37,7 +37,12 @@
     "viewAllProjects": "View all projects",
     "viewAllContents": "View all contents",
     "allSectionProjects": "All projects",
-    "attachments": "Attachments"
+    "attachments": "Attachments",
+    "skipLink": "Skip to main content",
+    "prevSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "projectCount": "projects",
+    "projectCountSingular": "project"
   },
   "categories": {
     "documentary-films": "Documentary Films",

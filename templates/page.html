@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="{{meta.description}}">
+    <meta name="author" content="Giulia Bertoluzzi">
+    <meta name="robots" content="index, follow">
     <title>{{meta.title}}</title>
 
     <!-- Google Fonts -->
@@ -20,11 +22,12 @@
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
 
     <!-- Open Graph -->
     <meta property="og:title" content="{{meta.title}}">
     <meta property="og:description" content="{{meta.description}}">
-    <meta property="og:image" content="https://giuliabertoluzzi.com/images/og-image.svg">
+    <meta property="og:image" content="https://giuliabertoluzzi.com/images/og-image.png">
     <meta property="og:url" content="https://giuliabertoluzzi.com/{{lang}}/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="{{locale}}">
@@ -33,45 +36,58 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{meta.title}}">
     <meta name="twitter:description" content="{{meta.og_description_short}}">
-    <meta name="twitter:image" content="https://giuliabertoluzzi.com/images/og-image.svg">
+    <meta name="twitter:image" content="https://giuliabertoluzzi.com/images/og-image.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="../css/style.css">
 
     <!-- Preload -->
     <link rel="preload" href="../config/projects.json" as="fetch" crossorigin>
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Giulia Bertoluzzi",
+      "url": "https://giuliabertoluzzi.com/{{lang}}/",
+      "jobTitle": "{{rt.hero.subtitle}}",
+      "description": "{{meta.description}}",
+      "sameAs": [
+        "https://www.linkedin.com/in/giulia-bertoluzzi-2962806b/"
+      ]
+    }
+    </script>
+    <meta name="theme-color" content="#0a0a0a">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">{{rt.ui.skipLink}}</a>
     <div id="wrapper">
         <!-- SIDEBAR -->
         <aside class="sidebar" id="sidebar">
             <div class="sidebar-header">
                 <button class="sidebar-logo" data-nav="hero">GIULIA BERTOLUZZI</button>
-                <p class="sidebar-tagline">{{sidebar.tagline}}</p>
+                <p class="sidebar-tagline" data-i18n="hero.subtitle">{{rt.hero.subtitle}}</p>
             </div>
 
             <nav class="sidebar-nav">
                 <ul class="sidebar-links">
                     <li class="sidebar-dropdown">
-                        <a href="#" class="sidebar-link dropdown-toggle" data-nav="portfolio">
-                            {{sidebar.journalism}}
+                        <a href="#" class="sidebar-link dropdown-toggle" data-nav="portfolio" data-section="journalism">
+                            <span data-i18n="nav.journalism">{{rt.nav.journalism}}</span>
                             <span class="dropdown-arrow">&#8226;</span>
                         </a>
-                        <ul class="dropdown-menu" id="dropdown-journalism">
-                            <!-- Populated by JS -->
-                        </ul>
+                        <ul class="dropdown-menu" id="journalism-dropdown"></ul>
                     </li>
                     <li class="sidebar-dropdown">
-                        <a href="#" class="sidebar-link dropdown-toggle" data-nav="portfolio">
-                            {{sidebar.ngo}}
+                        <a href="#" class="sidebar-link dropdown-toggle" data-nav="portfolio" data-section="ngo">
+                            <span data-i18n="nav.ngoWork">{{rt.nav.ngoWork}}</span>
                             <span class="dropdown-arrow">&#8226;</span>
                         </a>
-                        <ul class="dropdown-menu" id="dropdown-ngo">
-                            <!-- Populated by JS -->
-                        </ul>
+                        <ul class="dropdown-menu" id="ngo-dropdown"></ul>
                     </li>
-                    <li><a href="#" class="sidebar-link" data-nav="consulenze">{{sidebar.services}}</a></li>
-                    <li><a href="#" class="sidebar-link" data-nav="contatti">{{sidebar.contact}}</a></li>
+                    <li><a href="#" class="sidebar-link" data-nav="consulenze" data-i18n="nav.services">{{rt.nav.services}}</a></li>
+                    <li><a href="#" class="sidebar-link" data-nav="contatti" data-i18n="nav.contatti">{{rt.nav.contatti}}</a></li>
                 </ul>
             </nav>
 
@@ -97,6 +113,7 @@
                         <svg viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg>
                     </a>
                 </div>
+                <p class="copyright">&copy; {{year}} Giulia Bertoluzzi</p>
             </div>
         </aside>
 
@@ -116,8 +133,20 @@
             <!-- HERO -->
             <section class="page-section is-active" id="section-hero">
                 <h1 class="hero-name">GIULIA<br>BERTOLUZZI</h1>
-                <p class="hero-subtitle">{{hero.subtitle}}</p>
-                <p class="hero-description">{{hero.description}}</p>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">{{rt.hero.subtitle}}</p>
+                <p class="hero-description" data-i18n="hero.description">{{rt.hero.description}}</p>
+            </section>
+
+            <!-- SECTION LANDING: Journalism -->
+            <section class="page-section" id="section-journalism-landing">
+                <p class="section-intro" id="journalism-landing-intro"></p>
+                <div class="section-landing" id="journalism-landing-content"></div>
+            </section>
+
+            <!-- SECTION LANDING: NGO Work -->
+            <section class="page-section" id="section-ngo-landing">
+                <p class="section-intro" id="ngo-landing-intro"></p>
+                <div class="section-landing" id="ngo-landing-content"></div>
             </section>
 
             <!-- PORTFOLIO (carousel built by JS — mainpage projects) -->
@@ -126,8 +155,8 @@
                     <div class="carousel-slides" id="carousel-slides">
                         <!-- Slides injected by JS from projects.json -->
                     </div>
-                    <button class="carousel-arrow carousel-arrow--prev" id="carousel-prev">&larr;</button>
-                    <button class="carousel-arrow carousel-arrow--next" id="carousel-next">&rarr;</button>
+                    <button class="carousel-arrow carousel-arrow--prev" id="carousel-prev" aria-label="{{rt.ui.prevSlide}}">&larr;</button>
+                    <button class="carousel-arrow carousel-arrow--next" id="carousel-next" aria-label="{{rt.ui.nextSlide}}">&rarr;</button>
                     <div class="carousel-dots" id="carousel-dots">
                         <!-- Dots injected by JS -->
                     </div>
@@ -137,70 +166,59 @@
             <!-- ALL PROJECTS (grid of clickable boxes) -->
             <section class="page-section" id="section-all-projects">
                 <div class="all-projects-wrapper">
-                    <h2 class="section-heading">{{allProjects.heading}}</h2>
+                    <h2 class="section-heading" data-i18n="sections.allProjects">{{rt.sections.allProjects}}</h2>
                     <div class="all-projects-grid" id="all-projects-grid">
                         <!-- Populated by JS -->
                     </div>
                 </div>
             </section>
 
+            <!-- CATEGORY PAGE (grid with subsections) -->
+            <section class="page-section" id="section-category-page">
+                <div class="category-page-wrapper">
+                    <h2 class="section-heading" id="category-page-title"></h2>
+                    <p class="section-intro" id="category-page-intro"></p>
+                    <div id="category-page-content"></div>
+                </div>
+            </section>
+
+            <!-- PROJECT DETAIL -->
+            <section class="page-section" id="section-project-detail">
+                <div class="project-detail-wrapper">
+                    <button class="project-detail-back" id="project-detail-back" data-i18n="sections.back">&larr; {{rt.sections.back}}</button>
+                    <div class="project-detail-content" id="project-detail-content"></div>
+                </div>
+            </section>
+
             <!-- CONSULENZE -->
             <section class="page-section" id="section-consulenze">
                 <div class="consulting-wrapper">
-                    <h2 class="section-heading">{{consulting.heading}}</h2>
+                    <h2 class="section-heading" data-i18n="sections.services">{{rt.sections.services}}</h2>
+                    <p class="consulting-intro" data-i18n="sections.servicesIntro">{{rt.sections.servicesIntro}}</p>
                     <div class="consulting-grid">
                         <div class="consulting-card">
-                            <h3>{{consulting.card1.title}}</h3>
-                            <p class="consulting-card-tag">{{consulting.card1.tag}}</p>
-                            <p class="consulting-description">{{consulting.card1.description}}</p>
-                            <ul class="consulting-features">
-                                <li>{{consulting.card1.feature1}}</li>
-                                <li>{{consulting.card1.feature2}}</li>
-                                <li>{{consulting.card1.feature3}}</li>
-                            </ul>
+                            <h3 data-i18n="sections.servicesCard1Title">{{rt.sections.servicesCard1Title}}</h3>
+                            <p class="consulting-description" data-i18n="sections.servicesCard1Desc">{{rt.sections.servicesCard1Desc}}</p>
                         </div>
                         <div class="consulting-card">
-                            <h3>{{consulting.card2.title}}</h3>
-                            <p class="consulting-card-tag">{{consulting.card2.tag}}</p>
-                            <p class="consulting-description">{{consulting.card2.description}}</p>
-                            <ul class="consulting-features">
-                                <li>{{consulting.card2.feature1}}</li>
-                                <li>{{consulting.card2.feature2}}</li>
-                                <li>{{consulting.card2.feature3}}</li>
-                            </ul>
+                            <h3 data-i18n="sections.servicesCard2Title">{{rt.sections.servicesCard2Title}}</h3>
+                            <p class="consulting-description" data-i18n="sections.servicesCard2Desc">{{rt.sections.servicesCard2Desc}}</p>
                         </div>
                         <div class="consulting-card">
-                            <h3>{{consulting.card3.title}}</h3>
-                            <p class="consulting-card-tag">{{consulting.card3.tag}}</p>
-                            <p class="consulting-description">{{consulting.card3.description}}</p>
-                            <ul class="consulting-features">
-                                <li>{{consulting.card3.feature1}}</li>
-                                <li>{{consulting.card3.feature2}}</li>
-                                <li>{{consulting.card3.feature3}}</li>
-                            </ul>
-                        </div>
-                        <div class="consulting-card">
-                            <h3>{{consulting.card4.title}}</h3>
-                            <p class="consulting-card-tag">{{consulting.card4.tag}}</p>
-                            <p class="consulting-description">{{consulting.card4.description}}</p>
-                            <ul class="consulting-features">
-                                <li>{{consulting.card4.feature1}}</li>
-                                <li>{{consulting.card4.feature2}}</li>
-                                <li>{{consulting.card4.feature3}}</li>
-                            </ul>
+                            <h3 data-i18n="sections.servicesCard3Title">{{rt.sections.servicesCard3Title}}</h3>
+                            <p class="consulting-description" data-i18n="sections.servicesCard3Desc">{{rt.sections.servicesCard3Desc}}</p>
                         </div>
                     </div>
                     <div class="consulting-cta-box">
-                        <p class="consulting-cta-text">{{consulting.cta_text}}</p>
-                        <button class="consulting-cta-btn" data-nav="contatti">{{consulting.cta_button}}</button>
+                        <button class="consulting-cta-btn" data-nav="contatti" data-i18n="sections.servicesCta">{{rt.sections.servicesCta}}</button>
                     </div>
                 </div>
             </section>
 
             <!-- CONTATTI -->
             <section class="page-section" id="section-contatti">
-                <h2 class="section-heading">{{contact.heading}}</h2>
-                <p class="contact-tagline">{{contact.tagline}}</p>
+                <h2 class="section-heading" data-i18n="sections.contactTitle">{{rt.sections.contactTitle}}</h2>
+                <p class="contact-tagline" data-i18n="sections.contactTagline">{{rt.sections.contactTagline}}</p>
                 <a href="mailto:giulia@example.com" class="contact-email">giulia@example.com</a>
                 <div class="contact-social">
                     <a href="https://www.linkedin.com/in/giulia-bertoluzzi-2962806b/" class="contact-social-icon" aria-label="LinkedIn" target="_blank" rel="noopener">
@@ -221,7 +239,7 @@
     <div class="video-modal" id="video-modal" aria-hidden="true">
         <div class="modal-overlay"></div>
         <div class="modal-content">
-            <button class="modal-close" aria-label="{{modal.close_label}}">&times;</button>
+            <button class="modal-close" aria-label="{{rt.sections.modalClose}}">&times;</button>
             <div class="modal-video-wrapper"></div>
         </div>
     </div>
