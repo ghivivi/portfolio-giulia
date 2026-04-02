@@ -197,6 +197,64 @@ function csvRowToProject(row) {
     return project;
 }
 
+// ---- Section auto-registration ----
+
+/**
+ * For each CSV row that has a `section` value, check whether the categories
+ * and subcategory listed in that row are already registered in sections[section].
+ * If not, append them automatically.
+ *
+ * @param {Array}  csvRows       - parsed CSV row objects
+ * @param {Object} sections      - the existing sections object (mutated in place)
+ * @returns {number}             - number of new categories/subcategories added
+ */
+function autoRegisterSections(csvRows, sections) {
+    var added = 0;
+
+    for (var r = 0; r < csvRows.length; r++) {
+        var row = csvRows[r];
+        var sectionId = row.section ? row.section.trim() : '';
+        if (!sectionId) continue;
+
+        // Ensure the section exists
+        if (!sections[sectionId]) {
+            sections[sectionId] = { order: [] };
+            console.log('  New section created: "' + sectionId + '"');
+            added++;
+        }
+        var sec = sections[sectionId];
+        if (!sec.order) sec.order = [];
+
+        // Register each category from this row
+        var cats = row.categories
+            ? row.categories.split(',').map(function(s) { return s.trim(); }).filter(Boolean)
+            : [];
+
+        for (var c = 0; c < cats.length; c++) {
+            var catId = cats[c];
+            if (sec.order.indexOf(catId) === -1) {
+                sec.order.push(catId);
+                console.log('  New category added to "' + sectionId + '": "' + catId + '"');
+                added++;
+            }
+
+            // Register subcategory if present
+            var subId = row.subcategory ? row.subcategory.trim() : '';
+            if (subId) {
+                if (!sec.subcategories) sec.subcategories = {};
+                if (!sec.subcategories[catId]) sec.subcategories[catId] = [];
+                if (sec.subcategories[catId].indexOf(subId) === -1) {
+                    sec.subcategories[catId].push(subId);
+                    console.log('  New subcategory added to "' + catId + '": "' + subId + '"');
+                    added++;
+                }
+            }
+        }
+    }
+
+    return added;
+}
+
 // ---- Main ----
 
 function main() {
@@ -217,7 +275,11 @@ function main() {
         console.error('Warning: could not read existing JSON, starting fresh.');
     }
 
+    var sections = existingData.sections || {};
     var existingProjects = existingData.projects || [];
+
+    // Auto-register new categories/subcategories from CSV rows that have a `section` value
+    var sectionsAdded = autoRegisterSections(csvRows, sections);
 
     // Build an index of existing projects by id for O(1) lookup
     var projectIndex = {};
@@ -251,9 +313,9 @@ function main() {
         }
     }
 
-    // Build output preserving top-level "sections" key
+    // Build output
     var output = {
-        sections: existingData.sections || {},
+        sections: sections,
         projects: existingProjects
     };
 
@@ -262,7 +324,8 @@ function main() {
 
     console.log(
         'Done. Updated: ' + updated + ' project(s), appended: ' + appended +
-        ' new project(s). Total: ' + existingProjects.length + ' projects in ' + JSON_PATH
+        ' new project(s), sections entries added: ' + sectionsAdded +
+        '. Total: ' + existingProjects.length + ' projects in ' + JSON_PATH
     );
 }
 
