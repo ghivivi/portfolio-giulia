@@ -37,11 +37,18 @@
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Auto-redirect to Italian version after 5 seconds -->
+    <!-- Auto-redirect based on browser language -->
     <script>
-        setTimeout(function() {
-            window.location.href = 'it/';
-        }, 5000);
+        (function() {
+            var lang = (navigator.language || navigator.userLanguage || '').toLowerCase().substring(0, 2);
+            if (lang === 'it') {
+                window.location.replace('it/');
+            } else if (lang === 'fr') {
+                window.location.replace('fr/');
+            } else {
+                window.location.replace('en/');
+            }
+        })();
     </script>
 </head>
 <body class="landing-page">
