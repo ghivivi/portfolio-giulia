@@ -112,6 +112,18 @@
         {
           "url": "../media/longform-reportage/international-crisis/sinai-traffico-esseri-umani.pdf",
           "label": "Sinai, traffico di esseri umani"
+        },
+        {
+          "url": "http://temi.repubblica.it/limes/anteprima-di-limes-713-egitto-rivoluzione-usa-e-getta/50667?photo=12",
+          "label": "Limes"
+        },
+        {
+          "url": "http://www.left.it/2013/07/04/sinai-deserto-e-affari/11230/",
+          "label": "Left"
+        },
+        {
+          "url": "http://www.europaquotidiano.it/2013/10/06/egitto-sinai/",
+          "label": "Europa Quotidiano"
         }
       ],
       "testo": {
@@ -149,7 +161,12 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "http://www.europaquotidiano.it/2014/09/30/la-guerra-siriana-vista-dal-golan-sempre-piu-vicino-a-israele/",
+          "label": "Europa Quotidiano – Golan"
+        }
+      ],
       "testo": {
         "en": "Two investigations into Israel’s borderlands: the Golan Heights as the Syrian war approaches, and Holot—Israel’s desert detention center for African migrants.\n\nFrom the Israeli-occupied Golan, Syria’s war is visible and audible. This reportage documents life on the strategic plateau as conflict approaches the border fence—Israeli communities watching smoke rise from Syrian villages, and the complex geopolitics of a war zone observed from occupied territory.\n\nDeep in Israel’s Negev Desert, Holot holds African asylum seekers in indefinite detention. This investigation explores Israel’s “voluntary” detention policy targeting Eritrean and Sudanese refugees—a system designed to coerce departure while maintaining plausible deniability.",
         "it": "Due inchieste sulle terre di confine di Israele: le Alture del Golan mentre la guerra siriana si avvicina, e Holot—il centro di detenzione israeliano nel deserto per migranti africani.\n\nDal Golan occupato da Israele, la guerra in Siria è visibile e udibile. Questo reportage documenta la vita sull’altopiano strategico mentre il conflitto si avvicina alla recinzione di confine—comunità israeliane che osservano il fumo salire dai villaggi siriani, e la complessa geopolitica di una zona di guerra osservata da un territorio occupato.\n\nNel profondo del deserto del Negev, Holot trattiene i richiedenti asilo africani in detenzione a tempo indeterminato. Questa inchiesta esplora la politica di detenzione “volontaria” di Israele rivolta ai rifugiati eritrei e sudanesi—un sistema progettato per costringere alla partenza mantenendo una negabilità plausibile.",
@@ -247,6 +264,10 @@
         {
           "url": "../media/longform-reportage/international-crisis/siria-calcoli-regime-il-caffe.pdf",
           "label": "Siria, i calcoli del regime (Il Caffè)"
+        },
+        {
+          "url": "http://www.europaquotidiano.it/2014/09/30/la-guerra-siriana-vista-dal-golan-sempre-piu-vicino-a-israele/",
+          "label": "Europa Quotidiano"
         }
       ],
       "testo": {
@@ -317,7 +338,12 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "http://www.middleeasteye.net/news/video-egyptian-protesters-demand-end-sexual-harassment-2050576310",
+          "label": "Middle East Eye"
+        }
+      ],
       "testo": {
         "en": "Cairo, June 2014. Hundreds marched demanding an end to sexual harassment—a pervasive crisis in Egyptian public life. The protest followed mass assaults during el-Sisi’s presidential inauguration.\n\nThis video captures a rare moment of feminist activism in Sisi’s Egypt—where political protest was criminalized but sexual violence was too normalized to silence.",
         "it": "Il Cairo, giugno 2014. Centinaia di persone hanno manifestato chiedendo la fine delle molestie sessuali—una crisi pervasiva nella vita pubblica egiziana. La protesta ha fatto seguito alle aggressioni di massa durante l’inaugurazione presidenziale di al-Sisi.\n\nQuesto video cattura un raro momento di attivismo femminista nell’Egitto di Sisi—dove la protesta politica era criminalizzata ma la violenza sessuale era troppo normalizzata per essere messa a tacere.",
@@ -400,6 +426,26 @@
         {
           "url": "../media/longform-reportage/political-and-social-justice-gender/donne-curde-combattenti.pdf",
           "label": "Donne curde combattenti"
+        },
+        {
+          "url": "http://www.repubblica.it/esteri/2014/10/09/news/reportage_kobane_confine_siria_turchia-97717684/",
+          "label": "Repubblica"
+        },
+        {
+          "url": "http://www.middleeasteye.net/in-depth/features/tent-cities-gas-canisters-and-anger-turkish-syrian-border-2094319416",
+          "label": "Middle East Eye"
+        },
+        {
+          "url": "http://www.choisir.ch/politique-economie/politique/item/2119",
+          "label": "Choisir"
+        },
+        {
+          "url": "http://epaper2.caffe.ch/ee/ilca/_main_/2014/10/12/045/",
+          "label": "Il Caffè"
+        },
+        {
+          "url": "http://epaper.azione.ch/ee/azion/_main_/2014/10/13/025/",
+          "label": "Azione"
         }
       ],
       "testo": {
@@ -653,7 +699,16 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "https://www.youtube.com/watch?v=zKU1Wb3xZMc",
+          "label": "Rainews24 – Siriani in fuga (YouTube)"
+        },
+        {
+          "url": "http://choisir.ch/home/revues/2013/decembre-2013",
+          "label": "Choisir"
+        }
+      ],
       "testo": {
         "en": "As Syria’s war intensified in 2012-2013, hundreds of thousands fled to Egypt seeking refuge. But Egypt’s own political crisis—the 2013 coup and crackdown—made Syrians targets of suspicion, detention, and violence.\n\nThis project documents Syrian displacement in Egypt: families escaping war only to face a new crisis, communities navigating xenophobia and political instability, and the precarious limbo of seeking safety in an unsafe place.\n\nSyrian refugee crisis meeting Egypt’s post-coup political crisis—displacement compounded by xenophobia, arbitrary detention, and deteriorating conditions that would eventually push many Syrians to attempt Mediterranean crossings.",
         "it": "Mentre la guerra in Siria si intensificava nel 2012-2013, centinaia di migliaia di persone fuggirono in Egitto in cerca di rifugio. Ma la crisi politica dell’Egitto stesso—il colpo di stato del 2013 e la repressione—ha reso i siriani bersagli di sospetti, detenzione e violenza.\n\nQuesto progetto documenta lo sfollamento siriano in Egitto: famiglie in fuga dalla guerra che si trovano ad affrontare una nuova crisi, comunità che navigano la xenofobia e l’instabilità politica, e il limbo precario di chi cerca sicurezza in un luogo insicuro.\n\nLa crisi dei rifugiati siriani incontra la crisi politica post-golpe dell’Egitto—sfollamento aggravato da xenofobia, detenzione arbitraria e condizioni in deterioramento che avrebbero spinto molti siriani a tentare la traversata del Mediterraneo.",
@@ -1418,7 +1473,24 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "https://www.youtube.com/watch?v=e0TXYoFF8Hg",
+          "label": "Middle East Eye – Interview Mardin co-mayor (YouTube)"
+        },
+        {
+          "url": "https://www.middleeasteye.net/news/video-februniye-aykol-turkeys-first-female-assyrian-mayor",
+          "label": "Middle East Eye – Fabrunyer Aykol"
+        },
+        {
+          "url": "http://www.rsi.ch/play/tv/telegiornale/video/telegiornale?id=5402464",
+          "label": "RSI Telegiornale"
+        },
+        {
+          "url": "https://www.facebook.com/watch/?v=10154158932732565",
+          "label": "Rai Storia – A Women's World"
+        }
+      ],
       "testo": {
         "en": "Summer 2015. Kurdish regions across Turkey and Iraq navigated twin pressures: the war against ISIS in Syria and Iraq, and escalating conflict with the Turkish state. This reporting documented Kurdish communities caught between multiple conflicts.\n\nCoverage included PKK conflict zones in southeastern Turkey, Kurdish political movements during Turkish elections, Iraqi Kurdistan’s role in the anti-ISIS coalition, and the displacement and humanitarian impact. Part of The Railway Diaries journey through Kurdish regions.",
         "it": "Estate 2015. Le regioni curde in Turchia e Iraq affrontavano una doppia pressione: la guerra contro l’ISIS in Siria e Iraq e l’escalation del conflitto con lo stato turco. Questo reportage ha documentato le comunità curde intrappolate tra molteplici conflitti.\n\nLa copertura ha incluso le zone di conflitto del PKK nel sud-est della Turchia, i movimenti politici curdi durante le elezioni turche, il ruolo del Kurdistan iracheno nella coalizione anti-ISIS e l’impatto umanitario e degli sfollamenti. Parte del viaggio di The Railway Diaries attraverso le regioni curde.",
@@ -1516,6 +1588,18 @@
         {
           "url": "../media/longform-reportage/political-and-social-justice-gender/sacerdotesse-zoroastriane-middleeasteye.pdf",
           "label": "Zoroastrian Priestesses (Middle East Eye)"
+        },
+        {
+          "url": "http://www.middleeasteye.net/in-depth/features/zoroastrian-priestesses-iran-2058029133",
+          "label": "Middle East Eye"
+        },
+        {
+          "url": "http://www.sept.info/iran-revolution-discrete-zoroastriens/",
+          "label": "Sept.info"
+        },
+        {
+          "url": "http://orientxxi.info/lu-vu-entendu/pretresses-zoroastriennes-en-iran,1008",
+          "label": "Orient XXI"
         }
       ],
       "testo": {
@@ -1616,6 +1700,14 @@
         {
           "url": "../media/longform-reportage/migration-displacement/melilla-rotta-migranti-il-caffe.pdf",
           "label": "Melilla, rotta migranti (Il Caffè)"
+        },
+        {
+          "url": "http://www.repubblica.it/esteri/2015/10/26/news/rotte_migranti_siriani_melilla_libia-125934068/",
+          "label": "Repubblica"
+        },
+        {
+          "url": "http://www.nigrizia.it/notizia/dal-marocco-non-si-passa",
+          "label": "Nigrizia"
         }
       ],
       "testo": {
@@ -2440,6 +2532,38 @@
         {
           "url": "../media/longform-reportage/migration-displacement/donne-migranti-mediterraneo-il-caffe.pdf",
           "label": "Donne migranti nel Mediterraneo (Il Caffè)"
+        },
+        {
+          "url": "http://openmigration.org/analisi/gli-ottomila-salvati-a-pasqua-diario-di-bordo-di-una-missione-di-salvataggio/",
+          "label": "Open Migration – Gli 8000 di Pasqua (IT)"
+        },
+        {
+          "url": "http://openmigration.org/en/analyses/the-eight-thousand-migrants-saved-at-easter-logbook-of-a-rescue-mission/",
+          "label": "Open Migration – 8000 Saved at Easter (EN)"
+        },
+        {
+          "url": "http://openmigration.org/en/analyses/the-tunisian-fishermen-who-bury-nameless-migrants/",
+          "label": "Open Migration – Tunisian Fishermen (EN)"
+        },
+        {
+          "url": "https://inkyfada.com/2017/06/sar-zone-sauvetage-migrants-mediterranee/",
+          "label": "Inkyfada – SAR Zone"
+        },
+        {
+          "url": "https://inkyfada.com/2017/06/photoreportage-migrants-mediterranee-sauvetage/",
+          "label": "Inkyfada – Photoreportage"
+        },
+        {
+          "url": "https://www.internazionale.it/video/2017/10/25/pescatori-tunisini-migranti",
+          "label": "Internazionale – Pescatori tunisini"
+        },
+        {
+          "url": "http://www.middleeasteye.net/in-depth/features/fishermen-zarzis-1153799343",
+          "label": "Middle East Eye – Fishermen of Zarzis"
+        },
+        {
+          "url": "https://www.choisir.ch/societe/societe/item/2999-le-cimetiere-des-inconnus-echoues-a-zarzis",
+          "label": "Choisir – Le cimetière des inconnus"
         }
       ],
       "testo": {
@@ -2562,7 +2686,16 @@
         "documentary-films"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "https://vimeo.com/207909226",
+          "label": "Far Right (Vimeo) – Password: udo"
+        },
+        {
+          "url": "http://www.bertafilm.com/catalogue/far-right",
+          "label": "Berta Film – Far Right"
+        }
+      ],
       "testo": {
         "en": "Before Brexit, before Trump, this documentary examined the normalization of far-right politics in Europe—particularly France. How did Marine Le Pen’s National Front transition from fringe to mainstream? How did extremist ideas enter acceptable political discourse?\n\nInvestigating political normalization, grassroots organizing, economic populism, and cultural warfare—this film documented a shift that would reshape Western politics.",
         "it": "Prima della Brexit, prima di Trump, questo documentario ha esaminato la normalizzazione della politica di estrema destra in Europa—in particolare in Francia. Come ha fatto il Front National di Marine Le Pen a passare dai margini al mainstream? Come sono entrate le idee estremiste nel discorso politico accettabile?\n\nIndagando sulla normalizzazione politica, l’organizzazione dal basso, il populismo economico e la guerra culturale—questo film ha documentato un cambiamento che avrebbe ridefinito la politica occidentale.",
@@ -2661,7 +2794,12 @@
         "documentary-films"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "https://www.youtube.com/watch?v=feVWYvSLKXA",
+          "label": "Una Storia Sommersa (YouTube)"
+        }
+      ],
       "testo": {
         "en": "Egypt’s revolution created chaos—and opportunity. As state control collapsed, an underground network emerged: trafficking Egyptian antiquities looted from archaeological sites and museums.\n\nThis investigative documentary traces the connections between antiquities smuggling and other international trafficking networks operating during Egypt’s political crisis. An investigation into how power vacuums enable criminal networks to flourish.\n\nThis was the first investigative documentary produced by Zeernews, the Cairo-based collective that would later evolve into Nawart Press.",
         "it": "La rivoluzione egiziana ha creato caos—e opportunità. Con il crollo del controllo statale, è emersa una rete clandestina: il traffico di antichità egizie saccheggiate da siti archeologici e musei.\n\nQuesto documentario investigativo traccia le connessioni tra il contrabbando di antichità e altre reti di traffico internazionale attive durante la crisi politica egiziana. Un’indagine su come i vuoti di potere permettano alle reti criminali di prosperare.\n\nQuesto è stato il primo documentario investigativo prodotto da Zeernews, il collettivo con base al Cairo che si sarebbe poi evoluto in Nawart Press.",
@@ -2885,6 +3023,18 @@
         {
           "url": "../media/longform-reportage/migration-displacement/lesvos-refugies-orientxxi.pdf",
           "label": "Lesvos réfugiés (Orient XXI)"
+        },
+        {
+          "url": "http://newirin.irinnews.org/migrant-crisis-greece-photo-feature",
+          "label": "IRIN News – Photo feature"
+        },
+        {
+          "url": "http://www.middleeasteye.net/news/video-migrants-targedy-overwhelms-greek-island-lesvos-76206394",
+          "label": "Middle East Eye – Video"
+        },
+        {
+          "url": "http://orientxxi.info/magazine/lesbos-l-autre-porte-de-l-europe-pour-des-refugies-en-perdition,0981",
+          "label": "Orient XXI"
         }
       ],
       "testo": {
@@ -3050,6 +3200,18 @@
         {
           "url": "../media/longform-reportage/political-and-social-justice-gender/tunisia-mamotex-operaie-orientxxi.pdf",
           "label": "Tunisia Mamotex operaie (Orient XXI)"
+        },
+        {
+          "url": "http://orientxxi.info/magazine/le-combat-perdu-des-ouvrieres-tunisiennes-de-mamotex,1339",
+          "label": "Orient XXI"
+        },
+        {
+          "url": "http://www.middleeasteye.net/in-depth/features/made-tunisia-women-textile-workers-resist-poor-working-conditions-1680717702",
+          "label": "Middle East Eye"
+        },
+        {
+          "url": "http://www.ilreportage.eu/2016/08/a-tunisi-unazienda-tessile-autogestita-dalle-lavoratrici/",
+          "label": "Il Reportage"
         }
       ],
       "testo": {
@@ -3116,7 +3278,16 @@
       "categories": [
         "longform-reportage"
       ],
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "http://www.radio3.rai.it/dl/portaleRadio/media/ContentItem-f621adee-437b-4b1b-8e18-3915270721da.html",
+          "label": "Radio3mondo (RAI)"
+        },
+        {
+          "url": "http://www.middleeasteye.net/news/tunisian-mothers-grief-two-daughters-radicalised-lost-islamic-state",
+          "label": "Middle East Eye"
+        }
+      ],
       "testo": {
         "en": "Tunisia became the world’s largest per-capita exporter of jihadists—6,000-7,000 joined ISIS. This investigation explores why, focusing on families left behind and mothers who lost daughters to radicalization.\n\nCoverage includes a Tunisian mother’s story: two daughters lost to ISIS, and the impossible question of how radicalization happens within families.",
         "it": "La Tunisia è diventata il più grande esportatore pro capite di jihadisti al mondo—6.000-7.000 si sono uniti all’ISIS. Questa inchiesta esplora il perché, concentrandosi sulle famiglie rimaste e sulle madri che hanno perso le figlie a causa della radicalizzazione.\n\nLa copertura include la storia di una madre tunisina: due figlie perse a causa dell’ISIS, e la domanda impossibile su come la radicalizzazione avvenga all’interno delle famiglie.",
@@ -3159,6 +3330,18 @@
         {
           "url": "../media/multimedia-projects/far-right-nawart-magazine.pdf",
           "label": "Far Right (Nawart Magazine)"
+        },
+        {
+          "url": "https://vimeo.com/207909226",
+          "label": "Far Right (Vimeo) – Password: udo"
+        },
+        {
+          "url": "http://www.bertafilm.com/catalogue/far-right",
+          "label": "Berta Film – Far Right"
+        },
+        {
+          "url": "https://www.choisir.ch/politique-economie/politique-internationale/item/2712-la-marche-de-l-extreme-droite-francaise",
+          "label": "Choisir – Marche de l'extrême droite"
         }
       ],
       "testo": {
@@ -3347,7 +3530,12 @@
         "documentary-films"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "https://vimeo.com/255014993",
+          "label": "Strange Fish (Vimeo) – Password: ZARZIS"
+        }
+      ],
       "testo": {
         "en": "In the fishing town of Zarzis, Tunisia, the sea delivers a grim catch: the bodies of migrants who drowned attempting to reach Europe. Local fishermen have become gravediggers, burying the nameless dead in a cemetery that has become a monument to the Mediterranean migration crisis.\n\nThis documentary follows these reluctant first responders—men who recover bodies from their fishing nets and ensure they receive dignified burial when no one else will.",
         "it": "Nella cittadina di pescatori di Zarzis, in Tunisia, il mare porta una pesca macabra: i corpi dei migranti annegati nel tentativo di raggiungere l’Europa. I pescatori locali sono diventati becchini, seppellendo i morti senza nome in un cimitero divenuto monumento alla crisi migratoria del Mediterraneo.\n\nQuesto documentario segue questi riluttanti primi soccorritori—uomini che recuperano i corpi dalle reti da pesca e garantiscono loro una sepoltura dignitosa quando nessun altro lo fa.",
@@ -3387,7 +3575,40 @@
         "multimedia-projects"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "https://inkyfada.com/2017/06/sar-zone-sauvetage-migrants-mediterranee/",
+          "label": "Inkyfada – SAR Zone"
+        },
+        {
+          "url": "https://inkyfada.com/2017/06/photoreportage-migrants-mediterranee-sauvetage/",
+          "label": "Inkyfada – Photoreportage"
+        },
+        {
+          "url": "http://openmigration.org/analisi/gli-ottomila-salvati-a-pasqua-diario-di-bordo-di-una-missione-di-salvataggio/",
+          "label": "Open Migration – Gli 8000 di Pasqua (IT)"
+        },
+        {
+          "url": "http://openmigration.org/en/analyses/the-eight-thousand-migrants-saved-at-easter-logbook-of-a-rescue-mission/",
+          "label": "Open Migration – 8000 Saved at Easter (EN)"
+        },
+        {
+          "url": "http://openmigration.org/en/analyses/the-tunisian-fishermen-who-bury-nameless-migrants/",
+          "label": "Open Migration – Tunisian Fishermen (EN)"
+        },
+        {
+          "url": "https://www.internazionale.it/video/2017/10/25/pescatori-tunisini-migranti",
+          "label": "Internazionale – Pescatori tunisini"
+        },
+        {
+          "url": "http://www.middleeasteye.net/in-depth/features/fishermen-zarzis-1153799343",
+          "label": "Middle East Eye – Fishermen of Zarzis"
+        },
+        {
+          "url": "https://www.choisir.ch/societe/societe/item/2999-le-cimetiere-des-inconnus-echoues-a-zarzis",
+          "label": "Choisir – Le cimetière des inconnus"
+        }
+      ],
       "testo": {
         "en": "In the fishing town of Zarzis, Tunisia, the sea delivers a grim catch: the bodies of migrants who drowned attempting to reach Europe. This multimedia project traces the full arc of the Mediterranean migration crisis—from SAR operations at sea to the Tunisian fishermen who bury the nameless dead.\n\nThe documentary film follows Zarzis fishermen who have become reluctant gravediggers, recovering bodies and providing dignified burial. The Inkyfada investigation offers an in-depth analysis of SAR zone operations, NGO rescue efforts, and the politics of Mediterranean migration. The Open Migration reportage documents the peak crisis of Easter 2017, when over 8,000 people were rescued in a single weekend.\n\nThis cross-platform investigation combined breaking news coverage, investigative journalism, and long-form documentary storytelling.",
         "it": "Nella cittadina di pescatori di Zarzis, in Tunisia, il mare porta una pesca macabra: i corpi dei migranti annegati nel tentativo di raggiungere l’Europa. Questo progetto multimediale ripercorre l’intero arco della crisi migratoria del Mediterraneo—dalle operazioni SAR in mare ai pescatori tunisini che seppelliscono i morti senza nome.\n\nIl documentario segue i pescatori di Zarzis diventati becchini loro malgrado, che recuperano i corpi e garantiscono una sepoltura dignitosa. L’inchiesta di Inkyfada offre un’analisi approfondita delle operazioni nella zona SAR, dei soccorsi delle ONG e della politica della migrazione mediterranea. Il reportage di Open Migration documenta il picco della crisi a Pasqua 2017, quando oltre 8.000 persone furono salvate in un solo fine settimana.\n\nQuesta inchiesta cross-mediale ha combinato copertura delle breaking news, giornalismo investigativo e narrazione documentaristica di lungo formato.",
@@ -3589,6 +3810,10 @@
         {
           "url": "../media/ngo-work/documentary-series/de-vos-propres-yeux-season6-france.pdf",
           "label": "De Vos Propres Yeux S6 France"
+        },
+        {
+          "url": "https://devospropresyeux.org/en/season/france/",
+          "label": "De Vos Propres Yeux – Season 6"
         }
       ],
       "testo": {
@@ -3630,7 +3855,28 @@
         "field-missions"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "https://www.solidarites.org/fr/en-direct-du-terrain/ukraine-vivre-dans-le-metro-de-kharkiv/",
+          "label": "Solidarités International (FR)"
+        },
+        {
+          "url": "https://www.solidarites.org/en/live-from-the-field/western-ukraine-the-daily-life-of-displaced-persons/",
+          "label": "Solidarités International (EN)"
+        },
+        {
+          "url": "https://www.solidarites.org/wp-content/uploads/2022/08/journal-solidarites-international-116.pdf",
+          "label": "Journal Solidarités International (PDF)"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=LqsaHYsPZW4",
+          "label": "Video (YouTube)"
+        },
+        {
+          "url": "https://blogs.mediapart.fr/solidarites-international/blog/040722/ukraine-vivre-dans-le-metro-de-kharkiv",
+          "label": "Mediapart"
+        }
+      ],
       "testo": {
         "en": "When Russian shelling began in February 2022, thousands of Kharkiv residents descended into the city’s metro. What started as temporary shelter became home for months—families sleeping on platforms, children attending underground schools, life continuing 50 meters below ground.\n\nThis project documents daily existence in the metro: the routines, resilience, and quiet determination of people waiting for war to end.",
         "it": "Quando i bombardamenti russi sono iniziati nel febbraio 2022, migliaia di residenti di Kharkiv sono scesi nella metropolitana della città. Quello che era iniziato come un rifugio temporaneo è diventato casa per mesi—famiglie che dormivano sulle banchine, bambini che frequentavano scuole sotterranee, la vita che continuava 50 metri sotto terra.\n\nQuesto progetto documenta l’esistenza quotidiana nella metropolitana: le routine, la resilienza e la silenziosa determinazione di persone in attesa che la guerra finisca.",
@@ -3667,7 +3913,24 @@
         "field-missions"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "https://www.solidarites.org/fr/en-direct-du-terrain/syrie-12-ans-de-guerre-et-maintenant-le-cholera/",
+          "label": "Solidarités International – 12 ans de guerre"
+        },
+        {
+          "url": "https://www.solidarites.org/fr/en-direct-du-terrain/syrie-reponse-durgence-pour-contenir-lepidemie-de-cholera/",
+          "label": "Solidarités International – Réponse d'urgence"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=vIFsdAzyrEA",
+          "label": "Video (YouTube)"
+        },
+        {
+          "url": "https://blogs.mediapart.fr/solidarites-international/blog/081222/syrie-12-ans-de-guerre-et-maintenant-le-cholera-0",
+          "label": "Mediapart"
+        }
+      ],
       "testo": {
         "en": "Twelve years into Syria’s war, cholera returned—spreading through displacement camps and destroyed cities. A public health crisis layered onto ongoing conflict, economic collapse, and mass displacement.\n\nThis project documents Syria’s compounding crises and Solidarités International’s emergency response: water chlorination, sanitation infrastructure, cholera prevention.",
         "it": "Dodici anni dopo l’inizio della guerra in Siria, il colera è tornato—diffondendosi nei campi per sfollati e nelle città distrutte. Una crisi sanitaria sovrapposta al conflitto in corso, al collasso economico e allo sfollamento di massa.\n\nQuesto progetto documenta le crisi che si accumulano in Siria e la risposta d’emergenza di Solidarités International: clorazione dell’acqua, infrastrutture igienico-sanitarie, prevenzione del colera.",
@@ -3703,7 +3966,28 @@
         "field-missions"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "https://www.solidarites.org/fr/en-direct-du-terrain/caminantes-lexode-oublie-des-venezueliens-en-colombie/",
+          "label": "Solidarités International – Caminantes"
+        },
+        {
+          "url": "https://www.solidarites.org/fr/presse/linstagrameuse-julie-bourges-alias-douze-fevrier-en-colombie-sur-la-route-avec-les-caminantes-et-solidarites-international/",
+          "label": "Solidarités International – Julie Bourges"
+        },
+        {
+          "url": "https://www.solidarites.org/wp-content/uploads/2021/04/journal-donateurs-110.pdf",
+          "label": "Journal Solidarités International (PDF)"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=4RpnBmwHxss",
+          "label": "Video – Caminantes (YouTube)"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=HPXUWb6ti1o",
+          "label": "Video – DVPY S5 (YouTube)"
+        }
+      ],
       "testo": {
         "en": "Thousands of Venezuelans cross into Colombia on foot each month, fleeing economic collapse. This field mission documented both the migration crisis and Solidarités International’s humanitarian response along the route.\n\nCoverage combined content production for De Vos Propres Yeux Season 5 with standalone multimedia documentation of Solidarités International’s programs: water access points, shelter support, protection services for migrants walking the dangerous route to Bogotá.",
         "it": "Migliaia di venezuelani attraversano la Colombia a piedi ogni mese, fuggendo dal collasso economico. Questa missione sul campo ha documentato sia la crisi migratoria sia la risposta umanitaria di Solidarités International lungo il percorso.\n\nLa copertura ha combinato la produzione di contenuti per De Vos Propres Yeux Stagione 5 con documentazione multimediale autonoma dei programmi di Solidarités International: punti di accesso all’acqua, supporto abitativo, servizi di protezione per i migranti che percorrono la pericolosa rotta verso Bogotá.",
@@ -3739,7 +4023,20 @@
         "field-missions"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "https://www.solidarites.org/en/live-from-the-field/western-ukraine-the-daily-life-of-displaced-persons/",
+          "label": "Solidarités International (EN)"
+        },
+        {
+          "url": "https://www.solidarites.org/fr/en-direct-du-terrain/ouest-de-lukraine-le-quotidien-des-personnes-deplacees/",
+          "label": "Solidarités International (FR)"
+        },
+        {
+          "url": "https://blogs.mediapart.fr/solidarites-international/blog/140422/ouest-de-l-ukraine-le-quotidien-des-personnes-deplacees",
+          "label": "Mediapart"
+        }
+      ],
       "testo": {
         "en": "Millions fled westward when Russia invaded. Lviv and other western cities—relatively safe from bombardment—became refuge for families escaping eastern Ukraine.\n\nThis project documents daily life for internally displaced persons: the limbo of waiting, makeshift schools, job searching, and constant anxiety about loved ones still in combat zones.",
         "it": "Milioni di persone sono fuggite verso ovest quando la Russia ha invaso. Leopoli e altre città occidentali—relativamente al sicuro dai bombardamenti—sono diventate rifugio per le famiglie in fuga dall’Ucraina orientale.\n\nQuesto progetto documenta la vita quotidiana degli sfollati interni: il limbo dell’attesa, le scuole improvvisate, la ricerca di lavoro e l’ansia costante per i propri cari ancora nelle zone di combattimento.",
@@ -3775,7 +4072,24 @@
         "multimedia-projects-coordination"
       ],
       "mainpage": true,
-      "allegati": [],
+      "allegati": [
+        {
+          "url": "https://www.solidarites.org/fr/actualites-association/photoclimat-2023-solidarites-international-mise-a-lhonneur/",
+          "label": "Solidarités International – PhotoClimat 2023"
+        },
+        {
+          "url": "https://www.solidarites.org/fr/actualites-association/photoclimat-2025-solidarites-international-est-de-retour/",
+          "label": "Solidarités International – PhotoClimat 2025"
+        },
+        {
+          "url": "https://blogs.mediapart.fr/solidarites-international/blog/150623/souffrances-climatiques-lorsque-l-eau-vient-manquer-0",
+          "label": "Mediapart – Souffrances Climatiques"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=lCAJyEzHLpU",
+          "label": "Video (YouTube)"
+        }
+      ],
       "testo": {
         "en": "For two consecutive editions of France’s premier climate photography biennial, I coordinated Solidarités International’s exhibitions—managing 10+ international photographers across multiple continents.\n\n2023: “Souffrances Climatiques” (Climate Suffering) at Place du Palais Royal, Paris. 9 countries, climate crisis and humanitarian response.\n\n2025: “Histoires de (sur)vies” ((Sur)vival Stories) at Place de la Concorde, Paris. Civilians in conflict: Ukraine, Haiti, Mozambique, Chad.",
         "it": "Per due edizioni consecutive della principale biennale di fotografia climatica francese, ho coordinato le mostre di Solidarités International—gestendo oltre 10 fotografi internazionali su più continenti.\n\n2023: “Souffrances Climatiques” (Sofferenze Climatiche) a Place du Palais Royal, Parigi. 9 paesi, crisi climatica e risposta umanitaria.\n\n2025: “Histoires de (sur)vies” (Storie di (soprav)vivenza) a Place de la Concorde, Parigi. Civili nei conflitti: Ucraina, Haiti, Mozambico, Ciad.",
@@ -3821,6 +4135,10 @@
         {
           "url": "../media/ngo-work/documentary-series/de-vos-propres-yeux-season5-colombia.pdf",
           "label": "De Vos Propres Yeux S5 Colombia"
+        },
+        {
+          "url": "https://devospropresyeux.org/en/season/colombia/",
+          "label": "De Vos Propres Yeux – Season 5"
         }
       ],
       "testo": {
