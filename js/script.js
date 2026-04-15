@@ -129,15 +129,18 @@
             link.classList.remove('active');
         });
 
-        var navId = sectionId;
-        if (navId === 'all-projects' || navId === 'project-detail' || navId === 'category-page' || navId === 'portfolio') navId = null;
-
-        if (navId) {
-            var activeLink = document.querySelector('.sidebar-link[data-nav="' + navId + '"]');
-            if (activeLink) {
-                activeLink.classList.add('active');
-            }
+        if (sectionId === 'journalism-landing' || sectionId === 'ngo-landing') {
+            var secId = sectionId.replace('-landing', '');
+            var landingLink = document.querySelector('.sidebar-link[data-section-landing="' + secId + '"]');
+            if (landingLink) landingLink.classList.add('active');
+            return;
         }
+
+        var navId = sectionId;
+        if (navId === 'all-projects' || navId === 'project-detail' || navId === 'category-page' || navId === 'portfolio') return;
+
+        var activeLink = document.querySelector('.sidebar-link[data-nav="' + navId + '"]');
+        if (activeLink) activeLink.classList.add('active');
     }
 
     function closeMobileSidebar() {
