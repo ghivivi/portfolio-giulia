@@ -1,9 +1,9 @@
 {
   "meta": {
     "title": {
-      "it": "Giulia Bertoluzzi | Giornalista Multimedia",
-      "en": "Giulia Bertoluzzi | Multimedia Journalist",
-      "fr": "Giulia Bertoluzzi | Journaliste Multimédia"
+      "it": "Giulia Bertoluzzi | Giornalista e coordinatrice progetti multimediali",
+      "en": "Giulia Bertoluzzi | Journalist and Multimedia project coordinator",
+      "fr": "Giulia Bertoluzzi | Journaliste et coordinatrice projets Multimédia"
     },
     "description": {
       "it": "Portfolio di Giulia Bertoluzzi - Giornalista Multimedia. Documentari, reportage, progetti umanitari e contenuti multimediali.",
@@ -28,9 +28,9 @@
   },
   "sidebar": {
     "tagline": {
-      "it": "Giornalista Multimedia",
-      "en": "Multimedia Journalist",
-      "fr": "Journaliste Multimédia"
+      "it": "Giornalista e coordinatrice progetti multimediali",
+      "en": "Journalist and Multimedia project coordinator",
+      "fr": "Journaliste et coordinatrice projets Multimédia"
     },
     "journalism": {
       "it": "Giornalismo",
@@ -38,9 +38,9 @@
       "fr": "Journalisme"
     },
     "ngo": {
-      "it": "Lavoro ONG",
+      "it": "Lavori per ONG",
       "en": "NGO Work",
-      "fr": "Travail ONG"
+      "fr": "Travail pour ONG"
     },
     "services": {
       "it": "Servizi",
@@ -60,9 +60,9 @@
       "fr": "Journaliste Multimédia"
     },
     "description": {
-      "it": "7 anni di copertura nelle zone di crisi dal Medio Oriente all'Africa, raccontando storie di resilienza e umanità.",
-      "en": "7 years covering crisis zones from the Middle East to Africa, telling stories of resilience and humanity.",
-      "fr": "7 ans de couverture dans les zones de crise du Moyen-Orient à l'Afrique, racontant des histoires de résilience et d'humanité."
+      "it": "14 anni di esperienza nel giornalismo, produzione documentaristica e comunicazione. Coordinamento e produzione di contenuti in contesti di crisi umanitarie e politiche.",
+      "en": "14 years’ experience in journalism, documentary production and communications. Coordination and production of content in the context of humanitarian and political crises.",
+      "fr": "14 ans d'expérience dans le journalisme, la production de documentaires et la communication. Coordination et production de contenus dans des contextes de crises humanitaires et politiques."
     }
   },
   "allProjects": {
@@ -90,9 +90,9 @@
         "fr": "Planification"
       },
       "description": {
-        "it": "Sviluppo di strategie editoriali per copertura di zone di crisi e temi umanitari.",
-        "en": "Development of editorial strategies for crisis zone coverage and humanitarian issues.",
-        "fr": "Développement de stratégies éditoriales pour la couverture de zones de crise et de questions humanitaires."
+        "it": "Sviluppo di strategie editoriali.",
+        "en": "Development of editorial strategies.",
+        "fr": "Développement de stratégies éditoriales."
       },
       "feature1": {
         "it": "Analisi scenari geopolitici",
