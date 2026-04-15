@@ -2,8 +2,17 @@
 
 /**
  * Build script for Giulia Bertoluzzi portfolio.
- * Generates trilingual HTML files from templates + i18n.json.
+ * Generates trilingual HTML files from templates + i18n.
  * Zero external dependencies.
+ *
+ * Placeholder types:
+ *   {{key.path}}           — resolves from config/i18n.json (meta, locale, etc.)
+ *   {{rt.key.path}}        — resolves from config/i18n/{lang}.json (runtime translations)
+ *   {{lang}}               — language code (it, en, fr)
+ *   {{locale}}             — OG locale (it_IT, en_GB, fr_FR)
+ *   {{og_locale_alternates}} — alternate locale meta tags
+ *   {{lang_active_XX}}     — "active" class for language switcher
+ *   {{year}}               — current year
  *
  * Usage: node build.js
  */
@@ -13,17 +22,26 @@ var path = require('path');
 
 var LANGS = ['it', 'en', 'fr'];
 var ROOT = __dirname;
+var CURRENT_YEAR = new Date().getFullYear().toString();
 
-// Load i18n translations
+// Load i18n master config (meta, locale, consulting cards, etc.)
 var i18n = JSON.parse(fs.readFileSync(path.join(ROOT, 'config', 'i18n.json'), 'utf8'));
+
+// Load per-language runtime translations
+var runtimeI18n = {};
+LANGS.forEach(function(lang) {
+    runtimeI18n[lang] = JSON.parse(
+        fs.readFileSync(path.join(ROOT, 'config', 'i18n', lang + '.json'), 'utf8')
+    );
+});
 
 // Load templates
 var pageTemplate = fs.readFileSync(path.join(ROOT, 'templates', 'page.html'), 'utf8');
 var landingTemplate = fs.readFileSync(path.join(ROOT, 'templates', 'landing.html'), 'utf8');
 
 /**
- * Resolve a dotted key path (e.g. "consulting.card1.title") from the i18n object
- * for a given language.
+ * Resolve a dotted key path from the i18n master config for a given language.
+ * e.g. "meta.title" → i18n.meta.title[lang]
  */
 function resolveKey(keyPath, lang) {
     var parts = keyPath.split('.');
@@ -32,10 +50,24 @@ function resolveKey(keyPath, lang) {
         obj = obj[parts[i]];
         if (obj === undefined) return undefined;
     }
-    // obj should now be { it: "...", en: "...", fr: "..." }
-    if (typeof obj === 'object' && obj[lang] !== undefined) {
+    if (typeof obj === 'object' && obj !== null && obj[lang] !== undefined) {
         return obj[lang];
     }
+    return undefined;
+}
+
+/**
+ * Resolve a dotted key path from the runtime i18n file for a given language.
+ * e.g. "hero.subtitle" → runtimeI18n[lang].hero.subtitle
+ */
+function resolveRuntimeKey(keyPath, lang) {
+    var parts = keyPath.split('.');
+    var obj = runtimeI18n[lang];
+    for (var i = 0; i < parts.length; i++) {
+        if (obj === undefined || obj === null) return undefined;
+        obj = obj[parts[i]];
+    }
+    if (typeof obj === 'string') return obj;
     return undefined;
 }
 
@@ -47,6 +79,9 @@ function buildPage(lang) {
 
     // Replace {{lang}}
     html = html.replace(/\{\{lang\}\}/g, lang);
+
+    // Replace {{year}}
+    html = html.replace(/\{\{year\}\}/g, CURRENT_YEAR);
 
     // Replace {{locale}}
     var locale = i18n.locale[lang];
@@ -65,11 +100,17 @@ function buildPage(lang) {
         html = html.split(placeholder).join(lang === l ? 'active' : '');
     });
 
-    // Replace all {{key.path}} i18n placeholders
+    // Replace {{rt.key.path}} — runtime i18n placeholders
+    html = html.replace(/\{\{rt\.([a-zA-Z0-9_.]+)\}\}/g, function(match, keyPath) {
+        var value = resolveRuntimeKey(keyPath, lang);
+        if (value !== undefined) return value;
+        return match;
+    });
+
+    // Replace {{key.path}} — master i18n placeholders
     html = html.replace(/\{\{([a-zA-Z0-9_.]+)\}\}/g, function(match, keyPath) {
         var value = resolveKey(keyPath, lang);
         if (value !== undefined) return value;
-        // If not resolved, leave it (will be caught by validation)
         return match;
     });
 

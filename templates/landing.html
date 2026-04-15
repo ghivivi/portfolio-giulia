@@ -9,7 +9,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&family=Karla:wght@300;400;500&display=swap" rel="stylesheet">
 
     <!-- SEO -->
     <link rel="canonical" href="https://giuliabertoluzzi.com/">
@@ -24,7 +24,7 @@
     <!-- Open Graph -->
     <meta property="og:title" content="Giulia Bertoluzzi | Giornalista Multimedia">
     <meta property="og:description" content="Giulia Bertoluzzi - Giornalista Multimedia. Freelance, regista di documentari e reporter.">
-    <meta property="og:image" content="https://giuliabertoluzzi.com/images/og-image.svg">
+    <meta property="og:image" content="https://giuliabertoluzzi.com/images/og-image.png">
     <meta property="og:url" content="https://giuliabertoluzzi.com/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="it_IT">
@@ -32,16 +32,23 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Giulia Bertoluzzi | Giornalista Multimedia">
     <meta name="twitter:description" content="Giulia Bertoluzzi - Giornalista Multimedia.">
-    <meta name="twitter:image" content="https://giuliabertoluzzi.com/images/og-image.svg">
+    <meta name="twitter:image" content="https://giuliabertoluzzi.com/images/og-image.png">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- Auto-redirect to Italian version after 5 seconds -->
+    <!-- Auto-redirect based on browser language -->
     <script>
-        setTimeout(function() {
-            window.location.href = 'it/';
-        }, 5000);
+        (function() {
+            var lang = (navigator.language || navigator.userLanguage || '').toLowerCase().substring(0, 2);
+            if (lang === 'it') {
+                window.location.replace('it/');
+            } else if (lang === 'fr') {
+                window.location.replace('fr/');
+            } else {
+                window.location.replace('en/');
+            }
+        })();
     </script>
 </head>
 <body class="landing-page">
