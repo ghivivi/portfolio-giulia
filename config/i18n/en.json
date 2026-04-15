@@ -1,7 +1,7 @@
 {
   "meta": {
     "description": "Giulia Bertoluzzi Portfolio - Multimedia Journalist. Documentaries, reportage, humanitarian projects and multimedia content.",
-    "title": "Giulia Bertoluzzi | Multimedia Journalist"
+    "title": "Giulia Bertoluzzi | Journalist and Multimedia projects coordinator"
   },
   "nav": {
     "journalism": "Journalism",
@@ -11,19 +11,19 @@
   },
   "hero": {
     "subtitle": "Multimedia Journalist",
-    "description": "7 years covering crisis zones from the Middle East to Africa, telling stories of resilience and humanity."
+    "description": "14 years’ experience in journalism, documentary production and communications. Coordination and production of content in the context of humanitarian and political crises."
   },
   "sections": {
     "allProjects": "All Projects",
     "back": "Back",
     "services": "Consulting",
-    "servicesIntro": "I am available to work on content strategy and production coordination for social, humanitarian, political, and environmental stories around the world.",
+    "servicesIntro": "I am available to work on content strategy and production coordination.",
     "servicesCard1Title": "Editorial Strategy",
-    "servicesCard1Desc": "Developing editorial approaches to shed light on people living in crisis zones. This includes editorial planning that balances impact with ethics, and risk assessment for field operations in conflict zones.",
+    "servicesCard1Desc": "Developing editorial approaches. This includes editorial planning that balances impact with ethics, and risk assessment.",
     "servicesCard2Title": "Production Coordination",
-    "servicesCard2Desc": "Managing multimedia production projects from pre-production through delivery. I coordinate international teams of photographers, videographers, and journalists working across multiple countries, ensuring quality and consistency.",
+    "servicesCard2Desc": "Managing multimedia production projects from pre-production through delivery. I coordinate international teams, ensuring quality and consistency.",
     "servicesCard3Title": "Training & Mentorship",
-    "servicesCard3Desc": "Training journalists and humanitarian communicators for field work. Sessions cover ethical storytelling in vulnerable contexts, advanced multimedia techniques, and managing the psychological impact of crisis reporting.",
+    "servicesCard3Desc": "Training journalists and communicators for field work. Sessions cover ethical storytelling in vulnerable contexts, advanced multimedia techniques, and managing the psychological impact of crisis reporting.",
     "servicesCta": "Get in Touch",
     "contactTitle": "Contact",
     "contactTagline": "Available for assignments, collaborations and consulting projects",
