@@ -5,14 +5,7 @@
         "documentary-films",
         "multimedia-projects",
         "longform-reportage"
-      ],
-      "subcategories": {
-        "longform-reportage": [
-          "migration-displacement",
-          "international-crisis",
-          "political-social-justice-gender"
-        ]
-      }
+      ]
     },
     "ngo": {
       "order": [
@@ -132,7 +125,6 @@
         "fr": "La péninsule du Sinaï—une terre frontalière désertique entre l’Égypte, Israël et Gaza—échappe au contrôle de l’État. Tribus bédouines, réseaux de contrebande et groupes djihadistes émergents comblent le vide de pouvoir laissé par la négligence du Caire.\n\nCette série d’investigation explore les structures de pouvoir informelles de la péninsule : des cheikhs tribaux gérant les routes de contrebande à la montée de ceux qui deviendraient des militants affiliés à Daech. Le travail inclut l’histoire extraordinaire d’un prêtre copte, de guides bédouins et de réseaux de kidnapping opérant à travers le Sinaï.\n\nJournalisme d’investigation de long format combinant reportage de terrain, cultivation de sources dans des zones restreintes et analyse des structures de pouvoir dans la frontière oubliée de l’Égypte."
       },
       "mainpage": true,
-      "subcategory": "political-social-justice-gender",
       "description": {
         "en": "Egyptian Sinai: Smuggling & Jihadism (2013-14)",
         "it": "Sinai egiziano: contrabbando e jihadismo (2013-14)",
@@ -173,7 +165,6 @@
         "fr": "Deux enquêtes sur les terres frontalières d’Israël : le plateau du Golan alors que la guerre syrienne approche, et Holot—le centre de détention israélien dans le désert pour les migrants africains.\n\nDepuis le Golan occupé par Israël, la guerre en Syrie est visible et audible. Ce reportage documente la vie sur le plateau stratégique alors que le conflit s’approche de la clôture frontalière—des communautés israéliennes observant la fumée s’élever des villages syriens, et la géopolitique complexe d’une zone de guerre observée depuis un territoire occupé.\n\nAu cœur du désert du Néguev, Holot détient des demandeurs d’asile africains en détention indéfinie. Cette enquête explore la politique de détention « volontaire » d’Israël ciblant les réfugiés érythréens et soudanais—un système conçu pour contraindre au départ tout en maintenant un déni plausible."
       },
       "mainpage": true,
-      "subcategory": "political-social-justice-gender",
       "description": {
         "en": "Israel/Palestine & Detention (2014)",
         "it": "Israele/Palestina e detenzione (2014)",
@@ -276,7 +267,6 @@
         "fr": "Depuis le plateau du Golan occupé par Israël, la guerre en Syrie est visible et audible. Ce reportage documente la vie sur le plateau stratégique alors que le conflit s’approche de la clôture frontalière—des communautés israéliennes observant la fumée s’élever des villages syriens, et la géopolitique complexe de l’observation de la guerre depuis un territoire occupé.\n\nUne perspective sur le conflit syrien depuis sa périphérie : déplacements, mouvements militaires et civils des deux côtés d’une frontière contestée."
       },
       "mainpage": true,
-      "subcategory": "international-crisis",
       "description": {
         "en": "Syria from the Golan Heights (2014)",
         "it": "La Siria vista dalle alture del Golan (2014)",
@@ -316,8 +306,7 @@
         "en": "",
         "fr": ""
       },
-      "mainpage": false,
-      "subcategory": "international-crisis"
+      "mainpage": false
     },
     {
       "id": "le-donne-del-cairo-in-piazza-contro-gli-stupri-pagina-99",
@@ -350,7 +339,6 @@
         "fr": "Le Caire, juin 2014. Des centaines de personnes ont manifesté pour demander la fin du harcèlement sexuel—une crise omniprésente dans la vie publique égyptienne. La manifestation a suivi les agressions de masse lors de l’investiture présidentielle d’al-Sissi.\n\nCette vidéo capture un rare moment d’activisme féministe dans l’Égypte de Sissi—où la protestation politique était criminalisée mais la violence sexuelle trop normalisée pour être réduite au silence."
       },
       "mainpage": true,
-      "subcategory": "political-social-justice-gender",
       "description": {
         "en": "Egypt: Sexual Harassment Protests (2014)",
         "it": "Egitto: proteste contro le molestie sessuali (2014)",
@@ -454,7 +442,6 @@
         "fr": "Octobre 2014. Daech a assiégé la ville kurde syrienne de Kobané. Plus de 200 000 civils ont fui à travers la frontière turque en quelques jours, créant l’un des plus grands événements de déplacement en une seule semaine de la guerre syrienne.\n\nJ’ai couvert l’exode depuis Suruç—à sept kilomètres de Kobané mais dans un autre pays. Des camps de tentes sont apparus du jour au lendemain. La police turque a utilisé des gaz lacrymogènes sur la foule. La fumée s’élevait de Kobané tandis que les frappes aériennes de la coalition frappaient les positions de Daech."
       },
       "mainpage": true,
-      "subcategory": "international-crisis",
       "description": {
         "en": "Kobane Crisis (Turkey-Syria Border, 2014)",
         "it": "Crisi di Kobane (confine Turchia-Siria, 2014)",
@@ -715,7 +702,6 @@
         "fr": "Alors que la guerre en Syrie s’intensifiait en 2012-2013, des centaines de milliers de personnes ont fui vers l’Égypte. Mais la propre crise politique de l’Égypte—le coup d’État de 2013 et la répression—a fait des Syriens des cibles de suspicion, de détention et de violence.\n\nCe projet documente le déplacement syrien en Égypte : des familles fuyant la guerre pour affronter une nouvelle crise, des communautés naviguant la xénophobie et l’instabilité politique, et le limbe précaire de ceux qui cherchent la sécurité dans un lieu dangereux.\n\nLa crise des réfugiés syriens rencontre la crise politique post-coup d’État de l’Égypte—déplacement aggravé par la xénophobie, la détention arbitraire et des conditions détériorées qui pousseraient finalement de nombreux Syriens à tenter la traversée de la Méditerranée."
       },
       "mainpage": true,
-      "subcategory": "political-social-justice-gender",
       "description": {
         "en": "Syrian Refugees in Egypt (2013)",
         "it": "Rifugiati siriani in Egitto (2013)",
@@ -1497,7 +1483,6 @@
         "fr": "Été 2015. Les régions kurdes de Turquie et d’Irak faisaient face à une double pression : la guerre contre Daech en Syrie et en Irak, et l’escalade du conflit avec l’État turc. Ce reportage a documenté les communautés kurdes prises entre de multiples conflits.\n\nLa couverture a inclus les zones de conflit du PKK dans le sud-est de la Turquie, les mouvements politiques kurdes pendant les élections turques, le rôle du Kurdistan irakien dans la coalition anti-Daech, et l’impact humanitaire et les déplacements. Partie du voyage de The Railway Diaries à travers les régions kurdes."
       },
       "mainpage": true,
-      "subcategory": "international-crisis",
       "description": {
         "en": "Turkey & Iraq: Kurdish Struggle (2015)",
         "it": "Turchia e Iraq: la lotta curda (2015)",
@@ -1608,7 +1593,6 @@
         "fr": "Pour la première fois depuis des millénaires, des femmes deviennent prêtresses zoroastriennes en Iran. Les femmes mobeds dirigent désormais les prières, entretiennent les feux sacrés et défient la hiérarchie religieuse dans l’une des plus anciennes religions du monde.\n\nCe documentaire dresse le portrait des premières prêtresses zoroastriennes d’Iran : leurs parcours spirituels, la résistance qu’elles rencontrent et ce que leur présence signifie pour une religion ancienne qui s’adapte à la modernité."
       },
       "mainpage": true,
-      "subcategory": "political-social-justice-gender",
       "description": {
         "en": "Iranian Zoroastrian Priestesses (2015)",
         "it": "Le sacerdotesse zoroastriane dell'Iran (2015)",
@@ -1716,7 +1700,6 @@
         "fr": "Melilla : une enclave espagnole au Maroc, entourée de clôtures à triple couche surmontées de fil barbelé. Pour les migrants africains et moyen-orientaux, cette frontière représente une voie alternative brutale vers l’Europe.\n\nCe reportage documente les Syriens et d’autres tentant d’entrer en Europe par l’Afrique du Nord—vivant dans les forêts marocaines, planifiant le franchissement des clôtures, affrontant la violence policière."
       },
       "mainpage": true,
-      "subcategory": "migration-displacement",
       "description": {
         "en": "Melilla: New Wall Before Europe (2015)",
         "it": "Melilla: un nuovo muro prima dell'Europa (2015)",
@@ -2572,7 +2555,6 @@
         "fr": "Pâques 2017. Plus de 8 000 migrants furent secourus en Méditerranée en un seul week-end—l’une des plus grandes opérations de recherche et sauvetage de l’histoire de la crise. J’étais à bord de l’un des navires d’ONG pendant ces jours frnétiques, documentant la machine du sauvetage et les visages de ceux extraits des canots pneumatiques quelques instants avant de couler.\n\nMais l’histoire de la migration méditerranéenne ne s’arrête pas au sauvetage. Elle commence par le départ—des voyages désespérés depuis les côtes sans loi de la Libye. Et elle continue avec la mort—des corps échoués sur les plages tunisiennes, enterrés par les pêcheurs locaux dans des tombes anonymes parce que personne d’autre ne le fait.\n\nCette enquête multimédia suit l’ensemble du parcours : la zone SAR où les ONG opèrent sous attaque politique constante, les communautés de pêcheurs tunisiens devenus premiers intervenants malgré eux, et les politiques qui transforment la Méditerranée en fosse commune."
       },
       "mainpage": true,
-      "subcategory": "migration-displacement",
       "description": {
         "en": "Mediterranean Migration: Libya-Tunisia Route (2017)",
         "it": "Migrazione nel Mediterraneo: rotta Libia-Tunisia (2017)",
@@ -3042,7 +3024,6 @@
         "it": "Estate 2015. L’isola greca di Lesbo è diventata la porta d’ingresso dell’Europa per il più grande movimento di rifugiati dalla Seconda Guerra Mondiale. Centinaia—a volte migliaia—arrivavano ogni giorno su barche sovraffollate dalla Turchia.\n\nQuesto saggio fotografico documenta la crisi al suo apice: gli arrivi sulle spiagge, i volontari sopraffatti, le famiglie in transito e una comunità che crolla sotto l’emergenza umanitaria.",
         "fr": "Été 2015. L’île grecque de Lesbos est devenue la porte d’entrée de l’Europe pour le plus grand mouvement de réfugiés depuis la Seconde Guerre mondiale. Des centaines—parfois des milliers—arrivaient chaque jour sur des bateaux surchargés depuis la Turquie.\n\nCet essai photographique documente la crise à son paroxysme : les arrivées sur les plages, les bénévoles débordés, les familles en transit et une communauté qui s’effondre sous l’urgence humanitaire."
       },
-      "subcategory": "migration-displacement",
       "description": {
         "en": "Lesvos Migrant Crisis (Greece, 2015)",
         "it": "Crisi migranti a Lesvos (Grecia, 2015)",
@@ -3219,7 +3200,6 @@
         "it": "Quando l’azienda tessile francese Mamotex ha abbandonato la sua fabbrica tunisina nel 2014, le operaie hanno fatto qualcosa di straordinario: hanno occupato la fabbrica e ripreso la produzione come cooperativa.\n\nQuesto progetto documenta l’unica fabbrica autogestita della Tunisia—sarte che gestiscono la propria attività, lottando per la dignità e la sopravvivenza.",
         "fr": "Quand l’entreprise textile française Mamotex a abandonné son usine tunisienne en 2014, les ouvrières ont fait quelque chose d’extraordinaire : elles ont occupé l’usine et repris la production en coopérative.\n\nCe projet documente la seule usine autogérée de Tunisie—des couturières gérant leur propre entreprise, luttant pour la dignité et la survie."
       },
-      "subcategory": "political-social-justice-gender",
       "description": {
         "en": "Tunisia: Mamotex Workers' Struggle (2016)",
         "it": "Tunisia: la lotta delle operaie Mamotex (2016)",
@@ -3294,7 +3274,6 @@
         "fr": "La Tunisie est devenue le plus grand exportateur par habitant de djihadistes au monde—6 000 à 7 000 ont rejoint Daech. Cette enquête explore pourquoi, en se concentrant sur les familles restées et les mères qui ont perdu leurs filles à cause de la radicalisation.\n\nLa couverture inclut l’histoire d’une mère tunisienne : deux filles perdues à cause de Daech, et la question impossible de comment la radicalisation se produit au sein des familles."
       },
       "mainpage": true,
-      "subcategory": "political-social-justice-gender",
       "description": {
         "en": "Tunisia Foreign Fighters (2017)",
         "it": "Tunisia: combattenti stranieri (2017)",
