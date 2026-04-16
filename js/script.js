@@ -538,14 +538,6 @@
         var container = document.getElementById(sectionId + '-landing-content');
         if (!container || !allSections[sectionId]) return;
 
-        // Section intro
-        var introEl = document.getElementById(sectionId + '-landing-intro');
-        if (introEl) {
-            var intro = t('sectionIntros.' + sectionId);
-            introEl.textContent = (intro !== 'sectionIntros.' + sectionId) ? intro : '';
-            introEl.style.display = (intro !== 'sectionIntros.' + sectionId) ? '' : 'none';
-        }
-
         var sectionCats = allSections[sectionId].order || [];
         var html = '';
 

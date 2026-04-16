@@ -1,8 +1,4 @@
 {
-  "meta": {
-    "description": "Portfolio de Giulia Bertoluzzi - Journaliste Multimédia. Documentaires, reportages, projets humanitaires et contenus multimédias.",
-    "title": "Giulia Bertoluzzi | Journaliste Multimédia"
-  },
   "nav": {
     "journalism": "Journalisme",
     "ngoWork": "Travail ONG",
@@ -30,13 +26,11 @@
     "modalClose": "Fermer"
   },
   "ui": {
-    "all": "Tous",
     "watch": "Regarder",
     "readArticle": "Lire l'article",
     "details": "Détails",
     "viewAllProjects": "Voir tous les projets",
     "viewAllContents": "Voir tous les contenus",
-    "allSectionProjects": "Tous les projets",
     "attachments": "Pièces jointes",
     "skipLink": "Aller au contenu principal",
     "prevSlide": "Diapositive précédente",
@@ -50,8 +44,7 @@
     "longform-reportage": "Longform et Reportage",
     "documentary-series": "Séries Documentaires",
     "field-missions": "Missions de Terrain",
-    "multimedia-projects-coordination": "Coordination de Projets Multimédias",
-    "photo-exhibitions": "Expositions Photographiques"
+    "multimedia-projects-coordination": "Coordination de Projets Multimédias"
   },
   "tags": {
     "director": "Réalisation",
@@ -68,8 +61,6 @@
     "language": "Langue"
   },
   "sectionIntros": {
-    "journalism": "Journalisme indépendant 2013-2018",
-    "ngo": "Solidarités International 2020-2025",
     "documentary-films": "Documentaires longs métrages sur la migration, l'extrême droite et les trafics",
     "multimedia-projects": "Projets multimédias + Magazines",
     "longform-reportage": "Enquêtes approfondies et reportages de terrain sur la migration, les conflits et la justice sociale (2013–2018)",

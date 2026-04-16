@@ -1,8 +1,4 @@
 {
-  "meta": {
-    "description": "Portfolio di Giulia Bertoluzzi - Giornalista Multimedia. Documentari, reportage, progetti umanitari e contenuti multimediali.",
-    "title": "Giulia Bertoluzzi | Giornalista Multimedia"
-  },
   "nav": {
     "journalism": "Giornalismo",
     "ngoWork": "Lavoro ONG",
@@ -30,13 +26,11 @@
     "modalClose": "Chiudi"
   },
   "ui": {
-    "all": "Tutti",
     "watch": "Guarda",
     "readArticle": "Leggi articolo",
     "details": "Dettaglio",
     "viewAllProjects": "Vedi tutti i progetti",
     "viewAllContents": "Vedi tutti i contenuti",
-    "allSectionProjects": "Tutti i progetti",
     "attachments": "Allegati",
     "skipLink": "Salta al contenuto principale",
     "prevSlide": "Slide precedente",
@@ -50,8 +44,7 @@
     "longform-reportage": "Longform e Reportage",
     "documentary-series": "Serie Documentarie",
     "field-missions": "Missioni sul Campo",
-    "multimedia-projects-coordination": "Coordinamento Progetti Multimediali",
-    "photo-exhibitions": "Mostre Fotografiche"
+    "multimedia-projects-coordination": "Coordinamento Progetti Multimediali"
   },
   "tags": {
     "director": "Regia",
@@ -68,8 +61,6 @@
     "language": "Lingua"
   },
   "sectionIntros": {
-    "journalism": "Lavoro giornalistico indipendente 2013-2018",
-    "ngo": "Solidarités International 2020-2025",
     "documentary-films": "Documentari lungometraggi su migrazione, estrema destra e traffici",
     "multimedia-projects": "Progetti multimediali + Magazine",
     "longform-reportage": "Inchieste approfondite e reportage sul campo su migrazione, conflitti e giustizia sociale (2013–2018)",

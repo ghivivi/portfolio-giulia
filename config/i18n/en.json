@@ -1,8 +1,4 @@
 {
-  "meta": {
-    "description": "Giulia Bertoluzzi Portfolio - Multimedia Journalist. Documentaries, reportage, humanitarian projects and multimedia content.",
-    "title": "Giulia Bertoluzzi | Multimedia Journalist"
-  },
   "nav": {
     "journalism": "Journalism",
     "ngoWork": "NGO Work",
@@ -30,13 +26,11 @@
     "modalClose": "Close"
   },
   "ui": {
-    "all": "All",
     "watch": "Watch",
     "readArticle": "Read article",
     "details": "Details",
     "viewAllProjects": "View all projects",
     "viewAllContents": "View all contents",
-    "allSectionProjects": "All projects",
     "attachments": "Attachments",
     "skipLink": "Skip to main content",
     "prevSlide": "Previous slide",
@@ -50,8 +44,7 @@
     "longform-reportage": "Longform & Reportage",
     "documentary-series": "Documentary Series",
     "field-missions": "Field Missions",
-    "multimedia-projects-coordination": "Multimedia Projects Coordination",
-    "photo-exhibitions": "Photo Exhibitions"
+    "multimedia-projects-coordination": "Multimedia Projects Coordination"
   },
   "tags": {
     "director": "Director",
@@ -68,8 +61,6 @@
     "language": "Language"
   },
   "sectionIntros": {
-    "journalism": "Independent journalism 2013-2018",
-    "ngo": "Solidarités International 2020-2025",
     "documentary-films": "Feature-length documentaries on migration, far-right politics, and trafficking",
     "multimedia-projects": "Multimedia projects + Magazines",
     "longform-reportage": "In-depth investigations and field reporting across migration, conflict, and social justice (2013–2018)",
