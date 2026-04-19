@@ -11,7 +11,7 @@
  * Preserves the top-level "sections" key unchanged.
  * If the CSV has only a header row and no data rows, exits without touching the JSON.
  *
- * allegati column format: "url1|label1,url2|label2"
+ * allegati column format: "url1|label1;;url2|label2"  (;; separates entries, | separates url from label)
  *
  * Usage:  node scripts/csv-to-json.js
  */
@@ -118,7 +118,7 @@ function csvToObjects(text) {
  */
 function parseAllegati(raw) {
     if (!raw || !raw.trim()) return [];
-    return raw.split(',').map(function(segment) {
+    return raw.split(';;').map(function(segment) {
         segment = segment.trim();
         if (!segment) return null;
         var pipeIdx = segment.indexOf('|');
@@ -182,17 +182,18 @@ function csvRowToProject(row) {
         project.description = { it: desc_it, en: desc_en, fr: desc_fr };
     }
 
-    // tags: optional, only include if at least one tag field is non-empty
-    var tags_format   = row.tags_format   ? row.tags_format.trim()   : '';
-    var tags_role     = row.tags_role     ? row.tags_role.trim()     : '';
-    var tags_location = row.tags_location ? row.tags_location.trim() : '';
-    if (tags_format || tags_role || tags_location) {
-        var tags = {};
-        if (tags_format)   tags.format   = tags_format;
-        if (tags_role)     tags.role     = tags_role;
-        if (tags_location) tags.location = tags_location;
-        project.tags = tags;
+    // tags: any column named "tags_<key>" becomes tags.<key>.
+    // Block included only if at least one tags_* column is non-empty.
+    var tags = {};
+    var hasTag = false;
+    for (var key in row) {
+        if (key.indexOf('tags_') !== 0) continue;
+        var val = row[key] ? row[key].trim() : '';
+        if (!val) continue;
+        tags[key.slice(5)] = val;
+        hasTag = true;
     }
+    if (hasTag) project.tags = tags;
 
     return project;
 }

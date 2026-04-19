@@ -3512,7 +3512,7 @@
       "allegati": [
         {
           "url": "https://vimeo.com/255014993",
-          "label": "Strange Fish (Vimeo) – Password: ZARZIS"
+          "label": "Strange Fish (Vimeo Trailer)"
         }
       ],
       "testo": {
@@ -3555,6 +3555,10 @@
       ],
       "mainpage": true,
       "allegati": [
+        {  
+          "url": "https://vimeo.com/255014993",
+          "label": "Strange Fish (Vimeo) – Password: ZARZIS"
+        },
         {
           "url": "https://inkyfada.com/2017/06/sar-zone-sauvetage-migrants-mediterranee/",
           "label": "Inkyfada – SAR Zone"
