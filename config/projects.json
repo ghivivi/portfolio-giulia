@@ -23,7 +23,7 @@
       "date": "2015-02-25",
       "video": null,
       "thumbnail": {
-        "url": "http://nena-news.globalist.it/QFC/NEWS_72914.jpg",
+        "url": "../media/longform-reportage/longform et reportage.JPG",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -2655,7 +2655,7 @@
         "id": "CUh5iNMIIrs"
       },
       "thumbnail": {
-        "url": "../media/documentary-films/Far Right A new frightening normal.jpg",
+        "url": "../media/documentary-films/Far right a new frightening normal locandina.jpg",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -2763,7 +2763,7 @@
         "id": "feVWYvSLKXA"
       },
       "thumbnail": {
-        "url": "../media/documentary-films/una-storia-sommersa-youtube.png",
+        "url": "../media/documentary-films/Una storia sommersa.jpg",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3293,7 +3293,7 @@
         "id": "CUh5iNMIIrs"
       },
       "thumbnail": {
-        "url": "../media/thumbnails/documentary-far-right-a-new-frightening-normal.png",
+        "url": "../media/documentary-films/Far Right a new frightening normal.jpg",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3349,7 +3349,7 @@
         "id": "SfxbQSWhPqA"
       },
       "thumbnail": {
-        "url": "",
+        "url": "../media/multimedia-projects/Railway diaries.jpg",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3409,7 +3409,7 @@
         "id": "277282627"
       },
       "thumbnail": {
-        "url": "http://www.nawartpress.com/wp-content/uploads/2018/07/alloro_arancione-300x206.png",
+        "url": "../media/documentary-films/COPERTINA Strange Fish.jpg",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
@@ -3541,7 +3541,7 @@
         "id": "299668760"
       },
       "thumbnail": {
-        "url": "",
+        "url": "../media/documentary-films/strange-fish.jpg",
         "fallbackGradient": "linear-gradient(135deg, #E5DDD4 0%, #FAF8F5 100%)"
       },
       "title": {
