@@ -1356,6 +1356,50 @@ h1, h2, h3 {
     fill: currentColor;
 }
 
+.contact-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+    width: 100%;
+    max-width: 900px;
+}
+
+.contact-info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    min-width: 0;
+}
+
+.contact-info .contact-tagline {
+    margin-bottom: var(--space-sm);
+}
+
+.contact-info .contact-email {
+    margin: 0.5rem 0 var(--space-sm);
+}
+
+.contact-info .contact-social {
+    justify-content: flex-start;
+    margin-top: var(--space-sm);
+}
+
+.contact-image {
+    flex: 0 0 auto;
+}
+
+.contact-image img {
+    display: block;
+    width: 280px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
 /* ============================================
    14. VIDEO MODAL
    ============================================ */
@@ -1570,6 +1614,24 @@ h1, h2, h3 {
     .language-btn {
         width: 100%;
         max-width: 300px;
+    }
+
+    .contact-layout {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .contact-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-info .contact-social {
+        justify-content: center;
+    }
+
+    .contact-image img {
+        width: 200px;
     }
 }
 
