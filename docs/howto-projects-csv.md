@@ -1,6 +1,6 @@
 # Come usare `config/projects.csv`
 
-Il file `config/projects.csv` permette di aggiungere e modificare i progetti del portfolio senza toccare direttamente il JSON. Basta compilare il CSV, fare push su GitHub, e il sito si aggiorna automaticamente.
+Il file `config/projects.csv` permette di aggiungere e modificare i progetti. Basta compilare il CSV, caricarlo su GitHub, e il sito si aggiorna automaticamente.
 
 ---
 
