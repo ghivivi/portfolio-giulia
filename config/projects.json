@@ -3774,6 +3774,7 @@
       "id": "de-vos-propres-yeux-s6",
       "visible": true,
       "order": 1,
+      "category_cover_url": "../media/ONG home/Copertina Serie Documentari.jpg",    
       "date": "2021-01-01",
       "video": null,
       "thumbnail": {
@@ -3823,6 +3824,7 @@
       "id": "living-in-kharkivs-metro",
       "visible": true,
       "order": 1,
+      "category_cover_url": "../media/ONG home/Copertina missioni sul campo.jpg",
       "date": "2022-01-01",
       "video": null,
       "thumbnail": {
@@ -4039,6 +4041,7 @@
     {
       "id": "photoclimat-2023-2025",
       "visible": true,
+      "category_cover_url": "../media/ONG home/Copertina Coordinamento progetti multimediali.jpg",
       "order": 1,
       "date": "2023-01-01",
       "video": null,
