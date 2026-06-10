@@ -1361,9 +1361,8 @@ h1, h2, h3 {
     align-items: center;
     justify-content: center;
     gap: var(--space-lg);
-    margin-top: var(--space-md);
     width: 100%;
-    max-width: 900px;
+    max-width: 800px;
 }
 
 .contact-info {
@@ -1373,6 +1372,10 @@ h1, h2, h3 {
     align-items: flex-start;
     text-align: left;
     min-width: 0;
+}
+
+.contact-info .section-heading {
+    margin-bottom: var(--space-sm);
 }
 
 .contact-info .contact-tagline {
@@ -1394,7 +1397,7 @@ h1, h2, h3 {
 
 .contact-image img {
     display: block;
-    width: 280px;
+    width: 200px;
     max-width: 100%;
     height: auto;
     border-radius: 4px;
@@ -1631,7 +1634,7 @@ h1, h2, h3 {
     }
 
     .contact-image img {
-        width: 200px;
+        width: 180px;
     }
 }
 
