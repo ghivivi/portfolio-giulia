@@ -39,7 +39,9 @@ Modifica projects.csv → push su GitHub
 | `section` | — | `journalism` / `ngo` | Necessario solo per **nuove categorie** (vedi sezione dedicata) |
 | `categories` | ✓ | slug separati da virgola | Categorie a cui appartiene il progetto. Es: `longform-reportage` |
 | `subcategory` | — | slug | Sottocategoria. Es: `migration-displacement` |
-| `mainpage` | ✓ | `true` / `false` | `true` = appare nella sezione principale della home |
+| `mainpage` | ✓ | `true` / `false` | `true` = appare nello showreel/carousel della home |
+| `category_cover` | — | `true` / `false` | `true` = la `thumbnail_url` di questo progetto viene usata come immagine della colonna landing per la sua categoria (vedi "Cover delle categorie" più sotto) |
+| `category_cover_url` | — | URL o path relativo | Immagine **dedicata** per la colonna landing della categoria. Se valorizzata, ha priorità su `category_cover`. Usala per immagini ritagliate apposta per il formato verticale della colonna. Es: `../media/covers/longform-cover.jpg` |
 | `articleUrl` | — | URL | Link all'articolo/fonte esterna |
 | `thumbnail_url` | — | URL o path relativo | Immagine di anteprima. Path relativi: `../media/thumbnails/nome.jpg` |
 | `thumbnail_fallbackGradient` | — | CSS gradient | Sfondo se la thumbnail non si carica. Lasciare vuoto per usare il default |
@@ -153,6 +155,56 @@ mio-articolo;true;5;2026-04-01;Titolo;Title;Titre;journalism;longform-reportage;
 | `documentary-series` | Documentary Series |
 | `field-missions` | Field Missions |
 | `multimedia-projects-coordination` | Multimedia Projects Coordination |
+
+---
+
+## Cover delle categorie
+
+Le pagine landing di sezione (es. `/it/giornalismo.html`, `/it/ngo.html`) mostrano una colonna verticale per ogni categoria, con un'immagine di sfondo (CSS `background-size: cover`). Ci sono **due modi** per scegliere l'immagine, con priorità:
+
+### Opzione 1 — Immagine dedicata (consigliata)
+
+Usa la colonna `category_cover_url` per puntare a un'immagine **preparata apposta** per il formato verticale della colonna (così eviti il crop indesiderato della thumbnail landscape).
+
+1. Caricare l'immagine in `media/` (es. `media/covers/longform-cover.jpg`).
+2. Su una riga di un progetto della categoria interessata, scrivere il path in `category_cover_url`: `../media/covers/longform-cover.jpg`.
+3. Quella URL verrà usata come sfondo della colonna per ciascuna delle `categories` di quel progetto.
+
+### Opzione 2 — Riusa la thumbnail di un progetto
+
+Se ti va bene riusare la thumbnail di un progetto (formato landscape, verrà croppata al centro):
+
+1. Sulla riga del progetto, mettere `true` nella colonna `category_cover`.
+2. La sua `thumbnail_url` verrà usata come sfondo della colonna.
+
+### Priorità e regole
+
+L'ordine di precedenza per scegliere l'immagine della colonna è:
+
+1. Primo progetto della categoria con `category_cover_url` valorizzato → usa quella URL.
+2. Altrimenti, primo progetto con `category_cover=true` → usa la sua `thumbnail_url`.
+3. Altrimenti, primo progetto per `order` → usa la sua `thumbnail_url` (comportamento storico).
+
+In tutti i casi "primo" = quello con `order` più basso. I campi `category_cover` e `category_cover_url` sono indipendenti da `mainpage` e da `order`: un progetto può fornire la cover di una categoria senza apparire nello showreel e senza essere in cima alla lista.
+
+**Esempio:** per mostrare un'immagine dedicata nella colonna "Longform Reportage" della pagina Giornalismo, scegli un progetto qualsiasi di quella categoria e scrivi nella sua riga: `category_cover_url = ../media/covers/longform-cover.jpg`.
+
+---
+
+## Ordine dello showreel
+
+Lo showreel è il carousel a tutto schermo della home page. Mostra **solo i progetti con `mainpage=true`**, ordinati per il campo `order` ascendente:
+
+- `order=1` → prima slide
+- `order=2` → seconda slide
+- ... e così via
+
+**Da sapere:**
+- Il campo `order` è lo stesso usato per ordinare i progetti all'interno della categoria. Cambiare l'`order` di un progetto sposta sia la sua posizione nello showreel sia la sua posizione nella griglia della categoria.
+- Se non usi `category_cover`, l'`order` controlla anche quale progetto fornisce l'immagine della colonna landing della categoria (il primo per `order`). Per disaccoppiare cover e showreel, usa `category_cover` come descritto sopra.
+- I progetti con `mainpage=false` non appaiono nello showreel anche se hanno un `order` basso.
+
+**Esempio:** per riordinare lo showreel, modificare il campo `order` dei progetti con `mainpage=true` nel CSV.
 
 ---
 

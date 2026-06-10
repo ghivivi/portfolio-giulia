@@ -554,12 +554,18 @@
             var count = catProjects.length;
             if (count === 0) return;
 
-            // Find featured project (first one with a thumbnail or video)
-            var featured = catProjects[0];
+            // Cover selection priority:
+            //  1) project with category_cover_url set → use that dedicated URL
+            //  2) project with category_cover=true → use its thumbnail
+            //  3) fallback: first project by order, use its thumbnail
+            var withCoverUrl = catProjects.find(function(p) { return p.category_cover_url; });
+            var withCoverFlag = catProjects.find(function(p) { return p.category_cover === true; });
+            var featured = withCoverUrl || withCoverFlag || catProjects[0];
+            var coverUrl = withCoverUrl ? withCoverUrl.category_cover_url : getProjectThumbnailUrl(featured);
+
             var bgStyle = '';
-            var thumbUrl = getProjectThumbnailUrl(featured);
-            if (thumbUrl) {
-                bgStyle = "background-image: url('" + thumbUrl + "');";
+            if (coverUrl) {
+                bgStyle = "background-image: url('" + coverUrl + "');";
             } else if (featured.thumbnail && featured.thumbnail.fallbackGradient) {
                 bgStyle = 'background: ' + featured.thumbnail.fallbackGradient + ';';
             } else {

@@ -158,7 +158,9 @@ function csvRowToProject(row) {
             en: row.testo_en || '',
             fr: row.testo_fr || ''
         },
-        mainpage: row.mainpage === 'true'
+        mainpage: row.mainpage === 'true',
+        category_cover: row.category_cover === 'true',
+        category_cover_url: row.category_cover_url || ''
     };
 
     // video: build object only if type is provided
