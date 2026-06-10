@@ -72,7 +72,6 @@
     },
     {
       "id": "sinai-deserto-e-affari-left",
-      "category_cover_url": "TODO",
       "visible": true,
       "order": 3,
       "date": "2015-02-28",
@@ -2648,7 +2647,6 @@
     },
     {
       "id": "far-right-documentary-film",
-      "category_cover_url": "TODO",
       "visible": true,
       "order": 2,
       "date": "2016-01-01",
@@ -3490,8 +3488,9 @@
     },
     {
       "id": "strange-fish-film-e-prossime-date",
+      "category_cover_url": "../media/pictures home/COPERTINA documentari Strange Fish.jpg",
       "visible": true,
-      "order": 24,
+      "order": 1,
       "date": "2019-01-25",
       "video": {
         "type": "vimeo",
@@ -3773,7 +3772,6 @@
     },
     {
       "id": "de-vos-propres-yeux-s6",
-      "category_cover_url": "TODO",
       "visible": true,
       "order": 1,
       "date": "2021-01-01",
@@ -3823,7 +3821,6 @@
     },
     {
       "id": "living-in-kharkivs-metro",
-      "category_cover_url": "TODO",
       "visible": true,
       "order": 1,
       "date": "2022-01-01",
@@ -4041,7 +4038,6 @@
     },
     {
       "id": "photoclimat-2023-2025",
-      "category_cover_url": "TODO",
       "visible": true,
       "order": 1,
       "date": "2023-01-01",
@@ -4144,7 +4140,6 @@
     },
     {
       "id": "the-railway-diaries",
-      "category_cover_url": "TODO",
       "visible": true,
       "mainpage": true,
       "order": 201,
