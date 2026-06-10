@@ -72,6 +72,7 @@
     },
     {
       "id": "sinai-deserto-e-affari-left",
+      "category_cover_url": "TODO",
       "visible": true,
       "order": 3,
       "date": "2015-02-28",
@@ -2647,6 +2648,7 @@
     },
     {
       "id": "far-right-documentary-film",
+      "category_cover_url": "TODO",
       "visible": true,
       "order": 1,
       "date": "2016-01-01",
@@ -3771,6 +3773,7 @@
     },
     {
       "id": "de-vos-propres-yeux-s6",
+      "category_cover_url": "TODO",
       "visible": true,
       "order": 1,
       "date": "2021-01-01",
@@ -3820,6 +3823,7 @@
     },
     {
       "id": "living-in-kharkivs-metro",
+      "category_cover_url": "TODO",
       "visible": true,
       "order": 1,
       "date": "2022-01-01",
@@ -4037,6 +4041,7 @@
     },
     {
       "id": "photoclimat-2023-2025",
+      "category_cover_url": "TODO",
       "visible": true,
       "order": 1,
       "date": "2023-01-01",
@@ -4139,6 +4144,7 @@
     },
     {
       "id": "the-railway-diaries",
+      "category_cover_url": "TODO",
       "visible": true,
       "mainpage": true,
       "order": 201,
